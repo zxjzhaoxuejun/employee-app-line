@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<title>分析结论</title>
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/lCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/demoxf0729.css" />
+		<link rel="stylesheet" type="text/css" href="css/businessModel.css" />
+		<script type="text/javascript" src="js/setHtmlFontSize.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script src="js/lCalendar.min.js"></script>
+		<script src="js/city.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/otherChecker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/formatMoneyText.js"></script>
+		<style type="text/css">
+			.new_checkbox {
+				float: left;
+				width: 100%;
+			}
+			
+			.new_checkbox p {
+				background: none;
+				border-bottom: 0.05rem solid #E6E6EB;
+				position: relative;
+				padding-left: 0.25rem !important;
+				font-size: 0.4rem;
+			}
+			
+			.new_checkbox span {
+				position: absolute;
+				width: 0.3rem;
+				height: 0.3rem;
+				border-bottom: 0.1rem solid #E6E6EB;
+				border-right: 0.1rem solid #E6E6EB;
+				top: 0.5rem;
+				right: 0.5rem;
+				transform: rotate(-40deg);
+			}
+			
+			.rcb {
+				width: 100% !important;
+			}
+			
+			.rcb label {
+				width: 100% !important;
+				justify-content: flex-start !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<footer id="next">
+			<p>确认</p>
+		</footer>
+		<script type="text/javascript">
+			var _json;
+			var tbjson;
+			var sj = {};
+
+			function loadAdvise(sjson) {
+				var AndroidAnswer = sjson[1];
+				sjson = sjson[0];
+				sjson["answer"] = AndroidAnswer;
+
+				function jsonForm(data) {
+					var r = data.answer;
+					var answerJson = {}; //答案json字符串转换
+					for (var key in r) {
+						answerJson[key] = $.parseJSON(r[key]);
+					}
+					data.answer = answerJson;
+					return data;
+				}
+				var json = jsonForm(sjson);
+				_json = json;
+				console.log(_json)
+				$("<section></section>").appendTo($("body"));
+				var modelDetailSubList = _json.modelDetailSubList;
+				$.each(modelDetailSubList, function() {
+					if ($(this)[0].type == "INPUT") {
+						createInput($(this)[0]);
+					}
+					if ($(this)[0].type == "TABLE") {
+						createTable($(this)[0]);
+					}
+				});
+				$(".problem li").each(function() {
+					if ($(this).attr("isdynamicshow") == "1") {
+						$(this).hide();
+					}
+				});
+				var bossAdviseCoborrowerMessages
+				if ($(".problem").attr("modelname") == "advise") {
+					var bossAdviseModel = _json.answer.adviseModel;
+					var bossAdvise = bossAdviseModel.advise;
+					sj["adviseModel"] = _json.answer.adviseModel;
+				} else {
+					var bossAdviseModel = _json.answer.bossAdviseModel;
+					var bossAdvise = bossAdviseModel.bossAdvise;
+					sj["bossAdviseModel"] = _json.answer.bossAdviseModel;
+					bossAdviseCoborrowerMessages = bossAdviseModel.bossAdviseCoborrowerMessages;
+				}
+				for (key in bossAdvise) {
+					if (bossAdvise[key] != null) {
+						$(".problem[type='INPUT'] li").each(function() {
+							if ($(this).attr("fieldname") == key) {
+								if ($(this).children(".right").children("label").length == 2) {
+									if ($(this).children(".right").children("label").eq(0).find("input").val() == bossAdvise[key]) {
+										$(this).children(".right").children("label").eq(0).find("input").attr("checked", true);
+										$(this).attr("chd", bossAdvise[key]);
+										$(this).children(".right").children("label").eq(0).find("i").show();
+										$(this).children(".left").children("i").css({
+											"color": "#a09fa4"
+										});
+									}
+									if ($(this).children(".right").children("label").eq(1).find("input").val() == bossAdvise[key]) {
+										$(this).children(".right").children("label").eq(1).find("input").attr("checked", true);
+										$(this).attr("chd", bossAdvise[key]);
+										$(this).children(".right").children("label").eq(1).find("i").show();
+										$(this).children(".left").children("i").css({
+											"color": "#a09fa4"
+										});
+									}
+								} else if ($(this).children(".right").children("input").length == 1) {
+									if (!isNaN(parseInt(bossAdvise[key]))) {
+										$(this).children(".right").children("input").val(bossAdvise[key]);
+									} else {
+										$(this).children(".right").children("input").val(bossAdvise[key]);
+									}
+									$(this).children(".left").children("i").css({
+										"color": "#a09fa4"
+									});
+								} else if ($(this).hasClass("checkbox_zh")) {
+									var a = bossAdvise[key].split(",");
+									var _this = $(this);
+									$(a).each(function(i, val) {
+										_this.find(".rcb").each(function() {
+											$(this).find("label").each(function() {
+												if ($(this).find("input").attr("data-code") == val) {
+													$(this).find("img").attr("src", "img/jxt_icon.png");
+													$(this).find("input").attr("checked", "checked");
+													$(this).find("span").css({
+														"color": "#191919"
+													});
+												}
+											})
+										})
+									});
+								} else if ($(this).children(".right").children("span").length == 1) {
+									if (bossAdvise[key] != null) {
+										if (bossAdvise[key].length > 2) {
+											var codeDicList = $(this).data("dataArry").codeDicList;
+											var _this = $(this);
+											$(codeDicList).each(function() {
+												if (bossAdvise[key] == $(this)[0].code) {
+													_this.children(".right").children("span").text($(this)[0].name).css({
+														"color": "#191919"
+													});
+													_this.attr("_name", bossAdvise[key]);
+													_this.children(".left").children("i").css({
+														"color": "#a09fa4"
+													});
+												}
+											});
+										} else {
+											$(this).children(".right").children("span").text(bossAdvise[key] + "期").css({
+												"color": "#191919"
+											});
+											$(this).attr("_name", bossAdvise[key]);
+											$(this).children(".left").children("i").css({
+												"color": "#a09fa4"
+											});
+										}
+									}
+								} else if ($(this).hasClass("textareaStyle")) {
+									if (bossAdvise[key] != null) {
+										$(this).find("textarea").val(bossAdvise[key]);
+										$(this).children(".left").children("i").css({
+											"color": "#a09fa4"
+										});
+									}
+								}
+							}
+						})
+					}
+				}
+				binding();
+				var si = "false";
+				var xsi;
+				$(".problem[type='INPUT'] li").each(function() {
+					if ($(this).children(".right").children("label").length == 2) {
+						if ($(this).children(".right").children("label").eq(0).find("input").val() == $(this).attr("chd")) {
+							$(this).children(".right").children("label").eq(0).find("input").click();
+							if (si == "false") {
+								xsi = $(this).children(".right").children("label").eq(0).find("input");
+							}
+						}
+						if ($(this).children(".right").children("label").eq(1).find("input").val() == $(this).attr("chd")) {
+							$(this).children(".right").children("label").eq(1).find("input").click();
+							if (si == "false") {
+								xsi = $(this).children(".right").children("label").eq(1).find("input");
+							}
+						}
+						if (si == "true") {
+							if (xsi != undefined) {
+								xsi.click();
+							}
+						} else {
+							si = "true";
+						}
+					}
+				});
+				if (bossAdviseCoborrowerMessages != undefined) {
+					if (bossAdviseCoborrowerMessages != null && bossAdviseCoborrowerMessages.length > 0) {
+						$(".visible .cy span").remove();
+						for (var i = 0; i < bossAdviseCoborrowerMessages.length; i++) {
+							if (bossAdviseCoborrowerMessages[i]["type"] != null) {
+								for (var k = 0; k < $(".visible li").first().children(".right").children("label").length; k++) {
+									if ($(".visible li").first().children(".right").children("label").eq(k).find("input").val() == bossAdviseCoborrowerMessages[i]["type"]) {
+										var b = $(".visible li").first().children(".right").children("label").eq(k).text()
+										var c = $("<span>" + b + "</span>");
+										c.data("a_save", bossAdviseCoborrowerMessages[i]);
+										c.appendTo(".visible .cy");
+									}
+								}
+							} else {
+								$("<span>页签</span>").data("a_save", bossAdviseCoborrowerMessages[i]).appendTo(".visible .cy");
+								
+							}
+						}
+						$(".visible span").eq(0).click();
+						$(".visible .jian").show();
+						$(".visible").show();
+					} else {
+						$(".visible,.jian").hide();
+						$(".visible").hide();
+					}
+				}
+				$("textarea").parents("li").hide();
+				$(".checkbox_zh").each(function() {
+					if ($(this).is(":visible")) {
+						$(this).find(".rcb").each(function() {
+							if ($(this).find("label").text().substr(-4) == "其它原因" || $(this).find("label").text().substr(-4) == "其他原因") {
+								if ($(this).find("input").prop("checked")) {
+									$("textarea").parents("li").show();
+								}
+							}
+						})
+					}
+				})
+			}
+
+			function createInput(inputJson) {
+				var id = inputJson.code.split(".").join("");
+				$("<div type='INPUT' class='problem' id='" + id + "'><p>" + inputJson.name + "</p><ul></ul></div>").appendTo($("section")).data("dataArry", this.modelDetailSubListArry).attr("modelname", inputJson["objName"]);
+				createLi(id, inputJson.questionDetailList);
+			}
+
+			function createTable(inputJson) {
+				var id = inputJson.code.split(".").join("");
+				$("<div type='TABLE' class='problem'><div class='problem show' id='" + id + "'><p>" + inputJson.name + "<img src='img/add_icon.png' class='add'><img src='img/jian_icon.png' class='jian'></p><div class='visible'><div class='cy'><span class='span_bg' index='1'>页签</span></div><ul></ul></div></div></div>").appendTo($("section")).data("dataArry", this.modelDetailSubListArry).attr("modelname", inputJson["objName"]);
+				createLi(id, inputJson.questionDetailList);
+				tbjson = inputJson.questionDetailList;
+			}
+
+			function createLi(id, questionDetailList) {
+				for (var i = 0; i < questionDetailList.length; i++) {
+					//获取推入类型
+					var inputTypes = questionDetailList[i].inputType;
+					switch (inputTypes) {
+						case "CODE":
+							create_Code(id, questionDetailList[i]);
+							break;
+						case "CHECKBOX":
+							create_Checkbox(id, questionDetailList[i]);
+							break;
+						case "ADDRESS":
+							create_Address(id, questionDetailList[i]);
+							break;
+						case "DATE":
+							create_Date(id, questionDetailList[i]);
+							break;
+						case "DOUBLE":
+							create_Double(id, questionDetailList[i]);
+							break;
+						case "INTEGER":
+							create_Integer(id, questionDetailList[i]);
+							break;
+						case "STRING":
+							create_String(id, questionDetailList[i]);
+							break;
+						case "TELEPHONE":
+							create_Telephone(id, questionDetailList[i]);
+							break;
+						case "TEXTAREA":
+							create_Textarea(id, questionDetailList[i]);
+							break;
+						case "DATEZONE":
+							create_DateZone(id, questionDetailList[i]);
+							break;
+						case "SSQADDRESS":
+							create_SsqAddress(id, questionDetailList[i]);
+							break;
+					};
+				};
+				//	创建模块Code方法
+				function create_Code(id, questionDetailList) {
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					//		id:是附在大块的ID名
+					if (questionDetailList.codeDicList.length == 2) {
+						var _elem = '<li code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+							'<div class="left">' +
+							'<span>&nbsp;&nbsp;</span>' +
+							'<i>' + questionDetailList.name + '</i>' +
+							'</div>' +
+							'<div class="right">' +
+							'<label>' +
+							'<input name=' + questionDetailList.code + '-radio' + ' type="radio" data-code=' + questionDetailList.codeDicList[0].code + ' value=' + questionDetailList.codeDicList[0].code + '>' +
+							questionDetailList.codeDicList[0].name +
+							'<i></i>' +
+							'</label>' +
+							'<label>' +
+							'<input name=' + questionDetailList.code + '-radio' + ' type="radio" data-code=' + questionDetailList.codeDicList[1].code + ' value=' + questionDetailList.codeDicList[1].code + '>' +
+							questionDetailList.codeDicList[1].name +
+							'<i></i>' +
+							'</label>' +
+							'</div>' +
+							'</li>';
+						var elem = $(_elem);
+						//在li的元素以code值设置为id名
+						elem.attr("id", questionDetailList.code.split(".").join(""));
+						//把制定自己的questionDetailList:大列表里面的小列表数据总和存到元素里面用dataArry
+						elem.data("dataArry", questionDetailList);
+						elem.attr("data-fieldName", questionDetailList.fieldName);
+						elem.attr("fieldName", questionDetailList.fieldName);
+						require(elem, questionDetailList);
+						elem.appendTo(pushElem);
+					} else if (questionDetailList.codeDicList.length > 2) {
+						var _elem = '<li _cd="CODE" code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+							'<div class="left">' +
+							'<span>&nbsp;&nbsp;</span>' +
+							'<i>' + questionDetailList.name + '</i>' +
+							'</div>' +
+							'<div class="right">' +
+							'<span class="choose" data-code="">请选择</span><img src="img/down_icon.png" class="select"/>'
+						'</div>'
+						'</li>';
+						var elem = $(_elem);
+						//在li的元素以code值设置为id名
+						elem.attr("id", questionDetailList.code.split(".").join(""));
+						//把制定自己的questionDetailList:大列表里面的小列表数据存到元素里面用dataArry
+						elem.data("dataArry", questionDetailList);
+						elem.attr("data-fieldName", questionDetailList.fieldName);
+						elem.attr("fieldName", questionDetailList.fieldName);
+						require(elem, questionDetailList);
+						elem.appendTo(pushElem);
+					}
+				};
+				//创建"Checkbox"模块
+				function create_Checkbox(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					var _elem = '<li class="checkbox_zh" code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'</li>';
+					var elem = $(_elem);
+					//在.right的元素以code值设置为id名
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					//把制定自己的questionDetailList:大列表里面的小列表数据存到元素里面用dataArry
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					for (var i = 0; i < questionDetailList.codeDicList.length; i++) {
+						var codeDicList_name = questionDetailList.codeDicList[i].name;
+						console.log()
+						if (questionDetailList.codeDicList[i].codeDicList != undefined) {
+							if (questionDetailList.codeDicList[i].codeDicList.length == 0) {
+								var _box = $('<div class="right chenckbox rcb"></div>');
+								checkele(elem, questionDetailList.codeDicList[i], questionDetailList.codeDicList[i]["code"], _box);
+								elem.append(_box);
+							} else {
+								var new_checkbox = '<div class="new_checkbox" onoff="off">' +
+									'<p>' + codeDicList_name + '<span></span></p>' +
+									'</div>'
+								var new_checkbox = $(new_checkbox);
+								new_checkbox.data("dataArry", questionDetailList.codeDicList[i]);
+								new_checkbox.find("input").attr("data-code", questionDetailList.codeDicList[i]["code"]);
+								new_checkbox.attr("data-code", questionDetailList.codeDicList[i]["code"]);
+								elem.append(new_checkbox);
+								var _questionDetailList = questionDetailList.codeDicList[i].codeDicList;
+								var _box = $('<div class="right chenckbox rcb" style="display: none;"></div>');
+								_box.attr("data-code", questionDetailList.codeDicList[i]["code"]);
+								$.each(_questionDetailList, function() {
+									checkele(elem, $(this)[0], $(this)[0]["code"], _box);
+								});
+								elem.append(_box);
+							}
+						} else {
+							var _box = $('<div class="right chenckbox rcb"></div>');
+							checkele(elem, questionDetailList.codeDicList[i], questionDetailList.codeDicList[i]["code"], _box);
+							elem.append(_box);
+						}
+					}
+
+					function checkele(elem, dataArry, data_code, _box) {
+						var _chenckboxNewsELe = '<label class="chenckboxNews">' +
+							'<input type="checkbox" style="display:none"/>' +
+							'<img src="img/jx_icon.png">' +
+							'<span>' + dataArry.name + '</span>' +
+							'</label>'
+						var chenckboxNewsELe = $(_chenckboxNewsELe);
+						chenckboxNewsELe.data("dataArry", dataArry);
+						chenckboxNewsELe.find("input").attr("data-code", data_code);
+						_box.append(chenckboxNewsELe);
+					}
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建Address模块
+				function create_Address(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					var _elem = '<li code="' + questionDetailList.code + '" class="address" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right" onclick="adree(this.id)">' +
+						'<span class="choose" name="" guid="" cdxq="dzxq">请选择</span>' +
+						'<img src="img/down_icon.png" class="select"/>' +
+						'</div>' +
+						'<div class="x-address">' +
+						'<p class="x-address_p1">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>详细地址</i>' +
+						'</p>' +
+						'<p class="x-address_p2">' +
+						'<input type="text" placeholder="请输入详细地址" />'
+					'</p>' +
+					'</div>' +
+					'</li>';
+					var elem = $(_elem);
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.find(".right").attr("id", questionDetailList.code.split(".").join("") + "-address");
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建ssqAddress模块
+				function create_SsqAddress(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					var _elem = '<li code="' + questionDetailList.code + '" class="ssqaddress" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right" onclick="adree(this.id)">' +
+						'<span class="choose" name="" guid="" cdz="dz">请选择</span>' +
+						'<img src="img/down_icon.png" class="select"/>' +
+						'</div>' +
+						'</li>'
+					var elem = $(_elem);
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.find(".right").attr("id", questionDetailList.code.split(".").join("") + "-address");
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建Date模块
+				function create_Date(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					var _elem = '<li code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right chenckbox" data-pluginDateNoOff="off">' +
+						'<input type="text" readonly name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29"/>' +
+						'</div>' +
+						'</li>';
+					var elem = $(_elem);
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.find(".right input").attr("id", "date-" + questionDetailList.code.split(".").join(""));
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem).find(".right input").each(function() {
+						var id = "#" + $(this).attr("id");
+						var dateTool = new lCalendar();
+						dateTool.init({
+							"trigger": id,
+							"type": "date"
+						});
+					});
+				};
+				//创建Double模块
+				function create_Double(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					//placeholder输入框默认文字内容
+					var placeholder = "请输入" + questionDetailList.name;
+					var _elem = '<li code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right chenckbox">' +
+						'<input type="number" placeholder=' + placeholder + '>' +
+						'<span></span>' +
+						'</div>' +
+						'</li>';
+					var elem = $(_elem);
+					if (questionDetailList.inputUnit != null) {
+						elem.find(".right span").text(questionDetailList.inputUnit);
+					};
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建Integer模块
+				function create_Integer(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					var _elem = '<li code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right chenckbox">' +
+						'<input type="number" placeholder="请输入' + questionDetailList.name + '" />' +
+						'<span></span>' +
+						'</div>' +
+						'</li>';
+					var elem = $(_elem);
+					if (questionDetailList.inputUnit != null) {
+						elem.find(".right span").text(questionDetailList.inputUnit);
+					};
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建String模块
+				function create_String(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					//placeholder输入框默认文字内容
+					var placeholder = "请输入" + questionDetailList.name;
+					var _elem = '<li code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right chenckbox">' +
+						'<input type="text" placeholder=' + placeholder + '>' +
+						'<span></span>' +
+						'</div>' +
+						'</li>';
+					var elem = $(_elem);
+					if (questionDetailList.inputUnit != null) {
+						elem.find(".right span").text(questionDetailList.inputUnit);
+					}
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建TELEPHONE模块
+				function create_Telephone(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					//placeholder输入框默认文字内容
+					var placeholder = "请输入" + questionDetailList.name;
+					var _elem = '<li code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right chenckbox phone">' +
+						'<input type="number" placeholder="区号" class="telephone_left" data-maxlength="4"/>' +
+						'<b>-</b>' +
+						'<input type="number" placeholder="电话号码" class="telephone_center" data-maxlength="8"/>' +
+						'<b>-</b>' +
+						'<input type="number" placeholder="分机号" class="telephone_right" data-maxlength="2"/>' +
+						'<span></span>' +
+						'</div>' +
+						'</li>';
+					var elem = $(_elem);
+					if (questionDetailList.inputUnit != null) {
+						elem.find(".right span").text(questionDetailList.inputUnit);
+					}
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建textarea模块
+				function create_Textarea(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					//placeholder输入框默认文字内容
+					var placeholder = "请输入" + questionDetailList.name;
+					var _elem = '<li code="' + questionDetailList.code + '" class="textareaStyle" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right chenckbox">' +
+						'<textarea name="" rows="" cols="" placeholder="请输入" ></textarea>' +
+						'</div>'
+					'</li>';
+					var elem = $(_elem);
+					if (questionDetailList.inputUnit != null) {
+						elem.find(".right span").text(questionDetailList.inputUnit);
+					};
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem);
+				};
+				//创建DATEZONE模块
+				function create_DateZone(id, questionDetailList) {
+					//id:是附在大块的ID名
+					//questionDetailList:大列表里面的小列表数据总和
+					var pushElem = $('#' + id).find("ul");
+					var _elem = '<li code="' + questionDetailList.code + '" isLabel="' + questionDetailList.isLabel + '" isControlShow="' + questionDetailList.isControlShow + '" isDynamicShow="' + questionDetailList.isDynamicShow + '">' +
+						'<div class="left">' +
+						'<span>&nbsp;&nbsp;</span>' +
+						'<i>' + questionDetailList.name + '</i>' +
+						'</div>' +
+						'<div class="right chenckbox qdate" data-pluginDateNoOff="off">' +
+						'<input type="text" readonly name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29" style="width:2.5rem;text-align:center" />' +
+						'<b>-</b>' +
+						'<input type="text" readonly name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29" style="width:2.5rem;text-align:center" />' +
+						'</div>' +
+						'</li>';
+					var elem = $(_elem);
+					elem.attr("id", questionDetailList.code.split(".").join(""));
+					elem.find(".right input").each(function(index) {
+						$(this).attr("id", "date-" + questionDetailList.code.split(".").join("") + "-" + index);
+					});
+					elem.data("dataArry", questionDetailList);
+					elem.attr("data-fieldName", questionDetailList.fieldName);
+					elem.attr("fieldName", questionDetailList.fieldName);
+					require(elem, questionDetailList);
+					elem.appendTo(pushElem).find(".right input").each(function() {
+						var id = "#" + $(this).attr("id");
+						var dateTool = new lCalendar();
+						dateTool.init({
+							"trigger": id,
+							"type": "date"
+						});
+					});
+				};
+				//创建单选2个以上遮罩层
+				function require(elem, questionDetailList) {
+					if (questionDetailList.require) {
+						elem.find(".left span").html("*");
+					};
+					if (questionDetailList.isDynamicShow == "1") {
+						elem.hide();
+					}
+				}
+			}
+
+			function binding() {
+				$(document).on("focus", ".problem li input", function() { //获取焦点
+					$(this).parents("li").addClass("ylborder"); //添加当前黄色下边框
+					$(this).parents("li").siblings().removeClass("ylborder"); //删除其他黄色下边框
+				});
+				$(document).on("blur", ".problem[type='INPUT'] li input", function() { //获取焦点
+					$(this).parents("li").removeClass("ylborder"); //添加当前黄色下边框
+					if ($(this).val() != "") {
+						$(this).parent().siblings(".left").children("i").css({
+							"color": "#a09fa4"
+						});
+					} else {
+						$(this).parent().siblings(".left").children("i").css({
+							"color": "#191919"
+						});
+					}
+					$(this).parent().siblings(".left").find("label").remove();
+					if ($(this).val().trim() == "") {
+						if ($(this).parents("li").find(".left span").text() == "*") {
+							$('<label class="message_info">请输入必填项</label>').appendTo($(this).parent().siblings(".left"))
+						}
+					} else {
+						if ($(this).parent().siblings(".left").find("label").length == 0) {
+							var result = checkRu(_json, $(this).parents("li").attr("fieldname"), $(this).val());
+							if (result != true) {
+								$('<label class="message_info">' + result + '</label>').appendTo($(this).parent().siblings(".left"))
+							}
+						}
+					}
+				});
+				$(document).on("click", "li[_cd='CODE'] .right", function() {
+					mask($(this).parents("li"));
+				});
+				$(document).on("blur", ".problem[type='TABLE'] li input", function() { //获取焦点
+					$(this).parents("li").removeClass("ylborder"); //添加当前黄色下边框
+					if ($(this).val() != "") {
+						$(this).parent().siblings(".left").children("i").css({
+							"color": "#a09fa4"
+						});
+					} else {
+						$(this).parent().siblings(".left").children("i").css({
+							"color": "#191919"
+						});
+					}
+					$(this).parent().siblings(".left").find("label").remove();
+					if ($(this).val().trim() == "") {} else {
+						if ($(this).parent().siblings(".left").find("label").length == 0) {
+							var result = checkRutb(_json, $(this).parents("li").attr("fieldname"), $(this).val());
+							if (result != true) {
+								$('<label class="message_info">' + result + '</label>').appendTo($(this).parent().siblings(".left"))
+							}
+						}
+					}
+				});
+				$(document).on("keyup", ".problem[type='INPUT'] input[type='number']", function() {
+//					if ($(this).val().indexOf(".") > 0) {
+//						var sval = $(this).val().substr(0, $(this).val().indexOf(".")) + $(this).val().substring($(this).val().indexOf(".") + 1);
+//						$(this).val(sval.trim());
+//					}
+					if (!$(this).parents("li").find(".left i").text().indexOf("手机") > 0) {
+						if ($(this).val().length >= 8) {
+							$(this).val($(this).val().substr(0, 8));
+						}
+					}
+				})
+				$(document).on("click", ".chenckbox label", function() {
+					var parentEle = $(this).closest("li");
+					var checkBr = $(this).find("input").prop("checked");
+					//复选框选中效果
+					if (checkBr) {
+						$(this).find("span").css("color", "#191919");
+						$(this).find("img").attr("src", "img/jxt_icon.png");
+						if ($(this).text().substr(-4) == "其它原因" || $(this).text().substr(-4) == "其他原因") {
+							$("textarea").parents("li").show();
+						}
+					} else {
+						$(this).find("span").css("color", "#a0a0a5");
+						$(this).find("img").attr("src", "img/jx_icon.png");
+						if ($(this).text().substr(-4) == "其它原因" || $(this).text().substr(-4) == "其他原因") {
+							$("textarea").parents("li").hide();
+						}
+					};
+					var checked = "false";
+					$(".problem li .chenckbox input").each(function() {
+						if ($(this).prop("checked")) {
+							checked = "checked";
+						}
+					});
+					if (checked == "checked") {
+						$(this).parents("li").find('.left').children('i').css('color', '#a09fa4');
+					}
+					if (checked == "false") {
+						$(this).parents("li").find('.left').children('i').css('color', '#191919');
+					}
+				});
+				$(document).on("click", ".problem li label input[type='radio']", function() {
+					$(this).parents("li").find("input").each(function() {
+						if ($(this).prop("checked")) {
+							$(this).nextAll("i").css("display", "block");
+							$(this).parents("li").attr("chd", $(this).val());
+						} else {
+							$(this).nextAll("i").css("display", "none");
+						};
+					});
+					$(this).parents("li").find(".left i").css({
+						"color": "#a09fa4"
+					});
+					var _that = $(this).parent("label");
+					if ($(this).parents("li").attr("islabel") == "1") { //判断isLabel是否为1
+						$(".problem .cy span").each(function() { //循环所有页签
+							if ($(this).hasClass("span_bg")) { //判断当前选中的页签
+								if (_that.text().length > 4) { //判断长度是否大于4,大于4的话就截取前4位
+									$(this).text(_that.text().substr(0, 4));
+								} else {
+									if (_that.text() == "") { //如果value值为空的话
+										$(this).text("页签"); //span的文字为页签
+									} else {
+										$(this).text(_that.text()); //把值赋给页签
+									}
+								}
+							}
+						})
+					};
+					if ($(this).parents("li").is(":visible")) {
+						if ($(this).parents("li").attr("iscontrolshow") == "1") {
+							var dataArry = $(this).parents("li").data("dataArry");
+							$(dataArry.controlShowRuleList).each(function() {
+								var code = $(this)[0].code;
+								$.each(code, function(index, value) {
+									$(".problem li").each(function() {
+										if ($(this).attr("code") == value) {
+											$(this).hide();
+											each($(this), 'false');
+										}
+									})
+								});
+							});
+							console.log(dataArry.controlShowRuleList)
+							$(dataArry.controlShowRuleList).each(function() {
+								if (_that.children().val().match($(this)[0].key)) {
+									var code = $(this)[0].code;
+									$.each(code, function(index, value) {
+										$(".problem li").each(function() {
+											if ($(this).attr("code") == value) {
+												$(this).show();
+												each($(this), 'true');
+											}
+										})
+										$(".show li").each(function() {
+											if ($(this).attr("code") == value) {}
+										});
+									});
+								}
+							});
+						}
+					}
+					$("textarea").parents("li").hide();
+					$(".problem[type='INPUT'] li").each(function() {
+						if ($(this).is(":visible")) {
+							if ($(this).hasClass("checkbox_zh")) {
+								$(this).find(".rcb").each(function() {
+									if ($(this).find("label").text().substr(-4) == "其它原因" || $(this).find("label").text().substr(-4) == "其他原因") {
+										if ($(this).find("input").prop("checked")) {
+											$("textarea").parents("li").show();
+										}
+									}
+								})
+							}
+						}
+					})
+
+					function each(t_his, tf) {
+						if (t_his.attr("iscontrolshow") == "1") {
+							if (tf == "true") {
+								if (t_his.attr("chd") != undefined) {
+									var chd = t_his.attr("chd");
+									var dataArry = t_his.data("dataArry");
+									if (dataArry.controlShowRuleList != null) {
+										$(dataArry.controlShowRuleList).each(function() {
+											var k_ey = $(this)[0].key;
+											var c_ode = $(this)[0].code;
+											if (chd.match(k_ey)) {
+												$.each(c_ode, function(index, value) {
+													$(".problem li").each(function() {
+														if ($(this).attr("code") == value) {
+															$(this).show();
+															each($(this), tf);
+														}
+													});
+												});
+											}
+										});
+									} else {
+										$(this).show();
+										return;
+									}
+								} else {
+									$(this).show();
+									return;
+								}
+							}
+							if (tf == "false") {
+								var dataArry = t_his.data("dataArry");
+								if (dataArry.controlShowRuleList != null) {
+									$(dataArry.controlShowRuleList).each(function() {
+										var code = $(this)[0].code;
+										$.each(code, function(index, value) {
+											$(".problem li").each(function() {
+												if ($(this).attr("code") == value) {
+													$(this).hide();
+													each($(this), tf);
+												}
+											})
+										});
+									});
+								}
+							}
+						} else {
+							return;
+						}
+					}
+					if ($(this).parent().text() == "批准") {
+						$(".show").show();
+					};
+					if ($(this).parent().text() == "拒绝") {
+						$(".show").hide();
+					};
+				});
+				$(document).on("touchstart touchend touchmove", "#mask", function() {
+					//						return false;
+				});
+				$(document).on("click", ".new_checkbox", function() {
+					if ($(this).attr("onoff") == "off") {
+						$(this).find("p span").css({
+							"transform": "rotate(40deg)"
+						});
+						$(this).attr("onoff", "on");
+						var data_code = $(this).attr("data-code");
+						$(".rcb").each(function() {
+							if ($(this).attr("data-code") == data_code) {
+								$(this).show();
+							}
+						});
+					} else {
+						$(this).find("p span").css({
+							"transform": "rotate(-40deg)"
+						});
+						$(this).attr("onoff", "off");
+						var data_code = $(this).attr("data-code");
+						$(".rcb").each(function() {
+							if ($(this).attr("data-code") == data_code) {
+								$(this).hide();
+							}
+						});
+					}
+				})
+				$(document).on("click", ".cy span", function() {
+					o_save();
+					$(this).addClass("span_bg").siblings().removeClass("span_bg");
+					$(".show ul").html(""); //把ul清空
+					createLi($(".show").attr("id"), tbjson);
+					var a_save = $(this).data("a_save");
+					o_show(a_save);
+				});
+				$(document).on("click", ".show .add", function() {
+					if ($(".visible").is(":visible")) {
+						o_save();
+						var s_t;
+						$(".show li").each(function() {
+							var dataArry = $(this).data("dataArry");
+							if (dataArry.isLabel == "1") {
+								if ($(this).find(".right span").length == 1) { //判断类型;span类型
+									s_t = $(this).find(".right span").text();
+								} else if ($(this).find(".right input").length == 1) { //input类型
+									s_t = $(this).find(".right input").val();
+								} else if ($(this).find(".right").hasClass("rcb")) { //checkbox类型
+									var _st = "";
+									$(this).find(".right label").each(function() {
+										if ($(this).find("input").prop("checked")) { //判断是否选中
+											_st += $(this).children("span").text() + ","; //多选相加
+										}
+									});
+									s_t = _st.slice(0, -1); //截取最后面的逗号
+								} else if ($(this).find(".right label").length == 2) { //单选类型
+									$(this).find(".right label").each(function() { //循环单选
+										if ($(this).find("input").prop("checked")) { //判断哪个选中
+											s_t = $(this).text();
+										}
+									})
+								}
+							}
+						});
+						if (s_t != undefined) {
+							$('<span>页签</span>').appendTo($(".show .cy")).addClass("span_bg").siblings().removeClass("span_bg"); //添加页签,为单前页签添加类名,其他页签删除类名
+							$(".show ul").html(""); //把ul清空
+							createLi($(".show").attr("id"), tbjson);
+						}
+					} else {
+						$(".visible").show();
+						$(".jian").show();
+					}
+				});
+				$(document).on("click", ".show .jian", function() {
+					$(".show .cy span").each(function() {
+						$("<img src='img/close_icon.png'/>").appendTo($(this));
+					});
+					$(".show .cy span img").click(function() {
+						var index = $(this).parent().index();
+						o_save()
+						$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body"); //遮罩层
+						$("._ci").click(function() { //取消
+							$(".cy span img").remove(); //删除图片
+							$("#mask").remove(); //删除遮罩层
+						});
+						$("._qr").click(function() {
+							$(".cy span img").remove(); //删除图片
+							$("#mask").remove(); //删除遮罩层
+							if ($(".show .cy span").length == "1") {
+								$(".visible").hide();
+								$(".jian").hide();
+							} else {
+								$(".show .cy span").eq(index).remove();
+								if (index == "0") {
+									$(".show .cy span").eq(index).addClass("span_bg").siblings().removeClass("span_bg");
+								} else {
+									$(".show .cy span").eq(index - 1).addClass("span_bg").siblings().removeClass("span_bg");
+								};
+								$(".show .cy span").each(function() {
+									if ($(this).hasClass("span_bg")) {
+										var a_save = $(this).data("a_save");
+										o_show(a_save);
+									}
+								})
+							}
+						});
+						return false;
+					})
+				});
+				$(document).on("click", "#next", function() {
+					submit(true);
+				});
+				$(document).on('focus', "textarea", function() {
+					$(this).addClass('textYellow');
+				}).on('blur', 'textarea', function() {
+					$(this).removeClass('textYellow');
+					if ($(this).val() != "") {
+						$(this).parents("li").find(".left i").css({
+							"color": "#a09fa4"
+						});
+					} else {
+						$(this).parents("li").find(".left i").css({
+							"color": "#191919"
+						});
+					}
+					$(this).find(".left label").remove();
+					if ($(this).parents("li").find(".left label").length == 0) {
+						var result = checkRu(_json, $(this).parents("li").attr("fieldname"), $(this).val());
+						if (result != true) {
+							$('<label class="message_info">' + result + '</label>').appendTo($(this).parent().siblings(".left"))
+						}
+					}
+				})
+
+				function o_save() {
+					var a_save = {};
+					$(".show li").each(function() {
+						if ($(this).css("display") == "none") {} else {
+							var _jz;
+							if ($(this).find(".right span").length == 1) {
+								if ($(this).attr("_cd") == "CODE") { //code类型
+									_jz = $(this).attr("_name");
+									if (_jz == "" || _jz == undefined) { //假如为空的话,把值设为null
+										_jz = null;
+									}
+								}
+								if ($(this).find(".right span").attr("cdxq") == "dzxq") { //地址详情
+									var ssq = $(this).find(".right span").attr("guid"); //guid
+									var dzxq = $(this).find(".x-address input").val(); //详细地址的value值
+									_jz = ssq + "||" + dzxq; //value值为guid+value值
+									if (_jz == "" || _jz == "请选择" || ssq == undefined) { //假如为空的话,把值设为null
+										_jz = null;
+									}
+								}
+								if ($(this).find(".right span").attr("cdz") == "dz") { //地址
+									var ssq = $(this).find(".right span").attr("guid"); //guid
+									_jz = ssq; //value值为guid
+									if (_jz == "" || _jz == "请选择" || ssq == undefined) { //假如为空的话,把值设为null
+										_jz = null;
+									}
+								}
+							};
+							if ($(this).find(".right input").length == 1) { //input类型
+								_jz = $(this).find(".right input").val(); //value为input的value值
+								if (_jz == "" || _jz == "请选择") { //假如为空的话,把值设为null
+									_jz = null;
+								};
+							};
+							if ($(this).find(".right label").length == 2) { //单选类型
+								if ($(this).find(".right label").eq(0).children("input").prop("checked") == false && $(this).find(".right label").eq(1).children("input").prop("checked") == false) { //判断是否都没选中
+									_jz = null;
+								} else {
+									$(this).find(".right label").each(function() {
+										if ($(this).find("input").prop("checked")) {
+											_jz = $(this).find("input").val();
+										}
+									});
+								}
+							};
+							if ($(this).find(".textCons textarea").length == 1) { //textarea类型
+								_jz = $(this).find(".textCons textarea").val(); //value为text值
+								if (_jz == "") { //假如为空的话,把值设为null
+									_jz = null;
+								}
+							};
+							if ($(this).find(".phone input").length == 3) { //家庭固话类型
+								var _pho = ""; //定义一个空的字符串
+								$(this).find(".phone input").each(function() {
+									_pho += $(this).val();
+								});
+								var p_h = _pho.slice(0, -1); //删除最后一位
+								if (p_h == "--") { //如果没有值的话，为null
+									_pho = null;
+								}
+								_jz = p_h;
+							};
+							if ($(this).find(".right").hasClass("rcb")) { //checkbox类型
+								var csp = ""; //定义一个空的字符串
+								$(this).find(".checkbox label").each(function() {
+									if ($(this).find("input").prop("checked")) {
+										csp += $(this).children("span").attr("name") + ",";
+									};
+								})
+								var _csp = csp.slice(0, -1); //删除最后一位
+								if (csp == "") { //如果没有值的话，为null
+									_csp = null;
+								}
+								_jz = _csp;
+							};
+							if ($(this).find(".qdate input").length == 2) { //两个日期
+								var _pho = ""; //定义一个空的字符串
+								$(this).find(".qdate input").each(function() {
+									_pho += $(this).val() + ","; //把值到_pho上
+								});
+								var p_h = _pho.slice(0, -1); //删除最后一位
+								if (p_h == ",") { //如果没有值的话，为null
+									p_h = null;
+								}
+								_jz = p_h;
+							}
+							if (_jz != undefined) {
+								a_save[$(this).attr("fieldname")] = _jz;
+							} else {
+								a_save[$(this).attr("fieldname")] = null;
+							}
+						}
+					});
+					$(".cy span").each(function() {
+						if ($(this).hasClass("span_bg")) {
+							$(this).data("a_save", a_save);
+						}
+					});
+				}
+
+				function o_show(a_save) {
+					$(".show li").each(function() {
+						var fieldname = $(this).attr("fieldname");
+						var that = $(this);
+						for (key in a_save) {
+							if (key == fieldname) {
+								if (that.find(".right span").length == 1) { //判断类型;span类型
+									if (a_save[key] != null) { //判断答案不为空
+										var _lcd = that.attr("_cd"); //type类型(code)
+										var _tn = that.attr("_tn"); //所有的guid和所对应的中文
+										var dzxq = that.children(".right").find("span"); //li下面的span
+										if (_lcd != undefined) { //判断问题是否为code类型的
+											var dataArry = that.data("dataArry");
+											var dc = dataArry.codeDicList;
+											$(dc).each(function() {
+												if ($(this)[0].code == a_save[key]) {
+													that.find(".right span").text($(this)[0].name); //把中文到span上
+													that.attr("_name", $(this)[0].code); //把guid当成属性值存到li里面
+												}
+											})
+										}
+										if (dzxq.attr("cdxq") != undefined) { //省市区加详细地址
+											var _tv = a_save[key].split("||"); //一大串guid加||加详细地址,用竖杆切割成数组，分别为guid和详细地址
+											dzxq.attr("guid", _tv[0]); //把guid附到li上面
+											var Atv = AndroidJs.getAddressByGuid(_tv[0]); //调用安卓方法，返回一个中文的字符串
+											that.find(".right span").text(Atv); //把字符串赋到span上
+											that.find(".x-address input").val(_tv[1]); //把详细地址附到input上
+										}
+										if (dzxq.attr("cdz") != undefined) { //省市区
+											var _tv = a_save[key].split("||"); //一大串guid加||加详细地址,用竖杆切割成数组，分别为guid和详细地址
+											console.log(_tv)
+											dzxq.attr("guid", _tv[0]); //把guid附到li上面
+											var Atv = AndroidJs.getAddressByGuid(_tv[0]); //调用安卓方法，返回一个中文的字符串
+											that.find(".right span").text(Atv); //把字符串赋到span上
+										}
+									}
+									if (a_save[key] != null) {
+										if (a_save[key] != "请选择") {
+											that.find(".left i").css({
+												"color": "#a09fa4"
+											});
+											that.find(".right span").css({
+												"color": "#191919"
+											});
+										}
+									}
+								}
+								if (that.find(".right input").length == 1) { //input类型
+									if (a_save[key] != null) { //判断答案不为空
+										that.find(".right input").val(a_save[key]); //把值赋到input上
+									}
+									if (a_save[key] != null) {
+										if (a_save[key] != "" && a_save[key] != undefined && a_save[key] != null) {
+											that.find(".left i").css({
+												"color": "#a09fa4"
+											});
+											that.find(".right label").css({
+												"color": "#191919"
+											});
+										}
+									}
+								}
+								if (that.find(".right label").length == 2) { //单选类型
+									that.find(".right label").each(function() {
+										if (a_save[key] != null) { //判断答案不为空
+											if ($(this).find("input").val() == a_save[key]) { //判断value值和label的value值是否相等
+												$(this).find("input").click();
+												$(this).find("input").attr("checked", true);
+												$(this).find("input").next("i").show().parent().siblings().children("i").hide();
+												$(this).find("input").parent().siblings().children("input").attr("checked", false);
+												$(this).find("input").parents("li").find(".left i").css({
+													"color": "#a09fa4"
+												});
+											}
+										}
+									});
+								}
+								if (that.find("textarea").length == 1) { //textarea类型
+									if (a_save[key] != null) { //判断答案不为空
+										that.find("textarea").val(a_save[key]); //给textarea赋值
+										if ($('textarea').val() != "") {
+											that.find('.left i').css({
+												"color": "#a09fa4"
+											});
+										} else {
+											that.find('.left i').css({
+												"color": "#191919"
+											});
+										}
+									}
+								}
+								if (that.find(".phone input").length == 3) { //固定电话
+									if (a_save[key] != null) { //判断答案不为空
+										var t_v = a_save[key]; //固定电话07XX-8XXXXXX0-0XX
+										var _tv = t_v.split("-"); //以-来分割
+										that.find(".phone input").each(function(i) {
+											if (_tv[i] != undefined) {
+												that.find(".phone input").eq(i).val(_tv[i]); //分别给3个input赋值
+											}
+										})
+									}
+								}
+								if (that.find(".right").hasClass("rcb")) { //checkbox类型
+									if (a_save[key] != null) { //判断答案不为空
+										var t_v = a_save[key].split(","); //value值以逗号分割
+										that.find(".right label").each(function() {
+											var t_his = $(this);
+											$(t_v).each(function(i, value) {
+												if (t_his.find("span").attr("name") == value) {
+													t_his.find("input").attr("checked", true);
+													t_his.find("img").attr("src", "img/jxt_icon.png");
+													t_his.find(".left i").css('color', '#a0a0a0');
+												}
+											});
+										});
+									}
+								}
+								if (that.find(".qdate input").length == 2) { //两个时间
+									if (a_save[key] != null) { //判断答案不为空
+										var t_v = a_save[key]; //20XX-XX-XX,20XX-XX-XX
+										var _tv = t_v.split(","); //以逗号来分割
+										that.find(".qdate input").each(function(i) {
+											if (_tv[j] != undefined) {
+												$(this).val(_tv[i])
+											};
+										})
+									}
+								}
+							}
+						}
+					});
+				}
+
+				function submit(tf) {
+					if (_json.answer.bossAdviseModel != undefined) {
+						if (sj["bossAdviseModel"]["bossAdvise"] == null) {
+							sj["bossAdviseModel"]["bossAdvise"] = {}
+						}
+						$("div[type='INPUT'] li").each(function() {
+							var fd = $(this).attr("fieldname");
+							if ($(this).children(".right").children("label").length == 2) {
+								var a;
+								if ($(this).children(".right").children("label").eq(0).find("input").prop("checked")) {
+									a = 1;
+									sj["bossAdviseModel"]["bossAdvise"][fd] = $(this).children(".right").children("label").eq(0).find("input").val();
+								}
+								if ($(this).children(".right").children("label").eq(1).find("input").prop("checked")) {
+									a = 2;
+									sj["bossAdviseModel"]["bossAdvise"][fd] = $(this).children(".right").children("label").eq(1).find("input").val();
+								}
+								if (a == undefined) {
+									sj["bossAdviseModel"]["bossAdvise"][fd] = null;
+								}
+							} else if ($(this).children(".right").children("input").length == 1) {
+								sj["bossAdviseModel"]["bossAdvise"][fd] = $(this).children(".right").children("input").val();
+								if (sj["bossAdviseModel"]["bossAdvise"][fd].trim() == "") {
+									sj["bossAdviseModel"]["bossAdvise"][fd] = null;
+								}
+							} else if ($(this).children(".right").children("span").length == 1) {
+								if ($(this).hasClass("str")) {
+									if ($(this).children(".right").children("span").attr("guid") != undefined) {
+										sj["bossAdviseModel"]["bossAdvise"][fd] = $(this).children(".right").children("span").attr("guid") + "||" + $(this).children(".x-address").find("input").val();
+									} else {
+										sj["bossAdviseModel"]["bossAdvise"][fd] = null;
+									}
+								} else {
+									if ($(this).attr("_name") != undefined) {
+										sj["bossAdviseModel"]["bossAdvise"][fd] = $(this).attr("_name");
+									} else {
+										sj["bossAdviseModel"]["bossAdvise"][fd] = null;
+									}
+								}
+							} else if ($(this).hasClass("checkbox_zh")) {
+								var a = "";
+								$(this).find(".rcb").each(function() {
+									$(this).find("label").each(function() {
+										if ($(this).find("input").prop("checked")) {
+											a += $(this).find("input").attr("data-code") + ","
+										}
+									})
+								})
+								if (a != "") {
+									sj["bossAdviseModel"]["bossAdvise"][fd] = a.slice(0, -1);
+								} else {
+									sj["bossAdviseModel"]["bossAdvise"][fd] = null;
+								}
+							} else if ($(this).hasClass("textareaStyle")) {
+								if ($(this).find("textarea") != "") {
+									sj["bossAdviseModel"]["bossAdvise"][fd] = $(this).find("textarea").val();
+								} else {
+									sj["bossAdviseModel"]["bossAdvise"][fd] = null;
+								}
+							}
+						});
+					} else {
+						if (sj["adviseModel"]["advise"] == null) {
+							sj["adviseModel"]["advise"] = {}
+						}
+						$("div[type='INPUT'] li").each(function() {
+							var fd = $(this).attr("fieldname");
+							if ($(this).children(".right").children("label").length == 2) {
+								var a;
+								if ($(this).children(".right").children("label").eq(0).find("input").prop("checked")) {
+									a = 1;
+									sj["adviseModel"]["advise"][fd] = $(this).children(".right").children("label").eq(0).find("input").val();
+								}
+								if ($(this).children(".right").children("label").eq(1).find("input").prop("checked")) {
+									a = 2;
+									sj["adviseModel"]["advise"][fd] = $(this).children(".right").children("label").eq(1).find("input").val();
+								}
+								if (a == undefined) {
+									sj["adviseModel"]["advise"][fd] = null;
+								}
+							} else if ($(this).children(".right").children("input").length == 1) {
+								sj["adviseModel"]["advise"][fd] = $(this).children(".right").children("input").val();
+								if (sj["adviseModel"]["advise"][fd].trim() == "") {
+									sj["adviseModel"]["advise"][fd] = null;
+								}
+							} else if ($(this).children(".right").children("span").length == 1) {
+								if ($(this).hasClass("str")) {
+									if ($(this).children(".right").children("span").attr("guid") != undefined) {
+										sj["adviseModel"]["advise"][fd] = $(this).children(".right").children("span").attr("guid") + "||" + $(this).children(".x-address").find("input").val();
+									} else {
+										sj["adviseModel"]["advise"][fd] = null;
+									}
+								} else {
+									if ($(this).attr("_name") != undefined) {
+										sj["adviseModel"]["advise"][fd] = $(this).attr("_name");
+									} else {
+										sj["adviseModel"]["advise"][fd] = null;
+									}
+								}
+							} else if ($(this).hasClass("checkbox_zh")) {
+								var a = "";
+								$(this).find(".rcb").each(function() {
+									$(this).find("label").each(function() {
+										if ($(this).find("input").prop("checked")) {
+											a += $(this).find("input").attr("data-code") + ","
+										}
+									})
+								})
+								if (a != "") {
+									sj["adviseModel"]["advise"][fd] = a.slice(0, -1);
+								} else {
+									sj["adviseModel"]["advise"][fd] = null;
+								}
+							} else if ($(this).hasClass("textareaStyle")) {
+								if ($(this).find("textarea") != "") {
+									sj["adviseModel"]["advise"][fd] = $(this).find("textarea").val();
+								} else {
+									sj["adviseModel"]["advise"][fd] = null;
+								}
+							}
+						});
+					}
+					if ($(".show").length != 0) {
+						if ($(".visible:visible").length == 0) {
+							sj["bossAdviseModel"]["bossAdviseCoborrowerMessages"] = [];
+						} else {
+							o_save();
+							var b = [];
+							$(".cy span").each(function(i) {
+								$(this).data("a_save")["lineNo"] = (Number(i) + 1).toString();
+								b.push($(this).data("a_save"));
+							});
+							sj["bossAdviseModel"]["bossAdviseCoborrowerMessages"] = b;
+						}
+					}
+					var status = "2";
+					status = check(b);
+					sj["completeStatus"] = status;
+					var _sj = JSON.stringify(sj);
+					console.log(sj)
+					if (tf) {
+						if (status == "2") {
+							AndroidJs.saveWjDetalAnswer(_sj, true);
+						} else {
+							AndroidJs.saveWjDetalAnswer(_sj, false);
+						}
+					} else {
+						AndroidJs.saveWjDetalAnswer(_sj, false);
+					}
+				}
+			}
+
+			function check(b) {
+				var qq = "true";
+				$("div[type='INPUT'] li").each(function() {
+					var rq = $(this).data('dataArry').require;
+					var regexRule = $(this).data('dataArry').regexRule;
+					$(this).find(".left label").remove();
+					if ($(this).is(":visible")) {
+						if ($(this).find("input").length == 1) {
+							if ($(this).find("input").val().trim() != "") {
+								$(".problem[type='INPUT'] li input").blur();
+								if ($(this).find(".left label").length != 0) {
+									qq = "false";
+								}
+							} else {
+								if (rq) {
+									$(this).find(".left").append('<label class="message_info">请输入必填项</label>');
+									qq = "false";
+								}
+							}
+						}
+						if ($(this).find(".right label").length == 2) {
+							if (!$(this).find(".right label input").eq(0).prop("checked") && !$(this).find(".right label input").eq(1).prop("checked")) {
+								if (rq) {
+									$(this).find(".left").append('<label class="message_info">请选择</label>');
+									qq = "false";
+								};
+							}
+						}
+						if ($(this).hasClass("checkbox_zh")) {
+							var ww = "false";
+							$(this).find(".rcb").each(function() {
+								$($(this).find("input")).each(function(){
+									if ($(this).prop("checked")){
+										ww = "true";
+									}
+								})
+							});
+							console.log(ww)
+							if (ww == "false") {
+								if (rq) {
+									$(this).find(".left").append('<label class="message_info">请选择至少一个多选</label>');
+									qq = "false";
+								};
+							}
+						}
+						if ($(this).find(".right span").length == 1) {
+							if ($(this).find(".right span").text() == "请选择") {
+								if (rq) {
+									$(this).find(".left").append('<label class="message_info">请选择</label>');
+									qq = "false";
+								};
+							}
+						}
+						if ($(this).find("textarea").length == 1) {
+							if ($(this).is(":visible")) {
+								if ($(this).find("textarea").val() != "") {
+									$(this).find("textarea").blur();
+								} else {
+									$(this).find(".left").append('<label class="message_info">请填写</label>');
+									qq = "false";
+								}
+							}
+							if ($(this).find(".right span").text() == "请选择") {
+								if (rq) {
+									$(this).find(".left").append('<label class="message_info">请选择</label>');
+									qq = "false";
+								};
+							}
+						}
+					}
+				});
+				if ($(".visible").is(":visible")) {
+					$(".cy span").removeClass("unfinish");
+					$("div[type='TABLE'] li").each(function() {
+						var rq = $(this).data('dataArry').require;
+						var regexRule = $(this).data('dataArry').regexRule;
+						$(this).find(".left label").remove();
+						if ($(this).is(":visible")) {
+							if ($(this).find("input").length == 1) {
+								if ($(this).find("input").val().trim() != "") {
+									$(".problem[type='TABLE'] li input").blur();
+									if ($(this).find(".left label").length != 0) {
+										qq = "false";
+										$(".cy span").each(function() {
+											if ($(this).hasClass("span_bg")) {
+												$(this).addClass("unfinish");
+											}
+										})
+									}
+								} else {
+									if (rq) {
+										$(this).find(".left").append('<label class="message_info">请输入必填项</label>');
+										qq = "false";
+									}
+								}
+							}
+							if ($(this).find(".right label").length == 2) {
+								if (!$(this).find(".right label input").eq(0).prop("checked") && !$(this).find(".right label input").eq(1).prop("checked")) {
+									if (rq) {
+										$(this).find(".left").append('<label class="message_info">请选择</label>');
+										qq = "false";
+									};
+								}
+							}
+							if ($(this).hasClass("checkbox_zh")) {
+								var ww = "false";
+								$(this).find(".rcb").each(function() {
+									if ($(this).find("input").prop("checked")) {
+										ww = "true";
+									}
+								});
+								if (ww == "false") {
+									if (rq) {
+										$(this).find(".left").append('<label class="message_info">请选择至少一个多选</label>');
+										qq = "false";
+									};
+								}
+							}
+						}
+					});
+					$.each(b, function(i, val) {
+						for (key in val) {
+							if (val[key] != null) {
+								var questionDetailList = _json.modelDetailSubList[1].questionDetailList;
+								console.log(questionDetailList)
+								$.each(questionDetailList, function(j, tal) {
+									if (key == tal.fieldName) {
+										if (tal.regexRule == "other_identitycard") {
+											var otherCheck = $.fn.OtherChecker["identitycard"];
+											var result = false;
+											if (!otherCheck || "{}" == JSON.stringify(otherCheck)) {
+												console.warn("模块:" + modelName + " ;存在特殊校验规则字段【" + field + "】, 不支持的校验类型. " + checkType);
+											} else {
+												result = otherCheck.check(val[key]);
+											}
+											if (!result) {
+												$(".cy span").eq(i).addClass("unfinish");
+												qq = "false";
+											};
+										} else {
+											var rule = eval("/" + tal.regexRule + "/");
+											if (rule.test(val[key])) {} else {
+												$(".cy span").eq(i).addClass("unfinish");
+												qq = "false";
+											}
+										}
+									}
+								});
+							}
+						}
+					})
+				}
+				if (qq == "true") {
+					return "2";
+				}
+				if (qq == "false") {
+					return "1";
+				}
+			};
+
+			function mask(_this) {
+				var dataArry = _this.data("dataArry");
+				var that = dataArry.codeDicList;
+				$('<div id="mask"><div class="mask_bg"></div><ul><div class="m_div"></div><li class="cancel">取消</li></ul></div>').appendTo("body");
+				for (var i = 0; i < dataArry.codeDicList.length; i++) {
+					$(".m_div").append($("<li _name='" + dataArry.codeDicList[i].code + "'>" + dataArry.codeDicList[i].name + "</li>"))
+				};
+				$("#mask li").on("click", function() {
+					$("#mask").remove();
+					if ($(this).html() != "取消") {
+						_this.attr("_name", $(this).attr("_name"));
+						var _that = $(this).text();
+						console.log(_this)
+						if ($(this).hasClass('cancel')) {} else {
+							_this.find(".right span").text($(this).text()).css({
+								"color": "#191919"
+							});
+							_this.find(".left").children("i").css({
+								"color": "#a09fa4"
+							});
+						};
+					};
+				});
+			}
+
+			function checkRu(check_json, fieldname, val) {
+				if (check_json != undefined && fieldname != undefined && val != undefined) {
+					var questionDetailList = check_json.modelDetailSubList[0].questionDetailList;
+					var regexRuleName;
+					$.each(questionDetailList, function(i, tal) {
+						if (tal.fieldName == fieldname) {
+							if (tal.regexRule == "other_identitycard") {
+								var otherCheck = $.fn.OtherChecker["identitycard"];
+								var result = false;
+								if (!otherCheck || "{}" == JSON.stringify(otherCheck)) {
+									console.warn("模块:" + modelName + " ;存在特殊校验规则字段【" + field + "】, 不支持的校验类型. " + checkType);
+								} else {
+									result = otherCheck.check(val);
+								}
+								if (!result) {
+									regexRuleName = tal.regexRuleName;
+								};
+							} else {
+								var rule = eval("/" + tal.regexRule + "/");
+								if (rule.test(val)) {} else {
+									regexRuleName = tal.regexRuleName;
+								}
+							}
+						}
+					});
+					if (regexRuleName != undefined) {
+						return regexRuleName;
+					} else {
+						return true
+					}
+				} else {
+					return;
+				}
+			}
+
+			function checkRutb(check_json, fieldname, val) {
+				if (check_json != undefined && fieldname != undefined && val != undefined) {
+					var questionDetailList = check_json.modelDetailSubList[1].questionDetailList;
+					var regexRuleName;
+					$.each(questionDetailList, function(i, tal) {
+						if (tal.fieldName == fieldname) {
+							if (tal.regexRule == "other_identitycard") {
+								var otherCheck = $.fn.OtherChecker["identitycard"];
+								var result = false;
+								if (!otherCheck || "{}" == JSON.stringify(otherCheck)) {
+									console.warn("模块:" + modelName + " ;存在特殊校验规则字段【" + field + "】, 不支持的校验类型. " + checkType);
+								} else {
+									result = otherCheck.check(val);
+								}
+								if (!result) {
+									regexRuleName = tal.regexRuleName;
+								};
+							} else {
+								var rule = eval("/" + tal.regexRule + "/");
+								if (rule.test(val)) {} else {
+									regexRuleName = tal.regexRuleName;
+								}
+							}
+						}
+					});
+					if (regexRuleName != undefined) {
+						return regexRuleName;
+					} else {
+						return true
+					}
+				} else {
+					return;
+				}
+			}
+		</script>
+	</body>
+</html>

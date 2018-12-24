@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" href="css/xjl.css" />
+		<script src="js/jquery-1.11.0.js"></script>
+		<script src="js/setHtmlFontSize.js"></script>
+		<script src="js/common_function.js"></script>
+		<script src="js/answerJosn.js"></script>
+		<script src="js/bossCrossExaminationTurnover.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<section>
+			<div class="x-title">
+				<p>销售额</p>
+			</div>
+			<div class="con-list">
+				<ul class="xs">
+					<li name="busySeason">
+						<div class="list-left">
+							<span>*</span><i>旺季</i>
+						</div>
+						<div class="list-right">
+							<span class="code-list01 wj">请选择</span><b class="d-icon">月</b>
+						</div>
+					</li>
+					<li name="busySeasonAvgSaleAmount" style="border-bottom: 0.04rem solid rgb(230, 230, 235);">
+						<div class="list-left">
+							<span>*</span><i>月均销售额</i>
+						</div>
+						<div class="list-right">
+							<input type="number" value="0" class="avgwj month-rato"><b class="d-icon">元</b>
+						</div>
+					</li>
+					<li name="shoulderSeason">
+						<div class="list-left">
+							<span>*</span><i>平季</i>
+						</div>
+						<div class="list-right">
+							<span class="code-list01 pj">请选择</span><b class="d-icon">月</b>
+						</div>
+					</li>
+					<li name="shoulderSeasonAvgSaleAmount" style="border-bottom: 0.04rem solid rgb(230, 230, 235);">
+						<div class="list-left">
+							<span>*</span><i>月均销售额</i>
+						</div>
+						<div class="list-right">
+							<input type="number" value="0" class="avgpj month-rato"><b class="d-icon">元</b>
+						</div>
+					</li>
+					<li name="slackSeason">
+						<div class="list-left">
+							<span>*</span><i>淡季</i>
+						</div>
+						<div class="list-right">
+							<span class="code-list01 dj">请选择</span><b class="d-icon">月</b>
+						</div>
+					</li>
+					<li name="slackSeasonAvgSaleAmount" style="border-bottom: 0.04rem solid rgb(230, 230, 235);">
+						<div class="list-left">
+							<span>*</span><i>月均销售额</i>
+						</div>
+						<div class="list-right">
+							<input type="number" value="0" class="avgdj month-rato"><b class="d-icon">元</b>
+						</div>
+					</li>
+					<li class="red-color">
+						<div class="list-left"><i>月加权平均营业额</i></div>
+						<div class="list-right">
+							<input type="number" value="0" class="xs_avg" disabled="disabled"><b class="d-icon">元</b>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="cr-title">
+				<p class="t-tile mode-defule">销售模式</p>
+				<div class="click-icon xs-btn">
+					<span class="add-icon"></span>
+					<span class="del-icon"></span>
+				</div>
+			</div>
+			<div class="tab-list xs-type">
+				<div class="tab-nav xs-nav"></div>
+			</div>
+			<div class="cr-title">
+				<p class="t-tile mode-defule">产品类型</p>
+				<div class="click-icon pro-btn">
+					<span class="add-icon"></span>
+					<span class="del-icon"></span>
+				</div>
+			</div>
+			<div class="tab-list pro-type">
+				<div class="tab-nav type-nav"></div>
+			</div>
+			<div class="x-title">
+				<p>营业额交叉检验其他方法</p>
+				<div class="txt">
+					<textarea class="turnover-textarea" ></textarea>
+				</div>
+			</div>
+
+
+		</section>
+		<footer id="next" onclick="submit(true);">
+			<p>确定</p>
+		</footer>
+	</body>
+
+</html>

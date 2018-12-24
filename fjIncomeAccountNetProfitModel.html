@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+		<link rel="stylesheet" href="css/xjl.css" />
+		<script src="js/jquery-1.11.0.js"></script>
+		<script src="js/setHtmlFontSize.js"></script>
+		<script src="js/common_function.js"></script>
+		<script src="js/answerJosn.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		
+		<script src="js/fjIncomeAccountNetProfitModel.js"></script>
+		<!--<script>
+			var h = [{
+				"sysDicMap": {
+					"fixedOutcomeDict": [{
+						"showOrder": 0,
+						"value": "员工工资",
+						"key": "staffSalary"
+					}, {
+						"showOrder": 1,
+						"value": "租金",
+						"key": "rentAmount"
+					}, {
+						"showOrder": 2,
+						"value": "水电费",
+						"key": "waterEleExpend"
+					}, {
+						"showOrder": 3,
+						"value": "其他开支",
+						"key": "otherExpend"
+					}]
+				}
+			}, {
+				"fjLoanPurposeModel": "{\"fjLoanPurpose\":{\"loanPurpose\":\"consumption,manage,invest\",\"loanPurposeDetail\":\"马见客户叫你姐姐\",\"riskAnalysis\":\"陪吗地?付出\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"}}",
+				"fjInvestigateConclusionManageStabilityModel": "{\"fjInvestigateConclusionManageStability\":{\"serialNo\":null,\"status\":null,\"batchNo\":null,\"commitDataType\":null,\"analysisResult\":null,\"analysisResultDetail\":null,\"detailDescript\":null}}",
+				"bossIncomeAccountDates": "[{\"date\":\"2017-06\",\"sortNo\":1,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2017-07\",\"sortNo\":2,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2017-08\",\"sortNo\":3,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2017-09\",\"sortNo\":4,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2017-10\",\"sortNo\":5,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2017-11\",\"sortNo\":6,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2017-12\",\"sortNo\":7,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2018-01\",\"sortNo\":8,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2018-02\",\"sortNo\":9,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2018-03\",\"sortNo\":10,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2018-04\",\"sortNo\":11,\"batchNo\":1,\"commitDataType\":\"1\"},{\"date\":\"2018-05\",\"sortNo\":12,\"batchNo\":1,\"commitDataType\":\"1\"}]",
+				"fjIncomeAccountAvgGrossMarginModel": "{\"fjIncomeAccountAvgGrossMargin\":null}",
+				"fjMarryInfoModel": "{\"fjMarryInfo\":{\"marryState\":\"1\",\"isKnownLoan\":\"0\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"}}",
+				"questionnaireCode": "{\"questionnaireCode\":\"0013\"}",
+				"fjAssetHouseModel": "{\"assetHouseNo\":{\"houseCount\":null,\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"},\"fjAssetHouses\":[]}",
+				"fjFamilyInfoModel": "{\"fjFamilyNo\":{\"familyCount\":null,\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"},\"fjFamilyInfos\":[]}",
+				"fjInvestigateConclusionCashFlowModel": "{\"fjInvestigateConclusionCashFlow\":{\"serialNo\":null,\"status\":null,\"batchNo\":null,\"commitDataType\":null,\"analysisResult\":null,\"analysisResultDetail\":null,\"detailDescript\":null}}",
+				"fjInvestigateConclusionManageTruthModel": "{\"fjInvestigateConclusionManageTruth\":{\"serialNo\":null,\"status\":null,\"batchNo\":null,\"commitDataType\":null,\"analysisResult\":null,\"analysisResultDetail\":null,\"detailDescript\":null}}",
+				"fjCompanyManageHistoryModel": "{\"fjManageHistory\":{\"engageDate\":\"2017-05-23\",\"shareholderIsChange\":\"1\",\"shareholderChangeTimeAndReason\":\"干活吧宝贝\",\"industryIsChange\":\"1\",\"industryChangeTimeAndReason\":\"潘v恩人喝喜酒\",\"engageYear\":\"2\",\"manageYear\":\"5\",\"managePlaceType\":\"1\",\"managePlaceArea\":\"120\",\"manageHistoryDescription\":\"莫给你发货v姐姐\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"}}",
+				"fjDownstreamInfoModel": "{\"fjDownstreamInfo\":{\"id\":\"5e1ef97228cc4a00b73995359c35eced\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\",\"createDate\":\"2018-05-28\",\"updateDate\":\"2018-05-28\",\"isDelete\":\"0\",\"status\":0,\"batchNo\":1,\"commitDataType\":\"1\",\"downstreamCompanyType\":\"你好搞笑烤肉和\",\"billingMethod\":\"1\",\"monthlyDay\":null,\"mainPayWay\":\"3\",\"curAccountPeriodBeginDate\":\"2017-05-23\",\"curAccountPeriodEndDate\":\"2017-06-23\",\"curAccountPeriodStr\":\"2017-05-23,2017-06-23\",\"payableAmount\":10000.0}}",
+				"fjIncomeAccountFixedOutcomeModel": "{\"fjIncomeAccountFixedOutcomes\":[],\"fjIncomeAccountFixedOutcomeSummaries\":[]}",
+				"serialNo": "{\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"}",
+				"fjIncomeAccountSaleModel": "{\"fjIncomeAccountSale\":null,\"fjIncomeAccountSaleDetails\":[]}",
+				"fjInvestigateConclusionManageSituationModel": "{\"fjInvestigateConclusionManageSituation\":{\"serialNo\":null,\"status\":null,\"batchNo\":null,\"commitDataType\":null,\"analysisResult\":null,\"analysisResultDetail\":null,\"detailDescript\":null}}",
+				"fjCompanyInfoModel": "{\"fjCompanyInfo\":{\"id\":\"ae57c72000e04e2094ae2f6ba3aa796c\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\",\"createDate\":\"2018-05-28\",\"updateDate\":\"2018-05-28\",\"isDelete\":\"0\",\"status\":0,\"batchNo\":1,\"commitDataType\":\"1\",\"companyName\":\"干活吧宝贝\",\"companyType\":\"trading\",\"otherType\":null,\"actualControllerName\":\"i还人家更健康\",\"relationship\":\"徐加班费今年才\",\"applicantHoldShares\":10.0,\"shareholderNumber\":20,\"investigateAddress\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{D07A6C5B-837B-437A-A43C-CEE206EE90F6}@{D91F11B8-260D-4EA9-B2DC-CDF92CFEFB22}||不矜持推荐你个\"}}",
+				"fjVisitBusinessModel": "{\"fjVisitBusiness\":{\"serialNo\":null,\"status\":null,\"batchNo\":null,\"visitName\":null,\"visitContentDescript\":null}}",
+				"fjInvestigateConclusionInvestmentModel": "{\"fjInvestigateConclusionInvestment\":{\"serialNo\":null,\"status\":null,\"batchNo\":null,\"commitDataType\":null,\"analysisResult\":null,\"analysisResultDetail\":null,\"detailDescript\":null}}",
+				"fjMainProductModel": "{\"fjMainProduct\":{\"id\":\"43eb05f29b2740a889d263c0c44ce35c\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\",\"createDate\":\"2018-05-28\",\"updateDate\":\"2018-05-28\",\"isDelete\":\"0\",\"status\":0,\"batchNo\":1,\"commitDataType\":\"1\",\"mainProductType\":\"生产加工类型-广告印刷、包装及造纸-包装、造纸\",\"mainProductDetail\":\"没敢看炒苦瓜一斤\"}}",
+				"fjAssetCarModel": "{\"assetCarNo\":{\"carCount\":null,\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"},\"fjAssetCars\":[]}",
+				"fjUpstreamInfoModel": "{\"fjUpstreamInfo\":{\"id\":\"ce7e31b46fcf4276bc25e87c52d86d83\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\",\"createDate\":\"2018-05-28\",\"updateDate\":\"2018-05-28\",\"isDelete\":\"0\",\"status\":0,\"batchNo\":1,\"commitDataType\":\"1\",\"upstreamCompanyType\":\"你有空v家电家具\",\"billingMethod\":\"1\",\"monthlyDay\":null,\"mainPayWay\":\"2\",\"curAccountPeriodBeginDate\":\"2017-05-23\",\"curAccountPeriodEndDate\":\"2018-04-23\",\"curAccountPeriodStr\":\"2017-05-23,2018-04-23\",\"payableAmount\":1000.0}}",
+				"fjDebtSituationModel": "{\"fjBorrowInstitutions\":[]}",
+				"fjIncomeAccountNetProfitModel": "{\"fjIncomeAccountNetProfit\":{\"lastYearNetProfit\":null,\"customerDictationNetProfit\":\"8493\",\"investigatorReckonProfit\":\"666\"},\"fjIncomeAccountProfitExpenses\":[{\"expensesProject\":\"fdfd\",\"expensesAmount\":\"555\",\"lineNo\":\"1\"},{\"expensesProject\":\"fdf233d\",\"expensesAmount\":\"666\",\"lineNo\":\"2\"}]}",
+				"fjLiveInfoModel": "{\"fjLiveInfo\":{\"id\":\"910214273c534cbcbac9106454fc3775\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\",\"createDate\":\"2018-05-28\",\"updateDate\":\"2018-05-28\",\"isDelete\":\"0\",\"status\":0,\"batchNo\":1,\"commitDataType\":\"1\",\"isGoLivePlace\":\"1\",\"isReal\":\"3\",\"otherDescription\":null,\"liveAddress\":\"{7CD64271-5E1E-413C-8420-0F2A4899DE8E}@{261D9758-5859-4342-9C80-B3CA37948132}@{F65F0BBD-9622-43FA-BAC6-2565DEF76D3E}||根本v好女孩叫你\",\"liveState\":\"2\",\"liveYear\":2.0,\"isLiveWithFamily\":\"0\",\"liveArea\":64646.0,\"monthlyRent\":97979.0,\"abnormalSituation\":\"干活吧宝贝\"}}",
+				"fjComprehensiveConclusionModel": "{\"fjComprehensiveConclusion\":{\"comprehensiveConclusion\":null,\"investigateWay\":null,\"customerManageInfo\":null,\"exceptionInfo\":null,\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"}}",
+				"fjInvestigateConclusionRiskModel": "{\"fjInvestigateConclusionRisk\":{\"serialNo\":null,\"status\":null,\"batchNo\":null,\"commitDataType\":null,\"analysisResult\":null,\"analysisResultDetail\":null,\"detailDescript\":null}}",
+				"fjVisitEmployeeModel": "{\"fjVisitEmployee\":{\"visitName\":\"ii发个包发\",\"visitContentDescript\":\"他经常给你电话\",\"serialNo\":\"{A704573A-2F3E-4A9E-B808-AD014BE585E0}\"}}"
+			}]
+			loadFJIncomeAccountNetProfit(h);
+		</script>-->
+	</body>
+
+</html>

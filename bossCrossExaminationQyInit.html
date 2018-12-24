@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<title>初始权益</title>
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/lCalendar.css"/>
+		<link rel="stylesheet" type="text/css" href="css/demoxf0729.css"/>
+		<link rel="stylesheet" type="text/css" href="css/businessModel.css"/>
+		<script type="text/javascript" src="js/setHtmlFontSize.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script src="js/lCalendar.min.js"></script>
+		<script src="js/crossTest_computeRuble.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<section>
+			<div class="problem time">
+				<p>初始权益</p>
+				<ul>
+					<li fieldName="initialEquityDate">
+						<div class="left">
+							<span>*</span>
+							<i>初始权益时间</i>
+						</div>
+						<div class="right">
+							  <input id="demo11" type="text" readonly name="input_date" placeholder="请输入初始权益时间" data-lcalendar="1916-01-11,2116-05-29" />
+						</div>
+					</li>
+					<li fieldName="initialInterest">
+						<div class="left">
+							<span>*</span>
+							<i>初始权益</i>
+						</div>
+						<div class="right">
+							<span class="w_xspan">0</span>
+							<b class="yuan">元</b>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="income">
+				<div class="ic_head">
+					<div>
+						<span class="span_bg" id="sr">资产</span>
+						<span id="zc">负债</span>
+					</div>
+				</div>
+				<div class="sr">
+					<div class="problem">
+						<ul>
+							<li fieldName="cashDeposit">
+								<div class="left">
+									<span>*</span>
+									<i>现金及存款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入现金及存款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="receivableAccount">
+								<div class="left">
+									<span>*</span>
+									<i>应收账款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入应收账款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="prepayAccount">
+								<div class="left">
+									<span>*</span>
+									<i>预付账款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入预付账款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="stock">
+								<div class="left">
+									<span>*</span>
+									<i>存货</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入存货"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="fixedAsset">
+								<div class="left">
+									<span>*</span>
+									<i>固定资产</i>
+								</div>
+								<div class="right">
+									<span class="w_xspan">0</span>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="otherOperateAsset">
+								<div class="left">
+									<span>*</span>
+									<i>其他经营性资产</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入其他经营性资产"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="otherNonoperateAsset">
+								<div class="left">
+									<span>*</span>
+									<i>其他非经营性资产</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入其他非经营性资产"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="zc">
+					<div class="problem">
+						<ul>
+							<li fieldName="payableAccount">
+								<div class="left">
+									<span>*</span>
+									<i>应付账款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入应付账款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="prereceiveAccount">
+								<div class="left">
+									<span>*</span>
+									<i>预收账款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入预收账款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="smallLoanCompanyLoan">
+								<div class="left">
+									<span>*</span>
+									<i>小额公司贷款（除中安）</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入小额公司贷款（除中安）"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="bankCreditLoan">
+								<div class="left">
+									<span>*</span>
+									<i>银行信用贷款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入银行信用贷款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="zaLoanBalance">
+								<div class="left">
+									<span>*</span>
+									<i>中安贷款余额</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入中安贷款余额"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="creditOverdraw">
+								<div class="left">
+									<span>*</span>
+									<i>信用卡透支</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入信用卡透支"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="bankMortgageLoan">
+								<div class="left">
+									<span>*</span>
+									<i>银行抵押贷款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入银行抵押贷款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="personalLoan">
+								<div class="left">
+									<span>*</span>
+									<i>私人借款</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入私人借款"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+							<li fieldName="other">
+								<div class="left">
+									<span>*</span>
+									<i>其他（拆股费用等）</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入其他（拆股费用等）"/>
+									<b class="yuan">元</b>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<footer id="next">
+			<p>提交</p>
+		</footer>
+		<script type="text/javascript">
+			var record;	
+		    var sj;
+			
+//			var a={"answer":{"balanceSheetModel":{"balanceSheetAnswers":[],"bossBankLongTermDepts":[],"bossBankShortTermLoans":[],"bossCompanyShortTermLoans":[],"bossCreditShortTermLoans":[],"bossDeposits":[],"bossFixedAssets":[{"buyTime":"2016-07-18","id":"5584486f-1ac6-40f5-babe-c7b21183746f","lineNo":2,"name":"看看咯","number":12,"serialNo":"201607139928123628","totalValue":68.0,"unitPrice":586.0},{"buyTime":"2016-07-18","id":"53d755fc-9bf5-491d-9115-142c0bea0cd6","lineNo":1,"name":"来咯","number":85,"serialNo":"201607139928123628","totalValue":555.0,"unitPrice":586.0}],"bossOtherBusinessAccounts":[{"amount":5863.0,"assetType":"加盟费及保证金","endDate":null,"id":"6aba82e7-cbee-4707-9b73-89e944cb79f9","lineNo":1,"serialNo":"201607139928123628"},{"amount":0.0,"assetType":"下游铺货","endDate":null,"id":"7e7479ac-3f09-4375-9cb0-9e7ce3718829","lineNo":3,"serialNo":"201607139928123628"},{"amount":0.0,"assetType":"其他","endDate":null,"id":"eb22c0bd-9cd7-4b25-b112-ad7a641b7933","lineNo":4,"serialNo":"201607139928123628"},{"amount":0.0,"assetType":"预付房租","endDate":null,"id":"c6d90223-09cb-44e8-8941-e6feddb66350","lineNo":5,"serialNo":"201607139928123628"},{"amount":0.0,"assetType":"押金","endDate":null,"id":"a0a7ea01-e9b6-4923-9fb3-a5b0730ca68d","lineNo":2,"serialNo":"201607139928123628"},{"amount":0.0,"assetType":"预付设备定金","endDate":null,"id":"c501e26d-6586-4873-96d2-a3a0cdaab12a","lineNo":0,"serialNo":"201607139928123628"}],"bossOtherNotBusinessAccounts":[],"bossOthersPayableAccounts":[{"amount":8855.0,"id":"f2de596c-d7fa-444b-8ddf-fdd03ba30613","lineNo":1,"payableBeginTime":null,"payableEndTime":null,"payableType":null,"serialNo":"201607139928123628"}],"bossPayableAccounts":[],"bossPaymentAdvances":[],"bossPrepayAccounts":[],"bossPrivateLongTermDepts":[],"bossReceivableAccounts":[],"bossStocks":[{"amount":70056.0,"id":"100f6af2-e1a3-40b7-8334-90352520b27f","lineNo":1,"name":"监控","number":126,"serialNo":"201607139928123628","unitPrice":556.0}]},"bossAdviseModel":{"bossAdvise":null,"bossAdviseCoborrowerMessages":[]},"bossAnalysisRiskModel":{"bossAnalysisRisk":null},"bossAssetInfoModel":{"bossAssetCars":[],"bossAssetHouses":[{"address":"1","addressChoice":null,"area":88.0,"buyDate":"2016-07-18","id":"37c485bf-823a-455b-a3e3-f0598ba708ac","lineNo":1,"number":0,"owner":"{4EF5FE7A-3BBE-4B3D-BC6E-EA3F240DA289},{9987D154-323C-4337-8EBB-BC8F4934284B},{CCD863A5-699C-45A0-B433-33FBDE2C1466},{14F2E020-68EE-4147-824A-A11167071FA4}","price":555.0,"serialNo":"201607139928123628","state":"{55D662F4-8C5C-4E4D-9732-3440E9F98242}","type":"{4C94EA3E-8BC0-4E2C-AEC8-843D20DBB2EC}"}],"bossAssetNo":{"carNumber":5,"houseNumber":4,"id":"8f5f8b41-7a94-438c-8649-5654cada2a8f","serialNo":"201607139928123628"}},"bossBaseInfoModel":{"bossBaseInfo":{"certNo":"360981197105671628","currentAddress":"{3D3241AE-DBF4-4DAE-ADEC-B96B33DC25E1}@{A121F418-68D2-46CE-8EE0-0022E7C32CA1}@{61ED34F7-EE7B-434B-A013-32656C4259EF}||监控","familyCount":10,"familyPhone":"0755-55665258-65","id":"5d3f3649-c3c0-4bbe-bcdb-52e546624e95","isKnownLoan":"1","liveBeginDate":"2016-07-18","liveStat":"{0565E264-7F39-4614-AD90-BB0CE46CA085}","marrige":"{3DE4DAC9-4357-4E6B-A3BE-2D3B56B6483D}","name":"麦奇","pattern":"{44F11470-C105-44EC-ABE9-9C50DDEAFD30}","phone":"15111298412","renovationState":null,"rent":2558.0,"residenceAddress":"1","serialNo":"201607139928123628","sex":"1","spouseCertNo":"430621195623451234","spouseCertType":"{F17E7EC6-C4AA-4537-8BC4-1E6B22AC273A}","spouseCompanyName":"图里河","spouseCompanyPhone":"0755-552555-5","spouseJob":"{6D7DC76C-718A-45AB-9F0F-FA8D56251A2D}","spouseName":"九三","spousePhone":"13755168235","spouseSalary":5569.0,"whomLive":"{C8225A89-4BDC-407B-BBD4-4135700011A0},{6D86A81A-EEF6-49EA-9BAF-F203602D03D7},{A7D99FA0-D47A-4F4B-8CFD-DA3DC8897B64},{115BAF95-31A7-4946-B055-51E25E2C57E2}"},"bossFamilyInfos":[{"id":"aebc889d-d999-4a32-a25b-33be7cd9e6e3","job":"{6D7DC76C-718A-45AB-9F0F-FA8D56251A2D}","lineNo":2,"relationship":"{31F1644A-8A05-4F7E-A989-98E4E9DB3461}","serialNo":"201607139928123628","vocationIntroduce":"天空之城","workPlace":"{151393B4-86C5-460C-A73D-DEDCC74C3211}"},{"id":"5153f4d5-b8de-41b9-b8cb-78625ce7b5d1","job":"{9B59176C-F4B6-4DD8-BA8D-D0E0D5F69F4B}","lineNo":1,"relationship":"{88F0493F-AA10-4366-BEC5-53C293564D60}","serialNo":"201607139928123628","vocationIntroduce":"有记录","workPlace":"{679BB9DA-7B7E-4522-9B2E-E49F188C9D23}"}]},"bossBusinessChangeCauseModel":{"bossBusinessChangeCause":null},"bossBusinessInfoModel":{"bossBusinessInfos":[{"avgAnnualProfit":886.0,"beginDate":"2016-07-18","endDate":"2016-07-18","id":"e90c6427-7bb2-4405-9e0a-08b5320127a2","initialInvestmentFunds":8569.0,"lineNo":2,"serialNo":"201607139928123628","tradeName":"困难"},{"avgAnnualProfit":856.0,"beginDate":"2016-07-18","endDate":"2016-07-18","id":"b036db71-d442-4ed9-8d20-00cdb00ec8e6","initialInvestmentFunds":8866.0,"lineNo":3,"serialNo":"201607139928123628","tradeName":"回家咯"},{"avgAnnualProfit":668.0,"beginDate":"2016-07-18","endDate":"2016-07-18","id":"9c8df2cb-0d8c-4e82-b262-018b7d8eb3a5","initialInvestmentFunds":8556.0,"lineNo":1,"serialNo":"201607139928123628","tradeName":"CK8面"}],"bossCurrentBusinessInfo":{"beginDate":"2016-07-18","customerContribution":555.0,"id":"e50c5b0f-9a90-4391-b6c6-98c26f97062b","initialInvestmentFund":558.0,"serialNo":"201607139928123628","totalInvestmentAmount":3566.0},"bossLargeExpenses":[{"amount":8563.0,"date":"2016-07-18","id":"32d283db-69c1-47ea-ae89-d3d5a3b5953b","lineNo":1,"serialNo":"201607139928123628","type":null}],"bossNetProfit":{"id":"203465fd-7be0-444d-9eb2-46efc8342582","lastYearNetProfit":555.0,"previousYearNetProfit":6554.0,"serialNo":"201607139928123628","thisYearNetProfit":555.0},"bossOtherFundSources":[{"amount":888.0,"date":"2016-07-18","id":"2e73ef72-80c4-42f3-893a-1ec6a58970ae","lineNo":1,"serialNo":"201607139928123628","type":null}]},"bossCashFlowModel":{"bossCashFlowDetails":[],"bossCashFlowMain":null},"bossCompanyInfoModel":{"bossCompanyInfo":{"businessAddress":"{3D3241AE-DBF4-4DAE-ADEC-B96B33DC25E1}@{A121F418-68D2-46CE-8EE0-0022E7C32CA1}@{61ED34F7-EE7B-434B-A013-32656C4259EF}||JJMM","businessBeginTime":"2016-07-18","businessLicense":"0","businessPremiseArea":265.0,"businessPremiseType":"{4CAB6C60-573F-496B-81A6-5C24D3ADF4E8}","companyName":"英国的","companyTelephone":"0752-123586-6","customerShareRatio":12.0,"employeeCount":23,"id":"37036eb6-2837-4532-980b-535dfc3d6038","leaseContractTerm":"2016-07-18","legalPerson":"考虑一下","mainBusiness":null,"partnerShareRatio":null,"serialNo":"201607139928123628"},"bossShareholderRatioInfos":[{"id":"50cbd31d-6747-4d95-8e0a-7d72ba76d46f","lineNo":1,"name":"看看咯","ratio":12.0,"serialNo":"201607139928123628"}]},"bossContactModel":{"bossContacts":[{"companyAddress":null,"companyName":null,"companyPhone":null,"department":null,"familyAddress":null,"familyTelephone":null,"id":"dc581fba-52b4-4488-94af-774405489335","isKnownLoan":null,"job":null,"lineNo":3,"name":null,"phone":null,"post":null,"relationship":null,"serialNo":"201607139928123628","sex":null},{"companyAddress":"{3D3241AE-DBF4-4DAE-ADEC-B96B33DC25E1}@{A121F418-68D2-46CE-8EE0-0022E7C32CA1}@{61ED34F7-EE7B-434B-A013-32656C4259EF}||痛苦了","companyName":"通卡","companyPhone":"0755-52388-69","department":null,"familyAddress":"{3D3241AE-DBF4-4DAE-ADEC-B96B33DC25E1}@{A121F418-68D2-46CE-8EE0-0022E7C32CA1}@{61ED34F7-EE7B-434B-A013-32656C4259EF}||唾沫横飞","familyTelephone":"0755-5566822-5","id":"17c844d4-5d05-4836-b9ea-41ec9b6cdb8b","isKnownLoan":"1","job":"{ED4D7871-684D-4C4A-8CC7-7DBE31F91155}","lineNo":1,"name":"看你们","phone":"13755235689","post":null,"relationship":"{F1BFCDF1-CB80-424A-A9A5-519228D21B02}","serialNo":"201607139928123628","sex":null},{"companyAddress":null,"companyName":null,"companyPhone":null,"department":null,"familyAddress":null,"familyTelephone":null,"id":"aef3bab6-48ca-4246-8457-9af7488fc960","isKnownLoan":null,"job":null,"lineNo":2,"name":null,"phone":null,"post":null,"relationship":null,"serialNo":"201607139928123628","sex":null}]},"bossFamilyInfoModel":{"bossFamilyOtherDescription":null,"bossMembersFamilyInfos":[],"bossSpouse":null},"bossIncomeAccountModel":{"bossAcrossCheck":null,"bossAcrossCheckPeriods":[],"bossAcrossInitialEquity":{"bankCreditLoan":255.0,"bankMortgageLoan":556.0,"cashDeposit":5569.0,"creditOverdraw":555.0,"fixedAsset":0.0,"id":"b0bfa6fc-85b8-4958-99e5-4079c98f4352","initialEquityDate":"2016-07-18","initialInterest":-12375.0,"other":5566.0,"otherNonoperateAsset":588.0,"otherOperateAsset":58.0,"payableAccount":886.0,"personalLoan":8569.0,"prepayAccount":556.0,"prereceiveAccount":589.0,"receivableAccount":255.0,"serialNo":"201607139928123628","smallLoanCompanyLoan":2455.0,"stock":586.0,"zaLoanBalance":556.0},"bossAcrossOtherCost":{"avgNetProfit":0.0,"breakEvenTurnover":0.0,"comprehensiveGrossProfitRate":0.0,"costRate":0.0,"id":"f908f11c-dfee-477d-a27a-80056b60ad42","influenceFactor":null,"netGrossProfitRate":284,"productGrossProfitRate":79.32,"remark":null,"serialNo":"201607139928123628","turnoverGrossProfitRate":0},"bossAcrossOtherTypes":[{"id":"83a718e9-33ab-4fd5-af81-094e10517055","lineNo":1,"monthAmount":253.0,"ratio":556.0,"serialNo":"201607139928123628","type":"{7DABF20C-581D-4C6D-A554-48A2A2E9D008}"}],"bossAcrossTurnover":{"busySeason":"1,2,10","busySeasonAvgSaleAmount":256.0,"busySeasonMonthCount":2,"id":"76cf9e4a-ea3e-48f7-962c-17e4e27307aa","monthWeightAvgTurnover":5342.96,"monthWeightAvgTurnoverProject":699.88,"monthWeightAvgTurnoverType":10.46,"remark":null,"serialNo":"201607139928123628","shoulderSeason":"3,11","shoulderSeasonAvgSaleAmount":5586.0,"shoulderSeasonMonthCount":22,"slackSeason":"12","slackSeasonAvgSaleAmount":6952.0,"slackSeasonMonthCount":3},"bossAcrossTurnoverProjects":[{"id":"d7b2d1ca-0bef-489b-8496-16188b9b9735","lineNo":1,"monthSaleAmount":5599.0,"saleRatio":8.0,"serialNo":"201607139928123628","type":"出来咯"}],"bossAcrossTurnoverTypes":[{"id":"a8f4341b-acfc-4a9d-86cc-9a549fe53218","lineNo":1,"monthSaleAmount":586.0,"saleRatio":56.0,"serialNo":"201607139928123628","type":null}],"bossAcrossVariableCosts":[{"enterPrice":1158.0,"grossProfitRate":79.32,"id":"59f27ddf-71c5-4863-8f85-b58be7d303b6","lineNo":1,"profit":4441.0,"salePrice":5599.0,"saleRatio":8.0,"serialNo":"201607139928123628","type":"困难"}],"bossIncomeAccountFixedOutcomes":[{"amount":566.0,"date":"2015-07","id":"ec4793e7-9583-43bc-b644-bfdbbbe4c58e","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2016-04","id":"bb9cc994-3dd0-4ce8-a866-66693dc668f5","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2016-05","id":"14130647-4b4c-4058-8533-7a837dac0a6d","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2016-01","id":"f07aebf9-725c-43a8-9ebe-fe31697bb0a4","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2015-12","id":"e2f5c545-8203-46a0-9072-947848c17d78","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2015-11","id":"e16d8a83-df4f-458a-bb9c-c8c59bb33d77","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2016-02","id":"e4125206-4fbe-4a1c-a971-20d7cd2bdb1d","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2015-09","id":"a9ab5585-345e-4dec-bdb2-7d0ff4937c95","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2016-06","id":"529f489f-008c-4876-8c12-ab6f6e21ec2b","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2015-10","id":"5cde2bdc-f8e1-4d02-bfd5-03783c2cdd0e","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2016-03","id":"2ab4167d-9127-41ab-8e5a-7ee1835e556c","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"},{"amount":566.0,"date":"2015-08","id":"8d9183a9-9f53-4cbe-9fc2-efe9181b60a7","lineNo":1,"name":"{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}","serialNo":"201607139928123628","type":"1"}],"bossIncomeAccountIncomes":[{"amount":0.0,"date":"2015-12","id":"54776a5f-b3b1-4fff-9780-a716042cd8b9","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":256.0,"date":"2015-10","id":"73825694-5fd6-4d9d-99c6-27537f5b9d4e","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":0.0,"date":"2015-09","id":"3139200a-3773-4d95-b1fa-da7a43299ced","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":0.0,"date":"2016-05","id":"9f20cbd4-9ac6-45b1-add7-b979cd747db0","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":256.0,"date":"2016-02","id":"592daaa2-db60-43a6-8890-e312b11e1163","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":0.0,"date":"2016-04","id":"69b7e189-042b-4ab5-be40-6123eb238b97","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":0.0,"date":"2015-08","id":"64bd9b02-444d-4eb2-8b82-3ced127faaf8","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":5586.0,"date":"2016-03","id":"30988a31-e1e5-4899-b5ba-0b3b3f3e077c","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":0.0,"date":"2015-07","id":"395ccaea-b21a-4f16-9a24-a61cb4a8cd2d","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":256.0,"date":"2016-01","id":"a8ace30b-f96a-40b7-97d2-9c55b731890d","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":0.0,"date":"2016-06","id":"79d112dc-9dd0-49c5-8c26-b8a76cb40c03","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"},{"amount":5586.0,"date":"2015-11","id":"60553dff-935c-4ddb-b6df-cdec4878a03c","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1"}],"bossIncomeAccountOthers":[{"amount":0.0,"category":"4","date":"2015-09","id":"05328747-d45d-4044-8875-036d8341dff8","lineNo":22,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2016-01","id":"40cb956a-a2c1-402e-b9f5-45871c894a81","lineNo":18,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2015-07","id":"e4ee9e25-b09d-424a-8791-033bbf7ab206","lineNo":24,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2016-02","id":"9e301023-1e73-48b8-b53a-83f7449b7d7b","lineNo":17,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2015-11","id":"8cb8389f-3e08-47aa-ada8-65516ba97395","lineNo":20,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2015-07","id":"43c426e9-84ff-48fe-84c5-a840ea584841","lineNo":12,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2016-04","id":"6a0e56f4-0d0d-46d0-8ae9-eab5761cbe0c","lineNo":15,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2016-01","id":"1d3cbd69-885d-431a-992e-5e51ffc469b3","lineNo":6,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2015-09","id":"f25a6904-323b-4566-a087-0a250914b34a","lineNo":10,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2016-05","id":"82f1a696-d401-454c-ba1b-23e28021608a","lineNo":2,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2015-10","id":"7b865779-e68d-4ee2-9135-2875dc76d74a","lineNo":9,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2015-12","id":"8c51a24a-6de0-48a2-a081-ab89796d7e71","lineNo":7,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2016-05","id":"0d5892fe-db38-4ae8-922d-b9d1bfac93e3","lineNo":14,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2015-08","id":"89514457-c6da-437b-bcd4-45b6d3736865","lineNo":23,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2016-04","id":"2b5887f3-7e27-4d64-91f9-84af9148ca70","lineNo":3,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2016-06","id":"2f30a761-920d-4106-b7d5-5fe44c0d6f2b","lineNo":13,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2016-06","id":"8ce04980-07aa-4415-acad-34bd128c0ac9","lineNo":1,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2015-08","id":"a1399b1e-c56e-4450-a343-cb2b36090505","lineNo":11,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2016-02","id":"7c690441-fe72-4f87-8477-59f3dbadffa4","lineNo":5,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2016-03","id":"abceca25-cc24-44bf-aa30-d9468bfd6b7c","lineNo":4,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2015-10","id":"2cee7cc2-6eca-4298-9057-978c2d70d344","lineNo":21,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2016-03","id":"adcd22e1-bf41-4904-8f86-601fea3b3b14","lineNo":16,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":2255.0,"category":"2","date":"2015-11","id":"7a735c97-81e6-4c25-8770-49b920fe0088","lineNo":8,"name":"{887C6960-6230-43C1-9CCB-B630B5F03844}","otherName":null,"serialNo":"201607139928123628","type":"1"},{"amount":0.0,"category":"4","date":"2015-12","id":"73c389e7-27f2-4204-a1b5-c1246c5ce269","lineNo":19,"name":"其他收入","otherName":null,"serialNo":"201607139928123628","type":"1"}],"bossIncomeAccountSummaries":[],"bossIncomeAccountTurnoverResources":[],"bossIncomeAccountVariableCosts":[{"amount":0.0,"date":"2016-03","id":"a83a9738-97b9-43d1-a3ee-33196bec17fa","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2016-02","id":"c64ccf82-c017-4cc4-a06e-4841f770d192","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2016-04","id":"31b470ad-7c3c-48c8-8b63-ab7346e5bfd7","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2015-10","id":"08231ba7-e7eb-4686-a6a5-2e8a72e24428","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2015-11","id":"daf27638-b02e-48ae-8409-89d493291481","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2016-06","id":"fb3253fb-ca2e-4c39-8960-1d8e1c14f44b","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2015-08","id":"56da47af-6ed8-4163-841f-1c2f194840d1","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2015-09","id":"1f6e25a0-d38a-4e1c-a73b-b59574689e01","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2015-12","id":"4a095d74-9381-44ce-9466-b270dbd57fd4","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2016-05","id":"ac056d03-da44-4fd3-86b0-fecb4ad469d5","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2015-07","id":"d78085d5-bc98-4a6b-ab77-993d4b89dc22","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0},{"amount":0.0,"date":"2016-01","id":"a1beaa55-a54e-46ee-ad24-beb9217a0c7e","lineNo":1,"name":"农庄、农家乐、度假村","serialNo":"201607139928123628","type":"1","variableCost":0.0}]},"bossIndustryRiskModel":{"bossIndustryRisk":null},"bossLoanPurposeModel":{"bossFundSources":[{"amount":856.0,"fundSource":"{C8493B35-2045-49C6-828D-D01E613A6593}","fundSourceInput":null,"id":"59d23148-1bdd-4bfa-bcdd-05c11a177f49","lineNo":2,"serialNo":"201607139928123628"},{"amount":252886.0,"fundSource":"{379035D4-A44C-442D-B194-4ECBAFFBD681}","fundSourceInput":null,"id":"33d0c8b8-54fa-4785-808b-df7b659566ce","lineNo":1,"serialNo":"201607139928123628"}],"bossLoanPurposes":[{"id":"7cd1e15f-c66c-4506-a876-1ceddc3272fb","investmentFund":2559.0,"lineNo":1,"project":"{288AA22F-1CD9-443C-9DA8-8F6C1C13CEBB}","projectInput":null,"serialNo":"201607139928123628","useDetail":"8666"}]},"bossManagementModel":{"bossAgencyInfos":[{"agencyFee":556.0,"allowReturn":"1","brandName":"监控","comprehensiveRebate":25.0,"distributionWorth":0.0,"hasDistribution":"0","id":"6f111d6d-ac19-415d-8001-aadf1011330b","lastYearActualRebate":566.0,"lastYearTask":599.0,"lastYearTaskComplete":"1","lineNo":1,"rebateForm":"{7C533366-3966-49C6-9943-3B15F4049A00}","saleForm":"{A9AFD9D9-C7C2-4255-ABB7-70D4289F7E06}","serialNo":"201607139928123628","thisYearTask":556.0}],"bossBillingMode":null,"bossDownstreams":[{"cooperationYear":1555,"generalAccountPeriod":0,"generalReceiveTime":null,"id":"16f78a65-1fa8-4047-816a-731e6608a6e6","indentorName":"jjjjJJMM","lastReceiveAmount":856.0,"lastReceiveTime":"2016-07-18","lineNo":1,"monthSaleAmount":66.0,"payCycle":"{F36AB0E1-0ED2-4CFB-B0DE-E5FC84E58FD5}","payWay":null,"prereceiveAccount":0.0,"prereceiveTime":null,"receivableAccount":0.0,"receivableBeginTime":null,"receivableEndTime":null,"saleRatio":5.0,"serialNo":"201607139928123628"}],"bossOutGoingMachning":null,"bossProductInfos":[{"grossProfitRate":9.0,"id":"435a39d2-b7f4-4014-a658-328c43bf0ed8","lineNo":1,"monthSaleAmount":5599.0,"productName":"出来咯","saleRatio":8.0,"serialNo":"201607139928123628"}],"bossProductionCapaction":null,"bossProductionFlow":null,"bossSaleModels":[{"grossProfitRate":56.0,"id":"888ee3c8-eb4f-434f-a2a1-e1ad86a7cc20","lineNo":1,"monthSaleAmount":586.0,"saleModel":null,"saleRatio":56.0,"serialNo":"201607139928123628"}],"bossServiceCategorys":[],"bossStoreInfos":[{"comprehensiveNetProfit":82.0,"id":"71007645-1a43-4190-840c-04c931d24e3b","lineNo":1,"monthSaleAmount":588.0,"openDate":"2016-07-18","serialNo":"201607139928123628","storeName":"了咯血"}],"bossUpstreams":[{"cooperationYear":558,"generalAccountPeriod":0,"generalPayTime":null,"id":"5fac601f-4763-4482-b8dc-edf8f8999619","lastPayAmount":856.0,"lastPayTime":"2016-07-18","lineNo":1,"monthPurchaseAmount":123555.0,"payCycle":"{BE196F97-A732-43E5-A16A-A2D8A8936995}","payWay":null,"payableAccount":0.0,"payableBeginTime":null,"payableEndTime":null,"prepayAccount":0.0,"prepayTime":null,"purchaseRatio":5.0,"serialNo":"201607139928123628","supplierName":"图呢"}]},"bossOffBalanceAssetModel":{"bossOffBalanceAsset":null},"bossOwnerInfoModel":{"bossOverdue":null,"bossOwnerCreditInfo":null,"bossOwnerCreditReport":null,"bossOwnerLoanInfo":null},"bossProvideModel":null,"operateLog":null,"serialNo":"201607139928123628","completeStatus":null},"balanceSheetMajors":null,"bossIncomeAccountDates":[{"date":"2015-07","id":11,"sortNo":1},{"date":"2015-08","id":5,"sortNo":2},{"date":"2015-09","id":4,"sortNo":3},{"date":"2015-10","id":2,"sortNo":4},{"date":"2015-11","id":8,"sortNo":5},{"date":"2015-12","id":12,"sortNo":6},{"date":"2016-01","id":10,"sortNo":7},{"date":"2016-02","id":3,"sortNo":8},{"date":"2016-03","id":1,"sortNo":9},{"date":"2016-04","id":7,"sortNo":10},{"date":"2016-05","id":6,"sortNo":11},{"date":"2016-06","id":9,"sortNo":12}],"code":"02.10.01","detailModelRelationCodeList":null,"detailModelRelationList":[],"isEnd":"1","modelDetails":null,"name":"初始化权益","parentCode":"02.10","smallImage":null,"smallImageGray":null,"sortNo":1,"sysDicList":[],"sysDicMap":{},"type":"3","completeStatus":null}
+//			loadBossCrossExaminationQyInit(a)
+			function loadBossCrossExaminationQyInit(sjson){
+				var AndroidAnswer = sjson[1];
+				sjson = sjson[0];
+				sjson["answer"]=AndroidAnswer;
+				function jsonForm(data){
+					var r=data.answer;
+					var answerJson={};//答案json字符串转换
+					for(var key in r){
+						answerJson[key]=$.parseJSON(r[key]);
+					}
+					data.answer = answerJson;
+					return data;
+				}
+				var json=jsonForm(sjson);
+				record = json;
+				var calendar= new lCalendar();
+			    calendar.init({
+			        'trigger': '#demo11',
+			        'type': 'date'
+			    });
+				sj=json.answer;
+				var bossAcrossInitialEquity = json.answer.bossIncomeAccountModel.bossAcrossInitialEquity;
+				if(bossAcrossInitialEquity!=null){
+					for(key in bossAcrossInitialEquity){
+						$(".sr ul li").each(function(){
+							if(key==$(this).attr("fieldname")){
+								if(bossAcrossInitialEquity[key]!=null){
+									if(!isNaN(parseInt(bossAcrossInitialEquity[key]))){
+										$(this).find(".right input").val(parseInt(bossAcrossInitialEquity[key])).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+									}else{
+										$(this).find(".right input").val(bossAcrossInitialEquity[key]).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+									}
+									$(this).find(".right span").text(bossAcrossInitialEquity[key]);
+									if($(this).find(".right span").text()!="0"){
+										$(this).children(".left").children("i").css({"color":"#a09fa4"});
+									}
+								}
+							}
+						});
+						$(".zc ul li").each(function(){
+							if(key==$(this).attr("fieldname")){
+								if(bossAcrossInitialEquity[key]!=null){
+									if(!isNaN(parseInt(bossAcrossInitialEquity[key]))){
+										$(this).find(".right input").val(parseInt(bossAcrossInitialEquity[key])).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+									}else{
+										$(this).find(".right input").val(bossAcrossInitialEquity[key]).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+									}
+									$(this).find(".right span").text(bossAcrossInitialEquity[key]);
+									if($(this).find(".right span").text()!="0"){
+										$(this).children(".left").children("i").css({"color":"#a09fa4"});
+									}
+								}
+							}
+						});
+						$(".time li").each(function(){
+							if(key==$(this).attr("fieldname")){
+								if(bossAcrossInitialEquity[key]!=null){
+									$(this).find(".right input").val(bossAcrossInitialEquity[key]).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+									$(this).find(".right span").text(bossAcrossInitialEquity[key]);
+									if($(this).find(".right span").text()!="0"){
+										$(this).children(".left").children("i").css({"color":"#a09fa4"});
+									}
+								}
+							}
+						})
+						
+					}
+				}
+				var qy=computeRuble.initialEquity(record);
+				var gd=computeRuble.fixedAssets(record);
+				if(typeof qy=="number"){
+					if(!isNaN(parseInt(qy))){
+						$(".time li:nth-of-type(2)").find(".right span").text(qy);
+					}else{
+						$(".time li:nth-of-type(2)").find(".right span").text("0");
+					}
+				}
+				if(typeof gd=="number"){
+					if(!isNaN(parseInt(gd))){
+						$(".sr li[fieldname='fixedAsset']").find(".right span").text(gd).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+					}else{
+						$(".sr li[fieldname='fixedAsset']").find(".right span").text("0").parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+					}
+				}
+
+			}
+			$("#sr").on("touchstart",function(){
+				$(this).addClass("span_bg").siblings().removeClass("span_bg");
+				$(".sr").show();
+				$(".zc").hide();
+			});
+			$("#zc").on("touchstart",function(){
+				$(this).addClass("span_bg").siblings().removeClass("span_bg");
+				$(".zc").show();
+				$(".sr").hide();
+			});
+			$("#next").click(function(){
+				submit(true)
+			});
+			$("#demo11").on("blur",function(){
+				if(record!=undefined){
+					var re_sult=computeRuble.fixedAssets_realTime(record);
+					var res_ult=computeRuble.initialEquity_realTime(record);
+					if(!isNaN(parseInt(re_sult))){
+						$("li[fieldname='fixedAsset']").find(".right .w_xspan").text(re_sult);
+					}else{
+						$("li[fieldname='fixedAsset']").find(".right .w_xspan").text("0");
+					}
+					if(!isNaN(parseInt(res_ult))){
+						$("li[fieldname='initialInterest']").find(".right .w_xspan").text(res_ult);
+					}else{
+						$("li[fieldname='initialInterest']").find(".right .w_xspan").text("0");
+					}
+				}
+			});
+			function submit(tf){
+				if(sj!=undefined){
+					sj["bossIncomeAccountModel"]["bossAcrossInitialEquity"]={};
+				}else{
+					sj={"bossIncomeAccountModel":{"bossAcrossInitialEquity":{}}};
+				}
+				var status="2";
+				var tsj={};
+				$(".ic_head span").removeClass("_unfinish");
+				var _sr = true;
+				$(".sr ul li").each(function(){
+					if($(this).find(".right input").length==1){
+						$(this).find(".left label").remove();
+						if($(this).find(".right input").val().trim()==""){
+							tsj[$(this).attr("fieldname")]=null;
+						}else{
+							tsj[$(this).attr("fieldname")]=$(this).find(".right input").val();
+							if(!fushu($(this).find(".right input").val())){
+								$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+								status="1";
+								_sr = false;
+							};
+						}
+					}else if($(this).find(".right span").length==1){
+						tsj[$(this).attr("fieldname")]=$(this).find(".right span").text();
+					}
+				});
+				var _zc = true;
+				if(!_sr){
+					$(".ic_head span:nth-of-type(1)").addClass("_unfinish");
+				}
+				$(".zc ul li").each(function(){
+					if($(this).find(".right input").length==1){
+						$(this).find(".left label").remove();
+						if($(this).find(".right input").val().trim()==""){
+							tsj[$(this).attr("fieldname")]=null;
+						}else{
+							tsj[$(this).attr("fieldname")]=$(this).find(".right input").val();
+							if(!fushu($(this).find(".right input").val())){
+								$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+								status="1";
+								_zc = false;
+							};
+						}
+					}else if($(this).find(".right span").length==1){
+						tsj[$(this).attr("fieldname")]=$(this).find(".right span").text();
+					}
+				});
+				if(!_zc){
+					$(".ic_head span:nth-of-type(2)").addClass("_unfinish");
+				}
+				$(".time li").each(function(){
+					if($(this).find(".right input").length==1){
+						if($(this).find(".right input").val().trim()==""){
+							tsj[$(this).attr("fieldname")]=null;
+						}else{
+							tsj[$(this).attr("fieldname")]=$(this).find(".right input").val();
+						}
+					}else if($(this).find(".right span").length==1){
+						tsj[$(this).attr("fieldname")]=$(this).find(".right span").text();
+					}
+				});
+				
+				$("#demo11").parents("li").find(".left label").remove();
+				if($("#demo11").val().trim()==""){
+					$("#demo11").parents("li").find(".left").append('<label class="message_info">请输入必填数据</label>');
+					status="1";
+				}else{
+					function lit(date1){
+						var d = new Date();
+						var year = d.getFullYear();
+						var month = d.getMonth()+1;
+						if(month<10){
+							month = "0"+month;
+						}
+						var day = d.getDate();
+						if(day<10){
+							day = "0"+day;
+						}
+				   	 	var str = year+"-"+month+"-"+day;//当前日期
+				   	 	if(date1==str){
+				   	 		return true;
+				   	 	}
+				        var oDate1 = new Date(date1);
+				        var oDate2 = new Date(str);
+				        if(oDate1.getTime() > oDate2.getTime()){
+				            return false;                    
+				        } else {
+				        	return true;
+				        }
+					}
+					var k=lit($("#demo11").val());
+					if(!k){
+						status="1";
+						$('#section2 .cy span').each(function(){
+							if($(this).hasClass("span_bg")){
+								$(this).addClass("unfinish");
+							}
+						})
+						$("#demo11").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+					}
+				}
+				sj["bossIncomeAccountModel"]["bossAcrossInitialEquity"]=tsj;
+				sj["completeStatus"]=status;
+				var _sj=JSON.stringify(sj);
+				if(tf==undefined){
+					var tf=false;
+				}
+				console.log(sj)
+				if (tf) {
+					if(status=="2"){
+						AndroidJs.saveWjDetalAnswer(_sj, true);
+					}else{
+						AndroidJs.saveWjDetalAnswer(_sj, false);
+					}
+					
+				} else {
+					AndroidJs.saveWjDetalAnswer(_sj, false);
+				}
+			}
+			$('.textCon textarea').on('blur',function(){
+				if($('.textCon textarea').val().trim()!=""){
+					$('.textCon span').hide();
+				}else{
+					$('.textCon span').show();
+				}
+				$('.textCon textarea').removeClass('textYellow');
+			});
+			$('.textCon textarea').on('focus',function(){
+				$('.textCon span').hide();
+				$(this).addClass('textYellow');
+			});
+			$(".problem li input").on("focus",function(){
+				$(this).parent().parent("li").addClass("ylborder");
+				$(this).parent().parent("li").siblings().removeClass("ylborder");
+			});
+			$(".problem li input").on("blur",function(){
+				$(this).parent().parent().removeClass("ylborder");
+				if($(this).val().trim()!=""){
+					$(this).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+				}else{
+					$(this).parent().siblings(".left").children("i").css({"color":"#191919"});
+				}
+			});
+			$(document).on("keyup","input[type='number']",function(){
+//				if($(this).val().indexOf(".") > 0){
+//					var sval = $(this).val().substr(0,$(this).val().indexOf("."))+$(this).val().substring($(this).val().indexOf(".")+1);
+//					$(this).val(sval.trim());
+//				}
+				if($(this).val().length >= 10){
+					$(this).val($(this).val().substr(0,10));
+				}
+				var res_ult=computeRuble.initialEquity_realTime(record);
+				if(!isNaN(parseInt(res_ult))){
+					$("li[fieldname='initialInterest']").find(".right .w_xspan").text(res_ult);
+				}else{
+					$("li[fieldname='initialInterest']").find(".right .w_xspan").text("0");
+				}				
+			})
+			$(document).on("blur","input[type='number']",function(){
+				$(this).parents("li").find("label").remove();
+				if($(this).val()!=""){
+					if(!fushu($(this).val())){
+						a = false;
+						if($(this).parent(".b_r").length!=0){
+							$(this).parents(".problem").prev().find(".left label").remove();
+							$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+						}else{
+							$(this).find(".left label").remove();
+							$('<label class="message_info">10位正整数</label>').appendTo($(this).parents("li").find(".left"))
+						}
+					};
+				}
+			});
+			function fushu(val){
+				var telReg = /^(\d{0,10})$/;
+				if(val!=""){
+					if(telReg.test(val)){
+						return true;
+					}else{
+						return false;
+					}
+				}
+			}
+		</script>
+		<script type="text/javascript">
+			$(".income li span").not(".w_xspan").html("&nbsp;&nbsp;");
+		</script>
+		<script src="js/formatMoneyText.js"></script>
+	</body>
+</html>

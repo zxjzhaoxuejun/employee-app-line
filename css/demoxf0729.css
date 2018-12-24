@@ -1,0 +1,1008 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{margin:0; padding:0;}  
+body, button, input, select, textarea{font-family:"微软雅黑";}  
+button, input, select, textarea, h1, h2, h3, h4, h5, h6 {font-size:100%;}  
+h2, h3 {font-size:0.14rem;}
+i,b,strong{font-weight: normal;font-style:normal;margin: 0;padding: 0;}  
+button, input, select, textarea, label {vertical-align:middle; outline:none;}
+img { vertical-align:middle; border:none; display:inline-block;}  
+ul, ol { list-style:none;}  
+a { text-decoration:none; vertical-align:baseline; cursor:pointer;}  
+a:hover { text-decoration:underline; color:#000;}  
+table { border-collapse:collapse; border-spacing:0;}  
+body { word-wrap:break-word; word-break:break-all; height:100%; padding-bottom: 1.2rem;}
+header{width:100%;height: 1.6rem; position: fixed;top:0;left: 0;}
+header p{color:#191919;font-size: 0.46rem;line-height: 1.6rem;text-align: center;}
+header .return{display: block;width: 0.25rem;height: 0.42rem;position: absolute;top:0.6rem;left: 0.59rem;}
+header .other{display: block;width: 0.68rem;height: 0.41rem;position: absolute;top:0.6rem;right: 0.5rem;}
+#mask{overflow:hidden;width: 100%;height: 100%;position: fixed;top: 0;left: 0; z-index: 1002;}
+#mask .mask_bg{overflow:hidden;width: 100%;height: 100%;background: black;opacity: 0.5;}
+#mask ul{position: absolute;left: 0;bottom: 0;width: 100%;background: #FFFFFF;z-index: 10;}
+#mask li{text-align: center;min-height: 1.4rem;margin: 0 0.4rem;line-height: 1.45rem;border-bottom: 0.05rem solid #E6E6EB;color: #191919;font-size: 0.42rem; letter-spacing:0.06rem;}
+#mask .cancel{color: #ef4138;border-top: 0.05rem solid #ef4138;margin: 0;}
+#mask .linone{border-bottom: none;}
+.right label{color:#191919;height:1.4rem;float: left;font-size: 0.4rem;position: relative;}
+.right label input[type=radio]{width: 0.45rem;height: 0.45rem;line-height: 1.4rem;margin-top: 0.5rem;margin-right: 0.2rem;}
+.right label i{position: absolute;width: 0.25rem;height: 0.25rem;background: #32be97;top: 0.6rem;left: 0.09rem;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;-o-border-radius: 50%;-ms-border-radius: 50%;display: none;}
+section{
+	width: 100%;
+	overflow: auto;
+	height: 100%;
+}
+section .problem{
+	overflow: hidden;
+	position: relative;
+}
+.show{
+	display: none;
+}
+.problem p{
+	font-size: 0.42rem;
+	line-height: 1.5rem;
+	padding-left: 0.5rem;
+	background: #f1f0f6;
+	color: #191919;
+}
+.camera{
+	width: 0.76rem;
+	height: 0.59rem;
+	display: block;
+	position: absolute;
+	top:0.44rem;
+	right: 0.5rem;
+}
+.problem li{
+	min-height: 1.4rem;
+	background: #ffffff;
+	margin: 0 0.4rem;
+	line-height: 1.45rem;
+	border-bottom: 0.05rem solid #E6E6EB;
+	overflow: hidden;
+}
+.problem li.address{
+	min-height: 2.8rem;
+}
+.problem div.x-address{
+	min-height: 1.3rem;
+	clear: both;
+	border-top:0.05rem solid #E6E6EB;
+	background: #fff;
+	padding-left: 0;
+	font-size: 0.4rem;
+}
+.problem div.x-address p:nth-of-type(1){
+	float: left;
+	width:3.8rem;
+	font-size: 0.4rem;
+	background: #fff;
+	padding-left: 0;
+}
+.problem div.x-address p:nth-of-type(2){
+	float:right;
+	width:6rem;
+	font-size: 0.4rem;
+	background: #fff;
+	padding-left: 0;
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+div.x-address p:nth-of-type(2) input{
+	height: 1.1rem;
+	border: none;
+	line-height: 1.1rem;
+	padding-left: 0.06rem;
+	font-size: 0.4rem;
+	color: #A0A0A5;
+}
+.problem li.linone{
+	border-bottom:none;
+}
+.noborder{
+	border: none!important;
+}
+.ylborder{
+	border-bottom: 0.05rem solid #FAAA28 !important;
+}
+.yli{
+	color: #a09fa4!important;
+}
+.problem .left{
+	width: 4rem;
+	float: left;
+	position: relative;
+}
+.problem .left span{
+	color: #f0564c;
+	font-size: 0.4rem;
+	display: inline-block;
+	/*float: left;*/
+}
+.problem .left i{
+	font-size: 0.4rem;
+	display: inline-block;
+	/*float: left;*/
+	margin-left: 0.08rem;
+	color: #191919;
+	width: 3.3rem;
+	/*overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;*/
+}
+.problem .li_m{
+	height: 1.7rem;
+}
+.problem .left .i_m{
+	width: 2.8rem;
+	height: 0.9rem;
+	line-height: 0.54rem;
+	margin-top:0.4rem;
+	margin-left: 0.3rem;
+}
+.problem .right{
+	width: 6rem;
+    float: right;
+	position: relative;
+
+}
+.right span{
+	font-size: 0.4rem;
+	display: inline-block;
+	float: left;
+	color: #a09fa4;
+}
+.right b{
+	font-size: 0.4rem;
+	display: inline-block;
+	float: left;
+	color: #a09fa4;
+}
+.right .s1{
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 50%;
+	border: 0.05rem solid #30b48d;
+	display: block;
+	float: left;
+	margin: 0.45rem 0.1rem 0 0.1rem;
+	position: relative;
+}
+.right .s2{
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 50%;
+	background:#30b48d ;
+	display: none;
+	position: absolute;
+	top:0.1rem;
+	left:0.1rem;
+}
+.right .s3{
+	position: relative;
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 50%;
+	border: 0.05rem solid #30b48d;
+	display: block;
+	float: left;
+	margin: 0.45rem 0.1rem 0 0.7rem;
+}
+.right input{
+	width: 5.06rem;
+	font-size: 0.4rem;
+	height: 1rem;
+	line-height: 1rem;
+	padding: 0.15rem 0;
+	border: none;
+	display: block;
+	float: left;
+	outline: none;
+	color: #191919;
+	background: #fff;
+	padding-left: 0.05rem;
+}
+.phone b{
+	font-size: 0.5rem;
+	margin-right: 0.15rem;
+	margin-left: 0.06rem;
+}
+.phone input[type="number"]:nth-of-type(1){
+	width: 1rem;
+}
+.phone input[type="number"]:nth-of-type(2){
+	width: 1.9rem;
+}
+.phone input[type="number"]:nth-of-type(3){
+	width: 1.3rem;
+}
+.right input[type='date']{
+	width: 3.1rem;
+}
+/*.right input[type='date']:nth-of-type(2){
+	width: 3.7rem;
+}*/
+.right .select{
+	position: absolute;
+	width: 0.42rem;
+	height: 0.27rem;
+	display: block;
+	top: 0.65rem;
+	right: 0.2rem;
+}
+.yuan{
+	color: #55555A!important;
+}
+footer{
+	width: 100%;
+	height: 1.2rem;
+	background: #FFFFFF;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: #ff5f5f;
+	z-index: 1000;
+}
+footer p{
+	line-height: 1.2rem;
+	color: #fff;
+	text-align: center;
+	font-size: 0.42rem;
+}
+
+
+/*家庭成员信息*/
+#add,.add{
+	position: absolute;
+	width: 0.82rem;
+	height: 0.82rem;
+	top:0.35rem;
+	right: 2rem;
+}
+#jian,.jian{
+	position: absolute;
+	width: 0.82rem;
+	height: 0.82rem;
+	top:0.35rem;
+	right: 0.6rem;
+}
+/*.show{
+	display: block;
+}*/
+.cy{
+	min-height: 2.1rem;
+	overflow: hidden;
+	margin-bottom: 0.1rem;
+}
+.cy span{
+	/*width: 2rem;*/
+	width: 2.8rem;
+	height: 1rem;
+	display: block;
+	float: left;
+	line-height: 1rem;
+	text-align: center;
+	margin: 0.8rem 0 0 0.5rem;
+	/*border: 0.04rem solid #32be97;*/
+	border-radius: 0.15rem;
+	background: #E6E6EB;
+	/*color: #32be97;*/
+	font-size: 0.4rem;
+	position: relative;
+}
+.cy span img{
+	position: absolute;
+	display: block;
+	width: 0.58rem;
+	height: 0.58rem;
+	top: -0.2rem;
+	left:2.5rem;
+}
+.cy .span_bg{
+	color: #FFFFFF;
+	background: #32be97;
+}
+.remove{
+	position: absolute;
+	top:6rem;
+	left: 1.6rem;
+	width: 7.5rem;
+	height: 4.67rem;
+	border-radius: 0.02rem;
+}
+.remove ._sc{
+	text-align: center;
+	line-height: 3.56rem;
+	font-size: 0.4rem;
+	position: relative;
+	background: white;
+}
+.remove ._ci{
+	position: absolute;
+	top:0.2rem;
+	right: 0.2rem;
+	width: 0.72rem;
+	height: 0.72rem;
+	display: block;
+}
+.remove ._qr{
+	line-height: 1.12rem;
+	font-size: 0.55rem;
+	color: #FFFFFF;
+	text-align: center;
+	background: #ef4138;
+}
+.problem li.textTable{
+	height:3.5rem;
+	border:none;
+	line-height:none;
+	position: relative;
+}
+.textTitle{
+	margin-top:0.25rem;
+	width:100%;
+	height:0.8rem;
+	line-height:0.8rem;
+}
+.textTitle>span{
+	color:#f04137;
+	font-size:0.4rem;
+	display: inline-block;
+	float: left;
+}
+.textTitle>i{
+	font-size:0.4rem;
+	display: inline-block;
+	float: left;
+	margin-left:0.08rem;
+}
+.textCon{
+	clear:both;
+	font-size:0.4rem;
+	height:2rem;
+	margin-top:0.2rem;
+}
+.textCon>textarea{
+	height:1.8rem;
+	color:#a0a0a5;
+	width:97%;
+	padding:0.2rem;
+	border:0.05rem #e6e6eb solid;
+	border-radius:0.1rem;
+	font-size:0.4rem;
+}
+.textCon .b_k{
+	position: absolute;
+	bottom: 0rem;
+	right: 0.2rem;
+	color: #a0a0a5;
+	font-size: 0.4rem;
+}
+.textCon>textarea.textYellow{
+	border:0.05rem #faaa28 solid;
+}
+
+/***********地址样式********/
+.adr-mask{
+    	width:100%;
+    	height: auto;
+    	overflow: hidden;
+    }
+    .adr-mask-bg{
+    	width: 100%;
+    	height: 100%;
+    	position: fixed;
+    	left: 0;
+    	top:0;
+    	background: #333;
+    	opacity: 0.5;
+    	z-index: 100;	
+    }
+    .adr-mask-con{
+    	width: 100%;
+    	height: 7.5rem;
+    	background: #fff;
+    	position: fixed;
+    	bottom: 0;
+    	z-index: 105;
+    }
+    .adr-contorl-btn{
+    	width: 100%;
+    	height: 1.2rem;
+    	line-height: 1.2rem;
+    	text-align: center;
+    	font-size: 0.44rem;
+    	color: #191919;
+    }
+    .adr-contorl-btn>span{
+    	float: right;
+    	color: #f04137;
+    	margin-right: 0.4rem;
+    }
+    .aderr-nav{
+    	width: 100%;
+    	height: 1rem;
+    	border-bottom: 0.03rem #a0a0a0 solid;
+    	line-height:1rem;
+    }
+    .aderr-nav>span{
+    	display: inline-block;
+    	width: 25%;
+    	height: 0.6rem;
+    	color: #F04137;
+    	font-size: 0.4rem;
+    	line-height: 0.5rem;
+    	vertical-align: middle;
+    	padding-bottom: 0.2rem;
+    	text-align: center;
+    	border-bottom: 0.06rem #F04137 solid;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+	    white-space: nowrap;
+    }
+    .adr-mask-con ul{
+    	width:97%;
+    	height:4.5rem;
+    	margin-left:3%;
+    	margin-top: 0;
+    	overflow-y:scroll;
+    	list-style: none;
+    	padding: 0;
+    }
+    .adr-mask-con ul li{
+    	width: 100%;
+    	height: 1.2rem;
+    	font-size: 0.4rem;
+    	padding: 0;
+    	line-height: 1.2rem;
+    }
+    #demo{
+    	display: block;
+    	height: 0.6rem;
+    	width: 100%;
+    	border: 0.03rem #ccc solid;
+    	font-size: 0.32rem;
+    }	
+/***********地址样式 end********/
+
+#odlTime,#endTime{
+	width:2.5rem;
+	text-align:center;
+}
+.num{
+	display:none;
+}
+
+/*收入分析表*/
+.income{
+	overflow: hidden;
+}
+.income .ic_head{
+	height: 2.46rem;
+}
+.income .ic_head div{
+	margin: 0.65rem auto 0;
+	width: 6.1rem;
+	height: 1rem;
+}
+.income .ic_head div span{
+	height: 1rem;
+	width: 2.96rem;
+	line-height: 1rem;
+	text-align: center;
+	background: #FFFFFF;
+	color: #32be97;
+	font-size: 0.4rem;
+	float: left;
+	display: block;
+	border: 0.03rem solid #32be97;
+}
+.income .ic_head div span:nth-of-type(1){
+	border-top-left-radius:0.15rem;
+	border-bottom-left-radius:0.15rem;
+}
+.income .ic_head div span:nth-of-type(2){
+	border-top-right-radius:0.15rem;
+	border-bottom-right-radius:0.15rem;
+}
+.income .ic_head div .span_bg{
+	color: #FFFFFF;
+	background: #32be97;
+}
+.ic_center{
+	overflow: hidden;
+	background:#f1f0f6 ;
+}
+.ic_center b{
+	font-size: 0.4rem;
+	line-height: 1.5rem;
+	margin-left: 0.4rem;
+}
+.ic_center span{
+	font-size: 0.4rem;
+	color: #f04137;
+	line-height: 1.5rem;
+	text-indent: 0.4rem;
+	margin-left: 0.3rem;
+}
+.ic_select{
+	height: 1.56rem;
+}
+.ic_select li{
+	line-height: 1.56rem;
+	width: 33.3%;
+	font-size: 0.4rem;
+	text-align: center;
+	border-bottom: 0.04rem solid #E6E6EB;
+	float: left;
+}
+.ic_select .li_ct{
+	width: 33.4%;
+}
+.ic_select .li_bt{
+	border-bottom: #f04137 solid 0.04rem;
+	color: #f04137;
+}
+.ic_dx{
+	width: 100%;
+	overflow: hidden;
+}
+.ic_dx .dx_h{
+	margin: 0.6rem 0;
+}
+.ic_dx .dx_h li{
+	width: 100%;
+	line-height: 0.9rem;
+	font-size: 0.4rem;
+	color: #a0a0a5;
+	overflow: hidden;
+}
+.ic_dx .dx_h i.ch_img{
+	margin-left: 0.5rem;
+	display: block;
+	float: left;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0.25rem;
+	background: url(../img/jx_icon.png) no-repeat;
+}
+.ic_dx .dx_h i.on{
+	margin-left: 0.5rem;
+	display: block;
+	float: left;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: 0.25rem;
+	background: url(../img/jxt_icon.png) no-repeat;
+}
+.ic_dx .dx_h span{
+	margin-left: 0.27rem;
+	display: block;
+	float: left;
+}
+.span_f{
+	color: #000000;
+}
+.dx_f{
+	border-top: 0.04rem solid #a0a0a5;
+}
+.dx_f li{
+	height: 1.22rem;
+}
+.dx_f li span{
+	display: block;
+	float: left;
+	border-bottom: 0.03rem solid #a0a0a5;
+	border-right: 0.03rem solid #a0a0a5;
+	width: 18.5%;
+	line-height: 1.2rem;
+	font-size: 0.32rem;
+	text-align: center;
+	height: 1.2rem;
+}
+.dx_f li span input{
+	border: none;
+	width: 80%;
+	height: 80%;
+	outline: none;
+	margin: 5% auto;
+	text-align: center;
+}
+.dx_f li span:nth-of-type(5){
+	border-right: none;
+	width: 19.6%;
+}
+.sr{
+	overflow: hidden;
+}
+.zc{
+	overflow: hidden;
+}
+.jj,.qt,.zc{
+	display: none;
+}
+.box{
+	display: inline-block;
+	width: 0.35rem;
+	height: 0.35rem;
+	border: 0.03rem #32be96 solid;
+	margin-right: 0.1rem;
+	vertical-align: middle;
+}
+.on{
+	display: inline-block;
+	width: 0.35rem;
+	height: 0.35rem;
+	border: 0.03rem #32be96 solid;
+	background: #32be96;
+	margin-right: 0.1rem;
+	vertical-align: middle;
+}
+
+/**********信息预览**********/
+.fg-bg{
+	width:100%;
+	height:0.5rem;
+	background:#f0f0f5;
+}
+.view-list{
+	padding:0 0.55rem;
+	height:auto;
+	overflow:hidden;
+}
+.problem p.view-title{
+	height:1.4rem;
+	line-height:1.4rem;
+	color:#191919;
+	font-size:0.4rem;
+	border-bottom:0.05rem #e6e6eb solid;
+	background: #fff;
+	margin:0 0.5rem;
+	padding-left: 0;
+}
+.problem p.view-title01{
+	height:1.4rem;
+	line-height:1.4rem;
+	color:#191919;
+	font-size:0.4rem;
+	padding-left:0.6rem;
+}
+.view-title>i{
+	display:inline-block;
+	width:0.13rem;
+	height:0.5rem;
+	background:#faaa28;
+	margin-right:0.3rem;
+	vertical-align:middle;
+}
+.problem p.view-title>em,.problem p.view-title01>em{
+	padding:0.06rem;
+	color:#f04137;
+	float:right;
+	font-style: normal;
+	margin-right:0.4rem;
+}
+/*add 2016-06-15  Dom操作复选框  单独写li样式*/
+.in_come {
+    width: 100%;
+    overflow: hidden;
+    }
+.in_come .income_h {
+    margin: 0 rem 0;
+}
+.in_come .income_h li {
+    width: 100%;
+    height:0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.4rem;
+    color: #a0a0a5;
+    overflow: hidden;
+    border:none;
+}
+.in_come .income_h img {
+    margin-left: 0.5rem;
+    display: block;
+    float: left;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-top: 0.25rem;
+}
+
+.in_come .income_h span {
+    margin-left: 0.27rem;
+    display: block;
+    float: left;
+}
+/*Dom操作复选框样式  end*/
+
+
+/*信用报告信息页  start*/
+
+  #creditInfo.problem i{
+  	color:#A0A0A5;
+  }
+  #creditInfo .left {
+    width: 4.5rem;
+    float: left;
+}
+  #creditInfo .right {
+    width: 5.0rem;
+    float: left;
+    position: relative;
+}
+ #creditInfo .right input{
+ 	width:3.96rem;
+ }
+ #creditInfo .right b {
+ 	float: right;
+ }
+ .creditResult{
+ 	border-top: 0.05rem solid #E6E6EB;
+ 	}
+ .creditResult  .titlebox{
+ 	width:6.0rem;
+ 	height:1.0rem;
+ 	border-radius: 0.1rem;
+ 	margin:0.8rem auto;
+ 	border:1px solid #32BE96;
+ 	background: #fff;
+ 	color:#32BE96;
+ }
+ .creditResult div ul li input{
+ 	display:inline-block;
+ 	width:100%;
+ 	height:100%;
+ 	border:none;
+ 	text-align: center;
+ }
+ .backcolor{background: #32BE96;color:#fff;}/*点击查询次数和逾期次数动态添加此类名*/
+  .creditResult  .titlebox .leftTitle{
+  	border-radius: 0.1rem 0 0 0.1rem;
+  	font-size: 0.36rem;
+  	text-align: center;
+  	width:50%;height:100%;
+  	float:left;
+  	line-height: 1rem;
+  }
+  .creditResult  .titlebox .rightTitle{
+  	border-radius: 0 0.1rem 0.1rem 0;
+  	font-size: 0.36rem;
+  	text-align: center;
+  	width:50%;height:100%;
+  	float:right;
+  	line-height: 1rem;
+  }
+
+.creditResult .creditTable{
+ 	width:100%;height:auto;
+ 	}
+.creditResult .creditTable ul{
+ 	border-top:1px solid #CDCDD2;}
+ .creditResult .creditTable li{
+ 	width:100%;
+ 	height:1.2rem;
+ 	display: table;}
+ .creditResult .creditTable li>div{
+ 	font-size: 0.38rem;
+ 	line-height: 0.38rem;
+ 	font-weight: 300;
+ 	width:25%;
+ 	text-align: center;
+ 	border-right:1px solid #E6E6EB;
+ 	border-bottom:1px solid #E6E6EB;
+ 	display: table-cell;
+ 	vertical-align: middle;}
+
+  .creditResult .creditTable .border{
+  	border-right:none !important;}
+ .creditResult button{
+ 	width: 100%;
+ 	height:1.2rem;
+ 	margin-top:0.5rem;
+ 	background: #FF5F5F;
+ 	color:#fff;
+ 	font-size: 0.46rem;
+ 	font-weight: 600;
+ 	text-align: center;
+ 	line-height: 1.2rem;
+ 	}
+ /*信用报告信息页  end*/
+
+ /*收入支出分析页面*/
+
+#incomeAnalysis.problem i{
+  	color:#A0A0A5;
+  }
+#incomeAnalysis .zhipei{
+ 	height: 2.0rem;
+ 	line-height: 2.0rem;
+ }
+ #incomeAnalysis .zhipei .left {
+	height: 2.0rem;
+	line-height: 2.0rem;
+    width: 3.5rem;
+    float: left;
+    margin-right: 0.26rem;
+}
+ #incomeAnalysis .zhipei i{
+ 	/*background: red;   测试用*/
+ 	width: 3.0rem;
+ 	line-height: 0.6rem;
+ 	padding-top:0.4rem;
+ }
+#incomeAnalysis .zhipei input{
+ 	height:1.6rem;
+ 	line-height:1.6rem ;
+ 	width:2.6rem;
+ 	float:left;}
+.creditResult p {
+    font-size: 0.42rem;
+    line-height: 1.5rem;
+    padding-left: 0.5rem;
+    background: #f1f0f6;
+    position: relative;
+    color: #191919;}
+ .creditResult p span{
+ 	color:#F04137;
+ 	padding-left:0.4rem;
+ }
+ .creditTable .salary{
+ 	width:100%;
+ 	height: 1.6rem !important;
+ 	border:1px solid #E6E6EB;
+
+ }
+ .creditTable .salary span{
+ 	width:33.3%;
+ 	float: left;
+ 	height: 1.6rem;
+ 	text-align: center;
+ }
+ .creditTable .salary span a{
+ 	color:#55555A;
+	line-height: 2.0rem;
+	font-size: 0.4rem;
+}
+.creditTable .salary span a:hover{
+	text-decoration: none;
+}
+      /*点击当前标题(底薪、奖金、其他)添加orangecolor*/
+.creditTable .salary span.orangecolor{
+	border-bottom:1px solid #F04137;
+}
+ .creditTable .salary span.orangecolor a{
+	color:#F04137;
+}
+ 	 /*复选框勾选 toggleClass动态添加类名*/
+.checkbox{width:100%;
+	height:6.3rem;}
+.checkbox h5{
+	height:0.9rem;
+	margin: 0 0.4rem;
+ 	color:#A0A0A5;
+ 	font-size: 0.4rem;
+ 	line-height:0.9rem;
+ 	font-weight: 500;
+ 	position: relative;
+ }
+ .checkbox h5:nth-of-type(1){
+ 	margin-top:0.5rem;}
+ .checkbox h5 i{
+ 	padding-left:0.68rem;
+ }
+ .checkbox h5 span{
+ 	width:0.4rem;
+ 	height:100%;
+ 	/*border:1px solid red;*/
+ 	position: absolute;
+ 	left:0;top:0;
+ 	background: url(../img/backgray.png) no-repeat center center;
+ 	background-size:0.4rem 0.44rem;
+ }
+ .checkbox h5.rightlogo{
+ 	color:#55555A;
+ }
+
+ .checkbox h5.rightlogo span{
+ 	background: url(../img/backright.png) no-repeat center center;
+ 	background-size: 0.4rem 0.44rem;
+ }
+ 		/*5列表格单独设置宽度百分比*/
+ .creditResult .creditTable .tableUl li>div{
+ 	width:20%;
+ 	}
+
+   /*信用报告信息页  end*/
+
+/*********以提供资料********/
+.tg-title{
+	heigth:1.5rem;
+	line-height:1.5rem;
+	width:100%;
+	background:#f0f0f5;
+}
+.tg-title>p{
+	color:#191919;
+	font-size:0.4rem;
+	margin-left:0.4rem;
+}
+.tg-con{
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	background:#fff;
+	padding:0.75rem 0rem;
+}
+.tg-nav{
+width:100%;
+height:auto;
+overflow: hidden;
+}
+.tg-nav li{
+	width:3rem;
+	height:1rem;
+	border-radius: 0.1rem;
+	border:0.05rem #e6e6eb solid;
+	line-height:1rem;
+	text-align:center;
+	color:#55555a;
+	float:left;
+	font-size:0.4rem;
+	margin-left:0.48rem;
+	margin-bottom:0.45rem;
+}
+.tg-nav li.big{
+	width:4.5rem;
+}
+.tg-nav li.check_color{
+	background:#32be96;
+	border:0.05rem #32be96 solid;
+	color:#fff;
+	}
+.qd-btn{
+	width: 100%;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	background: #F04137;
+	position: fixed;
+	bottom: 0rem;
+}
+.qd-btn>a{
+	display: block;
+	width: 100%;
+	height: 1.4rem;
+	color: #fff;
+	text-align: center;
+	letter-spacing: 0.05rem;
+	font-size: 0.4rem;
+}
+
+/*版本修改*/
+/*.problem li{
+	min-height: 1.4rem;*
+	background: #ffffff;
+	margin: 0 0.4rem;
+	line-height: 1.45rem;
+	border-bottom: 0.05rem solid #E6E6EB;
+	overflow: hidden;*
+}*/
+.money-show-text{
+	display: inline-block;
+	position: absolute;
+	right: 1rem;
+	top: 0;
+	font-style: normal;
+	font-size: 0.3rem;
+	color: #F04137;
+}
+.b_r .money-show-text{
+	line-height: 0.65rem;
+}
+/* 20181221 */
+.notChange{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #ccc;
+	opacity: .5;
+	z-index: 10;
+}

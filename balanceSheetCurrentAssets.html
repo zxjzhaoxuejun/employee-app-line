@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<title>流动资产</title>
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/lCalendar.css"/>
+		<link rel="stylesheet" type="text/css" href="css/demoxf0729.css"/>
+		<link rel="stylesheet" type="text/css" href="css/businessModel.css"/>
+		<script type="text/javascript" src="js/setHtmlFontSize.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script src="js/lCalendar.min.js"></script>
+	</head>
+	<body>
+		<section id="section3">
+			<div class="problem" id="3_1">
+				<p class="_xq"><span>现金及银行存款</span><span class="_zsp">0</span><span>元</span></p>
+			</div>
+			<div class="problem" id="3_1_0" _code="0001.0003.08.01.01">
+				<ul>
+					<li>
+						<div class="left"><span>&nbsp;&nbsp;</span><i>现金</i></div>
+						<div class="right">
+							<input type="number" placeholder="请输入现金" class="x_jpt" value=""><b class="yuan">元</b></div>
+					</li>
+				</ul>
+			</div>
+			<div class="problem" id="3_1_1" _code="0001.0003.08.01.02">
+				<ul>
+					<li>
+						<div class="left"><span>&nbsp;&nbsp;</span><i>银行存款</i></div>
+						<div class="right"><span class="x_span">0</span><b class="yuan">元</b><img src="img/_add.png" class="_add"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="problem" id="3_1_1_1">
+				<ul>
+					<li class="bk" style="display:none">
+						<div class="all_b" >
+							<!-- <div class="bank">
+								<div class="left b_l"><span>*&nbsp;&nbsp;</span>
+									<input fieldName="name" type="text" placeholder="请输入银行名称" class="x_ipt">
+								</div>
+								<div class="right b_r">
+									<input fieldName="amount" type="number" placeholder="请输入金额" class="x_ipt"><b class="yuan">元</b><img src="img/_sc.png" class="_sc"></div>
+							</div> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="problem" id="3_1_2" _code="0001.0003.08.01.03">
+				<ul>
+					<li>
+						<div class="left"><span>&nbsp;&nbsp;</span><i>现金支票</i></div>
+						<div class="right">
+							<input type="number" placeholder="请输入现金支票" class="x_jpt" value=""><b class="yuan">元</b></div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="section0">
+			<div _code="0001.0003.08.02.01" class="problem" id="0_1">
+				<p class="_xq"><span>应收账款</span><span class="_zsp">0</span><span>元</span><img src="img/add_icon.png" class="add"><img src="img/jian_icon.png" class="jian" style="display:none"></p>
+			</div>
+			<div class="problem show" id="0_1_1" style="display:none">
+				<div class="cy"><span class="span_bg">页签</span></div>
+				<ul>
+					<li fieldname="indentorName" isLabel="1">
+						<div class="left"><span>*</span><i>订货商名称</i></div>
+						<div class="right">
+							<input type="text" placeholder="请输入订货商名称" value="" maxlength="8">
+						</div>
+					</li>
+					<li fieldname="receivableBeginTime" isLabel="0">
+						<div class="left"><span>*</span><i>应收开始时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-02-01-02" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="receivableEndTime" isLabel="0">
+						<div class="left"><span>*</span><i>应收结束时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-02-01-03" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="receivableAccount" isLabel="0" class="receivableAccount">
+						<div class="left"><span>*</span><i>目前的应收帐款</i></div>
+						<div class="right">
+							<input type="number" placeholder="请输入目前的应收帐款" value=""><b class="yuan">元</b></div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		
+		<section id="section4">
+			<div class="problem" id="4_1" _code="0001.0003.08.03.01">
+				<p class="_xq"><span>预付款项</span><span class="_zsp">0</span><span>元</span><img src="img/add_icon.png" class="add"><img src="img/jian_icon.png" class="jian" style="display:none"></p>
+			</div>
+			<div class="problem show" id="4_1_1" style="display:none">
+				<div class="cy"><span class="span_bg">页签</span></div>
+				<ul>
+					<li fieldname="supplierName">
+						<div class="left"><span>*</span><i>供应商/采购商品名</i></div>
+						<div class="right">
+							<input type="text" placeholder="请输入供应商/采购商品名" value="" maxlength="8">
+						</div>
+					</li>
+					<li fieldname="prepayTime">
+						<div class="left"><span>*</span><i>预付产生时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-03-01-02" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="prepayAccount" class="prepayAccount">
+						<div class="left"><span>*</span><i>目前的预付帐款</i></div>
+						<div class="right">
+							<input type="number" placeholder="请输入目前的预付帐款" value=""><b class="yuan">元</b></div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="section5">
+			<div class="problem" id="5_1" _code="0001.0003.08.04.01">
+				<p class="_xq"><span>存货</span><span class="_zsp">0</span><span>元</span><img src="img/add_icon.png" class="add"><img src="img/jian_icon.png" class="jian"></p>
+			</div>
+			<div class="problem show" id="5_1_1" style="display: block;">
+				<div class="cy"><span class="span_bg">页签</span></div>
+				<ul>
+					<li fieldname="name">
+						<div class="left"><span>*</span><i>货物名称</i></div>
+						<div class="right">
+							<input type="text" placeholder="请输入货物名称" value="" maxlength="8">
+						</div>
+					</li>
+					<li fieldname="number" class="number">
+						<div class="left"><span>*</span><i>数量</i></div>
+						<div class="right">
+							<input type="number" placeholder="请输入数量" value="">
+						</div>
+					</li>
+					<li fieldname="unitPrice" class="unitPrice">
+						<div class="left"><span>*</span><i>成本</i></div>
+						<div class="right">
+							<input type="number" placeholder="请输入成本" value=""><b class="yuan">元</b></div>
+					</li>
+					<li fieldname="amount" class="amount">
+						<div class="left"><span>*</span><i>总金额</i></div>
+						<div class="right"><span class="w_xspan x_span">0</span><b class="yuan">元</b></div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<footer id="next">
+			<p>提交</p>
+		</footer>
+		<script src="js/formatMoneyText.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var sj;
+			var load = false;
+				
+			var common={//公共样式
+				together:function(){
+					$('.textCon textarea').on('blur',function(){
+						if($('.textCon textarea').val().trim()!=""){
+							$('.textCon span').hide();
+						}else{
+							$('.textCon span').show();
+						}
+						$('.textCon textarea').removeClass('textYellow');
+					});
+					$('.textCon textarea').on('focus',function(){
+						$('.textCon span').hide();
+						$(this).addClass('textYellow');
+					});
+					$(".problem li input").on("focus",function(){
+						$(this).parent().parent("li").addClass("ylborder");
+						$(this).parent().parent("li").siblings().removeClass("ylborder");
+					});
+					$(".problem li input").on("blur",function(){
+						$(this).parent().parent().removeClass("ylborder");
+						if($(this).val().trim()!=""){
+							$(this).parent().siblings(".left").children("i").css({"color":"#a09fa4"});
+						}else{
+							$(this).parent().siblings(".left").children("i").css({"color":"#191919"});
+						}
+					});
+				}
+			}
+			common.together();
+			
+			var cash={//现金及银行存款
+				add:function(){
+					var num=0;
+					for(var i=0;i<$(".bank").length;i++){
+						if($(".bank").eq(i).find("input[type='number']").val().trim()!=""){
+							num+=parseInt($(".bank").eq(i).find("input[type='number']").val());
+						}
+					}
+					$("#section3 .x_span").text(num);
+					var s_j=[];
+					$("#section3 .all_b .bank").each(function(i){
+						var tsj={}
+						var jm = $(this).find("input[type='text']").attr("fieldname");
+						var jv = $(this).find("input[type='text']").val();
+						if(jv.trim()==""){
+							jv=null
+						}
+						var _jm = $(this).find("input[type='number']").attr("fieldname");
+						var _jv = $(this).find("input[type='number']").val();
+						if(_jv.trim()==""){
+							_jv=null
+						}
+						tsj[jm]=jv;
+						tsj[_jm]=_jv;
+						tsj["lineNo"]=i+1;
+						s_j.push(tsj);
+					});
+					var _num=0;
+					var _xj=$("#3_1_0").find("input[type='number']").val();
+					if(_xj.trim()==""){
+						_xj=0;
+					}
+					var _zp=$("#3_1_2").find("input[type='number']").val();
+					if(_zp.trim()==""){
+						_zp=0;
+					}
+					_num = parseInt(num)+parseInt(_xj)+parseInt(_zp);
+					$("#3_1 ._zsp").text(_num);
+					this._num=_num;
+					this.s_j=s_j;
+					console.log(_num)
+				},
+				bingding:function(){
+					$(document).on("blur keyup change",".bank input[type='number'],#3_1_2 input[type='number'],#3_1_0 input[type='number']",this.add);
+					$("._add").on("click",function(){
+						var cc = true;
+						$("#3_1_1_1 .bank" ).each(function(){
+							console.log($(this))
+							if($(this).find(".b_l input").val()==""){
+								cc=false;
+							}
+							if($(this).find(".b_r input").val()==""){
+								cc=false;
+							}
+						});
+						if(cc){
+							$('<div class="bank">'+
+								'<div class="left b_l">'+
+									'<span>*&nbsp;&nbsp;</span>'+
+									'<input maxlength="8" type="text" placeholder="请输入银行名称" class="x_ipt" fieldName="name"/>'+
+								'</div>'+
+								'<div class="right b_r">'+
+									'<input type="number" placeholder="请输入金额" class="x_ipt" fieldName="amount"/><b class="yuan">元</b>'+
+									'<img src="img/_sc.png" class="_sc"/>'+
+								'</div>'+
+							'</div>').appendTo(".all_b");
+						}
+						cash.add();
+						$(".bk").show();
+					});
+					$(document).on("click","._sc",function(){
+						var _this =$(this);
+						$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+						$("._ci").click(function(){
+							$("#mask").remove();
+						});
+						$("._qr").click(function(){
+							$("#mask").remove();
+							_this.parents(".bank").remove();
+							cash.add();
+							if($(".bank").length==0){
+								$(".bk").hide();
+							}
+						});
+					});
+				}
+			}
+			cash.bingding();
+			
+			var credit={//应收账款
+				creat:function(v,bossReceivableAccounts){
+					var a_dd={};
+					var a_num=0;
+					if(v){
+						$("#section0 .cy").children().remove();
+						a_num=0;
+						$(bossReceivableAccounts).each(function(i){
+							a_num++;
+							if($(this)[0].lineNo=="1"){
+								csh($("#section0 .show li"),$(this)[0]);
+							}
+							a_dd[i+1]=[];
+							if($(this)[0]["indentorName"]!=null){
+								if($(this)[0]["indentorName"].length>4){
+									$("<span>"+$(this)[0]["indentorName"].substr(0,4)+"</span>").appendTo("#section0 .cy");
+								}else{
+									$("<span>"+$(this)[0]["indentorName"]+"</span>").appendTo("#section0 .cy");
+								}
+							}else{
+								$("<span>页签</span>").appendTo("#section0 .cy");
+							}
+
+							for(key in $(this)[0]){
+								var _this=$(this);
+								$("#section0 .show li").each(function(){
+									if(key==$(this).attr("fieldname")){
+										var td={};
+										td[key]=_this[0][key];
+										a_dd[i+1].push(td)
+									}
+								})
+							}
+							$("#section0 .cy").children().first().addClass("span_bg");
+						})
+						if($("#section0 .cy").children().length>1){
+							$("#section0 .jian").show();
+						}
+						a_Save();
+						$("#section0 .show").show();
+						$("#section0 .jian").show();
+					}
+					function a_Save(){
+						var i_dx;
+						$("#section0 .cy span").each(function(){
+							if($(this).hasClass("span_bg")){
+								i_dx=$(this).index()+1;
+							}
+						});
+						a_dd[i_dx]=[];
+						$("#section0 .show ul li").each(function(){
+							var newtsj={};
+							if($(this).children(".right").children("span").length==1){
+								var a_v=$(this).children(".right").children("span").text();
+								if(a_v=="请选择"||a_v=="取消"){
+									a_v=null
+								}
+								newtsj[$(this).attr("fieldname")]=a_v;
+							}else if($(this).children(".right").children("input").length==1){
+								var a_v=$(this).children(".right").children("input").val();
+								if(a_v.trim()==""){
+									a_v=null;
+								}
+								newtsj[$(this).attr("fieldname")]=a_v;
+							}
+							a_dd[i_dx].push(newtsj);
+						});
+						total=0;
+						for(var i in a_dd){
+							$(a_dd[i]).each(function(){
+								if($(this)[0].receivableAccount!=undefined){
+									if($(this)[0].receivableAccount!=null){
+										total+=parseInt($(this)[0].receivableAccount)
+									}
+								}
+							})
+						};
+						$("#section0 ._zsp").text(total);
+						return a_dd;
+					}
+					this.a_Save=a_Save;
+					$("#section0 .add").on("click",function(){
+						if(a_num==0){
+							$("#section0 .jian").show();
+							$("#section0 .show").show();
+							a_num++;
+							a_Save();
+						}else{
+							a_Save();
+							var s_t="";
+							var s_l="";
+							var ns_t=null;
+							var l_i=$("#section0 .show ul li");
+							for(var i=0;i<l_i.length;i++){
+								l_i.eq(i).find(".left label").remove();
+								if(l_i.eq(i).attr("islabel")==1){
+									ns_t =1;
+									if(l_i.eq(i).children(".right").children("span").length==1){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										s_t=l_i.eq(i).children(".right").children("span").text();
+									}else if(l_i.eq(i).children(".right").children("input").length==1){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										s_t=l_i.eq(i).children(".right").children("input").val();
+									}else if(l_i.eq(i).children(".right").hasClass("chenckbox")){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										var _st="";
+										for(var j=0;j<l_i.eq(i).children(".right").children("label").length;j++){
+											if(l_i.eq(i).children(".right").children("label").eq(j).children("input").prop("checked")){
+												_st+=l_i.eq(i).children(".right").children("label").eq(j).children("span").text()+",";
+											}
+										}
+										s_t =_st.slice(0,-1);
+									}
+								};
+							}
+							if(ns_t==null&&$("#section0 .problem ul li").first().find("input").val().trim()!=""){
+								a_num++;
+								$('<span><i>'+'页签'+'</i></span>').appendTo("#section0 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+								$("#section0 .show ul li").each(function(){
+									if($(this).children(".right").children("span").length==1){
+										$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});;
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}else if($(this).children(".right").children("input").length==1){
+										$(this).children(".right").children("input").val("");
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}
+								});
+								if(a_num>1){
+									$("#section0 ._xq").children("#section0 .jian").show();
+								}
+							};
+							if(s_t!=""&&s_t!="请选择"){
+								//判断li第一个元素的内容是否为span
+								$('<span>页签</span>').appendTo("#section0 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+								a_num++;
+								if(a_num>1){
+									$("#section0 ._xq").children("#section0 .jian").show();
+								}
+								$("#section0 .show ul li").each(function(){
+									if($(this).children(".right").children("span").length==1){
+										$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});;
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}else if($(this).children(".right").children("input").length==1){
+										$(this).children(".right").children("input").val("");
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}
+								});
+							};
+						}	
+					});
+					
+					
+					
+					
+					
+					$(document).on("click","#section0 .cy span",function(){
+						console.log(a_dd)
+						a_Save();
+						$(this).addClass("span_bg").siblings().removeClass("span_bg");
+						var _idx =$(this).index();
+						$("#section0 .show ul li").each(function(){
+							$(this).find(".left label").remove();
+							var fn = $(this).attr("fieldname");
+							var a_jv;
+							$(a_dd[_idx+1]).each(function(){
+								for(key in $(this)[0]){
+									if(key==fn){
+										a_jv=$(this)[0][key]
+									}
+								}
+							})
+							if($(this).children(".right").children("span").length==1){
+								if(a_jv!=null){
+									$(this).children(".right").children("span").text(a_jv).css({"color":"#191919"});
+									$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+								}else{
+									$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+									$(this).children(".left").children("i").css({"color":"#191919"});
+								}
+							}else if($(this).children(".right").children("input").length==1){
+								if(a_jv!=null){
+									if($(this).children(".right").children("input").attr("name")!="input_date"){
+										if(!isNaN(parseInt(a_jv))){
+											$(this).children(".right").children("input").val(parseInt(a_jv));
+										}else{
+											$(this).children(".right").children("input").val(a_jv);
+										}
+									}else{
+										$(this).children(".right").children("input").val(a_jv);
+									}
+									$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+								}else{
+									$(this).children(".right").children("input").val("");
+									$(this).children(".left").children("i").css({"color":"#191919"});
+								}
+							}
+						});
+						$("#section0 .problem .cy span").each(function(){
+							if(a_dd[$(this).index()+1][0][0]!=null){
+								$(this).text(a_dd[$(this).index()+1][0][0])
+							}
+						});
+					});
+					$("#section0 .jian").on("click",function(){
+						a_Save();
+						$("#section0 .problem .cy span").each(function(){
+							if(a_dd[$(this).index()+1][0][0]!=null){
+								$(this).text(a_dd[$(this).index()+1][0][0])
+							}
+						});
+						if(a_num>0){
+							$("#section0 .cy span").each(function(){
+								$("<img src='img/close_icon.png'/>").appendTo($(this));
+							})
+							$(".cy span img").click(function(){
+								var _tp =$(this).parent();
+								var _tidx=$(this).parent().index();
+								$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+								$("._ci").click(function(){
+									$("#section0 .cy span img").remove();
+									$("#mask").remove();
+								});
+								$("._qr").click(function(){
+									if(a_num==1){
+										$("#section0 .jian").hide();
+										$("#section0 .show").hide();
+										$("#section0 .cy span img").remove();
+										$("#mask").remove();
+										$("#section0 ._zsp").text("0");
+										a_num--;
+									}else{
+										$("#section0 .cy span img").remove();
+										$("#mask").remove();
+										_tp.remove();
+										if(_tidx==0){
+											$("#section0 .show .cy span").eq(0).addClass("span_bg").siblings().removeClass("span_bg");
+										}else{
+											$("#section0 .show .cy span").eq(_tidx-1).addClass("span_bg").siblings().removeClass("span_bg");
+										}
+										delete a_dd[_tidx+1];
+										if(_tidx+1<a_num){
+											var _sol=0;
+											var _sos={};
+											for(var i in a_dd){
+												_sol++;
+												_sos[_sol]=a_dd[i];
+											}
+											a_dd=_sos;
+										}
+										a_num--;
+										if(a_num==0){
+											$("#section0 .jian").hide();
+										}
+										$("#section0 .show ul li").each(function(){
+											$(this).find(".left label").remove();
+											if(_tidx==0){
+												_tidx=1
+											}
+											var fn = $(this).attr("fieldname");
+											var a_jv;
+											$(a_dd[_tidx]).each(function(){
+												for(key in $(this)[0]){
+													if(key==fn){
+														a_jv=$(this)[0][key]
+													}
+												}
+											})
+											if($(this).children(".right").children("span").length==1){
+												if(a_jv!=null){
+													$(this).children(".right").children("span").text(a_jv).css({"color":"#191919"});
+													$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+												}else{
+													$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+													$(this).children(".left").children("i").css({"color":"#191919"});
+												}
+											}else if($(this).children(".right").children("input").length==1){
+												if(a_jv!=null){
+													if($(this).children(".right").children("input").attr("name")!="input_date"){
+														if(!isNaN(parseInt(a_jv))){
+															$(this).children(".right").children("input").val(parseInt(a_jv));
+														}else{
+															$(this).children(".right").children("input").val(a_jv);
+														}
+													}else{
+														$(this).children(".right").children("input").val(a_jv);
+													}
+													$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+												}else{
+													$(this).children(".right").children("input").val("");
+													$(this).children(".left").children("i").css({"color":"#191919"});
+												}
+											}
+										});
+										a_Save();
+									}	
+								});
+							})
+						}
+					});
+					var total;
+					if($.isEmptyObject(a_dd)){
+						total=0;
+					};
+					
+					$("#section0 .receivableAccount").find("input").on("keyup",function(){
+						a_Save();
+					});
+					if(a_num==0){
+						$("#section0 .jian").hide();
+					};
+					$("#section0 .show ul li").first().find("input").on("keyup change",function(){
+						var _span;
+						$("#section0 .cy span").each(function(){
+							if($(this).hasClass("span_bg")){
+								_span=$(this)
+							}
+						})
+						if($(this).val().trim()!=""){
+							if($(this).val().length>4){
+								_span.text($(this).val().substr(0,4));
+							}else{
+								_span.text($(this).val());
+							}
+						}else{
+							_span.text("页签");
+						}
+					})
+				}
+			}
+			// credit.creat();
+			var fund = {//预付款项
+				advance:function(v,bossPrepayAccounts){
+					var a_dd={};
+					var a_num=0;
+					if(v){
+						$("#section4 .cy").children().remove();
+						a_num=0;
+						$(bossPrepayAccounts).each(function(i){
+							console.log($(this)[0])
+							a_num++;
+							if($(this)[0].lineNo=="1"){
+								csh($("#section4 .show li"),$(this)[0]);
+							}
+							a_dd[i+1]=[];
+							if($(this)[0]["supplierName"]!=null){
+								if($(this)[0]["supplierName"].length>4){
+									$("<span>"+$(this)[0]["supplierName"].substr(0,4)+"</span>").appendTo("#section4 .cy");
+								}else{
+									$("<span>"+$(this)[0]["supplierName"]+"</span>").appendTo("#section4 .cy");
+								}
+							}else{
+								$("<span>页签</span>").appendTo("#section4 .cy");
+							}
+							for(key in $(this)[0]){
+								var _this=$(this);
+								$("#section4 .show li").each(function(){
+									if(key==$(this).attr("fieldname")){
+										var td={};
+										td[key]=_this[0][key];
+										a_dd[i+1].push(td)
+									}
+								})
+							}
+							$("#section4 .cy").children().first().addClass("span_bg");
+						})
+						if($("#section4 .cy").children().length>1){
+							$("#section4 .jian").show();
+						}
+						a_Save();
+						$("#section4 .show").show();
+						$("#section4 .jian").show();
+					}
+					function a_Save(){
+						var i_dx;
+						$("#section4 .cy span").each(function(){
+							if($(this).hasClass("span_bg")){
+								i_dx=$(this).index()+1;
+							}
+						});
+						a_dd[i_dx]=[];
+						$("#section4 .show ul li").each(function(){
+							var newtsj={};
+							if($(this).children(".right").children("span").length==1){
+								var a_v=$(this).children(".right").children("span").text();
+								if(a_v=="请选择"||a_v=="取消"){
+									a_v=null
+								}
+								newtsj[$(this).attr("fieldname")]=a_v;
+							}else if($(this).children(".right").children("input").length==1){
+								var a_v=$(this).children(".right").children("input").val();
+								if(a_v.trim()==""){
+									a_v=null;
+								}
+								newtsj[$(this).attr("fieldname")]=a_v;
+							}
+							a_dd[i_dx].push(newtsj);
+						});
+						total=0;
+						for(var i in a_dd){
+							$(a_dd[i]).each(function(){
+								if($(this)[0].prepayAccount!=undefined){
+									if($(this)[0].prepayAccount!=null){
+										total+=parseInt($(this)[0].prepayAccount)
+									}
+								}
+							})
+						};
+						$("#section4 ._zsp").text(total);
+						return a_dd;
+					}
+					this.a_Save=a_Save;
+					$("#section4 .add").on("click",function(){
+						if(a_num==0){
+							$("#section4 .jian").show();
+							$("#section4 .show").show();
+							a_num++;
+							a_Save();
+						}else{
+							a_Save();
+							var s_t="";
+							var s_l="";
+							var ns_t=null;
+							var l_i=$("#section4 .show ul li");
+							for(var i=0;i<l_i.length;i++){
+								l_i.eq(i).find(".left label").remove();
+								if(l_i.eq(i).attr("islabel")==1){
+									ns_t =1;
+									if(l_i.eq(i).children(".right").children("span").length==1){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										s_t=l_i.eq(i).children(".right").children("span").text();
+									}else if(l_i.eq(i).children(".right").children("input").length==1){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										s_t=l_i.eq(i).children(".right").children("input").val();
+									}else if(l_i.eq(i).children(".right").hasClass("chenckbox")){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										var _st="";
+										for(var j=0;j<l_i.eq(i).children(".right").children("label").length;j++){
+											if(l_i.eq(i).children(".right").children("label").eq(j).children("input").prop("checked")){
+												_st+=l_i.eq(i).children(".right").children("label").eq(j).children("span").text()+",";
+											}
+										}
+										s_t =_st.slice(0,-1);
+									}
+								};
+							}
+							if(ns_t==null&&$("#section4 .problem ul li").first().find("input").val()!=""){
+								a_num++;
+								$('<span>页签</span>').appendTo("#section4 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+								$("#section4 .show ul li").each(function(){
+									if($(this).children(".right").children("span").length==1){
+										$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});;
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}else if($(this).children(".right").children("input").length==1){
+										$(this).children(".right").children("input").val("");
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}
+								});
+								if(a_num>1){
+									$("#section4 ._xq").children("#section4 .jian").show();
+								}
+							};
+							if(s_t!=""&&s_t!="请选择"){
+								//判断li第一个元素的内容是否为span
+								a_num++;
+								$('<span>页签</span>').appendTo("#section4 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+								a_num++;
+								if(a_num>0){
+									$("#section4 ._xq").children("#section4 .jian").show();
+								}
+								$("#section4 .show ul li").each(function(){
+									if($(this).children(".right").children("span").length==1){
+										$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});;
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}else if($(this).children(".right").children("input").length==1){
+										$(this).children(".right").children("input").val("");
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}
+								});
+							};
+						}
+							
+					});
+					
+					
+					
+					
+					
+					$(document).on("click","#section4 .cy span",function(){
+						a_Save();
+						$(this).addClass("span_bg").siblings().removeClass("span_bg");
+						var _idx =$(this).index();
+						$("#section4 .show ul li").each(function(){
+							$(this).find(".left label").remove();
+							var fn = $(this).attr("fieldname");
+							var a_jv;
+							$(a_dd[_idx+1]).each(function(){
+								for(key in $(this)[0]){
+									if(key==fn){
+										a_jv=$(this)[0][key]
+									}
+								}
+							})
+							if($(this).children(".right").children("span").length==1){
+								if(a_jv!=null){
+									$(this).children(".right").children("span").text(a_jv).css({"color":"#191919"});
+									$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+								}else{
+									$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+									$(this).children(".left").children("i").css({"color":"#191919"});
+								}
+							}else if($(this).children(".right").children("input").length==1){
+								if(a_jv!=null){
+									if($(this).children(".right").children("input").attr("name")!="input_date"){
+										if(!isNaN(parseInt(a_jv))){
+											$(this).children(".right").children("input").val(parseInt(a_jv));
+										}else{
+											$(this).children(".right").children("input").val(a_jv);
+										}
+									}else{
+										$(this).children(".right").children("input").val(a_jv);
+									}
+									$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+								}else{
+									$(this).children(".right").children("input").val("");
+									$(this).children(".left").children("i").css({"color":"#191919"});
+								}
+							}
+						});
+						$("#section4 .problem .cy span").each(function(){
+							if(a_dd[$(this).index()+1][0][0]!=null){
+								$(this).text(a_dd[$(this).index()+1][0][0])
+							}
+						});
+					});
+					$("#section4 .jian").on("click",function(){
+						a_Save();
+						$("#section4 .problem .cy span").each(function(){
+							if(a_dd[$(this).index()+1][0][0]!=null){
+								$(this).text(a_dd[$(this).index()+1][0][0])
+							}
+						});
+						if(a_num>0){
+							$("#section4 .cy span").each(function(){
+								$("<img src='img/close_icon.png'/>").appendTo($(this));
+							})
+							$("#section4 .cy span img").click(function(){
+								var _tp =$(this).parent();
+								var _tidx=$(this).parent().index();
+								$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+								$("._ci").click(function(){
+									$("#section4 .cy span img").remove();
+									$("#mask").remove();
+								});
+								$("._qr").click(function(){
+									if(a_num==1){
+										$("#section4 .jian").hide();
+										$("#section4 .show").hide();
+										$("#section4 .cy span img").remove();
+										$("#mask").remove();
+										$("#section4 ._zsp").text("0");
+										a_num--;
+									}else{
+										$("#section4 .cy span img").remove();
+										$("#mask").remove();
+										_tp.remove();
+										if(_tidx==0){
+											$("#section4 .show .cy span").eq(0).addClass("span_bg").siblings().removeClass("span_bg");
+										}else{
+											$("#section4 .show .cy span").eq(_tidx-1).addClass("span_bg").siblings().removeClass("span_bg");
+										}
+										delete a_dd[_tidx+1];
+										if(_tidx+1<a_num){
+											var _sol=0;
+											var _sos={};
+											for(var i in a_dd){
+												_sol++;
+												_sos[_sol]=a_dd[i];
+											}
+											a_dd=_sos;
+										}
+										a_num--;
+										if(a_num==0){
+											$("#section4 .jian").hide();
+										}
+										$("#section4 .show ul li").each(function(){
+											$(this).find(".left label").remove();
+											if(_tidx==0){
+												_tidx=1
+											}
+											var fn = $(this).attr("fieldname");
+											var a_jv;
+											$(a_dd[_tidx]).each(function(){
+												for(key in $(this)[0]){
+													if(key==fn){
+														a_jv=$(this)[0][key]
+													}
+												}
+											})
+											if($(this).children(".right").children("span").length==1){
+												if(a_jv!=null){
+													$(this).children(".right").children("span").text(a_jv).css({"color":"#191919"});
+													$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+												}else{
+													$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+													$(this).children(".left").children("i").css({"color":"#191919"});
+												}
+											}else if($(this).children(".right").children("input").length==1){
+												if(a_jv!=null){
+													if($(this).children(".right").children("input").attr("name")!="input_date"){
+														if(!isNaN(parseInt(a_jv))){
+															$(this).children(".right").children("input").val(parseInt(a_jv));
+														}else{
+															$(this).children(".right").children("input").val(a_jv);
+														}
+													}else{
+														$(this).children(".right").children("input").val(a_jv);
+													}
+													$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+												}else{
+													$(this).children(".right").children("input").val("");
+													$(this).children(".left").children("i").css({"color":"#191919"});
+												}
+											}
+										});
+										a_Save();
+									}	
+								});
+							})
+						}
+					});
+					var total;
+					if($.isEmptyObject(a_dd)){
+						total=0;
+					};
+					
+					$("#section4 .prepayAccount").find("input").on("keyup",function(){
+						a_Save();
+					});
+					if(a_num==0){
+						$("#section4 .jian").hide();
+					};
+					$("#section4 .show ul li").first().find("input").on("keyup change",function(){
+						var _span;
+						$("#section4 .cy span").each(function(){
+							if($(this).hasClass("span_bg")){
+								_span=$(this)
+							}
+						})
+						if($(this).val().trim()!=""){
+							if($(this).val().length>4){
+								_span.text($(this).val().substr(0,4));
+							}else{
+								_span.text($(this).val());
+							}
+						}else{
+							_span.text("页签");
+						}
+					})
+				
+				}
+			}
+			// fund.advance();
+		
+			var stock={//存货
+				inventory:function(v,bossStocks){
+					var a_dd={};
+					var a_num=1;
+					if(v){
+						$("#section5 .cy").children().remove();
+						a_num=0;
+						$(bossStocks).each(function(i){
+							a_num++;
+							if($(this)[0].lineNo=="1"){
+								csh($("#section5 .show li"),$(this)[0]);
+							}
+							a_dd[i+1]=[];
+							if($(this)[0]["name"]!=null){
+								if($(this)[0]["name"].length>4){
+									$("<span>"+$(this)[0]["name"].substr(0,4)+"</span>").appendTo("#section5 .cy");
+								}else{
+									$("<span>"+$(this)[0]["name"]+"</span>").appendTo("#section5 .cy");
+								}
+							}else{
+								$("<span>页签</span>").appendTo("#section5 .cy");
+							}
+							for(key in $(this)[0]){
+								var _this=$(this);
+								$("#section5 .show li").each(function(){
+									if(key==$(this).attr("fieldname")){
+										var td={};
+										td[key]=_this[0][key];
+										a_dd[i+1].push(td)
+									}
+								})
+							}
+							$("#section5 .cy").children().first().addClass("span_bg");
+						})
+						if($("#section5 .cy").children().length>1){
+							$("#section5 .jian").show();
+						}
+						a_Save();
+					}
+					function a_Save(){
+						var i_dx;
+						$("#section5 .cy span").each(function(){
+							if($(this).hasClass("span_bg")){
+								i_dx=$(this).index()+1;
+							}
+						});
+						a_dd[i_dx]=[];
+						$("#section5 .show ul li").each(function(){
+							var newtsj={};
+							if($(this).children(".right").children("span").length==1){
+								var a_v=$(this).children(".right").children("span").text();
+								if(a_v=="请选择"||a_v=="取消"){
+									a_v=null
+								}
+								newtsj[$(this).attr("fieldname")]=a_v;
+							}else if($(this).children(".right").children("input").length==1){
+								
+								var a_v=$(this).children(".right").children("input").val();
+								if(a_v.trim()==""){
+									a_v=null;
+								}
+								newtsj[$(this).attr("fieldname")]=a_v;
+							}
+							a_dd[i_dx].push(newtsj);
+						});
+						total=0;
+						for(var i in a_dd){
+							$(a_dd[i]).each(function(){
+								if($(this)[0].amount!=undefined){
+									if($(this)[0].amount!=null){
+										total+=toDecimal(parseFloat($(this)[0].amount));
+									}
+								}
+							})
+						};
+						$("#section5 ._zsp").text(total)
+						return a_dd;
+					}
+					this.a_Save=a_Save;
+					$("#section5 .add").on("click",function(){
+						if($("#section5 .show:visible").length==0){
+							$("#section5 .show,#section5 .jian").show();
+							a_Save();
+						}else{
+							a_Save();
+							var s_t="";
+							var s_l="";
+							var ns_t=null;
+							var l_i=$("#section5 .show ul li");
+							for(var i=0;i<l_i.length;i++){
+								l_i.eq(i).find(".left label").remove();
+								if(l_i.eq(i).attr("islabel")==1){
+									ns_t =1;
+									if(l_i.eq(i).children(".right").children("span").length==1){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										s_t=l_i.eq(i).children(".right").children("span").text();
+									}else if(l_i.eq(i).children(".right").children("input").length==1){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										s_t=l_i.eq(i).children(".right").children("input").val();
+									}else if(l_i.eq(i).children(".right").hasClass("chenckbox")){
+										s_l= l_i.eq(i).children(".left").children("i").text();
+										var _st="";
+										for(var j=0;j<l_i.eq(i).children(".right").children("label").length;j++){
+											if(l_i.eq(i).children(".right").children("label").eq(j).children("input").prop("checked")){
+												_st+=l_i.eq(i).children(".right").children("label").eq(j).children("span").text()+",";
+											}
+										}
+										s_t =_st.slice(0,-1);
+									}
+								};
+							}
+							if(ns_t==null&&$("#section5 .problem ul li").first().find("input").val().trim()!=""){
+								a_num++;
+								$('<span>页签</span>').appendTo("#section5 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+								$("#section5 .show ul li").each(function(){
+									if($(this).children(".right").children("span").length==1){
+										if($(this).children(".right").children("span").hasClass("w_xspan")){
+											$(this).children(".right").children("span").text("0").css({"color":"#a0a0a5"});
+										}else{
+											$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+										};
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}else if($(this).children(".right").children("input").length==1){
+										$(this).children(".right").children("input").val("");
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}
+								});
+								if(a_num>1){
+									$("#section5 ._xq").children("#section5 .jian").show();
+								}
+							};
+							if(s_t!=""&&s_t!="请选择"){
+								//判断li第一个元素的内容是否为span
+								a_num++;
+								$('<span>页签</span>').appendTo("#section5 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+								a_num++;
+								if(a_num>1){
+									$("#section5 ._xq").children("#section5 .jian").show();
+								}
+								$("#section5 .show ul li").each(function(){
+									if($(this).children(".right").children("span").length==1){
+										if($(this).children(".right").children("span").hasClass("w_xspan")){
+											$(this).children(".right").children("span").text("0").css({"color":"#a0a0a5"});
+										}else{
+											$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+										}
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}else if($(this).children(".right").children("input").length==1){
+										$(this).children(".right").children("input").val("");
+										$(this).children(".left").children("i").css({"color":"#191919"});
+									}
+								});
+							};
+						}
+							
+					});
+					
+					
+					
+					
+					
+					$(document).on("click","#section5 .cy span",function(){
+						a_Save();
+						$(this).addClass("span_bg").siblings().removeClass("span_bg");
+						var _idx =$(this).index();
+						$("#section5 .show ul li").each(function(){
+							$(this).find(".left label").remove();
+							var fn = $(this).attr("fieldname");
+							var a_jv;
+							$(a_dd[_idx+1]).each(function(){
+								for(key in $(this)[0]){
+									if(key==fn){
+										a_jv=$(this)[0][key]
+									}
+								}
+							})
+							if($(this).children(".right").children("span").length==1){
+								if(a_jv!=null){
+									$(this).children(".right").children("span").text(a_jv).css({"color":"#191919"});
+									$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+								}else{
+									$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+									$(this).children(".left").children("i").css({"color":"#191919"});
+								}
+							}else if($(this).children(".right").children("input").length==1){
+								if(a_jv!=null){
+									if($(this).children(".right").children("input").attr("name")!="input_date"){
+										if(!isNaN(parseInt(a_jv))){
+											if($(this).hasClass("unitPrice")){
+												$(this).children(".right").children("input").val(a_jv);
+											}else{
+												$(this).children(".right").children("input").val(parseInt(a_jv));
+											}
+										}else{
+											$(this).children(".right").children("input").val(a_jv);
+										}
+									}else{
+										$(this).children(".right").children("input").val(a_jv);
+									}
+									$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+								}else{
+									$(this).children(".right").children("input").val("");
+									$(this).children(".left").children("i").css({"color":"#191919"});
+								}
+							}
+						});
+						$("#section5 .problem .cy span").each(function(){
+							if(a_dd[$(this).index()+1][0][0]!=null){
+								$(this).text(a_dd[$(this).index()+1][0][0])
+							}
+						});
+					});
+					$("#section5 .jian").on("click",function(){
+						a_Save();
+						$("#section5 .problem .cy span").each(function(){
+							if(a_dd[$(this).index()+1][0][0]!=null){
+								$(this).text(a_dd[$(this).index()+1][0][0])
+							}
+						});
+						if(a_num>0){
+							$("#section5 .cy span").each(function(){
+								$("<img src='img/close_icon.png'/>").appendTo($(this));
+							})
+							$("#section5 .cy span img").click(function(){
+								var _tp =$(this).parent();
+								var _tidx=$(this).parent().index();
+								$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+								$("#section5 ._ci").click(function(){
+									$("#section5 .cy span img").remove();
+									$("#mask").remove();
+								});
+								$("._qr").click(function(){
+									$("#section5 .cy span img").remove();
+									$("#mask").remove();
+									if(a_num==1){
+										$("#section5 .jian").hide();
+										$("#section5 .show").hide();
+										$("#section5 ._zsp").text("0");
+									}else{
+										_tp.remove();
+										if(_tidx==0){
+											$("#section5 .show .cy span").eq(0).addClass("span_bg").siblings().removeClass("span_bg");
+										}else{
+											$("#section5 .show .cy span").eq(_tidx-1).addClass("span_bg").siblings().removeClass("span_bg");
+										}
+										delete a_dd[_tidx+1];
+										if(_tidx+1<a_num){
+											var _sol=0;
+											var _sos={};
+											for(var i in a_dd){
+												_sol++;
+												_sos[_sol]=a_dd[i];
+											}
+											a_dd=_sos;
+										}
+										a_num--;
+										$("#section5 .show ul li").each(function(){
+											$(this).find(".left label").remove();
+											if(_tidx==0){
+												_tidx=1
+											}
+											var fn = $(this).attr("fieldname");
+											var a_jv;
+											$(a_dd[_tidx]).each(function(){
+												for(key in $(this)[0]){
+													if(key==fn){
+														a_jv=$(this)[0][key]
+													}
+												}
+											})
+											if($(this).children(".right").children("span").length==1){
+												if(a_jv!=null){
+													$(this).children(".right").children("span").text(a_jv).css({"color":"#191919"});
+													$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+												}else{
+													$(this).children(".right").children("span").text("请选择").css({"color":"#a0a0a5"});
+													$(this).children(".left").children("i").css({"color":"#191919"});
+												}
+											}else if($(this).children(".right").children("input").length==1){
+												if(a_jv!=null){
+													if($(this).children(".right").children("input").attr("name")!="input_date"){
+														if(!isNaN(parseInt(a_jv))){
+															if($(this).hasClass("unitPrice")){
+																$(this).children(".right").children("input").val(a_jv);
+															}else{
+																$(this).children(".right").children("input").val(parseInt(a_jv));
+															}
+														}else{
+															$(this).children(".right").children("input").val(a_jv);
+														}
+													}else{
+														$(this).children(".right").children("input").val(a_jv);
+													}
+													$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+												}else{
+													$(this).children(".right").children("input").val("");
+													$(this).children(".left").children("i").css({"color":"#191919"});
+												}
+											}
+										});
+										a_Save();
+									};	
+								});
+								$("._ci").click(function(){
+									$("#mask").remove();
+								});
+							})
+						}
+					});
+					var total;
+					if($.isEmptyObject(a_dd)){
+						total=0;
+					};
+					$("#section5 .number").find("input").on("keyup",function(){
+						var _li2=$("#section5 .number").find("input").val();
+						if(_li2.trim()==""){
+							_li2=0;
+						}
+						var _li3=$("#section5 .unitPrice").find("input").val();
+						if(_li3.trim()==""){
+							_li3=0;
+						}
+						var n_m=zs_toDecimal(parseInt(_li2)*parseFloat(_li3));
+						$("#section5 .amount .w_xspan").text(n_m);
+						a_Save();
+					});
+					$("#section5 .unitPrice").find("input").on("keyup",function(){
+						var _li2=$("#section5 .number").find("input").val();
+						if(_li2.trim()==""){
+							_li2=0;
+						}
+						var _li3=$("#section5 .unitPrice").find("input").val();
+						if(_li3.trim()==""){
+							_li3=0;
+						}
+						var n_m=zs_toDecimal(parseInt(_li2)*parseFloat(_li3));
+						$("#section5 .amount .w_xspan").text(n_m);
+						a_Save();
+					});
+					$("#section5 .show ul li").first().find("input").on("keyup change",function(){
+						var _span;
+						$("#section5 .cy span").each(function(){
+							if($(this).hasClass("span_bg")){
+								_span=$(this)
+							}
+						})
+						if($(this).val().trim()!=""){
+							if($(this).val().length>4){
+								_span.text($(this).val().substr(0,4));
+							}else{
+								_span.text($(this).val());
+							}
+						}else{
+							_span.text("页签");
+						}
+					})
+					if(a_num==0){
+						$("#section5 .jian").hide();
+					};
+				}
+			}
+//			stock.inventory();
+			console.log(stock)
+			$("#next").on("click",function(){
+				submit(true)
+			});
+			function submit(tf){
+				if(sj!=undefined){
+					sj["balanceSheetModel"]["bossDeposits"]=[];
+					sj["balanceSheetModel"]["bossReceivableAccounts"]=[];
+					sj["balanceSheetModel"]["bossPrepayAccounts"]=[];
+					sj["balanceSheetModel"]["bossStocks"]=[];
+				}else{
+					sj={"balanceSheetModel":{"balanceSheetAnswers":[],"bossDeposits":[],"bossReceivableAccounts":[],"bossPrepayAccounts":[],"bossStocks":[]}};
+				}
+				//bossDeposits现金及银行存款
+//				cash.add();
+				var bossDepositsA_dd=cash._num;//现金及银行存款
+				(function (){
+					var a=true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){//现金及银行存款
+						if($(this)[0].code==$("#section3 ._zsp").parents(".problem").attr("_code")){
+							a=false
+							$(this)[0].value=$("#section3 ._zsp").text();
+							if($(this)[0].value.trim()==""){
+								$(this)[0].value==null;
+							}
+						}
+					});
+					if(a){
+						var bossDepositsVlue={};
+						bossDepositsVlue["value"]=$("#section3 ._zsp").text();
+						bossDepositsVlue["code"]=$("#section3 ._zsp").parents(".problem").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossDepositsVlue);
+					}
+				})();
+				(function (){
+					var a=true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){//现金
+						if($(this)[0].code==$("#3_1_0").attr("_code")){
+							a=false
+							$(this)[0].value=$("#3_1_0 .x_jpt").val();
+							if($(this)[0].value.trim()==""){
+								$(this)[0].value==null;
+							}
+						}
+					});
+					if(a){
+						var bossDepositsVlue_xj={};//现金
+						bossDepositsVlue_xj["value"]=$("#3_1_0 .x_jpt").val();
+						if(bossDepositsVlue_xj["value"].trim()==""){
+							bossDepositsVlue_xj["value"]=null;
+						}
+						bossDepositsVlue_xj["code"]=$("#3_1_0").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossDepositsVlue_xj);
+					}
+				})();
+				(function (){
+					var a=true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){//银行存款
+						if($(this)[0].code==$("#3_1_1").attr("_code")){
+							a=false
+							$(this)[0].value=$("#3_1_1 .x_span").text();
+							if($(this)[0].value.trim()==""){
+								$(this)[0].value==null;
+							}
+						}
+					});
+					if(a){
+						var bossDepositsVlue_ck={};//银行存款
+						bossDepositsVlue_ck["value"]=$("#3_1_1 .x_span").text();
+						bossDepositsVlue_ck["code"]=$("#3_1_1").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossDepositsVlue_ck);
+					}
+				})();
+
+				cash.add()
+				sj["balanceSheetModel"]["bossDeposits"]=cash.s_j;
+				(function (){
+					var a=true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){//支票
+						if($(this)[0].code==$("#3_1_2").attr("_code")){
+							a=false
+							$(this)[0].value=$("#3_1_2 .x_jpt").val();
+							if($(this)[0].value.trim()==""){
+								$(this)[0].value==null;
+							}
+						}
+					});
+					if(a){
+						var bossDepositsVlue_zp={};//支票
+						bossDepositsVlue_zp["value"]=$("#3_1_2 .x_jpt").val();
+						if(bossDepositsVlue_zp["value"].trim()==""){
+							bossDepositsVlue_zp["value"]=null;
+						}
+						bossDepositsVlue_zp["code"]=$("#3_1_2").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossDepositsVlue_zp);
+					}
+				})();
+				//todo
+
+				
+				
+				
+				//bossReceivableAccounts应收账款
+//				credit.creat();
+				if($('#section0 .show:visible').length==0){
+					(function (){
+						var a=true;
+						$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){
+							if($(this)[0].code==$("#section0 ._zsp").parents(".problem").attr("_code")){
+								a=false
+								$(this)[0].value=$("#section0 ._zsp").text();
+								if($(this)[0].value.trim()==""){
+									$(this)[0].value==null;
+								}
+							}
+						});
+						if(a){
+							var bossReceivableAccountsVlue={};
+							bossReceivableAccountsVlue["value"]=$("#section0 ._zsp").text();
+							bossReceivableAccountsVlue["code"]=$("#section0 ._zsp").parents(".problem").attr("_code");
+							sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossReceivableAccountsVlue);
+						}
+					})();
+					sj["balanceSheetModel"]["bossReceivableAccounts"]=[];
+				}else{
+					var bossReceivableAccountsA_dd=credit.a_Save();
+					sj["balanceSheetModel"]["bossReceivableAccounts"]=tsj(bossReceivableAccountsA_dd);
+					(function (){
+						var a=true;
+						$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){
+							if($(this)[0].code==$("#section0 ._zsp").parents(".problem").attr("_code")){
+								a=false
+								$(this)[0].value=$("#section0 ._zsp").text();
+								if($(this)[0].value.trim()==""){
+									$(this)[0].value==null;
+								}
+							}
+						});
+						if(a){
+							var bossReceivableAccountsVlue={};
+							bossReceivableAccountsVlue["value"]=$("#section0 ._zsp").text();
+							bossReceivableAccountsVlue["code"]=$("#section0 ._zsp").parents(".problem").attr("_code");
+							sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossReceivableAccountsVlue);
+						}
+					})();
+				}
+					
+				
+				//todo
+				
+				
+				
+				//bossPrepayAccounts预付账款
+
+//				fund.advance();
+				if($('#section4 .show:visible').length==0){
+					(function (){
+						var a=true;
+						$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){
+							if($(this)[0].code==$("#section4 ._zsp").parents(".problem").attr("_code")){
+								a=false
+								$(this)[0].value=$("#section4 ._zsp").text();
+								if($(this)[0].value.trim()==""){
+									$(this)[0].value==null;
+								}
+							}
+						});
+						if(a){
+							var bossPrepayAccountsVlue={};
+							bossPrepayAccountsVlue["value"]=$("#section4 ._zsp").text();
+							bossPrepayAccountsVlue["code"]=$("#section4 ._zsp").parents(".problem").attr("_code");
+							sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossPrepayAccountsVlue);
+						}
+					})();
+					sj["balanceSheetModel"]["bossPrepayAccounts"]=[];
+				}else{
+					var bossPrepayAccountsA_dd=fund.a_Save();
+					sj["balanceSheetModel"]["bossPrepayAccounts"]=tsj(bossPrepayAccountsA_dd);
+					(function (){
+						var a=true;
+						$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){
+							if($(this)[0].code==$("#section4 ._zsp").parents(".problem").attr("_code")){
+								a=false
+								$(this)[0].value=$("#section4 ._zsp").text();
+								if($(this)[0].value.trim()==""){
+									$(this)[0].value==null;
+								}
+							}
+						});
+						if(a){
+							var bossPrepayAccountsVlue={};
+							bossPrepayAccountsVlue["value"]=$("#section4 ._zsp").text();
+							bossPrepayAccountsVlue["code"]=$("#section4 ._zsp").parents(".problem").attr("_code");
+							sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossPrepayAccountsVlue);
+						}
+					})();
+				}
+					
+				
+				//todo
+				
+				
+				// bossStocks存货
+				if($('#section5 .show:visible').length==0){
+					(function (){
+						var a=true;
+						$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){
+							if($(this)[0].code==$("#section5 ._zsp").parents(".problem").attr("_code")){
+								a=false
+								$(this)[0].value=$("#section5 ._zsp").text();
+								if($(this)[0].value.trim()==""){
+									$(this)[0].value==null;
+								}
+							}
+						});
+						if(a){
+							var bossStocksVlue={};
+							bossStocksVlue["value"]=$("#section5 ._zsp").text();
+							bossStocksVlue["code"]=$("#section5 ._zsp").parents(".problem").attr("_code");
+							sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossStocksVlue);
+						}
+					})();
+					sj["balanceSheetModel"]["bossStocks"]=[];
+				}else{
+					// stock.inventory();
+					// stock.a_Save();
+					var bossStocksA_dd=stock.a_Save();
+					// console.log(fund.sk)
+					sj["balanceSheetModel"]["bossStocks"]=tsj(bossStocksA_dd);
+					(function (){
+						var a=true;
+						$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function(){
+							if($(this)[0].code==$("#section5 ._zsp").parents(".problem").attr("_code")){
+								a=false
+								$(this)[0].value=$("#section5 ._zsp").text();
+								if($(this)[0].value.trim()==""){
+									$(this)[0].value==null;
+								}
+							}
+						});
+						if(a){
+							var bossStocksVlue={};
+							bossStocksVlue["value"]=$("#section5 ._zsp").text();
+							bossStocksVlue["code"]=$("#section5 ._zsp").parents(".problem").attr("_code");
+							sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossStocksVlue);
+						}
+					})();
+				};
+					
+				
+				var status='2';
+				$("#3_1_0 ul li:first").find(".left label").remove();
+				if($("#3_1_0 ul li:first").find("input").val().trim()!=""){
+					if(!fushu($("#3_1_0 ul li:first").find("input").val())){
+						status="1";
+						$('<label class="message_info">10位正整数</label>').appendTo($("#3_1_0 ul li:first").find(".left"))
+						
+					};
+				};
+				$("#3_1_2 ul li:first").find(".left label").remove();
+				if($("#3_1_2 ul li:first").find("input").val().trim()!=""){
+					if(!fushu($("#3_1_2 ul li:first").find("input").val())){
+						status="1";
+						$('<label class="message_info">10位正整数</label>').appendTo($("#3_1_2 ul li:first").find(".left"))
+						
+					};
+				};
+				if($('#3_1_1_1 ul li .bank').length!=0){
+					$("#3_1_1 li:first .left label").remove();
+					$('#3_1_1_1 ul li .bank').each(function(){
+						if($(this).find(".b_r input").val().trim()==""){
+							console.log('请输入金额');
+							$("#3_1_1 li:first .left label").remove();
+							$("#3_1_1 li:first .left").append('<label class="message_info">请输入金额</label>');
+							status="1";
+						}else{
+							if(!fushu($(this).find(".b_r input").val())){
+								status="1";
+								if($(this).parent(".b_r").length!=0){
+									$(this).parents(".problem").prev().find(".left label").remove();
+									$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+								}else{
+									$(this).parents(".problem").prev().find(".left label").remove();
+									$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+								};
+							};
+						}
+						if($(this).find(".b_l input").val().trim()==""){
+							console.log('请输入银行名称');
+							$("#3_1_1 li:first .left label").remove();
+							$("#3_1_1 li:first .left").append('<label class="message_info">请输入银行名称</label>');
+							status="1";
+						}
+					})
+				}
+				if($('#section0 .show:visible').length!=0){
+					$('#section0 .cy span').removeClass("unfinish");
+					$('#section0 .show li').each(function(){
+						$(this).find(".left label").remove();
+						if($(this).find('input').val().trim()==""){
+							$(this).find(".left").append('<label class="message_info">请输入必填数据</label>');
+							$('#section0 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+									status="1";
+								}
+							})
+						}else{
+							if($(this).find('input').attr("type")=="number"){
+								if(!fushu($(this).find('input').val())){
+									if($(this).parent(".b_r").length!=0){
+										$(this).parents(".problem").prev().find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+									}else{
+										$(this).find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+									};
+									$('#section0 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+											status="1";
+										}
+									})
+								};									
+							}
+						}
+					});
+					
+					if($("#section0 .show ul li:nth-of-type(2) input").val().trim()!=""){
+						$("#section0 .show ul li:nth-of-type(2) input").parents("li").find(".left label").remove();
+						function lnt(date1){
+							var d = new Date();
+							var year = d.getFullYear();
+							var month = d.getMonth()+1;
+							if(month<10){
+								month = "0"+month;
+							}
+							var day = d.getDate();
+							if(day<10){
+								day = "0"+day;
+							}
+					   	 	var str = year+"-"+month+"-"+day;//当前日期
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						}
+						var k=lnt($("#section0 .show ul li:nth-of-type(2) input").val());
+						if(!k){
+							status="1";
+							$('#section0 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+								}
+							})
+							$("#section0 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+						}else{
+							if($("#section0 .show ul li:nth-of-type(3) input").val().trim()!=""){
+								function ret(date1){
+							   	 	var str = $("#section0 .show ul li:nth-of-type(3) input").val();
+							   	 	console.log(date1,str)
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							   	 	console.log(date1==str)
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								};
+								var t = ret($("#section0 .show ul li:nth-of-type(2) input").val());
+								if(!t){
+									status="1";
+									$('#section0 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+										}
+									})
+									$("#section0 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于应付结束时间</label>');
+								}
+							}
+						}
+					}
+					if($("#section0 .show ul li:nth-of-type(3) input").val().trim()!=""){
+						$("#section0 .show ul li:nth-of-type(3) input").parents("li").find(".left label").remove();
+						function let(date1){
+							var d = new Date();
+							var year = d.getFullYear();
+							var month = d.getMonth()+1;
+							if(month<10){
+								month = "0"+month;
+							}
+							var day = d.getDate();
+							if(day<10){
+								day = "0"+day;
+							}
+					   	 	var str = year+"-"+month+"-"+day;//当前日期
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						}
+						var k=let($("#section0 .show ul li:nth-of-type(3) input").val());
+						if(!k){
+							status="1";
+							$('#section0 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+								}
+							})
+							$("#section0 .show ul li:nth-of-type(3) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+						}else{
+							if($("#section0 .show ul li:nth-of-type(2) input").val().trim()!=""){
+								function rit(date1){
+							   	 	var str = $("#section0 .show ul li:nth-of-type(2) input").val();
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return true;                    
+							        } else {
+							        	return false;
+							        }
+								};
+								var t = rit($("#section0 .show ul li:nth-of-type(3) input").val());
+								if(!t){
+									status="1";
+									$('#section0 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+										}
+									})
+									$(this).parents("li").children(".left").append('<label class="message_info">大于等于应付开始时间</label>');
+								}
+							}
+						}
+					};
+					
+					
+					$(sj["balanceSheetModel"]["bossReceivableAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section0 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							}
+						}
+					});
+					$(sj["balanceSheetModel"]["bossReceivableAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section0 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							};
+							var ki=$(this)[0];
+							if(key=="receivableBeginTime"){
+								function lrt(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lrt(ki["receivableBeginTime"]);
+								if(!k){
+									status="1";
+									$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}else{
+									if(ki["receivableEndTime"]!=null){
+										function rot(date1){
+									   	 	var str = ki["receivableEndTime"];
+									   	 	if(date1==str){
+									   	 		return true;
+									   	 	}
+									        var oDate1 = new Date(date1);
+									        var oDate2 = new Date(str);
+									        if(oDate1.getTime() > oDate2.getTime()){
+									            return false;                    
+									        } else {
+									        	return true;
+									        }
+										};
+										var t = rot(ki["receivableBeginTime"]);
+										if(!t){
+											status="1";
+											$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+										}
+									}
+								}
+							}
+							if(key=="receivableEndTime"){
+								function lrt1(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lrt1(ki["receivableEndTime"]);
+								if(!k){
+									status="1";
+									$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}
+							}
+							if(key=="receivableAccount"){
+								if(!fushu(ki["receivableAccount"])){
+									status="1";
+									$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								};
+							};
+						}
+					});
+				
+				}
+				if($('#section4 .show:visible').length!=0){
+					$('#section4 .cy span').removeClass("unfinish");
+					$('#section4 .show li').each(function(){
+						$(this).find(".left label").remove();
+						if($(this).find('input').val().trim()==""){
+							$(this).find(".left").append('<label class="message_info">请输入必填数据</label>');
+							$('#section4 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+									status="1";
+								}
+							})
+						}else{
+							if($(this).find('input').attr("type")=="number"){
+								if(!fushu($(this).find('input').val())){
+									if($(this).parent(".b_r").length!=0){
+										$(this).parents(".problem").prev().find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+									}else{
+										$(this).find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+									};
+									$('#section4 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+											status="1";
+										}
+									})
+								};									
+							}
+						}
+					});
+					if($("#section4 .show ul li:nth-of-type(2) input").val().trim()!=""){
+						$("#section4 .show ul li:nth-of-type(2) input").parents("li").find(".left label").remove();
+						function lit(date1){
+							var d = new Date();
+							var year = d.getFullYear();
+							var month = d.getMonth()+1;
+							if(month<10){
+								month = "0"+month;
+							}
+							var day = d.getDate();
+							if(day<10){
+								day = "0"+day;
+							}
+					   	 	var str = year+"-"+month+"-"+day;//当前日期
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						}
+						var k=lit($("#section4 .show ul li:nth-of-type(2) input").val());
+						if(!k){
+							status="1";
+							$('#section4 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+								}
+							})
+							$("#section4 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+						}
+					}
+					
+					$(sj["balanceSheetModel"]["bossPrepayAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section4 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							}
+						}
+					});
+					$(sj["balanceSheetModel"]["bossPrepayAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section4 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							};
+							var ki=$(this)[0];
+							if(key=="prepayTime"){
+								function lot(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lot(ki["prepayTime"]);
+								if(!k){
+									status="1";
+									$('#section4 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}
+							}
+							if(key=="prepayAccount"){
+								if(!fushu(ki["prepayAccount"])){
+									status="1";
+									$('#section4 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								};
+							};
+						}
+					});
+				
+				}
+				if($('#section5 .show:visible').length!=0){
+					$('#section5 .cy span').removeClass("unfinish");
+					$('#section5 .show li').each(function(){
+						$(this).find(".left label").remove();
+						if($(this).find('input').val()==""){
+							$(this).find(".left").append('<label class="message_info">请输入必填数据</label>');
+							$('#section5 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+									status="1";
+								}
+							})
+						}else{
+							if($(this).find('input').attr("type")=="number"){
+								if($(this).hasClass("unitPrice")){
+									if(!xiaoshu($(this).find('input').val())){
+										if($(this).parent(".b_r").length!=0){
+											$(this).parents(".problem").prev().find(".left label").remove();
+											$('<label class="message_info">10位正整数或带两位小数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+										}else{
+											$(this).find(".left label").remove();
+											$('<label class="message_info">10位正整数或带两位小数</label>').appendTo($(this).find(".left"))
+										};
+										$('#section5 .cy span').each(function(){
+											if($(this).hasClass("span_bg")){
+												$(this).addClass("unfinish");
+												status="1";
+											}
+										})
+									};
+								}else{
+									if(!fushu($(this).find('input').val())){
+										if($(this).parent(".b_r").length!=0){
+											$(this).parents(".problem").prev().find(".left label").remove();
+											$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+										}else{
+											$(this).find(".left label").remove();
+											$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+										};
+										$('#section5 .cy span').each(function(){
+											if($(this).hasClass("span_bg")){
+												$(this).addClass("unfinish");
+												status="1";
+											}
+										})
+									};
+								}
+																		
+							}
+						}
+					});
+					$(sj["balanceSheetModel"]["bossStocks"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section5 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							};
+							var ki=$(this)[0];
+							if(key=="unitPrice"){
+								if(!xiaoshu(ki["unitPrice"])){
+									status="1";
+									$('#section5 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								};
+							};
+							if(key=="number"){
+								if(!fushu(ki["number"])){
+									status="1";
+									$('#section5 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								};
+							};
+						}
+					});
+				}
+//				sj["completeStatus"]=status;
+				/**
+				 * 2018-4-25添加处理重复数据
+				 */
+				var cl_arr=sj["balanceSheetModel"]["bossDeposits"];//银行存款
+				var bossStocksArr=sj["balanceSheetModel"]["bossStocks"];//存货
+				var payAccountsArr=sj["balanceSheetModel"]["bossPrepayAccounts"];//预付
+				var receivableAccountsArr=sj["balanceSheetModel"]["bossReceivableAccounts"];//应收
+				function isRepeat(arr,textInfo) {
+				   var hash = {};
+				   for(var i in arr) {
+				       if(hash[arr[i].name])//&&hash[arr[i].amount11]
+				       {
+				       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+				       	    '<div class="res-mask-con">'+
+				       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+				       	      '<div class="res-mask-btn">知道了</div>'+
+				       	   '</div>'+
+				       	   '</div>';
+				       	   $(maskHtml).appendTo('body');
+				       	   $('.res-mask-btn').click(function(){
+				       	   		$('.res-mask').remove();
+				       	   })
+				           return true;
+				       }
+				       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+				       hash[arr[i].name] = true;
+//				        hash[arr[i].amount11] = true;
+				    }
+				   return false;
+				}
+				
+				
+				function isRepeat_1(arr,textInfo) {
+				   var hash = {};
+				   for(var i in arr) {
+				       if(hash[arr[i].name]&&hash[arr[i].number]&&hash[arr[i].unitPrice])//&&hash[arr[i].amount11]
+				       {
+				       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+				       	    '<div class="res-mask-con">'+
+				       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+				       	      '<div class="res-mask-btn">知道了</div>'+
+				       	   '</div>'+
+				       	   '</div>';
+				       	   $(maskHtml).appendTo('body');
+				       	   $('.res-mask-btn').click(function(){
+				       	   		$('.res-mask').remove();
+				       	   })
+				           return true;
+				       }
+				       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+				       hash[arr[i].name] = true;
+				       hash[arr[i].unitPrice] = true;
+				       hash[arr[i].number] = true;
+				    }
+				   return false;
+				}
+				
+				function isRepeat_2(arr,textInfo) {//预付款项
+				   var hash = {};
+				   for(var i in arr) {
+				       if(hash[arr[i].supplierName]&&hash[arr[i].prepayTime])//&&hash[arr[i].amount11]
+				       {
+				       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+				       	    '<div class="res-mask-con">'+
+				       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+				       	      '<div class="res-mask-btn">知道了</div>'+
+				       	   '</div>'+
+				       	   '</div>';
+				       	   $(maskHtml).appendTo('body');
+				       	   $('.res-mask-btn').click(function(){
+				       	   		$('.res-mask').remove();
+				       	   })
+				           return true;
+				       }
+				       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+				       hash[arr[i].supplierName] = true;
+				       hash[arr[i].prepayTime] = true;
+				    }
+				   return false;
+				}
+				
+				function isRepeat_3(arr,textInfo) {//应收账款
+				   var hash = {};
+				   for(var i in arr) {
+				       if(hash[arr[i].indentorName]&&hash[arr[i].receivableBeginTime]&&hash[arr[i].receivableEndTime])//&&hash[arr[i].amount11]
+				       {
+				       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+				       	    '<div class="res-mask-con">'+
+				       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+				       	      '<div class="res-mask-btn">知道了</div>'+
+				       	   '</div>'+
+				       	   '</div>';
+				       	   $(maskHtml).appendTo('body');
+				       	   $('.res-mask-btn').click(function(){
+				       	   		$('.res-mask').remove();
+				       	   })
+				           return true;
+				       }
+				       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+				       hash[arr[i].indentorName] = true;
+				       hash[arr[i].receivableBeginTime] = true;
+				       hash[arr[i].receivableEndTime] = true;
+				    }
+				   return false;
+				}
+				
+				var isRepeatStu=isRepeat(cl_arr,'银行存款模块输入银行名称不能相同！');
+				var isRepeatStu_1=isRepeat_1(bossStocksArr,'存货模块不能输入相同数据（货物名称，数量，成本不能全部相同）！');
+				var isRepeatStu_2=isRepeat_2(payAccountsArr,'预付款项模块不能输入相同数据（供应商/采购商品，预付产生时间不能全部相同）！');
+				var isRepeatStu_3=isRepeat_3(receivableAccountsArr,'应收账款模块不能输入相同数据（订货商名称，应收开始时间，应收结束时间不能全部相同）！');
+				if(status=='2'&&!isRepeatStu&&!isRepeatStu_1&&!isRepeatStu_2&&!isRepeatStu_3){
+					sj["completeStatus"]=2;
+				}else{
+					sj["completeStatus"]=1;
+				}
+				/**
+				 * end
+				 */
+				var _sj=JSON.stringify(sj);
+			
+				if(tf==undefined){
+					var tf=false;
+				}
+				if (tf) {
+					if(status=="2"&&!isRepeatStu&&!isRepeatStu_1&&!isRepeatStu_2&&!isRepeatStu_3){
+						AndroidJs.saveWjDetalAnswer(_sj, true);
+					}else{
+						AndroidJs.saveWjDetalAnswer(_sj, false);
+					}
+					
+				} else {
+					AndroidJs.saveWjDetalAnswer(_sj, false);
+				}
+			};
+			function tsj(a_dd){
+				var tsj =[];
+				for(i in a_dd){
+					var _tsj={};
+					$(a_dd[i]).each(function(){
+						for(key in $(this)[0]){
+							_tsj[key]=$(this)[0][key];
+						};
+					});
+					_tsj["lineNo"]=i;
+					tsj.push(_tsj);
+				}
+				return tsj;
+			}
+			function toDecimal(x) {  
+	            var f = parseFloat(x);  
+	            if (isNaN(f)) {  
+	                return;  
+	            }  
+	            f = Math.round(x*100)/100; /*改变保留小数点后几位（100=2,1000=3）*/
+	            return f;  
+	        }
+			//保留整数位
+function zs_toDecimal(x) {
+	var f = parseFloat(x);
+	if (isNaN(f)) {
+		return;
+	}
+	//          f = Math.round(x*100)/100; /*改变保留小数点后几位（100=2,1000=3）*/
+	f = Math.round(x, 0);
+	return f;
+}
+			function csh(li,_this){
+				$(li).each(function(){
+					for(key in _this){
+						if($(this).attr("fieldname")==key){
+							if(_this[key]!=null){
+								if($(this).children(".right").children("input").length=="1"){
+									if($(this).children(".right").children("input").attr("name")=="input_date"){
+										$(this).children(".right").children("input").val(_this[key]);
+									}else{
+										if(key=="unitPrice"){
+											$(this).children(".right").children("input").val(_this[key]);
+										}else{
+											if(!isNaN(parseInt(_this[key]))){
+												$(this).children(".right").children("input").val(parseInt(_this[key]));
+											}else{
+												$(this).children(".right").children("input").val(_this[key]);
+											}
+										}
+											
+									}
+									$(this).children(".left").children("i").css({"color":"#a09fa4"})
+								}else if($(this).children(".right").children("span").length=="1"){
+									if(key=="amount"){
+										_this[key]=zs_toDecimal(_this[key]);
+									}
+									$(this).children(".right").children("span").text(_this[key]);
+									$(this).children(".left").children("i").css({"color":"#a09fa4"})
+								}
+							}
+						}
+					}
+					
+				})
+			}
+			
+
+			
+			function loadBalanceSheetCurrentAssets(sjson){
+				var AndroidAnswer = sjson[1];
+				sjson =sjson[0];//$.parseJSON(sjson[0]);
+				sjson["answer"]=AndroidAnswer;
+				function jsonForm(data){
+					var r=data.answer;
+					var answerJson={};//答案json字符串转换
+					for(var key in r){
+						answerJson[key]=$.parseJSON(r[key]);
+					}
+					data.answer = answerJson;
+					return data;
+				}
+				var json=jsonForm(sjson);
+//				console.log(json);
+				var c_ode=json.answer.questionnaireCode.questionnaireCode;
+				console.log(json.answer.questionnaireCode.questionnaireCode)
+				var xj_code = "0001."+c_ode+".08.01.01";
+				$("#3_1_0").attr("_code",xj_code);
+				var yhck_code = "0001."+c_ode+".08.01.02";
+				$("#3_1_1").attr("_code",yhck_code);
+				var xjzp_code = "0001."+c_ode+".08.01.03";
+				$("#3_1_2").attr("_code",xjzp_code);
+				var yszk_code = "0001."+c_ode+".08.02.01";
+				$("#0_1").attr("_code",yszk_code);
+				var yfzk_code = "0001."+c_ode+".08.03.01";
+				$("#4_1").attr("_code",yfzk_code);
+				var ch_code = "0001."+c_ode+".08.04.01";
+				$("#5_1").attr("_code",ch_code);
+				var xjjyhck_code = "0001."+c_ode+".08.01";
+				$("#3_1").attr("_code",xjjyhck_code);
+				
+				
+
+				var calendar= new lCalendar();
+			    calendar.init({
+			        'trigger': '#date0001-0003-08-02-01-02',
+			        'type': 'date'
+			    });
+			    var calendar= new lCalendar();
+			    calendar.init({
+			        'trigger': '#date0001-0003-08-02-01-03',
+			        'type': 'date'
+			    });
+			    var calendar= new lCalendar();
+			    calendar.init({
+			        'trigger': '#date0001-0003-08-03-01-02',
+			        'type': 'date'
+			    });
+				sj=json.answer;
+				load = true;
+				console.log(json);
+				var bossDeposits = json.answer.balanceSheetModel.bossDeposits;//存款
+				console.log(bossDeposits);
+				
+				var balanceSheetAnswers = json.answer.balanceSheetModel.balanceSheetAnswers;//大类答案
+				$(balanceSheetAnswers).each(function(){
+					if($(this)[0].code==$("#3_1_0").attr("_code")){//现金
+						if($(this)[0].value!=null){
+							if(!isNaN(parseInt($(this)[0].value))){
+								$("#3_1_0 li").first().find("input").val(parseInt($(this)[0].value))
+							}else{
+								$("#3_1_0 li").first().find("input").val($(this)[0].value)
+							}
+
+						}
+					};
+					if($(this)[0].code==$("#3_1_2").attr("_code")){//支票
+						if($(this)[0].value!=null){
+							if(!isNaN(parseInt($(this)[0].value))){
+								$("#3_1_2 li").first().find("input").val(parseInt($(this)[0].value))
+							}else{
+								$("#3_1_2 li").first().find("input").val($(this)[0].value)
+							}
+						}
+					};
+				});
+				if(bossDeposits!=null){
+					if(bossDeposits.length!=0){
+						$("#section3 .all_b").children().remove();
+						$(bossDeposits).each(function(i){
+							var _name=$(this)[0].name;
+							if(_name==null){
+								_name="";
+							}
+							var _amount=$(this)[0].amount;
+							if(_amount==null){
+								_amount="";
+							}
+							if(!isNaN(_amount)){
+								_amount=parseInt(_amount);
+							}
+							$('<div class="bank">'+
+								'<div class="left b_l"><span>*&nbsp;&nbsp;</span>'+
+									'<input type="text" placeholder="请输入银行名称" class="x_ipt" fieldName="name" value="'+_name+'" maxlength="8">'+
+								'</div>'+
+								'<div class="right b_r">'+
+									'<input type="number" placeholder="请输入金额" class="x_ipt" fieldName="amount" value="'+_amount+'"><b class="yuan">元</b><img src="img/_sc.png" class="_sc"></div>'+
+							'</div>').appendTo("#section3 .all_b");
+						});
+						$(".bk").show();
+						cash.add();
+					}else{
+						cash.add();
+					};
+				}else{
+					cash.add();
+				};
+				var bossReceivableAccounts = json.answer.balanceSheetModel.bossReceivableAccounts;//应收账款
+				console.log(bossReceivableAccounts);
+				if(bossReceivableAccounts!=null){
+					if(bossReceivableAccounts.length!=0){
+						var v = true;
+						credit.creat(v,bossReceivableAccounts);
+					}else{
+						credit.creat();
+
+					}
+				}else{
+					credit.creat();
+				}
+				var bossPrepayAccounts = json.answer.balanceSheetModel.bossPrepayAccounts;//预付款项
+				console.log(bossPrepayAccounts)
+				if(bossPrepayAccounts!=null){
+					if(bossPrepayAccounts.length!=0){
+						var v = true;
+						fund.advance(v,bossPrepayAccounts);
+					}else{
+						fund.advance();
+					}
+				}else{
+					fund.advance();
+				};
+				var bossStocks = json.answer.balanceSheetModel.bossStocks;//存货
+				console.log(bossStocks)
+				if(bossStocks!=null){
+					if(bossStocks.length!=0){
+						var v = true;
+						stock.inventory(v,bossStocks);
+					}else{
+						stock.inventory();
+						$("#section5 .show,#section5 .jian").hide();
+					}
+				}else{
+					stock.inventory();
+					$("#section5 .show,#section5 .jian").hide();
+				};
+			}
+			$(document).on("blur",".b_l input",function(){
+				$("#3_1_1 li:first .left label").remove();
+				console.log($(this))
+				if($(this).val().trim()==""){
+					$("#3_1_1 li:first .left").append('<label class="message_info">请输入银行名称</label>');
+				}
+			})
+			$(document).on("blur",".b_r input",function(){
+				$("#3_1_1 li:first .left label").remove();
+				console.log($(this))
+				if($(this).val().trim()==""){
+					$("#3_1_1 li:first .left").append('<label class="message_info">请输入金额</label>');
+				}
+			})
+			$(document).on("blur","#section0 input,#section4 input,#section5 input",function(){
+				$(this).parents("li").find(".left label").remove();
+				if($(this).val().trim()==""){
+					$(this).parents("li").find(".left").append('<label class="message_info">请输入必填数据</label>');
+				}
+			})
+			
+			$("#section4 .show ul li:nth-of-type(2) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lct(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lct($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}
+			})
+			
+			$("#section0 .show ul li:nth-of-type(2) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lat(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lat($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}else{
+					if($("#section0 .show ul li:nth-of-type(3) input").val().trim()!=""){
+						function rrt(date1){
+					   	 	var str = $("#section0 .show ul li:nth-of-type(3) input").val();
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						};
+						var t = rrt($("#section0 .show ul li:nth-of-type(2) input").val());
+						if(!t){
+							$(this).parents("li").children(".left").append('<label class="message_info">小于等于应付结束时间</label>');
+						}
+					}
+				}
+			})
+			$("#section0 .show ul li:nth-of-type(3) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lbt(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lbt($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}else{
+					if($("#section0 .show ul li:nth-of-type(2) input").val().trim()!=""){
+						function rtt(date1){
+					   	 	var str = $("#section0 .show ul li:nth-of-type(2) input").val();
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return true;                    
+					        } else {
+					        	return false;
+					        }
+						};
+						var t = rtt($("#section0 .show ul li:nth-of-type(3) input").val());
+						if(!t){
+							$(this).parents("li").children(".left").append('<label class="message_info">大于等于应付开始时间</label>');
+						}
+					}
+				}
+			})
+			$(document).on("keyup","input[type='number']",function(){
+				if($(this).parents("li").hasClass("unitPrice")){
+					
+				}else{
+//					if($(this).val().indexOf(".") > 0){
+//						var sval = $(this).val().substr(0,$(this).val().indexOf("."))+$(this).val().substring($(this).val().indexOf(".")+1);
+//						$(this).val(sval.trim());
+//					}
+					if($(this).val().length >= 10){
+						$(this).val($(this).val().substr(0,10));
+						fund.a_Save();
+						stock.a_Save();
+						credit.a_Save();
+						cash.add();
+					}
+				}
+					
+			})
+			
+			// if(!load){
+			// 	stock.inventory();
+			// 	cash.add();
+			// 	fund.advance();
+			// 	credit.creat();
+			// }
+//			var a=["{\"balanceSheetSmalls\":[{\"code\":\"0001.0004.08.02.01.02\",\"name\":\"应收开始时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.02.01\",\"objName\":\"bossReceiveableAccounts\",\"fieldName\":\"receivableBeginTime\",\"sortNo\":2,\"type\":\"DATE\",\"answerChoice\":null,\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.01.02.01\",\"name\":\"银行名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.01.02\",\"objName\":\"bossDeposits\",\"fieldName\":\"name\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":null,\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.02.01.03\",\"name\":\"应收结束时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.02.01\",\"objName\":\"bossReceiveableAccounts\",\"fieldName\":\"receivableEndTime\",\"sortNo\":3,\"type\":\"DATE\",\"answerChoice\":null,\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.02.01.04\",\"name\":\"目前的应收帐款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.02.01\",\"objName\":\"bossReceiveableAccounts\",\"fieldName\":\"receivableAccount\",\"sortNo\":4,\"type\":\"DOUBLE\",\"answerChoice\":null,\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.01.02.02\",\"name\":\"金额\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.01.02\",\"objName\":\"bossDeposits\",\"fieldName\":\"amount\",\"sortNo\":2,\"type\":\"DOUBLE\",\"answerChoice\":null,\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.08.01.01\",\"name\":\"供应商/采购商品名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.08.01\",\"objName\":\"bossPayableAccounts\",\"fieldName\":\"supplierName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.08.01.02\",\"name\":\"应付时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.08.01\",\"objName\":\"bossPayableAccounts\",\"fieldName\":\"payableTimeStr\",\"sortNo\":2,\"type\":\"DATEZONE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.08.01.04\",\"name\":\"目前的应付帐款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.08.01\",\"objName\":\"bossPayableAccounts\",\"fieldName\":\"payableAccount\",\"sortNo\":4,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.09.01.01\",\"name\":\"应付款项类别\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.09.01\",\"objName\":\"bossOthersPayableAccounts\",\"fieldName\":\"payableType\",\"sortNo\":1,\"type\":\"CODE\",\"answerChoice\":\"{EDD1B528-9C7E-4E7B-8F34-4035AE1B7AFE}\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.09.01.02\",\"name\":\"应付时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.09.01\",\"objName\":\"bossOthersPayableAccounts\",\"fieldName\":\"payableTimeStr\",\"sortNo\":2,\"type\":\"DATEZONE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.09.01.04\",\"name\":\"金额\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.09.01\",\"objName\":\"bossOthersPayableAccounts\",\"fieldName\":\"amount\",\"sortNo\":4,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.10.01.01\",\"name\":\"订货商名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.10.01\",\"objName\":\"bossPaymentAdvances\",\"fieldName\":\"supplierName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.10.01.02\",\"name\":\"预收产生时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.10.01\",\"objName\":\"bossPaymentAdvances\",\"fieldName\":\"produceTime\",\"sortNo\":2,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.10.01.03\",\"name\":\"目前的预收帐款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.10.01\",\"objName\":\"bossPaymentAdvances\",\"fieldName\":\"advanceAccount\",\"sortNo\":3,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.01.01\",\"name\":\"机构名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.01\",\"objName\":\"bossBankShortTermLoans\",\"fieldName\":\"organizationName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.01.03\",\"name\":\"贷款开始时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.01\",\"objName\":\"bossBankShortTermLoans\",\"fieldName\":\"loanBeginTime\",\"sortNo\":3,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.01.04\",\"name\":\"贷款结束时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.01\",\"objName\":\"bossBankShortTermLoans\",\"fieldName\":\"loanEndTime\",\"sortNo\":4,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.01.05\",\"name\":\"期限（月）\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.01\",\"objName\":\"bossBankShortTermLoans\",\"fieldName\":\"term\",\"sortNo\":5,\"type\":\"INTEGER\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.02.01\",\"name\":\"机构名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.02\",\"objName\":\"bossCompanyShortTermLoans\",\"fieldName\":\"organizationName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.02.03\",\"name\":\"贷款起始时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.02\",\"objName\":\"bossCompanyShortTermLoans\",\"fieldName\":\"loanBeginTime\",\"sortNo\":3,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.02.04\",\"name\":\"贷款结束时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.02\",\"objName\":\"bossCompanyShortTermLoans\",\"fieldName\":\"loanEndTime\",\"sortNo\":4,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.02.05\",\"name\":\"期限（月）\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.02\",\"objName\":\"bossCompanyShortTermLoans\",\"fieldName\":\"term\",\"sortNo\":5,\"type\":\"INTEGER\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.04.01\",\"name\":\"机构名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.04\",\"objName\":\"bossCreditShortTermLoans\",\"fieldName\":\"organizationName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.04.03\",\"name\":\"贷款起始时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.04\",\"objName\":\"bossCreditShortTermLoans\",\"fieldName\":\"loanBeginTime\",\"sortNo\":3,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.04.04\",\"name\":\"贷款结束时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.04\",\"objName\":\"bossCreditShortTermLoans\",\"fieldName\":\"loanEndTime\",\"sortNo\":4,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.04.05\",\"name\":\"期限（月）\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.04\",\"objName\":\"bossCreditShortTermLoans\",\"fieldName\":\"term\",\"sortNo\":5,\"type\":\"INTEGER\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.01.01\",\"name\":\"机构名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.01\",\"objName\":\"bossBankLongTermDepts\",\"fieldName\":\"organizationName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.01.03\",\"name\":\"贷款起始时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.01\",\"objName\":\"bossBankLongTermDepts\",\"fieldName\":\"loanBeginTime\",\"sortNo\":3,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.01.04\",\"name\":\"贷款结束时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.01\",\"objName\":\"bossBankLongTermDepts\",\"fieldName\":\"loanEndTime\",\"sortNo\":4,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.01.02\",\"name\":\"剩余本金\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.01\",\"objName\":\"bossBankShortTermLoans\",\"fieldName\":\"residualAmount\",\"sortNo\":2,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.02.02\",\"name\":\"剩余本金\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.02\",\"objName\":\"bossCompanyShortTermLoans\",\"fieldName\":\"residualAmount\",\"sortNo\":2,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.11.04.02\",\"name\":\"剩余本金\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11.04\",\"objName\":\"bossCreditShortTermLoans\",\"fieldName\":\"residualAmount\",\"sortNo\":2,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.01.02\",\"name\":\"剩余本金\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.01\",\"objName\":\"bossBankLongTermDepts\",\"fieldName\":\"residualAmount\",\"sortNo\":2,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.02.02\",\"name\":\"剩余本金\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.02\",\"objName\":\"bossPrivateLongTermDebts\",\"fieldName\":\"residualAmount\",\"sortNo\":2,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.02.01.01\",\"name\":\"订货商名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.02.01\",\"objName\":\"bossReceiveableAccounts\",\"fieldName\":\"indentorName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":null,\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.01.05\",\"name\":\"期限（月）\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.01\",\"objName\":\"bossBankLongTermDepts\",\"fieldName\":\"term\",\"sortNo\":5,\"type\":\"INTEGER\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.02.01\",\"name\":\"机构名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.02\",\"objName\":\"bossPrivateLongTermDebts\",\"fieldName\":\"organizationName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.02.03\",\"name\":\"贷款起始时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.02\",\"objName\":\"bossPrivateLongTermDebts\",\"fieldName\":\"loanBeginTime\",\"sortNo\":3,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.02.04\",\"name\":\"贷款结束时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.02\",\"objName\":\"bossPrivateLongTermDebts\",\"fieldName\":\"loanEndTime\",\"sortNo\":4,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.12.02.05\",\"name\":\"期限（月）\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12.02\",\"objName\":\"bossPrivateLongTermDebts\",\"fieldName\":\"term\",\"sortNo\":5,\"type\":\"INTEGER\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.04.01.04\",\"name\":\"总金额\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.04.01\",\"objName\":\"bossStocks\",\"fieldName\":\"amount\",\"sortNo\":4,\"type\":\"DOUBLE\",\"answerChoice\":null,\"isAllowModify\":\"0\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.03.01.01\",\"name\":\"供应商/采购商品名\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.03.01\",\"objName\":\"bossPrepayAccounts\",\"fieldName\":\"supplierName\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.03.01.02\",\"name\":\"预付产生时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.03.01\",\"objName\":\"bossPrepayAccounts\",\"fieldName\":\"prepayTime\",\"sortNo\":2,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.03.01.03\",\"name\":\"目前的预付帐款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.03.01\",\"objName\":\"bossPrepayAccounts\",\"fieldName\":\"prepayAccount\",\"sortNo\":3,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.04.01.01\",\"name\":\"货物名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.04.01\",\"objName\":\"bossStocks\",\"fieldName\":\"name\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.04.01.02\",\"name\":\"数量\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.04.01\",\"objName\":\"bossStocks\",\"fieldName\":\"number\",\"sortNo\":2,\"type\":\"INTEGER\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.04.01.03\",\"name\":\"成本\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.04.01\",\"objName\":\"bossStocks\",\"fieldName\":\"unitPrice\",\"sortNo\":3,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.05.01.01\",\"name\":\"资产名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.05.01\",\"objName\":\"bossFixedAssets\",\"fieldName\":\"name\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.05.01.02\",\"name\":\"数量\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.05.01\",\"objName\":\"bossFixedAssets\",\"fieldName\":\"number\",\"sortNo\":2,\"type\":\"INTEGER\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.05.01.03\",\"name\":\"购买时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.05.01\",\"objName\":\"bossFixedAssets\",\"fieldName\":\"buyTime\",\"sortNo\":3,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.05.01.04\",\"name\":\"购买单价\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.05.01\",\"objName\":\"bossFixedAssets\",\"fieldName\":\"unitPrice\",\"sortNo\":4,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.05.01.05\",\"name\":\"总现值\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.05.01\",\"objName\":\"bossFixedAssets\",\"fieldName\":\"totalValue\",\"sortNo\":5,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.06.01.01\",\"name\":\"资产类别\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.06.01\",\"objName\":\"bossOtherBusinessAccounts\",\"fieldName\":\"assetType\",\"sortNo\":1,\"type\":\"CODE\",\"answerChoice\":\"{AFC9E76D-7165-4314-9F65-56BBE45048A2}\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"FALSE\"},{\"code\":\"0001.0004.08.06.01.02\",\"name\":\"到期时间\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.06.01\",\"objName\":\"bossOtherBusinessAccounts\",\"fieldName\":\"endDate\",\"sortNo\":2,\"type\":\"DATE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"FALSE\"},{\"code\":\"0001.0004.08.06.01.03\",\"name\":\"金额\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.06.01\",\"objName\":\"bossOtherBusinessAccounts\",\"fieldName\":\"amount\",\"sortNo\":3,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"FALSE\"},{\"code\":\"0001.0004.08.07.01.01\",\"name\":\"名称\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.07.01\",\"objName\":\"bossOtherNotBusinessAccounts\",\"fieldName\":\"name\",\"sortNo\":1,\"type\":\"STRING\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"},{\"code\":\"0001.0004.08.07.01.02\",\"name\":\"金额\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.07.01\",\"objName\":\"bossOtherNotBusinessAccounts\",\"fieldName\":\"amount\",\"sortNo\":2,\"type\":\"DOUBLE\",\"answerChoice\":\"\",\"isAllowModify\":\"1\",\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"isAllowRepeat\":\"1\",\"sourceType\":\"1\",\"require\":\"TRUE\"}],\"balanceSheetMajors\":[{\"code\":\"0001.0004.08.02.01\",\"name\":\"应收账款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.05.01\",\"name\":\"固定资产\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.01\",\"name\":\"现金及银行存款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"1\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.03.01\",\"name\":\"预付款项\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.01.01\",\"name\":\"现金\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.01\",\"type\":\"2\",\"sortNo\":2,\"isAllowModify\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.04.01\",\"name\":\"存货\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.01.02\",\"name\":\"银行存款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.01\",\"type\":\"2\",\"sortNo\":3,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.01.03\",\"name\":\"现金支票\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.01\",\"type\":\"2\",\"sortNo\":4,\"isAllowModify\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.06.01\",\"name\":\"其他经营资产\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.08.01\",\"name\":\"应付货款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.09.01\",\"name\":\"其他应付款项\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.10.01\",\"name\":\"预收款项\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.11\",\"name\":\"短期贷款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"1\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.11.01\",\"name\":\"银行信用贷款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11\",\"type\":\"2\",\"sortNo\":2,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.11.02\",\"name\":\"小贷公司贷款余额\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11\",\"type\":\"2\",\"sortNo\":3,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.11.03\",\"name\":\"中安贷款余额\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11\",\"type\":\"2\",\"sortNo\":4,\"isAllowModify\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.11.04\",\"name\":\"信用卡\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.11\",\"type\":\"2\",\"sortNo\":5,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.12\",\"name\":\"长期负债\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"1\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.12.01\",\"name\":\"银行抵押贷款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12\",\"type\":\"2\",\"sortNo\":2,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.12.02\",\"name\":\"私人借款\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12\",\"type\":\"2\",\"sortNo\":3,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.12.03\",\"name\":\"其他\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0001.0004.08.12\",\"type\":\"2\",\"sortNo\":4,\"isAllowModify\":\"1\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"},{\"code\":\"0001.0004.08.07.01\",\"name\":\"其他非经营资产\",\"questionnaireCode\":\"0001.0004\",\"detailModelCode\":\"0001.0004.08\",\"parentCode\":\"0\",\"type\":\"2\",\"sortNo\":1,\"isAllowModify\":\"0\",\"inputUnit\":null,\"regexRule\":null,\"regexRuleName\":null,\"answerLimit\":0,\"answerLimitMin\":0,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"answerInput\":\"DOUBLE\",\"sourceType\":\"1\"}]}",{
+//	"bossContactModel": "{\"bossContacts\":[{\"name\":\"啊路咯\",\"relationship\":\"{D7316C55-127B-405D-8D54-4104C3FA05C9}\",\"isKnownLoan\":\"1\",\"phone\":\"13722353686\",\"familyTelephone\":\"0755-12346678-23\",\"familyAddressSameCustom\":\"1\",\"companyAddressSameCustom\":\"0\",\"companyName\":\"春节快乐\",\"companyAddress\":\"{7CD64271-5E1E-413C-8420-0F2A4899DE8E}@{261D9758-5859-4342-9C80-B3CA37948132}@{F4D37EE7-6BFF-4952-B142-946A2DF3D3AF}||撸撸撸\",\"job\":\"{81CD6777-F9CA-42EA-9188-8EB7246770CD}\",\"companyPhone\":\"0755-12345678-55\",\"checkRemark\":\"拉锯战\",\"lineNo\":\"1\"},{\"name\":\"八达岭\",\"relationship\":\"{F1BFCDF1-CB80-424A-A9A5-519228D21B02}\",\"isKnownLoan\":\"1\",\"phone\":\"13422353586\",\"familyTelephone\":\"0755-1234567-555\",\"familyAddressSameCustom\":\"0\",\"familyAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8132FCD7-1982-4726-B396-6E7F645585B6}||德拉库拉\",\"companyAddressSameCustom\":\"0\",\"companyAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8EA4897A-30C9-4537-98BF-F28366905DF2}||刘经理\",\"job\":\"{81CD6777-F9CA-42EA-9188-8EB7246770CD}\",\"companyPhone\":\"0755-1234567-55\",\"checkRemark\":\"春节快乐\",\"lineNo\":\"2\"}]}",
+//	"bossCashFlowModel": "{\"bossCashFlowMain\":{\"amount\":\"1254\",\"beginDate\":\"2016-08\",\"endDate\":\"2016-12\",\"type\":\"1\",\"remark\":\"聊几句\"},\"bossCashFlowDetails\":[{\"date\":\"2016-08\",\"amount\":\"2536\",\"name\":\"的那\",\"lineNo\":1.0,\"type\":\"1\"},{\"date\":\"2016-09\",\"amount\":\"1234\",\"name\":\"的那\",\"lineNo\":1.0,\"type\":\"1\"},{\"date\":\"2016-10\",\"amount\":\"2586\",\"name\":\"的那\",\"lineNo\":1.0,\"type\":\"1\"},{\"date\":\"2016-11\",\"amount\":\"2358\",\"name\":\"的那\",\"lineNo\":1.0,\"type\":\"1\"},{\"date\":\"2016-12\",\"amount\":\"125\",\"name\":\"的那\",\"lineNo\":1.0,\"type\":\"1\"},{\"date\":\"2016-08\",\"amount\":\"4523\",\"name\":\"理解\",\"lineNo\":1.0,\"type\":\"2\"},{\"date\":\"2016-09\",\"amount\":\"1253\",\"name\":\"理解\",\"lineNo\":1.0,\"type\":\"2\"},{\"date\":\"2016-10\",\"amount\":\"526\",\"name\":\"理解\",\"lineNo\":1.0,\"type\":\"2\"},{\"date\":\"2016-11\",\"amount\":\"555\",\"name\":\"理解\",\"lineNo\":1.0,\"type\":\"2\"},{\"date\":\"2016-12\",\"amount\":\"55\",\"name\":\"理解\",\"lineNo\":1.0,\"type\":\"2\"}]}",
+//	"bossIncomeAccountDates": "[{\"date\":\"2016-01\",\"sortNo\":1.0},{\"date\":\"2016-02\",\"sortNo\":2.0},{\"date\":\"2016-03\",\"sortNo\":3.0},{\"date\":\"2016-04\",\"sortNo\":4.0},{\"date\":\"2016-05\",\"sortNo\":5.0},{\"date\":\"2016-06\",\"sortNo\":6.0},{\"date\":\"2016-07\",\"sortNo\":7.0},{\"date\":\"2016-08\",\"sortNo\":8.0},{\"date\":\"2016-09\",\"sortNo\":9.0},{\"date\":\"2016-10\",\"sortNo\":10.0},{\"date\":\"2016-11\",\"sortNo\":11.0},{\"date\":\"2016-12\",\"sortNo\":12.0}]",
+//	"bossAdviseModel": "{\"bossAdvise\":{\"loanAdvise\":\"{42B0FE69-4998-49CC-B093-3353D21DC8E6}\",\"adviseAmount\":\"253\",\"adviseTerm\":\"7\",\"adviseMonthRepayment\":\"55\",\"repayDate\":\"12\",\"denyReason\":\"5句咯\",\"refuseReason\":null,\"denyReasonZac\":null,\"denyReasonCust\":null,\"denyReasonOther\":null},\"bossAdviseCoborrowerMessages\":[{\"type\":\"{A2DEC2E3-63C3-43B7-A804-43C31C8E2BE0}\",\"name\":\"5句\",\"cert\":\"430225198007314200\",\"relationship\":\"{817DBF0F-78D3-425E-9F94-4B52E7F857B0}\",\"familyAddressSameCustom\":\"0\",\"familyAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8132FCD7-1982-4726-B396-6E7F645585B6}\",\"companyNameSameCustom\":\"0\",\"companyName\":\"图聊几句\",\"contactPhone\":\"13722536890\",\"workAddressSameCustom\":\"0\",\"workAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8132FCD7-1982-4726-B396-6E7F645585B6}\",\"lineNo\":\"1\"}]}",
+//	"bossOffBalanceAssetModel": "{\"bossOffBalanceAsset\":{\"houseLoanBalance\":\"5455\",\"carLoanBalance\":\"555\",\"evaluate\":\"就考虑\"}}",
+//	"bossOwnerInfoModel": "{\"bossOwnerLoanInfo\":null,\"bossOwnerCreditInfo\":null,\"bossOwnerCreditReports\":null,\"bossOverdues\":null}",
+//	"bossBusinessChangeCauseModel": "{\"bossBusinessChangeCause\":{\"description\":\"劳劳的那\"}}",
+//	"questionnaireCode": "{\"questionnaireCode\":\"0004\"}",
+//	"bossLoanPurposeModel": "{\"bossLoanPurposes\":[{\"project\":\"{5F7DE5F1-14EB-40CA-A9B3-38CE27F99CCD}\",\"investmentFund\":\"855\",\"useDetail\":\"5558关\",\"lineNo\":\"1\"},{\"project\":\"{AEA714B2-C562-4B43-8257-775C2E708C7A}\",\"investmentFund\":\"235\",\"useDetail\":\"8565聊几句\",\"lineNo\":\"2\"}],\"bossFundSources\":[{\"fundSource\":\"{C60C3F14-8B88-468A-B281-1DA1095536C9}\",\"amount\":\"558\",\"lineNo\":\"1\"},{\"fundSource\":\"{EDE29047-6832-4CCE-B94C-CF6292BC46EE}\",\"amount\":\"258\",\"lineNo\":\"2\"}]}",
+//	"bossCompanyInfoModel": "{\"bossCompanyInfo\":{\"companyName\":\"聊几\",\"businessLicense\":\"1\",\"legalPerson\":\"门面\",\"mainBusiness\":\"材料\",\"businessBeginTime\":\"2016-12-23\",\"employeeCount\":\"235\",\"companyTelephone\":\"0755-1234567-123\",\"customerShareRatio\":\"20\",\"businessPremiseType\":\"{8AA0F0DD-F9DB-4DDB-A5CD-5497A4731700}\",\"leaseContractTermStr\":\"2016-12-19,2016-12-23\",\"businessAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8132FCD7-1982-4726-B396-6E7F645585B6}||巨鹿路\",\"businessPremiseArea\":\"2536\"},\"bossShareholderRatioInfos\":[{\"name\":\"嗯嗯\",\"ratio\":\"20\",\"lineNo\":\"1\"},{\"name\":\"啦啊路\",\"ratio\":\"9\",\"lineNo\":\"2\"}]}",
+//	"bossIndustryRiskModel": "{\"bossIndustryRisk\":{\"description\":\"5句咯\"}}",
+//	"bossBaseInfoModel": "{\"bossBaseInfo\":{\"name\":\"顾经理\",\"certNo\":\"420521195801023123\",\"sex\":\"{BDD35C56-549C-47D6-8402-C1612462390D}\",\"phone\":\"13722536253\",\"residenceAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8132FCD7-1982-4726-B396-6E7F645585B6}||德巴金\",\"marrige\":\"{3DE4DAC9-4357-4E6B-A3BE-2D3B56B6483D}\",\"spouseName\":\"兔兔\",\"isKnownLoan\":\"1\",\"spouseCertType\":\"{F17E7EC6-C4AA-4537-8BC4-1E6B22AC273A}\",\"spouseCertNo\":\"430225198007314200\",\"spousePhone\":\"13722536891\",\"spouseFamilyPhone\":\"0755-12345578-22\",\"spouseFamilyAddressSameCustom\":\"0\",\"spouseFamilyAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8132FCD7-1982-4726-B396-6E7F645585B6}||劳劳碌碌\",\"spouseJob\":\"{81CD6777-F9CA-42EA-9188-8EB7246770CD}\",\"spouseCompanyNameSameCustom\":\"0\",\"spouseCompanyName\":\"啦啦啦啦\",\"spouseCompanyPhone\":\"0755-1234567-12\",\"spouseCompanyAddressSameCustom\":\"0\",\"spouseCompanyAddress\":\"{33F722F0-1458-476B-AF64-45F8722C42AF}@{9210D14F-C874-4F42-9DC8-FDCA80529CAF}@{8132FCD7-1982-4726-B396-6E7F645585B6}||那里看看\",\"spouseSalary\":\"1235\",\"spouseRemark\":\"咔\",\"liveStat\":\"{5B1F32B8-4C5E-481B-BF52-67BA14BBDDC7}\",\"whomLive\":\"{C8225A89-4BDC-407B-BBD4-4135700011A0},{6D86A81A-EEF6-49EA-9BAF-F203602D03D7},{115BAF95-31A7-4946-B055-51E25E2C57E2}\",\"currentAddress\":\"{7CD64271-5E1E-413C-8420-0F2A4899DE8E}@{261D9758-5859-4342-9C80-B3CA37948132}@{629B4E45-ED41-4203-9126-197862A07CFC}||八路5句\",\"liveBeginDate\":\"2016-12-23\",\"rent\":\"2356\",\"familyPhone\":\"0755-12345678-55\",\"familyCount\":\"5\"},\"bossFamilyInfos\":[{\"relationship\":\"{88F0493F-AA10-4366-BEC5-53C293564D60}\",\"job\":\"{81CD6777-F9CA-42EA-9188-8EB7246770CD}\",\"workPlace\":\"{151393B4-86C5-460C-A73D-DEDCC74C3211}\",\"vocationIntroduce\":\"劳劳碌\",\"lineNo\":\"1\"}]}",
+//	"bossAssetInfoModel": "{\"bossAssetCars\":[{\"buyStatus\":\"01\",\"owner\":\"{CCD863A5-699C-45A0-B433-33FBDE2C1466}\",\"buyDate\":\"2016-12-23\",\"price\":\"555\",\"state\":null,\"type\":null,\"carNo\":null,\"lineNo\":\"1\"},{\"buyStatus\":\"02\",\"owner\":\"{CCD863A5-699C-45A0-B433-33FBDE2C1466}\",\"buyDate\":\"2016-12-23\",\"price\":\"358\",\"state\":\"{F3B50FB6-7218-4AA8-9B0D-0BF616978960}\",\"type\":\"巴特勒\",\"carNo\":\"那阿罗\",\"lineNo\":\"2\"}],\"bossAssetHouses\":[{\"type\":\"{FA81FC3D-B2CD-4B6A-8B9E-E2F513F13D33}\",\"owner\":\"{4EF5FE7A-3BBE-4B3D-BC6E-EA3F240DA289},{9987D154-323C-4337-8EBB-BC8F4934284B},{4DA44C77-51D6-4D6E-8793-3226D37384ED}\",\"buyDate\":\"2016-12-23\",\"price\":\"2536\",\"area\":\"253\",\"state\":\"{55D662F4-8C5C-4E4D-9732-3440E9F98242}\",\"addressChoice\":\"0\",\"address\":\"{7CD64271-5E1E-413C-8420-0F2A4899DE8E}@{261D9758-5859-4342-9C80-B3CA37948132}@{F4D37EE7-6BFF-4952-B142-946A2DF3D3AF}||阿克拉贷\",\"lineNo\":\"1\"},{\"type\":\"{4C94EA3E-8BC0-4E2C-AEC8-843D20DBB2EC}\",\"owner\":\"{4EF5FE7A-3BBE-4B3D-BC6E-EA3F240DA289},{CCD863A5-699C-45A0-B433-33FBDE2C1466}\",\"buyDate\":\"2016-12-23\",\"price\":\"5658\",\"area\":\"555\",\"state\":\"{F3B50FB6-7218-4AA8-9B0D-0BF616978960}\",\"addressChoice\":\"0\",\"address\":\"{7CD64271-5E1E-413C-8420-0F2A4899DE8E}@{261D9758-5859-4342-9C80-B3CA37948132}@{F4D37EE7-6BFF-4952-B142-946A2DF3D3AF}||劳劳碌碌\",\"lineNo\":\"2\"}],\"assetCarNo\":{\"carCount\":\"4\"},\"assetHouseNo\":{\"houseCount\":\"5\"}}",
+//	"bossBusinessInfoModel": "{\"bossBusinessInfos\":[{\"tradeName\":\"劳劳碌碌\",\"dateStr\":\"2016-12-23,2016-12-23\",\"initialInvestmentFunds\":\"445\",\"avgAnnualProfit\":\"2356\",\"lineNo\":\"1\"},{\"tradeName\":\"的哦法克\",\"dateStr\":\"2016-12-23,2016-12-23\",\"initialInvestmentFunds\":\"2354\",\"avgAnnualProfit\":\"555\",\"lineNo\":\"2\"}],\"bossCurrentBusinessInfo\":{\"beginDate\":\"2016-12-23\",\"initialInvestmentFund\":\"255\",\"customerContribution\":\"256\",\"totalInvestmentAmount\":\"288\"},\"bossNetProfit\":{\"previousYearNetProfit\":\"254\",\"lastYearNetProfit\":\"525\",\"thisYearNetProfit\":\"255\"},\"bossOtherFundSources\":[{\"type\":\"{7EEAE491-4D86-44A0-9420-00348B238997}\",\"date\":\"2016-12-23\",\"amount\":\"2536\",\"lineNo\":\"1\"},{\"type\":\"{94CBC214-9CD6-4FF2-A893-3FB71BDC91D0}\",\"date\":\"2016-12-23\",\"amount\":\"2356\",\"lineNo\":\"2\"}],\"bossLargeExpenses\":[]}",
+//	"balanceSheetModel": "{\"balanceSheetAnswers\":[{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":810.0,\"code\":\"0001.0004.08.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":555.0,\"code\":\"0001.0004.08.01.01\",\"parentCode\":\"0001.0004.08.01\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":255.0,\"code\":\"0001.0004.08.01.02\",\"parentCode\":\"0001.0004.08.01\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":null,\"code\":\"0001.0004.08.01.03\",\"parentCode\":\"0001.0004.08.01\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":358.0,\"code\":\"0001.0004.08.02.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":0.0,\"code\":\"0001.0004.08.03.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":149827.0,\"code\":\"0001.0004.08.04.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":814.0,\"code\":\"0001.0004.08.05.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":55.0,\"code\":\"0001.0004.08.06.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":0.0,\"code\":\"0001.0004.08.07.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":255.0,\"code\":\"0001.0004.08.08.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":55.0,\"code\":\"0001.0004.08.09.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":0.0,\"code\":\"0001.0004.08.10.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":255.0,\"code\":\"0001.0004.08.11\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":0.0,\"code\":\"0001.0004.08.11.01\",\"parentCode\":\"0001.0004.08.11\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":255.0,\"code\":\"0001.0004.08.11.02\",\"parentCode\":\"0001.0004.08.11\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":0.0,\"code\":\"0001.0004.08.11.03\",\"parentCode\":\"0001.0004.08.11\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":0.0,\"code\":\"0001.0004.08.11.04\",\"parentCode\":\"0001.0004.08.11\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":325.0,\"code\":\"0001.0004.08.12\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":325.0,\"code\":\"0001.0004.08.12.01\",\"parentCode\":\"0001.0004.08.12\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":0.0,\"code\":\"0001.0004.08.12.02\",\"parentCode\":\"0001.0004.08.12\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"value\":null,\"code\":\"0001.0004.08.12.03\",\"parentCode\":\"0001.0004.08.12\",\"detailModelCode\":\"0001.0004.08\",\"type\":\"2\"},{\"value\":\"16921\"},{\"value\":\"4321\",\"code\":\"0001.undefined.08.01.01\"},{\"value\":\"255\",\"code\":\"0001.undefined.08.01.02\"},{\"value\":\"12345\",\"code\":\"0001.undefined.08.01.03\"},{\"value\":\"358\",\"code\":\"0001.undefined.08.02.01\"},{\"value\":\"3251\",\"code\":\"0001.undefined.08.03.01\"},{\"value\":\"149827\",\"code\":\"0001.undefined.08.04.01\"},{\"value\":\"814\",\"code\":\"0001.undefined.08.05.01\"},{\"value\":\"2457\",\"code\":\"0001.undefined.08.06.01\"},{\"value\":\"5258\",\"code\":\"0001.undefined.08.07.01\"},{\"value\":\"2255\",\"code\":\"0001.undefined.08.11.03\"},{\"value\":\"255\",\"code\":\"0001.undefined.08.08.01\"},{\"value\":\"55\",\"code\":\"0001.undefined.08.09.01\"},{\"value\":\"0\",\"code\":\"0001.undefined.08.10.01\"},{\"code\":\"0001.undefined.08.11\",\"value\":\"8639\"},{\"value\":\"10999\",\"code\":\"0001.undefined.08.12\"},{\"value\":\"5556\",\"code\":\"0001.undefined.08.12.03\"}],\"bossDeposits\":[{\"name\":\"记录了\",\"amount\":\"255\",\"lineNo\":1.0}],\"bossReceivableAccounts\":[{\"indentorName\":\"八路\",\"receivableBeginTime\":\"2016-12-19\",\"receivableEndTime\":\"2016-12-23\",\"receivableAccount\":\"358\",\"lineNo\":\"1\"}],\"bossPrepayAccounts\":[{\"supplierName\":\"得劳劳碌碌\",\"prepayTime\":\"2016-12-23\",\"prepayAccount\":\"3251\",\"lineNo\":\"1\"}],\"bossStocks\":[{\"name\":\"拉拉\",\"number\":\"558\",\"unitPrice\":\"244\",\"amount\":\"136152\",\"lineNo\":\"1\"},{\"name\":\"德拉库\",\"number\":\"25\",\"unitPrice\":\"547\",\"amount\":\"13675\",\"lineNo\":\"2\"}],\"bossFixedAssets\":[{\"name\":\"阿布拉江\",\"number\":\"25\",\"buyTime\":\"2016-12-23\",\"unitPrice\":\"225\",\"totalValue\":\"558\",\"lineNo\":\"1\"},{\"name\":\"法律\",\"number\":\"253\",\"buyTime\":\"2016-12-23\",\"unitPrice\":\"225\",\"totalValue\":\"256\",\"lineNo\":\"2\"}],\"bossOtherBusinessAccounts\":[{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"assetType\":\"押金\",\"endDate\":null,\"amount\":\"253\",\"lineNo\":0.0,\"assetTypeOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"assetType\":\"预付房租\",\"endDate\":\"2016-12-23\",\"amount\":\"1235\",\"lineNo\":1.0,\"assetTypeOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"assetType\":\"加盟费及保证金\",\"endDate\":null,\"amount\":\"55\",\"lineNo\":2.0,\"assetTypeOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"assetType\":\"下游铺货\",\"endDate\":null,\"amount\":\"258\",\"lineNo\":3.0,\"assetTypeOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"assetType\":\"预付设备定金\",\"endDate\":null,\"amount\":\"588\",\"lineNo\":4.0,\"assetTypeOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"assetType\":\"其他\",\"endDate\":null,\"amount\":\"68\",\"lineNo\":5.0,\"assetTypeOther\":\"聊几句\"}],\"bossOtherNotBusinessAccounts\":[{\"name\":\"拉拉裤\",\"amount\":\"5258\",\"lineNo\":1.0}],\"bossPayableAccounts\":[{\"supplierName\":\"哦啦啦\",\"payableBeginTime\":\"2016-12-23\",\"payableEndTime\":\"2016-12-23\",\"payableAccount\":\"255\",\"lineNo\":\"1\"}],\"bossOthersPayableAccounts\":[{\"payableType\":\"{DC9FA9BB-7420-4781-B4E7-7ABBB2FF9273}\",\"amount\":\"55\",\"lineNo\":\"1\"}],\"bossPaymentAdvances\":[],\"bossBankShortTermLoans\":[{\"organizationName\":\"卡库塔\",\"loanBeginTime\":\"2016-12-23\",\"term\":\"35\",\"lineNo\":1.0,\"residualAmount\":\"544\"}],\"bossCompanyShortTermLoans\":[{\"organizationName\":\"阿里\",\"loanBeginTime\":\"2016-12-23\",\"term\":\"25\",\"lineNo\":1.0,\"residualAmount\":\"255\"},{\"organizationName\":\"卡路里\",\"loanBeginTime\":\"2016-12-23\",\"term\":\"28\",\"lineNo\":2.0,\"residualAmount\":\"5585\"}],\"bossCreditShortTermLoans\":[{\"residualAmount\":\"2586\",\"lineNo\":\"1\"}],\"bossBankLongTermDepts\":[{\"organizationName\":\"春节快乐\",\"loanBeginTime\":\"2016-12-23\",\"term\":\"25\",\"lineNo\":1.0,\"residualAmount\":\"325\"},{\"organizationName\":\"道理论据\",\"loanBeginTime\":\"2016-12-23\",\"term\":\"27\",\"lineNo\":2.0,\"residualAmount\":\"2563\"}],\"bossPrivateLongTermDepts\":[{\"loanBeginTime\":\"2016-12-23\",\"lineNo\":1.0,\"residualAmount\":\"2555\"}]}",
+//	"bossIncomeAccountModel": "{\"bossIncomeAccountIncomes\":[{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-01\",\"amount\":\"525\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-02\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-03\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-04\",\"amount\":\"585\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-05\",\"amount\":\"585\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-06\",\"amount\":\"525\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-07\",\"amount\":\"585\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-08\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-09\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-10\",\"amount\":\"585\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-11\",\"amount\":\"525\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-12\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"其他生产加工\",\"date\":\"2016-12\",\"amount\":\"2538\",\"type\":\"2\",\"lineNo\":1.0,\"isAllowDelete\":\"0\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"555\",\"date\":\"2016-01\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"66\",\"date\":\"2016-02\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"77\",\"date\":\"2016-03\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"55\",\"date\":\"2016-04\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"888\",\"date\":\"2016-05\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"999\",\"date\":\"2016-06\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"123\",\"date\":\"2016-07\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"234\",\"date\":\"2016-08\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"235\",\"date\":\"2016-09\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"568\",\"date\":\"2016-10\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"235\",\"date\":\"2016-11\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"type\":\"1\",\"lineNo\":2.0,\"amount\":\"55\",\"date\":\"2016-12\",\"name\":\" 吃5句\",\"isAllowDelete\":\"1\"},{\"date\":\"2016-12\",\"amount\":\"8562\",\"name\":\" 吃5句\",\"type\":\"2\",\"lineNo\":2.0,\"isAllowDelete\":\"1\"}],\"bossIncomeAccountVariableCosts\":[{\"amount\":131.25,\"date\":\"2016-01\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-02\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-03\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":146.25,\"date\":\"2016-04\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":146.25,\"date\":\"2016-05\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":131.25,\"date\":\"2016-06\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":146.25,\"date\":\"2016-07\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-08\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-09\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":146.25,\"date\":\"2016-10\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":131.25,\"date\":\"2016-11\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":634.5,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"2\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":634.5,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"2\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":634.5,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"2\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":634.5,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"2\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":634.5,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"2\",\"variableCost\":\"25\"},{\"amount\":88.75,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"1\",\"variableCost\":\"25\"},{\"amount\":634.5,\"date\":\"2016-12\",\"lineNo\":1.0,\"name\":\"其他生产加工\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"2\",\"variableCost\":\"25\"},{\"amount\":333.0,\"date\":\"2016-01\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":39.6,\"date\":\"2016-02\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":46.2,\"date\":\"2016-03\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":33.0,\"date\":\"2016-04\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":532.8,\"date\":\"2016-05\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":599.4,\"date\":\"2016-06\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":73.8,\"date\":\"2016-07\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":140.4,\"date\":\"2016-08\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":141.0,\"date\":\"2016-09\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":340.8,\"date\":\"2016-10\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":141.0,\"date\":\"2016-11\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":33.0,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":5137.2,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"2\",\"variableCost\":\"60\"},{\"amount\":33.0,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":5137.2,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"2\",\"variableCost\":\"60\"},{\"amount\":33.0,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":5137.2,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"2\",\"variableCost\":\"60\"},{\"amount\":33.0,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"1\",\"variableCost\":\"60\"},{\"amount\":5137.2,\"date\":\"2016-12\",\"lineNo\":2.0,\"name\":\" 吃5句\",\"type\":\"2\",\"variableCost\":\"60\"}],\"bossIncomeAccountFixedOutcomes\":[{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-01\",\"amount\":\"322\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-02\",\"amount\":\"525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-03\",\"amount\":\"525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-04\",\"amount\":\"555\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-05\",\"amount\":\"555\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-06\",\"amount\":\"322\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-07\",\"amount\":\"555\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-08\",\"amount\":\"525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-09\",\"amount\":\"525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-10\",\"amount\":\"555\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-11\",\"amount\":\"322\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-12\",\"amount\":\"525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-01\",\"amount\":\"2155\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-02\",\"amount\":\"225\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-03\",\"amount\":\"225\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-04\",\"amount\":\"5525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-05\",\"amount\":\"5525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-06\",\"amount\":\"2155\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-07\",\"amount\":\"5525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-08\",\"amount\":\"225\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-09\",\"amount\":\"225\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-10\",\"amount\":\"5525\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-11\",\"amount\":\"2155\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-12\",\"amount\":\"225\",\"type\":\"1\",\"isAllowDelete\":\"0\",\"lineNo\":2.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"date\":\"2016-12\",\"amount\":\"2583\",\"type\":\"2\",\"isAllowDelete\":\"1\",\"lineNo\":1.0,\"nameOther\":null},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"date\":\"2016-12\",\"amount\":\"4256\",\"type\":\"2\",\"isAllowDelete\":\"1\",\"lineNo\":2.0,\"nameOther\":null}],\"bossIncomeAccountOthers\":[{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-01\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-02\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-03\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-04\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-05\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-06\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-07\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-08\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-09\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-10\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-11\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-12\",\"amount\":\"355\",\"type\":\"1\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-01\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-02\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-03\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-04\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-05\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-06\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-07\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-08\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-09\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-10\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-11\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-12\",\"amount\":\"555\",\"type\":\"1\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-01\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-02\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-03\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-04\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-05\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-06\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-07\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-08\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-09\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-10\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-11\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-12\",\"amount\":\"558\",\"type\":\"1\",\"lineNo\":15.0,\"category\":\"2\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"otherIncome\",\"otherName\":null,\"date\":\"2016-12\",\"amount\":\"2445\",\"type\":\"2\",\"lineNo\":1.0,\"category\":\"4\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"otherName\":null,\"date\":\"2016-12\",\"amount\":\"2536\",\"type\":\"2\",\"lineNo\":14.0,\"category\":\"1\"},{\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"otherName\":null,\"date\":\"2016-12\",\"amount\":\"558\",\"type\":\"2\",\"lineNo\":15.0,\"category\":\"2\"}],\"bossIncomeAccountSummaries\":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{\"date\":\"2016-01\",\"amount\":\"223\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-02\",\"amount\":\"1253\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-03\",\"amount\":\"2536\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-04\",\"amount\":\"554\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-05\",\"amount\":\"253\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-06\",\"amount\":\"255\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-07\",\"amount\":\"352\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-08\",\"amount\":\"635\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-09\",\"amount\":\"235\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-10\",\"amount\":\"632\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-11\",\"amount\":\"856\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-12\",\"amount\":\"25\",\"type\":\"5\",\"otherType\":\"1\",\"lineNo\":1.0},{\"date\":\"2016-12\",\"amount\":\"255\",\"type\":\"5\",\"otherType\":\"2\",\"lineNo\":1.0}],\"bossIncomeAccountTurnoverResources\":[{\"amount\":\"255\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-01\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"1234\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-02\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"2356\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-03\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"2356\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-04\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"853\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-05\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"2512\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-06\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"231\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-07\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"552\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-08\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"25\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-09\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"14\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-10\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"255\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-11\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null},{\"amount\":\"55\",\"lineNo\":1.0,\"resource\":\"{3C907C03-DD0E-467A-B7BF-FB44957C858E}\",\"date\":\"2016-12\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"otherResource\":null}],\"bossAcrossVariableCosts\":[{\"id\":\"3a1238b457d34e7fb975c3609bcde486\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"的那具\",\"enterPrice\":5551.0,\"salePrice\":555.0,\"saleRatio\":23.0,\"profit\":-4996.0,\"grossProfitRate\":-900.0,\"createDate\":\"2016-12-23\",\"updateDate\":\"2016-12-23\",\"isDelete\":\"0\",\"status\":\"0\",\"questionnaireCode\":\"0001.0004\",\"lineNo\":1.0}],\"bossAcrossOtherCost\":{\"id\":\"0eab736f150144af915a02c6e4c64ee2\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"productGrossProfitRate\":-900.0,\"costRate\":null,\"avgNetProfit\":2532.0,\"netGrossProfitRate\":767.0,\"breakEvenTurnover\":355.0,\"turnoverGrossProfitRate\":1047.0,\"remark\":\"才看见\",\"comprehensiveGrossProfitRate\":0.0,\"createDate\":\"2016-12-23\",\"updateDate\":\"2016-12-23\",\"isDelete\":\"0\",\"status\":\"0\",\"questionnaireCode\":\"0001.0004\",\"influenceFactor\":\"额all土\"},\"bossAcrossOtherTypes\":[{\"id\":\"fe05c94a0fc84bb499ec0432c18bfcfa\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"{E413625B-9BF1-482C-A268-8832BFAC51EC}\",\"ratio\":\"36\",\"monthAmount\":\"5585\",\"createDate\":\"2016-12-23\",\"updateDate\":\"2016-12-23\",\"isDelete\":\"0\",\"status\":\"0\",\"questionnaireCode\":\"0001.0004\",\"lineNo\":1.0},{\"id\":\"e3c8b2324ea547be9242762db85fbaca\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"{4B2F8749-2670-4259-974E-EB163CA78CC9}\",\"ratio\":55.0,\"monthAmount\":5555.0,\"createDate\":\"2016-12-23\",\"updateDate\":\"2016-12-23\",\"isDelete\":\"0\",\"status\":\"0\",\"questionnaireCode\":\"0001.0004\",\"lineNo\":2.0}],\"bossAcrossTurnover\":{\"busySeason\":\"2,3,8,9,12\",\"busySeasonAvgSaleAmount\":355.0,\"shoulderSeason\":\"1,6,11\",\"shoulderSeasonAvgSaleAmount\":525.0,\"slackSeason\":\"4,5,7,10\",\"slackSeasonAvgSaleAmount\":585.0,\"busySeasonMonthCount\":5.0,\"slackSeasonMonthCount\":4.0,\"shoulderSeasonMonthCount\":3.0,\"remark\":\"道理论据\"},\"bossAcrossTurnoverProjects\":[{\"id\":\"16f1634c352643968c651853c4afc929\",\"serialNo\":\"{8396B0FF-676D-46B0-A88E-F4CF337AE273}\",\"type\":\"拉拉裤\",\"monthSaleAmount\":\"1235\",\"saleRatio\":\"25\",\"createDate\":\"2016-12-23\",\"updateDate\":\"2016-12-23\",\"isDelete\":\"0\",\"status\":\"0\",\"questionnaireCode\":\"0001.0004\",\"lineNo\":1.0},{\"type\":\"八路军\",\"monthSaleAmount\":\"55\",\"saleRatio\":\"12\",\"lineNo\":2.0}],\"bossAcrossTurnoverTypes\":[{\"type\":\"{F8722A2F-A465-4FEC-946A-AC6C289834B5}\",\"monthSaleAmount\":\"25\",\"saleRatio\":\"24\",\"lineNo\":1.0},{\"type\":\"{A8DBB773-A35B-48B7-8DB7-77DEE7F3C2D8}\",\"monthSaleAmount\":\"2536\",\"saleRatio\":\"25\",\"lineNo\":2.0}],\"bossAcrossInitialEquity\":{\"cashDeposit\":\"225\",\"receivableAccount\":\"555\",\"prepayAccount\":\"1234\",\"stock\":\"22\",\"fixedAsset\":\"0\",\"otherOperateAsset\":\"25\",\"otherNonoperateAsset\":\"225\",\"payableAccount\":\"55\",\"prereceiveAccount\":\"25\",\"smallLoanCompanyLoan\":\"25\",\"bankCreditLoan\":\"2\",\"zaLoanBalance\":\"55\",\"creditOverdraw\":\"55\",\"bankMortgageLoan\":\"87\",\"personalLoan\":\"235\",\"other\":\"558\",\"initialEquityDate\":\"2016-12-23\",\"initialInterest\":\"964\"},\"bossAcrossCheck\":{\"periodProfit\":\"-1153\",\"repayPrincipal\":\"254\",\"periodIncome\":\"0\",\"revalue\":\"558\",\"periodOutcome\":\"3846\",\"depreciation\":\"61736\",\"devalue\":\"2356\",\"entitlement\":\"-63553\",\"actualInterest\":\"150974\",\"difference\":\"214527\",\"percentage\":\"-18606\",\"differenceReason\":\"啊考虑考虑\"},\"bossAcrossCheckPeriods\":[{\"category\":\"{C2BA3062-E717-4B99-A68C-CAF6B2B9E628}\",\"date\":\"2016-12-23\",\"amount\":\"558\",\"lineNo\":\"1\",\"type\":\"2\"},{\"category\":\"{FF912F6F-44FD-442A-A9FC-C280DFA655E4}\",\"date\":\"2016-12-23\",\"amount\":\"555\",\"lineNo\":\"2\",\"type\":\"2\"}],\"bossBorrowInfos\":[{\"relationship\":\"{BC8C881E-7ABC-47D4-B3AE-E51E9DCF3DA7}\",\"date\":\"2016-12-23\",\"amount\":\"145\",\"lineNo\":\"1\"},{\"relationship\":\"{D273B17C-EAA9-47BD-889B-BA4142E50B22}\",\"date\":\"2016-12-23\",\"amount\":\"2588\",\"lineNo\":\"2\"}]}",
+//	"bossManagementModel": "{\"bossAgencyInfos\":null,\"bossSaleModels\":[{\"saleModel\":\"{F8722A2F-A465-4FEC-946A-AC6C289834B5}\",\"monthSaleAmount\":\"5555\",\"saleRatio\":\"23\",\"grossProfitRate\":\"5\",\"lineNo\":\"1\"}],\"bossProductInfos\":[{\"productName\":\"拉拉裤\",\"monthSaleAmount\":\"1235\",\"saleRatio\":\"25\",\"grossProfitRate\":\"35\",\"lineNo\":\"1\"}],\"bossStoreNumberInfo\":{\"storeNumber\":\"3\"},\"bossStoreInfos\":[{\"storeName\":\"阿里\",\"openDate\":\"2016-12-23\",\"monthSaleAmount\":\"558\",\"comprehensiveNetProfit\":\"55\",\"lineNo\":\"1\"}],\"bossUpstreams\":[{\"supplierName\":\"哦啦啦\",\"cooperationYear\":\"35\",\"purchaseRatio\":\"55\",\"monthPurchaseAmount\":\"255\",\"payCycle\":\"{BE196F97-A732-43E5-A16A-A2D8A8936995}\",\"generalAccountPeriod\":\"5\",\"payWay\":\"{EC48848F-F2E5-4A5B-8DF7-7774CA2E7F2D}\",\"generalPayTime\":\"{10CBF714-2A3F-47C6-992E-E7AE12995292}\",\"lastPayTime\":\"2016-12-23\",\"lastPayAmount\":\"355\",\"payableAccount\":\"255\",\"payableTimeStr\":\"2016-12-23,2016-12-23\",\"lineNo\":\"1\"}],\"bossDownstreams\":[{\"indentorName\":\"八路\",\"cooperationYear\":\"58\",\"saleRatio\":\"55\",\"monthSaleAmount\":\"252\",\"payCycle\":\"{F36AB0E1-0ED2-4CFB-B0DE-E5FC84E58FD5}\",\"generalAccountPeriod\":\"55\",\"payWay\":\"{53248D82-ED49-4278-90C9-9BBDF5A0A98B}\",\"generalReceiveTime\":\"{10CBF714-2A3F-47C6-992E-E7AE12995292}\",\"lastReceiveTime\":\"2016-12-23\",\"lastReceiveAmount\":\"215\",\"receivableAccount\":\"358\",\"receivableTimeStr\":\"2016-12-19,2016-12-23\",\"lineNo\":\"1\"}],\"bossServiceCategorys\":null,\"bossBillingModes\":null,\"bossUpstreamAmount\":{\"totalAmount\":\"558\"},\"bossDownstreamAmount\":{\"totalAmount\":\"555\"},\"bossProductionFlow\":{\"description\":\"拉拉\"},\"bossOutGoingMachnings\":[{\"outgoingFlow\":\"DNF刺\",\"monthAmount\":\"5882\",\"forPaymentCycle\":\"{BE196F97-A732-43E5-A16A-A2D8A8936995}\",\"accountPeriod\":\"558\",\"forPaymentTime\":\"{684B1CB5-FC25-429D-8459-9544120834A8}\",\"payableProcessCost\":\"55\",\"payableTimeStr\":\"2016-12-21,2016-12-23\",\"lineNo\":\"1\"}],\"bossProductionCapaction\":{\"calculationType\":\"{9EC389F3-B112-4B0F-A1E3-3D828099BED2}\",\"perdayYield\":\"855\",\"perdayOutputValue\":\"558\",\"monthMaxYield\":\"25\"}}",
+//	"bossAnalysisRiskModel": "{\"bossAnalysisRisk\":{\"proposal\":\"米开朗基罗\"}}",
+//	"bossFamilyInfoModel": "{\"bossFamilyOtherDescription\":{\"otherDescription\":\"出来聚聚\"}}"
+//}]
+//
+//			loadBalanceSheetCurrentAssets(a);
+		</script>
+		<!-- <script type="text/javascript">
+			$(".left span").html("&nbsp;&nbsp;")
+		</script> -->
+		<script type="text/javascript">
+			function fushu(val){
+				var telReg = /^(\d{0,10})$/;
+				if(val!=""){
+					if(telReg.test(val)){
+						return true;
+					}else{
+						return false;
+					}
+				}
+				
+			}
+			function xiaoshu(val){
+				var telReg = /^(([1-9]\d{0,9})|(0))(\.\d{1,2})?$/;
+				if(val!=""){
+					if(telReg.test(val)){
+						return true;
+					}else{
+						return false;
+					}
+				}
+				
+			}
+			$(document).on("blur","input[type='number']",function(){
+				if($(this).val()!=""){
+					if($(this).parents("li").hasClass("unitPrice")){
+						if(!xiaoshu($(this).val())){
+							if($(this).parent(".b_r").length!=0){
+								$(this).parents(".problem").prev().find(".left label").remove();
+								$('<label class="message_info">10位正整数或带两位小数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+							}else{
+								$(this).parents("li").find(".left label").remove();
+								$('<label class="message_info">10位正整数或带两位小数</label>').appendTo($(this).parents("li").find(".left"))
+							}
+						};
+					}else{
+						if(!fushu($(this).val())){
+							if($(this).parent(".b_r").length!=0){
+								$(this).parents(".problem").prev().find(".left label").remove();
+								$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+							}else{
+								$(this).parents("li").find(".left label").remove();
+								$('<label class="message_info">10位正整数</label>').appendTo($(this).parents("li").find(".left"))
+							}
+						};
+					}
+				}else{
+					if($(this).parents("li").find(".left span").html()=="*"){
+						$(this).parents("li").find(".left label").remove();
+						$('<label class="message_info">请输入必填数据</label>').appendTo($(this).parents("li").find(".left"))
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

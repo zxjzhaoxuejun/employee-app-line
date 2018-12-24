@@ -1,0 +1,3633 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<title>短期负债</title>
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/lCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/demoxf0729.css"/>
+		<link rel="stylesheet" type="text/css" href="css/businessModel.css"/>
+		<script type="text/javascript" src="js/setHtmlFontSize.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script src="js/lCalendar.min.js"></script>
+	</head>
+
+	<body>
+		<section id="section0">
+			<div _code="0001.0003.08.08.01" class="problem" id="0_1">
+				<p class="_xq"><span>应付账款</span><span class="_zsp">0</span><span>元</span><img src="img/add_icon.png" class="add"><img src="img/jian_icon.png" class="jian"></p>
+			</div>
+			<div class="problem show" id="0_1_1" style="display: block;">
+				<div class="cy"><span class="span_bg">页签</span></div>
+				<ul>
+					<li fieldname="supplierName" isLabel="1">
+						<div class="left"><span>*</span><i>供应商/采购商品名称</i></div>
+						<div class="right">
+							<input maxlength="8" type="text" placeholder="请输入供应商/采购商品名称" value="">
+						</div>
+					</li>
+					<li fieldname="payableBeginTime" isLabel="0">
+						<div class="left"><span>*</span><i>应付开始时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-02-01-02" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="payableEndTime" isLabel="0">
+						<div class="left"><span>*</span><i>应付结束时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-02-01-03" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="payableAccount" isLabel="0" class="receivableAccount">
+						<div class="left"><span>*</span><i>目前的应付账款</i></div>
+						<div class="right">
+							<input maxlength="10" type="number" placeholder="请输入目前的应付账款" value=""><b class="yuan">元</b></div>
+					</li>
+					<!--<li fieldname="source" isLabel="0" style="display: none;">
+						<div class="left"><span>*</span><i>控制是否修改</i></div>
+						<div class="right">
+							<input maxlength="10" type="hidden" placeholder="请输入目前的应付账款" value=""></div>
+					</li>-->
+				</ul>
+			</div>
+		</section>
+		<section id="section9">
+			<div class="problem" id="9_1" _code="0001.0003.08.09.01">
+				<p class="_xq"><span>其他应付款项</span><span class="_zsp">0</span><span>元</span><img src="img/add_icon.png" class="add"><img src="img/jian_icon.png" class="jian"></p>
+			</div>
+			<div class="problem show" id="9_1_1" style="display: block;">
+				<div class="cy"><span class="span_bg">页签</span></div>
+				<ul>
+					<li fieldname="payableType" ct="{221126D1-A0B0-49C8-BDB8-85DA1E539103}:应付工资,{7124F687-A80B-457A-A5CE-EDB7A7AAAE11}:应付水电,{8082C097-02B2-4986-BA2B-B8038C57068A}:应付房租,{DC9FA9BB-7420-4781-B4E7-7ABBB2FF9273}:应付装修设备款,{DD8E6415-39BB-4DCC-89AB-BA942C3AD5CE}:应付的退股费用,{3F3B519F-8EBA-4DF0-AA87-7C01C85DFF0C}:应付外发加工费,{9BC02409-8CB6-4716-9358-83753490F4DC}:其他">
+						<div class="left">
+							<span>*</span>
+							<i>应付款项类别</i>
+						</div>
+						<div class="right">
+							<span class="choose">请选择</span>
+							<img src="img/down_icon.png" class="select select_1" />
+						</div>
+					</li>
+					<li fieldname="payableBeginTime" style="display: none;">
+						<div class="left"><span>*</span><i>应付开始时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-09-01-02" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="payableEndTime" style="display: none;">
+						<div class="left"><span>*</span><i>应付结束时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-09-01-03" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="payableTypeOther" style="display: none;">
+						<div class="left"><span>*</span><i>其他</i></div>
+						<div class="right">
+							<input type="text" placeholder="请输入其他">
+						</div>
+					</li>
+					<li fieldname="amount" class="amount">
+						<div class="left"><span>*</span><i>金额</i></div>
+						<div class="right">
+							<input maxlength="10" type="number" placeholder="请输入金额" value=""><b class="yuan">元</b></div>
+					</li>
+					<!--<li fieldname="source" style="visibility: hidden;">
+						<div class="left"><span>*</span><i>控制是否修改</i></div>
+						<div class="right">
+							<input maxlength="10" type="hidden" placeholder="请输入目前的应付账款" value=""></div>
+					</li>-->
+				</ul>
+			</div>
+		</section>
+		<section id="section10">
+			<div class="problem" id="10_1" _code="0001.0003.08.10.01">
+				<p class="_xq"><span>预收款项</span><span class="_zsp">0</span><span>元</span><img src="img/add_icon.png" class="add"><img src="img/jian_icon.png" class="jian"></p>
+			</div>
+			<div class="problem show" id="10_1_1" style="display: block;">
+				<div class="cy"><span class="span_bg">页签</span></div>
+				<ul>
+					<li fieldname="supplierName">
+						<div class="left"><span>*</span><i>订货商名称</i></div>
+						<div class="right">
+							<input maxlength="8" type="text" placeholder="请输入订货商名称" value="">
+						</div>
+					</li>
+					<li fieldname="produceTime">
+						<div class="left"><span>*</span><i>预收产生时间</i></div>
+						<div class="right">
+							<input id="date0001-0003-08-10-01-02" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">
+						</div>
+					</li>
+					<li fieldname="advanceAccount" class="advanceAccount">
+						<div class="left"><span>*</span><i>目前的预收账款</i></div>
+						<div class="right">
+							<input maxlength="10" type="number" placeholder="请输入目前的预收账款" value=""><b class="yuan">元</b></div>
+					</li>
+					<!--<li fieldname="source" style="display: none;">
+						<div class="left"><span>*</span><i>控制是否修改</i></div>
+						<div class="right">
+							<input maxlength="10" type="hidden" placeholder="请输入目前的应付账款" value=""></div>
+					</li>-->
+				</ul>
+			</div>
+		</section>
+		<section id="section11">
+			<div class="problem" id="11_1" _code="0001.0003.08.11">
+				<p class="_xq"><span>短期贷款</span><span class="w_zsp _zsp">0</span><span>元</span></p>
+			</div>
+			<div class="problem show" id="11_1_1" style="display: block;">
+				<div class="cy"><span class="span_bg">银行信用贷款</span><span>小贷公司贷款</span><span>中安公司贷款</span><span>信用卡</span><span>消金公司贷款</span></div>
+				<div class="d_k">
+					<div class="yszk">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善银行信用贷款</span><img src="img/_add.png" class="_add" style="right: 0.8rem;" /></p>
+						<ul>
+							
+						</ul>
+					</div>
+					<div class="xedk" style="display: none;">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善小额贷款余额</span><img src="img/_add.png" class="_add" style="right: 0.8rem;" /></p>
+						<ul>
+							
+						</ul>
+					</div>
+					<div class="zadk" style="display: none;">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善中安贷款余额</span><img src="img/_add.png" class="_add" style="right: 0.8rem;" /></p>
+						<!--<div class="problem show" _code="0001.0003.08.11.03" style="display: block;">-->
+						<ul>
+							
+						</ul>
+					</div>
+					<div class="xyk" style="display: none;">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善信用卡</span></p>
+						<div class="problem show" style="display: block;">
+							<ul>
+								<li fieldname="residualAmount">
+									<div class="left"><span>&nbsp;&nbsp;</span><i>透支总额</i></div>
+									<div class="right">
+										<input maxlength="10" class="money" type="number" placeholder="请输入透支总额" value=""><b class="yuan">元</b>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="xjdk" style="display: none;">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善消金公司贷款</span><img src="img/_add.png" class="_add" style="right: 0.8rem;" /></p>
+						<!--<div class="problem show" _code="0001.0003.08.11.03" style="display: block;">-->
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer id="next">
+			<p>提交</p>
+		</footer>
+		<script src="js/formatMoneyText.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var sj;
+			var shortLoan = { //短期贷款
+				bingding: function() {
+					var that = this;
+					$(".yszk ._add,.xedk ._add,.zadk ._add,.xjdk ._add").click(function() {
+						var _this = $(this);
+						that.mask();
+						$(".qr").click(function() {
+							var a = true;
+							$("#mask li").each(function() {
+								$(this).find("label").remove();
+								if ($(this).find("input").val().trim() == "") {
+									a = false;
+									$(this).children(".left").append('<label class="message_info">请输入必填数据</label>');
+								}else{
+									if($(this).find("input").attr("name") == "input_date"){
+										function left(date1){
+											var d = new Date();
+											var year = d.getFullYear();
+											var month = d.getMonth()+1;
+											if(month<10){
+												month = "0"+month;
+											}
+											var day = d.getDate();
+											if(day<10){
+												day = "0"+day;
+											}
+									   	 	var str = year+"-"+month+"-"+day;//当前日期
+									   	 	if(date1==str){
+									   	 		return true;
+									   	 	}
+									        var oDate1 = new Date(date1);
+									        var oDate2 = new Date(str);
+									        if(oDate1.getTime() > oDate2.getTime()){
+									            return false;                    
+									        } else {
+									        	return true;
+									        }
+										}
+										var date1 = $(this).find("input").val();
+										var b = left(date1);
+										if(!b){
+											$(this).children(".left").append('<label class="message_info">小于等于当前日期</label>');
+											a = false;
+										}
+									}
+									if($(this).find("input").attr("type") == "number"){
+										if($(this).find("input").val()!=""){
+											$(this).parents("li").find("label").remove();
+											if(!fushu($(this).find("input").val())){
+												a = false;
+												if($(this).parent(".b_r").length!=0){
+													$(this).parents(".problem").prev().find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+												}else{
+													$(this).find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+												}
+											};
+										}
+									}
+								}
+							});
+							if (a) {
+								$('<li>' +
+									'<div class="dqTop">' +
+									'<span fieldname="organizationName">' + $("._jg").val() + '</span>' +
+									'<img src="img/_sc.png" class="s_d"/>' +
+									'</div>' +
+									'<div class="dqBottom">' +
+									'<div><span fieldname="loanBeginTime">' + $("#date01").val() + '</span></div>' +
+									'<div><span fieldname="term">' + $("._qx").val() + '</span><b class="yuan">期</b></div>' +
+									'<div><span fieldname="residualAmount" class="money">' + $("._je").val() + '</span><b class="yuan">元</b></div>' +
+									'</div>' +
+									'</li>').appendTo(_this.parents("div").children("ul"))
+								$("#mask").remove();
+								that.sum();
+							}
+						});
+					});
+					$(document).on("click", ".s_d", function() {
+						var _this = $(this);
+						$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+						$("._ci").click(function() {
+							$("#mask").remove();
+						});
+						$("._qr").click(function() {
+							_this.parents("li").remove();
+							$("#mask").remove();
+							that.sum();
+						});
+						return false;
+					});
+					$(document).on("click", ".yszk li,.xedk li,.zadk li,.xjdk li", function() {
+						/*2018-12-21修改*/
+						if($(this).attr('data-source')==1){
+							return;
+						}
+						/*2018-12-21修改 end*/
+						that.mask();
+						var t_hat = $(this);
+						$("._jg").val($(this).find(".dqTop span").text());
+						$("#date01").val($(this).find(".dqBottom div:nth-of-type(1) span").text());
+						$("._qx").val($(this).find(".dqBottom div:nth-of-type(2) span").text());
+						$("._je").val($(this).find(".dqBottom div:nth-of-type(3) span").text());
+						$(".qr").click(function() {
+							var a = true;
+							$("#mask li").each(function() {
+								$(this).find("label").remove();
+								if ($(this).find("input").val().trim() == "") {
+									a = false;
+									$(this).children(".left").append('<label class="message_info">请输入必填数据</label>');
+								}else{
+									if($(this).find("input").attr("name") == "input_date"){
+										function left(date1){
+											var d = new Date();
+											var year = d.getFullYear();
+											var month = d.getMonth()+1;
+											if(month<10){
+												month = "0"+month;
+											}
+											var day = d.getDate();
+											if(day<10){
+												day = "0"+day;
+											}
+									   	 	var str = year+"-"+month+"-"+day;//当前日期
+									   	 	if(date1==str){
+									   	 		return true;
+									   	 	}
+									        var oDate1 = new Date(date1);
+									        var oDate2 = new Date(str);
+									        if(oDate1.getTime() > oDate2.getTime()){
+									            return false;                    
+									        } else {
+									        	return true;
+									        }
+										}
+										var date1 = $(this).find("input").val();
+										var b = left(date1);
+										if(!b){
+											$(this).children(".left").append('<label class="message_info">小于等于当前日期</label>');
+											a = false;
+										}
+									}
+									if($(this).find("input").attr("type") == "number"){
+										if($(this).find("input").val()!=""){
+											$(this).parents("li").find("label").remove();
+											if(!fushu($(this).find("input").val())){
+												a = false;
+												if($(this).parent(".b_r").length!=0){
+													$(this).parents(".problem").prev().find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+												}else{
+													$(this).find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+												}
+											};
+										}
+									}
+								}
+							});
+							if (a) {
+								t_hat.find(".dqTop span").text($("._jg").val());
+								t_hat.find(".dqBottom div:nth-of-type(1) span").text($("#date01").val());
+								t_hat.find(".dqBottom div:nth-of-type(2) span").text($("._qx").val());
+								t_hat.find(".dqBottom div:nth-of-type(3) span").text($("._je").val());
+								$("#mask").remove();
+								that.sum();
+							}
+						});
+					});
+					$(".zadk .money").on("keyup change", function() {
+						that.sum();
+					})
+				},
+				mask: function() {
+					$('<div id="mask"><div class="mask_bg"></div><div class="problem show" style="display: block;"><ul class="u_l"><div class="d_t"><span class="qr">确认</span><span class="qx">取消</span></div><li>' +
+						'<div class="left"><span>*</span><i>机构名称</i></div>' +
+						'<div class="right">' +
+						'<input maxlength="8" class="_jg" type="text" placeholder="请输入机构名称" value="">' +
+						'</div>' +
+						'</li><li>' +
+						'<div class="left"><span>*</span><i>贷款起始时间</i></div>' +
+						'<div class="right">' +
+						'<input id="date01" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1916-01-11,2116-05-29">' +
+						'</div>' +
+						'</li><li class="advanceAccount">' +
+						'<div class="left"><span>*</span><i>期限</i></div>' +
+						'<div class="right">' +
+						'<input class="_qx" maxlength="3" type="number" placeholder="请输入期限" value=""><b class="yuan">期</b></div>' +
+						'</li><li class="advanceAccount">' +
+						'<div class="left"><span>*</span><i>金额</i></div>' +
+						'<div class="right">' +
+						'<input class="_je" maxlength="10" type="number" placeholder="请输入金额" value=""><b class="yuan">元</b></div>' +
+						'</li></ul></div></div>').appendTo("body");
+					var calendar = new lCalendar();
+					calendar.init({
+						'trigger': '#date01',
+						'type': 'date'
+					});
+					$(".qx").click(function() {
+						$("#mask").remove();
+					});
+					$("#mask input").on("blur", function() {
+						$(this).parents("li").find("label").remove();
+						if ($(this).val().trim() == "") {
+							$(this).parents("li").children(".left").append('<label class="message_info">请输入必填数据</label>');
+						}else{
+							console.log($(this).context.id)
+							var _id=$(this).context.id;
+							var it = $("#"+_id);
+							if(it.attr("name") == "input_date"){
+								function left(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var date1 = it.val();
+								var b = left(date1);
+								if(!b){
+									it.parents("li").children(".left").append('<label class="message_info">小于等于当前日期</label>');
+								}
+							}
+							if($(this).attr("type") == "number"){
+								if($(this).val()!=""){
+									$(this).parents("li").find("label").remove();
+									if(!fushu($(this).val())){
+										a = false;
+										if($(this).parent(".b_r").length!=0){
+											$(this).parents(".problem").prev().find(".left label").remove();
+											$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+										}else{
+											$(this).parents("li").find(".left label").remove();
+											$('<label class="message_info">10位正整数</label>').appendTo($(this).parents("li").find(".left"))
+										}
+									};
+								}
+							}
+						}
+					});
+					$("#mask input").not("#date01").on("focus", function() {
+					});
+				},
+				span: function() {
+					$("#11_1_1 .cy span").click(function() {
+						$(this).addClass("span_bg").siblings().removeClass("span_bg");
+						$(".d_k").children().eq($(this).index()).show().siblings().hide();
+					});
+				},
+				sum: function() {
+					var num = 0;
+					$(".d_k").each(function() {
+						$(this).find("li").each(function() {
+							if ($(this).find(".money").text().trim() != "") {
+								num += parseInt($(this).find(".money").text())
+							}
+							if ($(this).find(".money").val().trim() != "") {
+								num += parseInt($(this).find(".money").val())
+							}
+						})
+					})
+					$("#11_1 .w_zsp").text(num);
+				}
+			};
+			shortLoan.bingding();
+			shortLoan.span();
+			shortLoan.sum()
+			var common = { //公共样式
+				together: function() {
+					$('.textCon textarea').on('blur', function() {
+						if ($('.textCon textarea').val().trim() != "") {
+							$('.textCon span').hide();
+						} else {
+							$('.textCon span').show();
+						}
+						$('.textCon textarea').removeClass('textYellow');
+					});
+					$('.textCon textarea').on('focus', function() {
+						$('.textCon span').hide();
+						$(this).addClass('textYellow');
+					});
+					$(".problem li input").on("focus", function() {
+						$(this).parent().parent("li").addClass("ylborder");
+						$(this).parent().parent("li").siblings().removeClass("ylborder");
+					});
+					$(".problem li input").on("blur", function() {
+						$(this).parent().parent().removeClass("ylborder");
+						if ($(this).val().trim() != "") {
+							$(this).parent().siblings(".left").children("i").css({
+								"color": "#a09fa4"
+							});
+						} else {
+							$(this).parent().siblings(".left").children("i").css({
+								"color": "#191919"
+							});
+						}
+					});
+				}
+			}
+			common.together();
+			//应付货款
+			var a_dd = {};
+			var a_num = 1;
+
+			function creat(v, bossPayableAccounts) {
+				if (v) {
+					$("#section0 .cy").children().remove();
+					a_num = 0;
+					$(bossPayableAccounts).each(function(i) {
+						a_num++;
+						if ($(this)[0].lineNo == "1") {
+							csh($("#section0 .show li"), $(this)[0]);
+						}
+						a_dd[i + 1] = [];
+						if ($(this)[0]["supplierName"] != null) {
+							if ($(this)[0]["supplierName"].length > 4) {
+								$("<span>" + $(this)[0]["supplierName"].substr(0, 4) + "</span>").appendTo("#section0 .cy");
+							} else {
+								$("<span>" + $(this)[0]["supplierName"] + "</span>").appendTo("#section0 .cy");
+							}
+						} else {
+							$("<span>页签</span>").appendTo("#section0 .cy");
+						}
+						for (key in $(this)[0]) {
+							var _this = $(this);
+							$("#section0 .show li").each(function() {
+								if (key == $(this).attr("fieldname")) {
+									var td = {};
+									td[key] = _this[0][key];
+									a_dd[i + 1].push(td)
+								}
+							})
+						}
+						$("#section0 .cy").children().first().addClass("span_bg");
+					})
+					if ($("#section0 .cy").children().length > 1) {
+						$("#section0 .jian").show();
+					}
+					a_Save();
+				};
+			}
+
+			function a_Save() {
+				var i_dx;
+				$("#section0 .cy span").each(function() {
+					if ($(this).hasClass("span_bg")) {
+						i_dx = $(this).index() + 1;
+					}
+				});
+				a_dd[i_dx] = [];
+				$("#section0 .show ul li").each(function() {
+					var newtsj = {};
+					if ($(this).children(".right").children("span").length == 1) {
+						var a_v = $(this).children(".right").children("span").text();
+						if (a_v == "请选择" || a_v == "取消") {
+							a_v = null
+						}
+						newtsj[$(this).attr("fieldname")] = a_v;
+					} else if ($(this).children(".right").children("input").length == 1) {
+						var a_v = $(this).children(".right").children("input").val();
+						if (a_v.trim() == "") {
+							a_v = null;
+						}
+						newtsj[$(this).attr("fieldname")] = a_v;
+					}
+					a_dd[i_dx].push(newtsj);
+				});
+				total = 0;
+				for (var i in a_dd) {
+					$(a_dd[i]).each(function() {
+						if ($(this)[0].payableAccount != undefined) {
+							if ($(this)[0].payableAccount != null) {
+								total += parseInt($(this)[0].payableAccount)
+							}
+						}
+					})
+				};
+				$("#section0 ._zsp").text(total);
+				return a_dd;
+			}
+			$("#section0 .add").on("click", function() {
+				if($("#section0 .show:visible").length==0){
+					$("#section0 .show,#section0 .jian").show();
+					a_Save();
+				}else{
+					a_Save();
+					var s_t = "";
+					var s_l = "";
+					var ns_t = null;
+					var l_i = $("#section0 .show ul li");
+					for (var i = 0; i < l_i.length; i++) {
+						l_i.eq(i).find(".left label").remove();
+						if (l_i.eq(i).attr("islabel") == 1) {
+							ns_t = 1;
+							if (l_i.eq(i).children(".right").children("span").length == 1) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								s_t = l_i.eq(i).children(".right").children("span").text();
+							} else if (l_i.eq(i).children(".right").children("input").length == 1) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								s_t = l_i.eq(i).children(".right").children("input").val();
+							} else if (l_i.eq(i).children(".right").hasClass("chenckbox")) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								var _st = "";
+								for (var j = 0; j < l_i.eq(i).children(".right").children("label").length; j++) {
+									if (l_i.eq(i).children(".right").children("label").eq(j).children("input").prop("checked")) {
+										_st += l_i.eq(i).children(".right").children("label").eq(j).children("span").text() + ",";
+									}
+								}
+								s_t = _st.slice(0, -1);
+							}
+						};
+					}
+					if (ns_t == null && $("#section0 .problem ul li").first().find("input").val().trim() != "") {
+						a_num++;
+						$('<span>页签</span>').appendTo("#section0 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+						$("#section0 .show ul li").each(function() {
+							if ($(this).children(".right").children("span").length == 1) {
+								$(this).children(".right").children("span").text("请选择").css({
+									"color": "#a0a0a5"
+								});;
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							} else if ($(this).children(".right").children("input").length == 1) {
+								$(this).children(".right").children("input").val("");
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							}
+						});
+						if (a_num > 1) {
+							$("#section0 ._xq").children("#section0 .jian").show();
+						}
+					};
+					if (s_t != "" && $("#section0 .problem ul li").first().find("input").val().trim() != "") {
+						//判断li第一个元素的内容是否为span
+						a_num++;
+						$('<span>页签</span>').appendTo("#section0 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+						if (a_num > 1) {
+							$("#section0 ._xq").children("#section0 .jian").show();
+						}
+						$("#section0 .show ul li").each(function() {
+							if ($(this).children(".right").children("span").length == 1) {
+								$(this).children(".right").children("span").text("请选择").css({
+									"color": "#a0a0a5"
+								});;
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							} else if ($(this).children(".right").children("input").length == 1) {
+								/**2018-12-21 添加 disabled*/
+								$(this).children(".right").children("input").val("").attr('disabled',false);
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							}
+						});
+					};
+				}
+					
+			});
+			$(document).on("click", "#section0 .cy span", function() {
+				a_Save();
+				$(this).addClass("span_bg").siblings().removeClass("span_bg");
+				var _idx = $(this).index();
+//				var isEdit=false;
+				$("#section0 .show ul li").each(function() {
+					$(this).find(".left label").remove();
+					var fn = $(this).attr("fieldname");
+					var a_jv;
+					$(a_dd[_idx + 1]).each(function() {
+						for (key in $(this)[0]) {
+							if (key == fn) {
+								a_jv = $(this)[0][key]
+							}
+						}
+						
+						/*2018-12-21修改*/
+//			if($(this)[0]['source']==1){
+//				isEdit=true;
+//			}else{
+//				isEdit=false;
+//			}
+			/*2018-12-21修改 end*/
+						
+					})
+					if ($(this).children(".right").children("span").length == 1) {
+						if (a_jv != null) {
+							$(this).children(".right").children("span").text(a_jv).css({
+								"color": "#191919"
+							});
+							$(this).children(".left").children("i").css({
+								"color": "#a0a0a5"
+							});
+						} else {
+							$(this).children(".right").children("span").text("请选择").css({
+								"color": "#a0a0a5"
+							});
+							$(this).children(".left").children("i").css({
+								"color": "#191919"
+							});
+						}
+					} else if ($(this).children(".right").children("input").length == 1) {
+						if(a_jv!=null){
+							if($(this).children(".right").children("input").attr("name")!="input_date"){
+								if(!isNaN(parseInt(a_jv))){
+									$(this).children(".right").children("input").val(parseInt(a_jv));
+								}else{
+									$(this).children(".right").children("input").val(a_jv);
+								}
+							}else{
+								$(this).children(".right").children("input").val(a_jv);
+							}
+							$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+						}else{
+							$(this).children(".right").children("input").val("");
+							$(this).children(".left").children("i").css({"color":"#191919"});
+						}
+					}
+				});
+				$("#section0 .problem .cy span").each(function() {
+					if (a_dd[$(this).index() + 1][0][0] != null) {
+						$(this).text(a_dd[$(this).index() + 1][0][0])
+					}
+				});
+			});
+			$("#section0 .jian").on("click", function() {
+				a_Save();
+				$("#section0 .problem .cy span").each(function() {
+					if (a_dd[$(this).index() + 1][0][0] != null) {
+						$(this).text(a_dd[$(this).index() + 1][0][0])
+					}
+				});
+				if (a_num > 0) {
+					$("#section0 .cy span").each(function() {
+								/**2018-12-21 修改*/
+//					var isShow='block';
+//					$(a_dd[$(this).index() + 1]).each(function(){
+//						if($(this)[0]['source']==1){
+//							isShow='none';
+//						};  style='display: "+isShow+";'
+//					})
+					/**2018-12-21 修改 end*/
+						$("<img src='img/close_icon.png'/>").appendTo($(this));
+					})
+					$(".cy span img").click(function() {
+						var _tp = $(this).parent();
+						var _tidx = $(this).parent().index();
+						$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+						$("._ci").click(function() {
+							$("#section0 .cy span img").remove();
+							$("#mask").remove();
+						});
+						$("._qr").click(function() {
+							$("#section0 .cy span img").remove();
+							$("#mask").remove();
+							if(a_num==1){
+								$("#section0 .show").hide();
+								$("#section0 .jian").hide();
+								$("#section0 ._zsp").text("0");
+							}else{
+								_tp.remove();
+								if (_tidx == 0) {
+									$("#section0 .show .cy span").eq(0).addClass("span_bg").siblings().removeClass("span_bg");
+								} else {
+									$("#section0 .show .cy span").eq(_tidx - 1).addClass("span_bg").siblings().removeClass("span_bg");
+								}
+								delete a_dd[_tidx + 1];
+								if (_tidx + 1 < a_num) {
+									var _sol = 0;
+									var _sos = {};
+									for (var i in a_dd) {
+										_sol++;
+										_sos[_sol] = a_dd[i];
+									}
+									a_dd = _sos;
+								}
+								a_num--;
+								$("#section0 .show ul li").each(function() {
+									$(this).find(".left label").remove();
+									if (_tidx == 0) {
+										_tidx = 1
+									}
+									var fn = $(this).attr("fieldname");
+									var a_jv;
+									$(a_dd[_tidx]).each(function() {
+										for (key in $(this)[0]) {
+											if (key == fn) {
+												a_jv = $(this)[0][key]
+											}
+										}
+									})
+									if ($(this).children(".right").children("span").length == 1) {
+										if (a_jv != null) {
+											$(this).children(".right").children("span").text(a_jv).css({
+												"color": "#191919"
+											});
+											$(this).children(".left").children("i").css({
+												"color": "#a0a0a5"
+											});
+										} else {
+											$(this).children(".right").children("span").text("请选择").css({
+												"color": "#a0a0a5"
+											});
+											$(this).children(".left").children("i").css({
+												"color": "#191919"
+											});
+										}
+									} else if ($(this).children(".right").children("input").length == 1) {
+										if(a_jv!=null){
+											if($(this).children(".right").children("input").attr("name")!="input_date"){
+												if(!isNaN(parseInt(a_jv))){
+													$(this).children(".right").children("input").val(parseInt(a_jv));
+												}else{
+													$(this).children(".right").children("input").val(a_jv);
+												}
+											}else{
+												$(this).children(".right").children("input").val(a_jv);
+											}
+											$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+										}else{
+											$(this).children(".right").children("input").val("");
+											$(this).children(".left").children("i").css({"color":"#191919"});
+										}
+									}
+								});
+								a_Save();
+							}
+								
+						});
+					})
+				}
+				
+				
+					
+			});
+			var total;
+			if ($.isEmptyObject(a_dd)) {
+				total = 0;
+			};
+			$("#section0 .receivableAccount").find("input").on("keyup", function() {
+				a_Save();
+			});
+			
+			$("#section0 .show ul li").first().find("input").on("keyup change", function() {
+				var _span;
+				$("#section0 .cy span").each(function() {
+					if ($(this).hasClass("span_bg")) {
+						_span = $(this)
+					}
+				})
+				if ($(this).val().trim() != "") {
+					if ($(this).val().length > 4) {
+						_span.text($(this).val().substr(0, 4));
+					} else {
+						_span.text($(this).val());
+					}
+				} else {
+					_span.text("页签");
+				}
+			})
+			
+			
+			
+			
+			$("#section0 .show ul li:nth-of-type(2) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lat(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lat($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}else{
+					if($("#section0 .show ul li:nth-of-type(3) input").val().trim()!=""){
+						function rrt(date1){
+					   	 	var str = $("#section0 .show ul li:nth-of-type(3) input").val();
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						};
+						var t = rrt($("#section0 .show ul li:nth-of-type(2) input").val());
+						if(!t){
+							$(this).parents("li").children(".left").append('<label class="message_info">小于等于应付结束时间</label>');
+						}
+					}
+				}
+			})
+			$("#section0 .show ul li:nth-of-type(3) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lbt(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lbt($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}else{
+					if($("#section0 .show ul li:nth-of-type(2) input").val().trim()!=""){
+						function rtt(date1){
+					   	 	var str = $("#section0 .show ul li:nth-of-type(2) input").val();
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return true;                    
+					        } else {
+					        	return false;
+					        }
+						};
+						var t = rtt($("#section0 .show ul li:nth-of-type(3) input").val());
+						if(!t){
+							$(this).parents("li").children(".left").append('<label class="message_info">大于等于应付开始时间</label>');
+						}
+					}
+				}
+			})
+			
+			$("#section10 .show ul li:nth-of-type(2) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lct(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lct($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}
+			})
+			
+			
+			//预收款项
+			var b_dd = {};
+			var b_num = 1;
+
+			function fund(v, bossPaymentAdvances) {
+				if (v) {
+					$("#section10 .cy").children().remove();
+					b_num = 0;
+					$(bossPaymentAdvances).each(function(i) {
+						b_num++;
+						if ($(this)[0].lineNo == "1") {
+							csh($("#section10 .show li"), $(this)[0]);
+						}
+						b_dd[i + 1] = [];
+						if ($(this)[0]["supplierName"] != null) {
+							if ($(this)[0]["supplierName"].length > 4) {
+								$("<span>" + $(this)[0]["supplierName"].substr(0, 4) + "</span>").appendTo("#section10 .cy");
+							} else {
+								$("<span>" + $(this)[0]["supplierName"] + "</span>").appendTo("#section10 .cy");
+							}
+						} else {
+							$("<span>页签</span>").appendTo("#section10 .cy");
+						}
+						for (key in $(this)[0]) {
+							var _this = $(this);
+							$("#section10 .show li").each(function() {
+								if (key == $(this).attr("fieldname")) {
+									var td = {};
+									td[key] = _this[0][key];
+									b_dd[i + 1].push(td)
+								}
+							})
+						}
+						$("#section10 .cy").children().first().addClass("span_bg");
+					})
+					if ($("#section10 .cy").children().length > 1) {
+						$("#section10 .jian").show();
+					}
+					b_Save();
+				}
+			};
+
+			function b_Save() {
+				var i_dx;
+				$("#section10 .cy span").each(function() {
+					if ($(this).hasClass("span_bg")) {
+						i_dx = $(this).index() + 1;
+					}
+				});
+				b_dd[i_dx] = [];
+				$("#section10 .show ul li").each(function() {
+					var newtsj = {};
+					if ($(this).children(".right").children("span").length == 1) {
+						var a_v = $(this).children(".right").children("span").text();
+						if (a_v == "请选择" || a_v == "取消") {
+							a_v = null
+						}
+						newtsj[$(this).attr("fieldname")] = a_v;
+					} else if ($(this).children(".right").children("input").length == 1) {
+						var a_v = $(this).children(".right").children("input").val();
+						if (a_v.trim() == "") {
+							a_v = null;
+						}
+						newtsj[$(this).attr("fieldname")] = a_v;
+					}
+					b_dd[i_dx].push(newtsj);
+				});
+				total2 = 0;
+				for (var i in b_dd) {
+					$(b_dd[i]).each(function() {
+						if ($(this)[0].advanceAccount != undefined) {
+							if ($(this)[0].advanceAccount != null) {
+								total2 += parseInt($(this)[0].advanceAccount)
+							}
+						}
+					})
+				};
+				$("#section10 ._zsp").text(total2);
+				return b_dd;
+			}
+			$("#section10 .add").on("click", function() {
+				if($("#section10 .show:visible").length==0){
+					$("#section10 .show,#section10 .jian").show();
+					b_Save();
+				}else{
+					b_Save();
+					var s_t = "";
+					var s_l = "";
+					var ns_t = null;
+					var l_i = $("#section10 .show ul li");
+					for (var i = 0; i < l_i.length; i++) {
+						l_i.eq(i).find(".left label").remove();
+						if (l_i.eq(i).attr("islabel") == 1) {
+							ns_t = 1;
+							if (l_i.eq(i).children(".right").children("span").length == 1) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								s_t = l_i.eq(i).children(".right").children("span").text();
+							} else if (l_i.eq(i).children(".right").children("input").length == 1) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								s_t = l_i.eq(i).children(".right").children("input").val();
+							} else if (l_i.eq(i).children(".right").hasClass("chenckbox")) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								var _st = "";
+								for (var j = 0; j < l_i.eq(i).children(".right").children("label").length; j++) {
+									if (l_i.eq(i).children(".right").children("label").eq(j).children("input").prop("checked")) {
+										_st += l_i.eq(i).children(".right").children("label").eq(j).children("span").text() + ",";
+									}
+								}
+								s_t = _st.slice(0, -1);
+							}
+						};
+					}
+					if (ns_t == null && $("#section10 .problem ul li").first().find("input").val().trim() != "") {
+						b_num++;
+						$('<span>页签</span>').appendTo("#section10 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+						$("#section10 .show ul li").each(function() {
+							if ($(this).children(".right").children("span").length == 1) {
+								$(this).children(".right").children("span").text("请选择").css({
+									"color": "#a0a0a5"
+								});;
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							} else if ($(this).children(".right").children("input").length == 1) {
+								$(this).children(".right").children("input").val("");
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							}
+						});
+						if (b_num > 1) {
+							$("#section10 ._xq").children("#section10 .jian").show();
+						}
+					};
+					if (s_t != "" && $("#section10 .problem ul li").first().find("input").val().trim() != "") {
+						//判断li第一个元素的内容是否为span
+						b_num++;
+						$('<span>页签</span>').appendTo("#section10 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+						b_num++;
+						if (b_num > 1) {
+							$("#section10 ._xq").children("#section10 .jian").show();
+						}
+						$("#section10 .show ul li").each(function() {
+							if ($(this).children(".right").children("span").length == 1) {
+								$(this).children(".right").children("span").text("请选择").css({
+									"color": "#a0a0a5"
+								});;
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							} else if ($(this).children(".right").children("input").length == 1) {
+								$(this).children(".right").children("input").val("");
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							}
+						});
+					};
+				
+				};
+					
+			});
+			$(document).on("click", "#section10 .cy span", function() {
+				b_Save();
+				$(this).addClass("span_bg").siblings().removeClass("span_bg");
+				var _idx = $(this).index();
+				$("#section10 .show ul li").each(function() {
+					$(this).find(".left label").remove();
+					var fn = $(this).attr("fieldname");
+					var a_jv;
+					$(b_dd[_idx + 1]).each(function() {
+						for (key in $(this)[0]) {
+							if (key == fn) {
+								a_jv = $(this)[0][key]
+							}
+						}
+					})
+					if ($(this).children(".right").children("span").length == 1) {
+						if (a_jv != null) {
+							$(this).children(".right").children("span").text(a_jv).css({
+								"color": "#191919"
+							});
+							$(this).children(".left").children("i").css({
+								"color": "#a0a0a5"
+							});
+						} else {
+							$(this).children(".right").children("span").text("请选择").css({
+								"color": "#a0a0a5"
+							});
+							$(this).children(".left").children("i").css({
+								"color": "#191919"
+							});
+						}
+					} else if ($(this).children(".right").children("input").length == 1) {
+						if(a_jv!=null){
+							if($(this).children(".right").children("input").attr("name")!="input_date"){
+								if(!isNaN(parseInt(a_jv))){
+									$(this).children(".right").children("input").val(parseInt(a_jv));
+								}else{
+									$(this).children(".right").children("input").val(a_jv);
+								}
+							}else{
+								$(this).children(".right").children("input").val(a_jv);
+							}
+							$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+						}else{
+							$(this).children(".right").children("input").val("");
+							$(this).children(".left").children("i").css({"color":"#191919"});
+						}
+					}
+				});
+				$("#section10 .problem .cy span").each(function() {
+					if (b_dd[$(this).index() + 1][0][0] != null) {
+						$(this).text(b_dd[$(this).index() + 1][0][0])
+					}
+				});
+			});
+			$("#section10 .jian").on("click", function() {
+				b_Save();
+				$("#section10 .problem .cy span").each(function() {
+					if (b_dd[$(this).index() + 1][0][0] != null) {
+						$(this).text(b_dd[$(this).index() + 1][0][0])
+					}
+				});
+				if (b_num > 0) {
+					$("#section10 .cy span").each(function() {
+						$("<img src='img/close_icon.png'/>").appendTo($(this));
+					})
+					$("#section10 .cy span img").click(function() {
+						var _tp = $(this).parent();
+						var _tidx = $(this).parent().index();
+						$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+						$("._ci").click(function() {
+							$("#section10 .cy span img").remove();
+							$("#mask").remove();
+						});
+						$("._qr").click(function() {
+							$("#section10 .cy span img").remove();
+							$("#mask").remove();
+							if(b_num==1){
+								$("#section10 .show").hide();
+								$("#section10 .jian").hide();
+								$("#section10 ._zsp").text("0");
+							}else{
+								_tp.remove();
+								if (_tidx == 0) {
+									$("#section10 .show .cy span").eq(0).addClass("span_bg").siblings().removeClass("span_bg");
+								} else {
+									$("#section10 .show .cy span").eq(_tidx - 1).addClass("span_bg").siblings().removeClass("span_bg");
+								}
+								delete b_dd[_tidx + 1];
+								if (_tidx + 1 < b_num) {
+									var _sol = 0;
+									var _sos = {};
+									for (var i in b_dd) {
+										_sol++;
+										_sos[_sol] = b_dd[i];
+									}
+									b_dd = _sos;
+								}
+								b_num--;
+								
+								$("#section10 .show ul li").each(function() {
+									$(this).find(".left label").remove();
+									if (_tidx == 0) {
+										_tidx = 1
+									}
+									var fn = $(this).attr("fieldname");
+									var a_jv;
+									$(b_dd[_tidx]).each(function() {
+										for (key in $(this)[0]) {
+											if (key == fn) {
+												a_jv = $(this)[0][key]
+											}
+										}
+									})
+									if ($(this).children(".right").children("span").length == 1) {
+										if (a_jv != null) {
+											$(this).children(".right").children("span").text(a_jv).css({
+												"color": "#191919"
+											});
+											$(this).children(".left").children("i").css({
+												"color": "#a0a0a5"
+											});
+										} else {
+											$(this).children(".right").children("span").text("请选择").css({
+												"color": "#a0a0a5"
+											});
+											$(this).children(".left").children("i").css({
+												"color": "#191919"
+											});
+										}
+									} else if ($(this).children(".right").children("input").length == 1) {
+										if(a_jv!=null){
+											if($(this).children(".right").children("input").attr("name")!="input_date"){
+												if(!isNaN(parseInt(a_jv))){
+													$(this).children(".right").children("input").val(parseInt(a_jv));
+												}else{
+													$(this).children(".right").children("input").val(a_jv);
+												}
+											}else{
+												$(this).children(".right").children("input").val(a_jv);
+											}
+											$(this).children(".left").children("i").css({"color":"#a0a0a5"});
+										}else{
+											$(this).children(".right").children("input").val("");
+											$(this).children(".left").children("i").css({"color":"#191919"});
+										}
+									}
+								});
+								b_Save();
+							};
+						});
+					})
+				}
+			});
+			var total2;
+			if ($.isEmptyObject(b_dd)) {
+				total2 = 0;
+			};
+			$("#section10 .advanceAccount").find("input").on("keyup", function() {
+				b_Save();
+			});
+			
+			$("#section10 .show ul li").first().find("input").on("keyup change", function() {
+				var _span;
+				$("#section10 .cy span").each(function() {
+					if ($(this).hasClass("span_bg")) {
+						_span = $(this)
+					}
+				})
+				if ($(this).val().trim() != "") {
+					if ($(this).val().length > 4) {
+						_span.text($(this).val().substr(0, 4));
+					} else {
+						_span.text($(this).val());
+					}
+				} else {
+					_span.text("页签");
+				}
+			})
+			
+			
+			
+			//其他应付账款
+			var other = {
+				bingding: function() {
+					$("#section9 .select").parent().click(function() {
+						mask($(this));
+					});
+
+					function mask(_this) {
+						$('<div id="mask"><div class="mask_bg"></div><ul><li isControlShow="1" _code="{221126D1-A0B0-49C8-BDB8-85DA1E539103}">应付工资</li><li isControlShow="1" _code="{7124F687-A80B-457A-A5CE-EDB7A7AAAE11}">应付水电</li><li isControlShow="1" _code="{8082C097-02B2-4986-BA2B-B8038C57068A}">应付房租</li><li _code="{DC9FA9BB-7420-4781-B4E7-7ABBB2FF9273}">应付装修设备款</li><li _code="{DD8E6415-39BB-4DCC-89AB-BA942C3AD5CE}">应付的退股费用</li><li isControlShow="1" _code="{3F3B519F-8EBA-4DF0-AA87-7C01C85DFF0C}">应付外发加工费</li><li isControlShow="2" _code="{9BC02409-8CB6-4716-9358-83753490F4DC}">其他</li><li class="cancel">取消</li></ul></div>').appendTo("body");
+						$("#mask li").each(function(){
+							var th_at=$(this);
+							$("#section9 .show").find(".cy span").each(function(){
+								if($(this).attr("DynamicShow")!=undefined){
+									if($(this).attr("DynamicShow")==th_at.attr("_code")){
+										th_at.hide();
+									}
+								}
+								
+							})
+						})
+						
+						$("#mask li").on("click", function() {
+							var _span;
+							var t_hat = $(this);
+							$("#section9 .cy span").each(function() {
+								if ($(this).hasClass("span_bg")) {
+									_span = $(this)
+								}
+							})
+							if ($(this).text() == "取消") {
+								$("#mask").remove();
+							} else {
+								$("#mask").remove();
+								if ($(this).text().length > 4) {
+									_span.text($(this).text().substr(0, 4));
+								} else {
+									_span.text($(this).text());
+								}
+								_this.attr("_code", $(this).attr("_code"));
+								_this.children().text($(this).text()).css({
+									"color": "#191919"
+								});
+								_this.siblings(".left").children("i").css({
+									"color": "#a09fa4"
+								});
+							};
+							$("#section9 .show").find(".cy span").each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).removeAttr("isControlShow");
+									$(this).attr("DynamicShow",t_hat.attr("_code"));
+									if(t_hat.attr("isControlShow")=="1"){
+										$(this).attr("isControlShow","1");
+									}
+									if(t_hat.attr("isControlShow")=="2"){
+										$(this).attr("isControlShow","2");
+									}
+								}
+							});
+							if(t_hat.attr("isControlShow")=="1"){
+								$("#section9 li").eq(1).show();
+								$("#section9 li").eq(2).show();
+							}else{
+								$("#section9 li").eq(1).hide();
+								$("#section9 li").eq(2).hide();
+							}
+							if(t_hat.attr("isControlShow")=="2"){
+								$("#section9 li").eq(3).show();
+							}else{
+								$("#section9 li").eq(3).hide();
+							};
+						});
+					}
+				}
+			}
+			other.bingding();
+			var c_dd = {};
+			var c_num = 1;
+
+			function others(v, bossOthersPayableAccounts) {
+//				console.log(bossOthersPayableAccounts)
+				if (v) {
+					$("#section9 .cy").children().remove();
+					c_num = 0;
+					$(bossOthersPayableAccounts).each(function(i) {
+						c_num++;
+						if ($(this)[0].lineNo == "1") {
+							csh($("#section9 .show li"), $(this)[0]);
+						}
+//						console.log(bossOthersPayableAccounts)
+						c_dd[i + 1] = [];
+						if ($(this)[0]["payableType"] != null) {
+							var _cd = $("#section9 .show li:first").attr("ct").split(",");
+							var th_is = $("#section9 .show li:first");
+							var jv;
+							var jp = $(this)[0]["payableType"];
+//							console.log(jp)
+							$(_cd).each(function(i) {
+								if (_cd[i].substring(0, _cd[i].indexOf(":")) == jp) {
+									th_is.attr("_code", bossOthersPayableAccounts[0]["payableType"]);
+									th_is.children(".right").attr("_code", bossOthersPayableAccounts[0]["payableType"]);
+									jv = _cd[i].substring(_cd[i].indexOf(":") + 1);
+								}
+							})
+//							console.log(jv);
+							var arra = ["{7124F687-A80B-457A-A5CE-EDB7A7AAAE11}","{221126D1-A0B0-49C8-BDB8-85DA1E539103}","{8082C097-02B2-4986-BA2B-B8038C57068A}","{3F3B519F-8EBA-4DF0-AA87-7C01C85DFF0C}"];
+							var g = false;
+							$.each(arra, function(i,val) {
+								if(val==jp){
+									g=true;
+								}
+							});
+							if (jv.length > 4) {
+								if(g){
+									if(jp=="{9BC02409-8CB6-4716-9358-83753490F4DC}"){
+										$("<span dynamicshow='"+jp+"' iscontrolshow='2'>" + jv.substr(0, 4) + "</span>").appendTo("#section9 .cy");
+									}else{
+										$("<span dynamicshow='"+jp+"' iscontrolshow='1'>" + jv.substr(0, 4) + "</span>").appendTo("#section9 .cy");
+									}
+								}else{
+									if(jp=="{9BC02409-8CB6-4716-9358-83753490F4DC}"){
+										$("<span dynamicshow='"+jp+"' iscontrolshow='2'>" + jv.substr(0, 4) + "</span>").appendTo("#section9 .cy");
+									}else{
+										$("<span dynamicshow='"+jp+"'>" + jv.substr(0, 4) + "</span>").appendTo("#section9 .cy");
+									};
+								}
+							} else {
+								if(g){
+									if(jp=="{9BC02409-8CB6-4716-9358-83753490F4DC}"){
+										alert(1)
+										$("<span dynamicshow='"+jp+"' iscontrolshow='2'>" + jv + "</span>").appendTo("#section9 .cy");
+									}else{
+										$("<span dynamicshow='"+jp+"' iscontrolshow='1'>" + jv + "</span>").appendTo("#section9 .cy");
+									}
+								}else{
+									if(jp=="{9BC02409-8CB6-4716-9358-83753490F4DC}"){
+										$("<span dynamicshow='"+jp+"' iscontrolshow='2'>" + jv + "</span>").appendTo("#section9 .cy");
+									}else{
+										$("<span dynamicshow='"+jp+"'>" + jv + "</span>").appendTo("#section9 .cy");
+									};
+								}
+							}
+						} else {
+							$("<span>页签</span>").appendTo("#section9 .cy");
+						}
+						for (key in $(this)[0]) {
+							var _this = $(this);
+							$("#section9 .show li").each(function() {
+								if (key == $(this).attr("fieldname")) {
+									var td = {};
+									td[key] = _this[0][key];
+									c_dd[i + 1].push(td)
+								}
+							})
+						}
+						$("#section9 .cy").children().first().addClass("span_bg");
+					})
+					var arre = ["{DD8E6415-39BB-4DCC-89AB-BA942C3AD5CE}","{9BC02409-8CB6-4716-9358-83753490F4DC}","{DC9FA9BB-7420-4781-B4E7-7ABBB2FF9273}"];
+					for(key in c_dd){
+						$.each(c_dd[key], function(i,val) {
+							for(k in val){
+								$.each(arre,function(j,jal){
+									if(jal==val[k]){
+//										console.log(c_dd[key])
+										var ayr = [];
+										if(jal=="{9BC02409-8CB6-4716-9358-83753490F4DC}"){
+											for(jey in c_dd[key]){
+												for(hey in c_dd[key][jey]){
+													if(hey == "amount"){
+														ayr.push(c_dd[key][jey]);
+													}
+													if(hey == "payableType"){
+														ayr.push(c_dd[key][jey]);
+													}
+													if(hey == "payableTypeOther"){
+														ayr.push(c_dd[key][jey]);
+													}
+												}
+											}
+										}else{
+											for(jey in c_dd[key]){
+												for(hey in c_dd[key][jey]){
+													if(hey == "amount"){
+														ayr.push(c_dd[key][jey]);
+													}
+													if(hey == "payableType"){
+														ayr.push(c_dd[key][jey]);
+													}
+												}
+											}
+										}
+										c_dd[key]=ayr;
+									}
+								})
+							}
+						});
+					}
+//					console.log(c_dd)
+					if ($("#section9 .cy").children().length > 1) {
+						$("#section9 .jian").show();
+					};
+					if($("#section9 .cy span").eq(0).attr("iscontrolshow")=="1"){
+						$("#section9 li").eq(1).show();
+						$("#section9 li").eq(2).show();
+					}else{
+						$("#section9 li").eq(1).hide();
+						$("#section9 li").eq(2).hide();
+					}
+					if($("#section9 .cy span").eq(0).attr("iscontrolshow")=="2"){
+						$("#section9 li").eq(3).show();
+					}else{
+						$("#section9 li").eq(3).hide();
+					}
+					c_Save();
+				}
+			}
+
+			function c_Save() {
+				var i_dx;
+				$("#section9 .cy span").each(function() {
+					if ($(this).hasClass("span_bg")) {
+						i_dx = $(this).index() + 1;
+					}
+				});
+				c_dd[i_dx] = [];
+				$("#section9 .show ul li").each(function() {
+					if($(this).css("display")=="none"){
+						
+					}else{
+						var newtsj = {};
+						if ($(this).children(".right").children("span").length == 1) {
+							var a_v = $(this).children(".right").attr("_code");
+							if (a_v == undefined) {
+								a_v = null
+							}
+							newtsj[$(this).attr("fieldname")] = a_v;
+						} else if ($(this).children(".right").children("input").length == 1) {
+							var a_v = $(this).children(".right").children("input").val();
+							if (a_v.trim() == "") {
+								a_v = null;
+							}
+							newtsj[$(this).attr("fieldname")] = a_v;
+						}
+						c_dd[i_dx].push(newtsj);
+					}
+				});
+				total3 = 0;
+				for (var i in c_dd) {
+					$(c_dd[i]).each(function() {
+						if ($(this)[0].amount != undefined) {
+							if ($(this)[0].amount != null) {
+								total3 += parseInt($(this)[0].amount)
+							}
+						}
+					})
+				};
+				$("#section9 ._zsp").text(total3);
+				return c_dd;
+			}
+			$("#section9 .add").on("click", function() {
+				if($("#section9 .show:visible").length==0){
+					$("#section9 .show,#section9 .jian").show();
+					c_Save();
+				}else{
+					c_Save();
+					var s_t = "";
+					var s_l = "";
+					var ns_t = null;
+					var l_i = $("#section9 .show ul li");
+					for (var i = 0; i < l_i.length; i++) {
+						l_i.eq(i).find(".left label").remove();
+						if (l_i.eq(i).attr("islabel") == 1) {
+							ns_t = 1;
+							if (l_i.eq(i).children(".right").children("span").length == 1) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								s_t = l_i.eq(i).children(".right").children("span").text();
+							} else if (l_i.eq(i).children(".right").children("input").length == 1) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								s_t = l_i.eq(i).children(".right").children("input").val();
+							} else if (l_i.eq(i).children(".right").hasClass("chenckbox")) {
+								s_l = l_i.eq(i).children(".left").children("i").text();
+								var _st = "";
+								for (var j = 0; j < l_i.eq(i).children(".right").children("label").length; j++) {
+									if (l_i.eq(i).children(".right").children("label").eq(j).children("input").prop("checked")) {
+										_st += l_i.eq(i).children(".right").children("label").eq(j).children("span").text() + ",";
+									}
+								}
+								s_t = _st.slice(0, -1);
+							}
+						};
+					}
+					if (ns_t == null && $("#section9 .problem ul li").first().find(".right span").text() != "请选择") {
+						c_num++;
+						$('<span>页签</span>').appendTo("#section9 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+						$("#section9 .show ul li").each(function() {
+							if ($(this).children(".right").children("span").length == 1) {
+								$(this).removeAttr("_code");
+								$(this).children(".right").removeAttr("_code");
+								$(this).children(".right").children("span").text("请选择").css({
+									"color": "#a0a0a5"
+								});
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							} else if ($(this).children(".right").children("input").length == 1) {
+								/*2018-12-21 修改disabled*/
+								$(this).children(".right").children("input").val("");
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							}
+						});
+						if (c_num > 1) {
+							$("#section9 ._xq").children("#section9 .jian").show();
+						}
+						$("#section9 li").eq(1).hide();
+						$("#section9 li").eq(2).hide();
+						$("#section9 li").eq(3).hide();
+					};
+					if (s_t != "" && $("#section9 .problem ul li").first().find(".right span").text() != "请选择") {
+						//判断li第一个元素的内容是否为span
+						c_num++;
+						$('<span>页签</span>').appendTo("#section9 .cy").addClass("span_bg").siblings().removeClass("span_bg");
+						c_num++;
+						if (c_num > 1) {
+							$("#section9 ._xq").children("#section9 .jian").show();
+						}
+						$("#section9 .show ul li").each(function() {
+							if ($(this).children(".right").children("span").length == 1) {
+								$(this).removeAttr("_code");
+								$(this).children(".right").removeAttr("_code");
+								$(this).children(".right").children("span").text("请选择").css({
+									"color": "#a0a0a5"
+								});
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							} else if ($(this).children(".right").children("input").length == 1) {
+								$(this).children(".right").children("input").val("");
+								$(this).children(".left").children("i").css({
+									"color": "#191919"
+								});
+							}
+						});
+					};
+				
+				};
+					
+			});
+			$(document).on("click", "#section9 .cy span", function() {
+				c_Save();
+				$(this).addClass("span_bg").siblings().removeClass("span_bg");
+				if($(this).attr("iscontrolshow")=="1"){
+					$("#section9 li").eq(1).show();
+					$("#section9 li").eq(2).show();
+				}else{
+					$("#section9 li").eq(1).hide();
+					$("#section9 li").eq(2).hide();
+				}
+				if($(this).attr("iscontrolshow")=="2"){
+					$("#section9 li").eq(3).show();
+				}else{
+					$("#section9 li").eq(3).hide();
+				}
+				var _idx = $(this).index();
+//				var isEdit=false;
+				console.log(c_dd[_idx + 1])
+				$("#section9 .show ul li").each(function() {
+					$(this).find(".left label").remove();
+					var fn = $(this).attr("fieldname");
+					var a_jv;
+					
+					$(c_dd[_idx + 1]).each(function() {
+						for (key in $(this)[0]) {
+							if (key == fn) {
+								a_jv = $(this)[0][key]
+							}
+						}
+						/*2018-12-21修改*/
+//						if($(this)[0]['source']==1){
+//							isEdit=true;
+//						}else{
+//							isEdit=false;
+//						}
+						/*2018-12-21修改 end*/
+					})
+					if ($(this).children(".right").children("span").length == 1) {
+						var t_his = $(this);
+						$(this).removeAttr("_code");
+						$(this).children(".right").removeAttr("_code");
+						if (a_jv != null) {
+							var _cd = $("#section9 .show li:first").attr("ct").split(",");
+							var jv;
+							var jp = a_jv;
+							$(_cd).each(function(i) {
+								if (_cd[i].substring(0, _cd[i].indexOf(":")) == jp) {
+									t_his.attr("_code", jp);
+									t_his.children(".right").attr("_code", jp);
+									a_jv = _cd[i].substring(_cd[i].indexOf(":") + 1);
+								}
+							})
+							$(this).children(".right").children("span").text(a_jv).css({
+								"color": "#191919"
+							});
+							$(this).children(".left").children("i").css({
+								"color": "#a0a0a5"
+							});
+						} else {
+							$(this).children(".right").children("span").text("请选择").css({
+								"color": "#a0a0a5"
+							});
+							$(this).children(".left").children("i").css({
+								"color": "#191919"
+							});
+						}
+					} else if ($(this).children(".right").children("input").length == 1) {
+						if (a_jv != null) {
+							$(this).children(".right").children("input").val(a_jv);
+							$(this).children(".left").children("i").css({
+								"color": "#a0a0a5"
+							});
+						} else {
+							$(this).children(".right").children("input").val("");
+							$(this).children(".left").children("i").css({
+								"color": "#191919"
+							});
+						}
+					}
+				});
+				// $("#section9 .problem .cy span").each(function(){
+				// 	if(c_dd[$(this).index()+1][0][0]!=null){
+				// 		$(this).text(c_dd[$(this).index()+1][0][0])
+				// 	}
+				// });
+			});
+			$("#section9 .jian").on("click", function() {
+				c_Save();
+				$("#section9 .problem .cy span").each(function() {
+					if (c_dd[$(this).index() + 1][0][0] != null) {
+						$(this).text(c_dd[$(this).index() + 1][0][0])
+					}
+				});
+				if (c_num > 0) {
+					$("#section9 .cy span").each(function() {
+						/**2018-12-21 修改*/
+//						var isShow='block';
+//						$(c_dd[$(this).index() + 1]).each(function(){
+//							if($(this)[0]['source']==1){
+//								isShow='none';
+//							};
+//							console.log($(this)[0]) style='display: "+isShow+";'
+//						})
+						
+						/**2018-12-21 修改 end*/
+						$("<img src='img/close_icon.png'/>").appendTo($(this));
+					})
+					$("#section9 .cy span img").click(function() {
+						var _tp = $(this).parent();
+						var _tidx = $(this).parent().index();
+						$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+						$("._ci").click(function() {
+							$("#section9 .cy span img").remove();
+							$("#mask").remove();
+						});
+						$("._qr").click(function() {
+							$("#section9 .cy span img").remove();
+							$("#mask").remove();
+							if(c_num==1){
+								$("#section9 .show").hide();
+								$("#section9 .jian").hide();
+								$("#section9 ._zsp").text("0");
+							}else{
+								_tp.remove();
+								if (_tidx == 0) {
+									$("#section9 .show .cy span").eq(0).addClass("span_bg").siblings().removeClass("span_bg");
+								} else {
+									$("#section9 .show .cy span").eq(_tidx - 1).addClass("span_bg").siblings().removeClass("span_bg");
+								}
+								delete c_dd[_tidx + 1];
+								if (_tidx + 1 < c_num) {
+									var _sol = 0;
+									var _sos = {};
+									for (var i in c_dd) {
+										_sol++;
+										_sos[_sol] = c_dd[i];
+									}
+									c_dd = _sos;
+								}
+								c_num--;
+								
+								$("#section9 .show ul li").each(function() {
+									$(this).find(".left label").remove();
+									if (_tidx == 0) {
+										_tidx = 1
+									}
+									var fn = $(this).attr("fieldname");
+									var a_jv;
+									$(c_dd[_tidx]).each(function() {
+										for (key in $(this)[0]) {
+											if (key == fn) {
+												a_jv = $(this)[0][key]
+											}
+										}
+									})
+									if ($(this).children(".right").children("span").length == 1) {
+										$(this).children(".right").removeAttr("_code");
+										$(this).removeAttr("_code");
+										var t_his = $(this);
+										if (a_jv != null) {
+											var _cd = $("#section9 .show li:first").attr("ct").split(",");
+											var jv;
+											var jp = a_jv;
+											$(_cd).each(function(i) {
+												if (_cd[i].substring(0, _cd[i].indexOf(":")) == jp) {
+													t_his.children(".right").attr("_code", jp);
+													t_his.attr("_code", jp);
+													a_jv = _cd[i].substring(_cd[i].indexOf(":") + 1);
+												}
+											})
+											$(this).children(".right").children("span").text(a_jv).css({
+												"color": "#191919"
+											});
+											$(this).children(".left").children("i").css({
+												"color": "#a0a0a5"
+											});
+										} else {
+											$(this).children(".right").children("span").text("请选择").css({
+												"color": "#a0a0a5"
+											});
+											$(this).children(".left").children("i").css({
+												"color": "#191919"
+											});
+										}
+									} else if ($(this).children(".right").children("input").length == 1) {
+										if (a_jv != null) {
+											$(this).children(".right").children("input").val(a_jv);
+											$(this).children(".left").children("i").css({
+												"color": "#a0a0a5"
+											});
+										} else {
+											$(this).children(".right").children("input").val("");
+											$(this).children(".left").children("i").css({
+												"color": "#191919"
+											});
+										}
+									}
+								});
+								c_Save();
+								$("#section9 .cy span").each(function(){
+									if($(this).hasClass("span_bg")){
+										if($(this).attr("iscontrolshow")=="1"){
+											$("#section9 li").eq(1).show();
+											$("#section9 li").eq(2).show();
+										}else{
+											$("#section9 li").eq(1).hide();
+											$("#section9 li").eq(2).hide();
+										}
+										if($(this).attr("iscontrolshow")=="2"){
+											$("#section9 li").eq(3).show();
+										}else{
+											$("#section9 li").eq(3).hide();
+										}
+									}
+								})
+							};
+								
+						});
+					})
+				}
+			});
+			var total3;
+			if ($.isEmptyObject(c_dd)) {
+				total3 = 0;
+			};
+			$("#section9 .amount").find("input").on("keyup", function() {
+				c_Save();
+			});
+			
+			$("#section9 .show ul li:nth-of-type(2) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lvt(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lvt($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}else{
+					if($("#section9 .show ul li:nth-of-type(3) input").val().trim()!=""){
+						function ryt(date1){
+					   	 	var str = $("#section9 .show ul li:nth-of-type(3) input").val();
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						};
+						var t = ryt($("#section9 .show ul li:nth-of-type(2) input").val());
+						if(!t){
+							$(this).parents("li").children(".left").append('<label class="message_info">小于等于应付结束时间</label>');
+						}
+					}
+				}
+			})
+			$("#section9 .show ul li:nth-of-type(3) input").on("blur",function(){
+				$(this).parents("li").find(".left label").remove();
+				function lmt(date1){
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth()+1;
+					if(month<10){
+						month = "0"+month;
+					}
+					var day = d.getDate();
+					if(day<10){
+						day = "0"+day;
+					}
+			   	 	var str = year+"-"+month+"-"+day;//当前日期
+			   	 	if(date1==str){
+			   	 		return true;
+			   	 	}
+			        var oDate1 = new Date(date1);
+			        var oDate2 = new Date(str);
+			        if(oDate1.getTime() > oDate2.getTime()){
+			            return false;                    
+			        } else {
+			        	return true;
+			        }
+				}
+				var k=lmt($(this).val());
+				if(!k){
+					$(this).parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+				}else{
+					if($("#section9 .show ul li:nth-of-type(2) input").val().trim()!=""){
+						function rut(date1){
+					   	 	var str = $("#section9 .show ul li:nth-of-type(2) input").val();
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return true;                    
+					        } else {
+					        	return false;
+					        }
+						};
+						var t = rut($("#section9 .show ul li:nth-of-type(3) input").val());
+						if(!t){
+							$(this).parents("li").children(".left").append('<label class="message_info">大于等于应付开始时间</label>');
+						}
+					}
+				}
+			})
+
+
+
+
+
+
+
+			function csh(li, _this) {//首次渲染
+		       var isEdit=false;
+		       /*2018-12-21修改*/
+//				if(_this.source==1){
+//					isEdit=true;
+//				}else{
+//					isEdit=false;.attr('disabled',isEdit)
+//				}
+				/*2018-12-21修改 end*/
+				$(li).each(function() {
+					var _that = $(this);
+					for (key in _this) {
+						if ($(this).attr("fieldname") == key) {
+							if (_this[key] != null) {
+								if ($(this).children(".right").children("input").length == "1") {
+									if($(this).children(".right").children("input").attr("name")=="input_date"){
+										$(this).children(".right").children("input").val(_this[key]);
+									}else{
+										if(!isNaN(parseInt(_this[key]))){
+											$(this).children(".right").children("input").val(parseInt(_this[key]));
+										}else{
+											$(this).children(".right").children("input").val(_this[key]);
+										}
+									}
+									$(this).children(".left").children("i").css({
+										"color": "#a09fa4"
+									})
+								} else if ($(this).children(".right").children("span").length == "1") {
+									var _cd = $(this).attr("ct").split(",");
+									$(_cd).each(function(i) {
+										if (_cd[i].substring(0, _cd[i].indexOf(":")) == _this[key]) {
+											_that.children(".right").children("span").text(_cd[i].substring(_cd[i].indexOf(":") + 1)).css({
+												"color": "#191919"
+											});
+											_that.children(".left").children("i").css({
+												"color": "#a09fa4"
+											})
+										}
+									})
+								}
+							}
+						}
+					}
+				})
+			}
+			$("#next").on("click", function() {
+				submit(true)
+			});
+
+			function tsj(a_dd) {
+				var tsj = [];
+				for (i in a_dd) {
+					var _tsj = {};
+					$(a_dd[i]).each(function() {
+						for (key in $(this)[0]) {
+							_tsj[key] = $(this)[0][key];
+						};
+					});
+					_tsj["lineNo"] = i;
+					tsj.push(_tsj);
+				}
+				return tsj;
+			}
+
+			function submit(tf) {
+				a_Save();
+				b_Save();
+				c_Save();
+				if (sj != undefined) {
+					sj["balanceSheetModel"]["bossPayableAccounts"] = [];
+					sj["balanceSheetModel"]["bossOthersPayableAccounts"] = [];
+					sj["balanceSheetModel"]["bossPaymentAdvances"] = [];
+					sj["balanceSheetModel"]["bossBankShortTermLoans"] = [];
+					sj["balanceSheetModel"]["bossCreditShortTermLoans"] = [];
+				} else {
+					sj = {
+						"balanceSheetModel": {
+							"balanceSheetAnswers": [],
+							"bossPayableAccounts": [],
+							"bossOthersPayableAccounts": [],
+							"bossPaymentAdvances": [],
+							"bossBankShortTermLoans": [],
+							"bossCompanyShortTermLoans": [],
+							"bossCreditShortTermLoans": []
+						}
+					};
+				}
+				//	var bossPayableAccountsA_dd = credit.a_Save();
+				//	var bossOthersPayableAccountsA_dd = other.a_Save();
+				//	var bossPaymentAdvancesA_dd = fund.a_Save();
+				//2018-12-20修改
+//				(function() {
+//					var a = true;
+//					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function() { //中安贷款余额
+//						if ($(this)[0].code == $("#section11 .zadk .show").attr("_code")) {
+//							a = false
+//							$(this)[0].value = $("#section11 .zadk li:first input").val();
+//							if ($(this)[0].value.trim() == "") {
+//								$(this)[0].value == null;
+//							}
+//						}
+//					});
+//					if (a) {
+//						var balanceSheetAnswersVlue = {}; //中安贷款余额
+//						balanceSheetAnswersVlue["value"] = $("#section11 .zadk li:first input").val();
+//						if (balanceSheetAnswersVlue["value"].trim() == "") {
+//							balanceSheetAnswersVlue["value"] = null;
+//						}
+//						balanceSheetAnswersVlue["code"] = $("#section11 .zadk .show").attr("_code");
+//						sj["balanceSheetModel"]["balanceSheetAnswers"].push(balanceSheetAnswersVlue);
+//					}
+//				})();
+//2018-12-20修改 end
+				// bossPayableAccounts;//应付货款
+				//				credit.creat();
+				if($("#section0 .show:visible").length==0){
+					sj["balanceSheetModel"]["bossPayableAccounts"]=[];
+				}else{
+					sj["balanceSheetModel"]["bossPayableAccounts"] = tsj(a_dd);
+				}
+
+				(function() {
+					var a = true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function() { //应付货款
+						if ($(this)[0].code == $("#section0 ._zsp").parents(".problem").attr("_code")) {
+							a = false
+							$(this)[0].value = $("#section0 ._zsp").text();
+							if ($(this)[0].value.trim() == "") {
+								$(this)[0].value == null;
+							}
+						}
+					});
+					if (a) {
+						var bossPayableAccountsVlue = {};
+						bossPayableAccountsVlue["value"] = $("#section0 ._zsp").text();
+						bossPayableAccountsVlue["code"] = $("#section0 ._zsp").parents(".problem").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossPayableAccountsVlue);
+					}
+				})();
+				// bossOthersPayableAccounts; //其他应付账款
+				//				other.advance();
+				if($("#section9 .show:visible").length==0){
+					sj["balanceSheetModel"]["bossOthersPayableAccounts"]=[];
+				}else{
+					sj["balanceSheetModel"]["bossOthersPayableAccounts"] = tsj(c_dd);	
+				}
+
+				(function() {
+					var a = true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function() { //其他应付账款
+						if ($(this)[0].code == $("#section9 ._zsp").parents(".problem").attr("_code")) {
+							a = false
+							$(this)[0].value = $("#section9 ._zsp").text();
+							if ($(this)[0].value.trim() == "") {
+								$(this)[0].value == null;
+							}
+						}
+					});
+					if (a) {
+						var bossOthersPayableAccountsVlue = {};
+						bossOthersPayableAccountsVlue["value"] = $("#section9 ._zsp").text();
+						bossOthersPayableAccountsVlue["code"] = $("#section9 ._zsp").parents(".problem").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossOthersPayableAccountsVlue);
+					}
+				})();
+				// bossPaymentAdvances; //预收款项
+				if($("#section10 .show:visible").length==0){
+					sj["balanceSheetModel"]["bossPaymentAdvances"] = [];
+				}else{
+					sj["balanceSheetModel"]["bossPaymentAdvances"] = tsj(b_dd);
+				}
+
+				(function() {
+					var a = true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function() { //预收款项
+						if ($(this)[0].code == $("#section10 ._zsp").parents(".problem").attr("_code")) {
+							a = false
+							$(this)[0].value = $("#section10 ._zsp").text();
+							if ($(this)[0].value.trim() == "") {
+								$(this)[0].value == null;
+							}
+						}
+					});
+					if (a) {
+						var bossPaymentAdvancesVlue = {};
+						bossPaymentAdvancesVlue["value"] = $("#section10 ._zsp").text();
+						bossPaymentAdvancesVlue["code"] = $("#section10 ._zsp").parents(".problem").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(bossPaymentAdvancesVlue);
+					}
+				})();
+				//短期贷款
+				(function() {
+					var a = true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function() { //短期贷款
+						if ($(this)[0].code == $("#section11 #11_1").attr("_code")) {
+							a = false
+							$(this)[0].value = $("#section11 #11_1 ._zsp").text();
+							if ($(this)[0].value.trim() == "") {
+								$(this)[0].value == null;
+							}
+						}
+					});
+					if (a) {
+						var dqdk = {};
+						dqdk["code"] = $("#section11 #11_1").attr("_code");
+						dqdk["value"] = $("#section11 #11_1 ._zsp").text();
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(dqdk);
+					}
+				})();
+				// bossBankShortTermLoans; //银行信用贷款
+				var bossBankShortTermLoansAy = [];
+				$("#section11 .yszk ul li").each(function(i) {
+					var sourceVal=$(this).attr('data-source');
+					var by = {};
+					by['source']=sourceVal;
+					var jm = $(this).children(".dqTop").find("span").attr("fieldname");
+					var jz = $(this).children(".dqTop").find("span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(1) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(1) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(2) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(2) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(3) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(3) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by["lineNo"] = i + 1;
+					by[jm] = jz;
+					bossBankShortTermLoansAy.push(by)
+				})
+				sj["balanceSheetModel"]["bossBankShortTermLoans"] = bossBankShortTermLoansAy;
+				// bossCompanyShortTermLoans; //小额贷款余额
+				var bossCompanyShortTermLoansAy = [];
+				$("#section11 .xedk ul li").each(function(i) {
+					var sourceVal=$(this).attr('data-source');
+					var by = {};
+					by['source']=sourceVal;
+					var jm = $(this).children(".dqTop").find("span").attr("fieldname");
+					var jz = $(this).children(".dqTop").find("span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(1) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(1) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(2) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(2) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(3) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(3) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by["lineNo"] = i + 1;
+					by[jm] = jz;
+					bossCompanyShortTermLoansAy.push(by)
+				})
+				sj["balanceSheetModel"]["bossCompanyShortTermLoans"] = bossCompanyShortTermLoansAy;
+				
+				
+			var zaBossCompanyShortTermLoansAy= []; //中安贷款余额2018-12-20修改
+			$("#section11 .zadk ul li").each(function(i) {
+				var sourceVal=$(this).attr('data-source');
+				var by = {};
+				by['source']=sourceVal;
+				var jm = $(this).children(".dqTop").find("span").attr("fieldname");
+				var jz = $(this).children(".dqTop").find("span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by[jm] = jz;
+				jm = $(this).children(".dqBottom").find("div:nth-of-type(1) span").attr("fieldname");
+				jz = $(this).children(".dqBottom").find("div:nth-of-type(1) span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by[jm] = jz;
+				jm = $(this).children(".dqBottom").find("div:nth-of-type(2) span").attr("fieldname");
+				jz = $(this).children(".dqBottom").find("div:nth-of-type(2) span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by[jm] = jz;
+				jm = $(this).children(".dqBottom").find("div:nth-of-type(3) span").attr("fieldname");
+				jz = $(this).children(".dqBottom").find("div:nth-of-type(3) span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by["lineNo"] = i + 1;
+				by[jm] = jz;
+				zaBossCompanyShortTermLoansAy.push(by)
+			})
+			sj["balanceSheetModel"]["zaBossCompanyShortTermLoans"] = zaBossCompanyShortTermLoansAy;
+			//中安贷款余额2018-12-20修改 end
+			
+			var BossFinancialCompanyShortTermLoansAy= []; //消金贷款公司2018-12-20修改
+			$("#section11 .xjdk ul li").each(function(i) {
+				var sourceVal=$(this).attr('data-source');
+				var by = {};
+				by['source']=sourceVal;
+				var jm = $(this).children(".dqTop").find("span").attr("fieldname");
+				var jz = $(this).children(".dqTop").find("span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by[jm] = jz;
+				jm = $(this).children(".dqBottom").find("div:nth-of-type(1) span").attr("fieldname");
+				jz = $(this).children(".dqBottom").find("div:nth-of-type(1) span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by[jm] = jz;
+				jm = $(this).children(".dqBottom").find("div:nth-of-type(2) span").attr("fieldname");
+				jz = $(this).children(".dqBottom").find("div:nth-of-type(2) span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by[jm] = jz;
+				jm = $(this).children(".dqBottom").find("div:nth-of-type(3) span").attr("fieldname");
+				jz = $(this).children(".dqBottom").find("div:nth-of-type(3) span").text();
+				if (jz.trim() == "") {
+					jz = null
+				}
+				by["lineNo"] = i + 1;
+				by[jm] = jz;
+				BossFinancialCompanyShortTermLoansAy.push(by)
+			})
+			sj["balanceSheetModel"]["BossFinancialCompanyShortTermLoans"] = BossFinancialCompanyShortTermLoansAy;
+			//消金贷款公司2018-12-20修改 end
+				
+				// bossCreditShortTermLoans; //信用卡
+				var bossCreditShortTermLoansAy = [];
+				var bossCreditShortTermLoansJs = {};
+				bossCreditShortTermLoansJs["residualAmount"] = $("#section11 .xyk").find(".show li:first input").val();
+				if (bossCreditShortTermLoansJs["residualAmount"].trim() == "") {
+					bossCreditShortTermLoansJs["residualAmount"] = null;
+				}
+				bossCreditShortTermLoansJs["lineNo"]="1";
+				if($("#section11 .xyk").find(".show li:first input").attr('disabled')=='disabled'){
+					bossCreditShortTermLoansJs["source"]="1";
+				}else{
+					bossCreditShortTermLoansJs["source"]="0";
+				}
+				bossCreditShortTermLoansAy.push(bossCreditShortTermLoansJs);
+				var status = "2";
+				var yszkStaus="2";
+				sj["balanceSheetModel"]["bossCreditShortTermLoans"] = bossCreditShortTermLoansAy;
+				$(".yszk ._xq span").css({"color":"#191919"});
+				$(".yszk li").each(function(){
+					if($(this).find(".dqTop span").text().trim()==""){
+						status="1";
+						yszkStaus="1";
+						$(".yszk ._xq span").css({"color":"#F04137"});
+					};
+					if($(this).find(".dqBottom div:nth-of-type(1) span").text().trim()==""){
+						status="1";
+						yszkStaus="1";
+						$(".yszk ._xq span").css({"color":"#F04137"});
+					}
+					if($(this).find(".dqBottom div:nth-of-type(2) span").text().trim()==""){
+						status="1";
+						yszkStaus="1";
+						$(".yszk ._xq span").css({"color":"#F04137"});
+					}
+					if($(this).find(".dqBottom div:nth-of-type(3) span").text().trim()==""){
+						status="1";
+						yszkStaus="1";
+						$(".yszk ._xq span").css({"color":"#F04137"});
+					}
+				});
+				
+				if(yszkStaus=="1"){
+					$(".yszk").parent().prev().children('span').eq(0).css({"color":"#F5A17C"});
+				}else{
+					$(".yszk").parent().prev().children('span').eq(0).css({"color":"#ffffff"});
+				}
+				$(".xedk ._xq span").css({"color":"#191919"});
+				
+				var xedkStatus="2";
+				$(".xedk li").each(function(){
+					if($(this).find(".dqTop span").text().trim()==""){
+						status="1";
+						xedkStatus="1";
+						$(".xedk ._xq span").css({"color":"#F04137"});
+					};
+					if($(this).find(".dqBottom div:nth-of-type(1) span").text().trim()==""){
+						status="1";
+						xedkStatus="1";
+						$(".xedk ._xq span").css({"color":"#F04137"});
+					}
+					if($(this).find(".dqBottom div:nth-of-type(2) span").text().trim()==""){
+						status="1";
+						xedkStatus="1";
+						$(".xedk ._xq span").css({"color":"#F04137"});
+					}
+					if($(this).find(".dqBottom div:nth-of-type(3) span").text().trim()==""){
+						status="1";
+						xedkStatus="1";
+						$(".xedk ._xq span").css({"color":"#F04137"});
+					}
+				});
+				if(xedkStatus=="1"){
+					$(".xedk").parent().prev().children('span').eq(1).css({"color":"#F5A17C"});
+				}else{
+					$(".xedk").parent().prev().children('span').eq(1).css({"color":"#ffffff"});
+				}
+				
+				if($('#section0 .show:visible').length!=0){
+					$('#section0 .show li').find("label").remove();
+					$('#section0 .cy span').removeClass("unfinish");
+					$('#section0 .show li').each(function(){
+						if($(this).find('input').val().trim()==""){
+							$(this).find(".left").append('<label class="message_info">请输入必填数据</label>');
+							$('#section0 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+									status="1";
+								}
+							})
+						}else{
+							if($(this).find('input').attr("type")=="number"){
+								if(!fushu($(this).find('input').val())){
+									if($(this).parent(".b_r").length!=0){
+										$(this).parents(".problem").prev().find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+									}else{
+										$(this).find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+									};
+									$('#section0 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+											status="1";
+										}
+									})
+								};									
+							}
+						}
+					});
+					if($("#section0 .show ul li:nth-of-type(2) input").val().trim()!=""){
+						$("#section0 .show ul li:nth-of-type(2) input").parents("li").find(".left label").remove();
+						function lnt(date1){
+							var d = new Date();
+							var year = d.getFullYear();
+							var month = d.getMonth()+1;
+							if(month<10){
+								month = "0"+month;
+							}
+							var day = d.getDate();
+							if(day<10){
+								day = "0"+day;
+							}
+					   	 	var str = year+"-"+month+"-"+day;//当前日期
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						}
+						var k=lnt($("#section0 .show ul li:nth-of-type(2) input").val());
+						if(!k){
+							status="1";
+							$('#section0 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+								}
+							})
+							$("#section0 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+						}else{
+							if($("#section0 .show ul li:nth-of-type(3) input").val().trim()!=""){
+								function ret(date1){
+							   	 	var str = $("#section0 .show ul li:nth-of-type(3) input").val();
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								};
+								var t = ret($("#section0 .show ul li:nth-of-type(2) input").val());
+								if(!t){
+									status="1";
+									$('#section0 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+										}
+									})
+									$("#section0 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于应付结束时间</label>');
+								}
+							}
+						}
+					}
+					if($("#section0 .show ul li:nth-of-type(3) input").val().trim()!=""){
+						$("#section0 .show ul li:nth-of-type(3) input").parents("li").find(".left label").remove();
+						function let(date1){
+							var d = new Date();
+							var year = d.getFullYear();
+							var month = d.getMonth()+1;
+							if(month<10){
+								month = "0"+month;
+							}
+							var day = d.getDate();
+							if(day<10){
+								day = "0"+day;
+							}
+					   	 	var str = year+"-"+month+"-"+day;//当前日期
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						}
+						var k=let($("#section0 .show ul li:nth-of-type(3) input").val());
+						if(!k){
+							status="1";
+							$('#section0 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+								}
+							})
+							$("#section0 .show ul li:nth-of-type(3) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+						}else{
+							if($("#section0 .show ul li:nth-of-type(2) input").val().trim()!=""){
+								function rit(date1){
+							   	 	var str = $("#section0 .show ul li:nth-of-type(2) input").val();
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return true;                    
+							        } else {
+							        	return false;
+							        }
+								};
+								var t = rit($("#section0 .show ul li:nth-of-type(3) input").val());
+								if(!t){
+									status="1";
+									$('#section0 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+										}
+									})
+									$(this).parents("li").children(".left").append('<label class="message_info">大于等于应付开始时间</label>');
+								}
+							}
+						}
+					};
+					
+					
+					$(sj["balanceSheetModel"]["bossPayableAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section0 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							}
+						}
+					});
+					$(sj["balanceSheetModel"]["bossPayableAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section0 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							};
+							var ki=$(this)[0];
+							if(key=="payableBeginTime"){
+								function lrt(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lrt(ki["payableBeginTime"]);
+								if(!k){
+									status="1";
+									$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}else{
+									if(ki["payableEndTime"]!=null){
+										function rot(date1){
+									   	 	var str = ki["payableEndTime"];
+									   	 	if(date1==str){
+									   	 		return true;
+									   	 	}
+									        var oDate1 = new Date(date1);
+									        var oDate2 = new Date(str);
+									        if(oDate1.getTime() > oDate2.getTime()){
+									            return false;                    
+									        } else {
+									        	return true;
+									        }
+										};
+										var t = rot(ki["payableBeginTime"]);
+										if(!t){
+											status="1";
+											$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+										}
+									}
+								}
+							}
+							if(key=="payableEndTime"){
+								function lrt1(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lrt1(ki["payableEndTime"]);
+								if(!k){
+									status="1";
+									$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}
+							}
+							if(key=="payableAccount"){
+								if(!fushu(ki["payableAccount"])){
+									status="1";
+									$('#section0 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								};
+							};	
+						}
+					});
+				
+				}
+				
+				if($('#section9 .show:visible').length!=0){
+					$('#section9 .show li').find("label").remove();
+					$('#section9 .cy span').removeClass("unfinish");
+					$('#section9 .show li').each(function(){
+						if($(this).is(":visible")){
+							if($(this).find('input').val()==""){
+								$(this).find(".left").append('<label class="message_info">请输入必填数据</label>');
+								$('#section9 .cy span').each(function(){
+									if($(this).hasClass("span_bg")){
+										$(this).addClass("unfinish");
+										status="1";
+									}
+								})
+							}else{
+								if($(this).find('input').attr("type")=="number"){
+									if(!fushu($(this).find('input').val())){
+										if($(this).parent(".b_r").length!=0){
+											$(this).parents(".problem").prev().find(".left label").remove();
+											$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+										}else{
+											$(this).find(".left label").remove();
+											$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+										};
+										$('#section9 .cy span').each(function(){
+											if($(this).hasClass("span_bg")){
+												$(this).addClass("unfinish");
+												status="1";
+											}
+										})
+									};									
+								}
+							}
+							if($(this).find('.right span').length==1){
+								if($(this).find('.right').attr("_code")==undefined){
+									status="1";
+									$(this).find(".left").append('<label class="message_info">请输入必填数据</label>');
+								}
+							}
+						}
+					});
+					if($("#section9 .show ul li:nth-of-type(2)").is(":visible")){
+						if($("#section9 .show ul li:nth-of-type(2) input").val().trim()!=""){
+							$("#section9 .show ul li:nth-of-type(2) input").parents("li").find(".left label").remove();
+							function ltt(date1){
+								var d = new Date();
+								var year = d.getFullYear();
+								var month = d.getMonth()+1;
+								if(month<10){
+									month = "0"+month;
+								}
+								var day = d.getDate();
+								if(day<10){
+									day = "0"+day;
+								}
+						   	 	var str = year+"-"+month+"-"+day;//当前日期
+						   	 	if(date1==str){
+						   	 		return true;
+						   	 	}
+						        var oDate1 = new Date(date1);
+						        var oDate2 = new Date(str);
+						        if(oDate1.getTime() > oDate2.getTime()){
+						            return false;                    
+						        } else {
+						        	return true;
+						        }
+							}
+							var k=ltt($("#section9 .show ul li:nth-of-type(2) input").val());
+							if(!k){
+								status="1";
+								$('#section9 .cy span').each(function(){
+									if($(this).hasClass("span_bg")){
+										$(this).addClass("unfinish");
+									}
+								})
+								$("#section9 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+							}else{
+								if($("#section9 .show ul li:nth-of-type(3) input").val().trim()!=""){
+									function rqt(date1){
+								   	 	var str = $("#section9 .show ul li:nth-of-type(3) input").val();
+								   	 	if(date1==str){
+								   	 		return true;
+								   	 	}
+								        var oDate1 = new Date(date1);
+								        var oDate2 = new Date(str);
+								        if(oDate1.getTime() > oDate2.getTime()){
+								            return false;                    
+								        } else {
+								        	return true;
+								        }
+									};
+									var t = rqt($("#section9 .show ul li:nth-of-type(2) input").val());
+									if(!t){
+										status="1";
+										$('#section9 .cy span').each(function(){
+											if($(this).hasClass("span_bg")){
+												$(this).addClass("unfinish");
+											}
+										})
+										$("#section9 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于应付结束时间</label>');
+									}
+								}
+							}
+						}
+					}
+					if($("#section9 .show ul li:nth-of-type(3)").is(":visible")){
+						if($("#section9 .show ul li:nth-of-type(3) input").val().trim()!=""){
+							$("#section9 .show ul li:nth-of-type(3) input").parents("li").find(".left label").remove();
+							function lyt(date1){
+								var d = new Date();
+								var year = d.getFullYear();
+								var month = d.getMonth()+1;
+								if(month<10){
+									month = "0"+month;
+								}
+								var day = d.getDate();
+								if(day<10){
+									day = "0"+day;
+								}
+						   	 	var str = year+"-"+month+"-"+day;//当前日期
+						   	 	if(date1==str){
+						   	 		return true;
+						   	 	}
+						        var oDate1 = new Date(date1);
+						        var oDate2 = new Date(str);
+						        if(oDate1.getTime() > oDate2.getTime()){
+						            return false;                    
+						        } else {
+						        	return true;
+						        }
+							}
+							var k=lyt($("#section9 .show ul li:nth-of-type(3) input").val());
+							if(!k){
+								status="1";
+								$('#section9 .cy span').each(function(){
+									if($(this).hasClass("span_bg")){
+										$(this).addClass("unfinish");
+									}
+								})
+								$("#section9 .show ul li:nth-of-type(3) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+							}else{
+								if($("#section9 .show ul li:nth-of-type(2) input").val().trim()!=""){
+									function rwt(date1){
+								   	 	var str = $("#section9 .show ul li:nth-of-type(2) input").val();
+								   	 	if(date1==str){
+								   	 		return true;
+								   	 	}
+								        var oDate1 = new Date(date1);
+								        var oDate2 = new Date(str);
+								        if(oDate1.getTime() > oDate2.getTime()){
+								            return true;                    
+								        } else {
+								        	return false;
+								        }
+									};
+									var t = rwt($("#section9 .show ul li:nth-of-type(3) input").val());
+									if(!t){
+										status="1";
+										$('#section9 .cy span').each(function(){
+											if($(this).hasClass("span_bg")){
+												$(this).addClass("unfinish");
+											}
+										})
+										$(this).parents("li").children(".left").append('<label class="message_info">大于等于应付开始时间</label>');
+									}
+								}
+							}
+						};
+					}
+					
+					
+					$(sj["balanceSheetModel"]["bossOthersPayableAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section9 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							}
+						}
+					});
+					$(sj["balanceSheetModel"]["bossOthersPayableAccounts"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section9 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							};
+							var ki=$(this)[0];
+							if(key=="payableBeginTime"){
+								function lut(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lut(ki["payableBeginTime"]);
+								if(!k){
+									status="1";
+									$('#section9 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}else{
+									if(ki["payableEndTime"]!=null){
+										function ret(date1){
+									   	 	var str = ki["payableEndTime"];
+									   	 	if(date1==str){
+									   	 		return true;
+									   	 	}
+									        var oDate1 = new Date(date1);
+									        var oDate2 = new Date(str);
+									        if(oDate1.getTime() > oDate2.getTime()){
+									            return false;                    
+									        } else {
+									        	return true;
+									        }
+										};
+										var t = ret(ki["payableBeginTime"]);
+										if(!t){
+											status="1";
+											$('#section9 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+										}
+									}
+								}
+							}
+							if(key=="payableEndTime"){
+								function lrt1(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lrt1(ki["payableEndTime"]);
+								if(!k){
+									status="1";
+									$('#section9 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}
+							}
+							if(key=="amount"){
+								if(!fushu(ki["amount"])){
+									status="1";
+									$('#section9 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								};
+							};
+						}
+					});
+				}
+				
+				if($('#section10 .show:visible').length!=0){
+					$('#section10 .show li').find("label").remove();
+					$('#section10 .cy span').removeClass("unfinish");
+					$('#section10 .show li').each(function(){
+						if($(this).find('input').val().trim()==""){
+							$(this).find(".left").append('<label class="message_info">请输入必填数据</label>');
+							$('#section10 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+									status="1";
+								}
+							})
+						}else{
+							if($(this).find('input').attr("type")=="number"){
+								if(!fushu($(this).find('input').val())){
+									if($(this).parent(".b_r").length!=0){
+										$(this).parents(".problem").prev().find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+									}else{
+										$(this).find(".left label").remove();
+										$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+									};
+									$('#section10 .cy span').each(function(){
+										if($(this).hasClass("span_bg")){
+											$(this).addClass("unfinish");
+											status="1";
+										}
+									})
+								};									
+							}
+						}
+					});
+					if($("#section10 .show ul li:nth-of-type(2) input").val().trim()!=""){
+						$("#section10 .show ul li:nth-of-type(2) input").parents("li").find(".left label").remove();
+						function lit(date1){
+							var d = new Date();
+							var year = d.getFullYear();
+							var month = d.getMonth()+1;
+							if(month<10){
+								month = "0"+month;
+							}
+							var day = d.getDate();
+							if(day<10){
+								day = "0"+day;
+							}
+					   	 	var str = year+"-"+month+"-"+day;//当前日期
+					   	 	if(date1==str){
+					   	 		return true;
+					   	 	}
+					        var oDate1 = new Date(date1);
+					        var oDate2 = new Date(str);
+					        if(oDate1.getTime() > oDate2.getTime()){
+					            return false;                    
+					        } else {
+					        	return true;
+					        }
+						}
+						var k=lit($("#section10 .show ul li:nth-of-type(2) input").val());
+						if(!k){
+							status="1";
+							$('#section10 .cy span').each(function(){
+								if($(this).hasClass("span_bg")){
+									$(this).addClass("unfinish");
+								}
+							})
+							$("#section10 .show ul li:nth-of-type(2) input").parents("li").children(".left").append('<label class="message_info">小于等于当前时间</label>');
+						}
+					}
+					
+					$(sj["balanceSheetModel"]["bossPaymentAdvances"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section10 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							}
+						}
+					});
+					$(sj["balanceSheetModel"]["bossPaymentAdvances"]).each(function(){
+						for(key in $(this)[0]){
+							if($(this)[0][key]==null){
+								$('#section10 .cy span').eq($(this)[0].lineNo-1).addClass("unfinish");
+								status="1";
+							};
+							var ki=$(this)[0];
+							if(key=="produceTime"){
+								function lot(date1){
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth()+1;
+									if(month<10){
+										month = "0"+month;
+									}
+									var day = d.getDate();
+									if(day<10){
+										day = "0"+day;
+									}
+							   	 	var str = year+"-"+month+"-"+day;//当前日期
+							   	 	if(date1==str){
+							   	 		return true;
+							   	 	}
+							        var oDate1 = new Date(date1);
+							        var oDate2 = new Date(str);
+							        if(oDate1.getTime() > oDate2.getTime()){
+							            return false;                    
+							        } else {
+							        	return true;
+							        }
+								}
+								var k=lot(ki["produceTime"]);
+								if(!k){
+									status="1";
+									$('#section10 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								}
+							}
+							if(key=="advanceAccount"){
+								if(!fushu(ki["advanceAccount"])){
+									status="1";
+									$('#section10 .cy span').eq(ki.lineNo-1).addClass("unfinish");
+								};
+							};
+						}
+					});
+				
+				};
+				$("#11_1_1 .cy span:nth-of-type(3)").removeClass("unfinish");
+//				$(".zadk").find(".show li .left label").remove();
+//				if($(".zadk").find("input").val().trim()!=""){
+//					if(!fushu($(".zadk").find("input").val())){
+//						$("#11_1_1 .cy span:nth-of-type(3)").addClass("unfinish");
+//						$('<label class="message_info">10位正整数</label>').appendTo($(".zadk").find(".show li .left"));
+//						status="1";
+//					};
+//				}
+				$("#11_1_1 .cy span:nth-of-type(4)").removeClass("unfinish");
+				$(".xyk").find(".show li .left label").remove();
+				if($(".xyk").find("input").val().trim()!=""){
+					if(!fushu($(".xyk").find("input").val())){
+						$("#11_1_1 .cy span:nth-of-type(4)").addClass("unfinish");
+						$('<label class="message_info">10位正整数</label>').appendTo($(".xyk").find(".show li .left"));
+						status="1";
+					};
+				}
+//				sj["completeStatus"] = status;
+//2018-4-25新增
+				var paymentData=sj["balanceSheetModel"]["bossPaymentAdvances"];//预收款项
+				var payableData=sj["balanceSheetModel"]["bossPayableAccounts"];//应付账款
+				var bankShortData=sj["balanceSheetModel"]["bossBankShortTermLoans"];//银行信用贷款
+				var companyShortData=sj["balanceSheetModel"]["bossCompanyShortTermLoans"];//小额贷款余额
+				function isRepeat_1(arr,textInfo) {//预收款项
+					   var hash = {};
+					   for(var i in arr) {
+					       if(hash[arr[i].supplierName]&&hash[arr[i].produceTime]&&hash[arr[i].advanceAccount])//&&hash[arr[i].amount11]
+					       {
+					       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+					       	    '<div class="res-mask-con">'+
+					       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+					       	      '<div class="res-mask-btn">知道了</div>'+
+					       	   '</div>'+
+					       	   '</div>';
+					       	   $(maskHtml).appendTo('body');
+					       	   $('.res-mask-btn').click(function(){
+					       	   		$('.res-mask').remove();
+					       	   })
+					           return true;
+					       }
+					       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+					       hash[arr[i].supplierName] = true;
+					       hash[arr[i].produceTime] = true;
+					       hash[arr[i].advanceAccount] = true;
+					  
+					    }
+					   return false;
+					}
+				
+				function isRepeat_2(arr,textInfo) {//应付账款
+					   var hash = {};
+					   for(var i in arr) {
+					       if(hash[arr[i].supplierName]&&hash[arr[i].payableBeginTime]&&hash[arr[i].payableEndTime]&&hash[arr[i].payableAccount])//&&hash[arr[i].amount11]
+					       {
+					       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+					       	    '<div class="res-mask-con">'+
+					       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+					       	      '<div class="res-mask-btn">知道了</div>'+
+					       	   '</div>'+
+					       	   '</div>';
+					       	   $(maskHtml).appendTo('body');
+					       	   $('.res-mask-btn').click(function(){
+					       	   		$('.res-mask').remove();
+					       	   })
+					           return true;
+					       }
+					       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+					       hash[arr[i].supplierName] = true;
+					       hash[arr[i].payableBeginTime] = true;
+					       hash[arr[i].payableEndTime] = true;
+					       hash[arr[i].payableAccount] = true;
+					  
+					    }
+					   return false;
+					}
+				
+				
+				function isRepeat_3(arr,textInfo) {//银行信用贷款
+					   var hash = {};
+					   for(var i in arr) {
+					       if(hash[arr[i].organizationName]&&hash[arr[i].loanBeginTime]&&hash[arr[i].residualAmount]&&hash[arr[i].term])//&&hash[arr[i].amount11]
+					       {
+					       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+					       	    '<div class="res-mask-con">'+
+					       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+					       	      '<div class="res-mask-btn">知道了</div>'+
+					       	   '</div>'+
+					       	   '</div>';
+					       	   $(maskHtml).appendTo('body');
+					       	   $('.res-mask-btn').click(function(){
+					       	   		$('.res-mask').remove();
+					       	   })
+					           return true;
+					       }
+					       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+					       hash[arr[i].organizationName] = true;
+					       hash[arr[i].loanBeginTime] = true;
+					       hash[arr[i].residualAmount] = true;
+					       hash[arr[i].term] = true;
+					  
+					    }
+					   return false;
+					}
+				
+				
+				var isRepeatStu_1=isRepeat_1(paymentData,'预收款项模块不能输入相同数据！');
+				var isRepeatStu_2=isRepeat_2(payableData,'应付账款模块不能输入相同数据！');
+				var isRepeatStu_3=isRepeat_3(bankShortData,'短期贷款模块中的银行信用贷款不能输入相同数据！');
+				var isRepeatStu_4=isRepeat_3(companyShortData,'短期贷款模块中的小额贷款余额不能输入相同数据！');
+				if(status=='2'&&!isRepeatStu_1&&!isRepeatStu_2&&!isRepeatStu_3&&!isRepeatStu_4){
+					sj["completeStatus"]=2;
+				}else{
+					sj["completeStatus"]=1;
+				}
+				//end
+
+
+				var _sj = JSON.stringify(sj);
+				if (tf == undefined) {
+					var tf = false;
+				}
+				if (tf) {
+					console.log(_sj)
+					if (status == "2"&&!isRepeatStu_1&&!isRepeatStu_2&&!isRepeatStu_3&&!isRepeatStu_4) {
+						AndroidJs.saveWjDetalAnswer(_sj, true);
+					} else {
+						AndroidJs.saveWjDetalAnswer(_sj, false);
+					}
+				} else {
+					AndroidJs.saveWjDetalAnswer(_sj, false);
+				}
+			}
+
+
+
+
+			function loadBalanceSheetShortTermLiabilities(sjson) {
+				var AndroidAnswer = sjson[1];
+				sjson = sjson[0];
+				sjson["answer"]=AndroidAnswer;
+				function jsonForm(data){
+					var r=data.answer;
+					var answerJson={};//答案json字符串转换
+					for(var key in r){
+						answerJson[key]=$.parseJSON(r[key]);
+					}
+					data.answer = answerJson;
+					return data;
+				}
+				var json=jsonForm(sjson);
+				var c_ode=json.answer.questionnaireCode.questionnaireCode;
+				var yfzk_code = "0001."+c_ode+".08.08.01";
+				$("#0_1").attr("_code",yfzk_code);
+				var qtyfkx_code = "0001."+c_ode+".08.09.01";
+				$("#9_1").attr("_code",qtyfkx_code);
+				var yskx_code = "0001."+c_ode+".08.10.01";
+				$("#10_1").attr("_code",yskx_code);
+				var dqdk_code = "0001."+c_ode+".08.11";
+				$("#11_1").attr("_code",dqdk_code);
+				var zadkye_code = "0001."+c_ode+".08.11.03";
+				$(".zadk .show").attr("_code",zadkye_code);
+				
+				
+				console.log("数据加载成功");
+				var calendar = new lCalendar();
+				calendar.init({
+					'trigger': '#date0001-0003-08-02-01-02',
+					'type': 'date'
+				});
+				var calendar = new lCalendar();
+				calendar.init({
+					'trigger': '#date0001-0003-08-02-01-03',
+					'type': 'date'
+				});
+				var calendar = new lCalendar();
+				calendar.init({
+					'trigger': '#date0001-0003-08-09-01-02',
+					'type': 'date'
+				});
+				var calendar = new lCalendar();
+				calendar.init({
+					'trigger': '#date0001-0003-08-09-01-03',
+					'type': 'date'
+				});
+				var calendar = new lCalendar();
+				calendar.init({
+					'trigger': '#date0001-0003-08-10-01-02',
+					'type': 'date'
+				});
+				sj = json.answer;
+				console.log(json)
+				var bossPayableAccounts = json.answer.balanceSheetModel.bossPayableAccounts; //应收账款
+				console.log(bossPayableAccounts);
+				if (bossPayableAccounts != null) {
+					if (bossPayableAccounts.length != 0) {
+						var v = true;
+						creat(v, bossPayableAccounts)
+					}else{
+						$("#section0 .show,#section0 .jian").hide();
+					}
+				}else{
+					$("#section0 .show,#section0 .jian").hide();
+				}
+				var balanceSheetAnswers = json.answer.balanceSheetModel.balanceSheetAnswers; //大类答案
+				$(balanceSheetAnswers).each(function() {
+					if ($(this)[0].code == $("#section11 .zadk .show").attr("_code")) { //中安贷款余额
+						if ($(this)[0].value != null) {
+							$("#section11 .zadk ul li").first().find("input").val($(this)[0].value)
+						}
+					}
+				});
+				var bossOthersPayableAccounts = json.answer.balanceSheetModel.bossOthersPayableAccounts; //其他应付账款
+				console.log(bossOthersPayableAccounts)
+				if (bossOthersPayableAccounts != null) {
+					if (bossOthersPayableAccounts.length != 0) {
+						var v = true;
+						others(v, bossOthersPayableAccounts);
+					}else{
+						$("#section9 .show,#section9 .jian").hide();
+					}
+				}else{
+					$("#section9 .show,#section9 .jian").hide();
+				}
+				var bossPaymentAdvances = json.answer.balanceSheetModel.bossPaymentAdvances; //预收款项
+//				console.log(bossPaymentAdvances)
+				if (bossPaymentAdvances != null) {
+					if (bossPaymentAdvances.length != 0) {
+						var v = true;
+						fund(v, bossPaymentAdvances)
+					}else{
+						$("#section10 .show,#section10 .jian").hide();
+					}
+				}else{
+					$("#section10 .show,#section10 .jian").hide();
+				}
+				var bossBankShortTermLoans = json.answer.balanceSheetModel.bossBankShortTermLoans; //银行信用贷款
+//				console.log(bossBankShortTermLoans)
+				if (bossBankShortTermLoans != null) {
+					if (bossBankShortTermLoans.length != 0) {
+						$("#section11 .yszk ul").children().remove();
+						$(bossBankShortTermLoans).each(function() {
+							console.log($(this)[0])
+							var on = $(this)[0].organizationName;
+							var lbt = $(this)[0].loanBeginTime;
+							var tm = $(this)[0].term;
+							var ra = $(this)[0].residualAmount;
+							if (on == null||on=='') {
+								return true;
+								on = "";
+							}
+							if (lbt == null) {
+								lbt = "";
+							}
+							if (tm == null) {
+								tm = "";
+							}else{
+								if(!isNaN(parseInt(tm))){
+									tm=parseInt(tm)
+								}
+							}
+							if (ra == null) {
+								ra = "";
+							}else{
+								if(!isNaN(parseInt(ra))){
+									ra=parseInt(ra)
+								}
+							}
+							/*2018-12-21修*/
+							var editModel='';
+							if($(this)[0].source==1){
+								editModel='<div class="edit-mask"></div>'
+							}
+							/*2018-12-21修 end*/
+							$('<li data-source="'+$(this)[0].source+'">' +editModel+
+								'<div class="dqTop">' +
+								'<span fieldname="organizationName">' + on + '</span>' +
+								'<img src="img/_sc.png" class="s_d" />' +
+								'</div>' +
+								'<div class="dqBottom">' +
+								'<div><span fieldname="loanBeginTime">' + lbt + '</span></div>' +
+								'<div><span fieldname="term">' + tm + '</span><b class="yuan">期</b></div>' +
+								'<div><span fieldname="residualAmount" class="money">' + ra + '</span><b class="yuan">元</b></div>' +
+								'</div>' +
+								'</li>').appendTo("#section11 .yszk ul");
+								
+								
+						});
+						
+					};
+				};
+				var bossCompanyShortTermLoans = json.answer.balanceSheetModel.bossCompanyShortTermLoans; //小额贷款公司
+				console.log(bossCompanyShortTermLoans)
+				if (bossCompanyShortTermLoans != null) {
+					if (bossCompanyShortTermLoans.length != 0) {
+						$("#section11 .xedk ul").children().remove();
+						$(bossCompanyShortTermLoans).each(function() {
+							var on = $(this)[0].organizationName;
+							var lbt = $(this)[0].loanBeginTime;
+							var tm = $(this)[0].term;
+							var ra = $(this)[0].residualAmount;
+							if (on == null||on=='') {
+								return true;
+								on = "";
+							}
+							if (lbt == null) {
+								lbt = "";
+							}
+							if (tm == null) {
+								tm = "";
+							}else{
+								if(!isNaN(parseInt(tm))){
+									tm=parseInt(tm)
+								}
+							}
+							if (ra == null) {
+								ra = "";
+							}else{
+								if(!isNaN(parseInt(ra))){
+									ra=parseInt(ra)
+								}
+							}
+							/*2018-12-21修*/
+							var editModel='';
+							if($(this)[0].source==1){
+								editModel='<div class="edit-mask"></div>'
+							}
+							/*2018-12-21修 end*/
+							$('<li data-source="'+$(this)[0].source+'">' +editModel+
+								'<div class="dqTop">' +
+								'<span fieldname="organizationName">' + on + '</span>' +
+								'<img src="img/_sc.png" class="s_d" />' +
+								'</div>' +
+								'<div class="dqBottom">' +
+								'<div><span fieldname="loanBeginTime">' + lbt + '</span></div>' +
+								'<div><span fieldname="term">' + tm + '</span><b class="yuan">期</b></div>' +
+								'<div><span fieldname="residualAmount" class="money">' + ra + '</span><b class="yuan">元</b></div>' +
+								'</div>' +
+								'</li>').appendTo("#section11 .xedk ul");
+						});
+					};
+				};
+				var bossCreditShortTermLoans = json.answer.balanceSheetModel.bossCreditShortTermLoans; //信用卡
+				console.log(bossCreditShortTermLoans);
+				if(bossCreditShortTermLoans.length!=0&&bossCreditShortTermLoans.length!=null){//\"source\": \"1\",
+				var isEdiy=false;
+				if(bossCreditShortTermLoans[0].source==1){
+					isEdiy=true;
+				}else{
+					isEdiy=false;
+				}
+					if (bossCreditShortTermLoans[0].residualAmount != null) {
+						if(!isNaN(parseInt(bossCreditShortTermLoans[0].residualAmount))){
+							$("#section11 .xyk .show li").first().find("input").val(parseInt(bossCreditShortTermLoans[0].residualAmount)).attr('disabled',isEdiy)
+						}else{
+							$("#section11 .xyk .show li").first().find("input").val(bossCreditShortTermLoans[0].residualAmount).attr('disabled',isEdiy)
+						}
+					}
+				}
+					
+				var zaBossCompanyShortTermLoans = json.answer.balanceSheetModel.zaBossCompanyShortTermLoans; //中安贷款余额
+				if (zaBossCompanyShortTermLoans != null) {
+					if (zaBossCompanyShortTermLoans.length != 0) {
+						$("#section11 .zadk ul").children().remove();
+						$(zaBossCompanyShortTermLoans).each(function() {
+							var on = $(this)[0].organizationName;
+							var lbt = $(this)[0].loanBeginTime;
+							var tm = $(this)[0].term;
+							var ra = $(this)[0].residualAmount;
+							if (on == null||on=='') {
+								return true;
+								on = "";
+							}
+							if (lbt == null) {
+								lbt = "";
+							}
+							if (tm == null) {
+								tm = "";
+							}else{
+								if(!isNaN(parseInt(tm))){
+									tm=parseInt(tm)
+								}
+							}
+							if (ra == null) {
+								ra = "";
+							}else{
+								if(!isNaN(parseInt(ra))){
+									ra=parseInt(ra)
+								}
+							}
+							/*2018-12-21修*/
+							var editModel='';
+							if($(this)[0].source==1){
+								editModel='<div class="edit-mask"></div>'
+							}
+							/*2018-12-21修 end*/
+							$('<li data-source="'+$(this)[0].source+'">' +editModel+
+								'<div class="dqTop">' +
+								'<span fieldname="organizationName">' + on + '</span>' +
+								'<img src="img/_sc.png" class="s_d" />' +
+								'</div>' +
+								'<div class="dqBottom">' +
+								'<div><span fieldname="loanBeginTime">' + lbt + '</span></div>' +
+								'<div><span fieldname="term">' + tm + '</span><b class="yuan">期</b></div>' +
+								'<div><span fieldname="residualAmount" class="money">' + ra + '</span><b class="yuan">元</b></div>' +
+								'</div>' +
+								'</li>').appendTo("#section11 .zadk ul");
+						});
+					};
+				};
+				
+				var BossFinancialCompanyShortTermLoans = json.answer.balanceSheetModel.BossFinancialCompanyShortTermLoans; //消金公司贷款
+				if (BossFinancialCompanyShortTermLoans != null) {
+					if (BossFinancialCompanyShortTermLoans.length != 0) {
+						$("#section11 .xjdk ul").children().remove();
+						$(BossFinancialCompanyShortTermLoans).each(function() {
+							var on = $(this)[0].organizationName;
+							var lbt = $(this)[0].loanBeginTime;
+							var tm = $(this)[0].term;
+							var ra = $(this)[0].residualAmount;
+							if (on == null||on=='') {
+								return true;
+								on = "";
+							}
+							if (lbt == null) {
+								lbt = "";
+							}
+							if (tm == null) {
+								tm = "";
+							}else{
+								if(!isNaN(parseInt(tm))){
+									tm=parseInt(tm)
+								}
+							}
+							if (ra == null) {
+								ra = "";
+							}else{
+								if(!isNaN(parseInt(ra))){
+									ra=parseInt(ra)
+								}
+							}
+							/*2018-12-21修*/
+							var editModel='';
+							if($(this)[0].source==1){
+								editModel='<div class="edit-mask"></div>'
+							}
+							/*2018-12-21修 end*/
+							$('<li data-source="'+$(this)[0].source+'">' +editModel+
+								'<div class="dqTop">' +
+								'<span fieldname="organizationName">' + on + '</span>' +
+								'<img src="img/_sc.png" class="s_d" />' +
+								'</div>' +
+								'<div class="dqBottom">' +
+								'<div><span fieldname="loanBeginTime">' + lbt + '</span></div>' +
+								'<div><span fieldname="term">' + tm + '</span><b class="yuan">期</b></div>' +
+								'<div><span fieldname="residualAmount" class="money">' + ra + '</span><b class="yuan">元</b></div>' +
+								'</div>' +
+								'</li>').appendTo("#section11 .xjdk ul");
+						});
+					};
+				};
+				
+			shortLoan.sum()
+			}
+			$(document).on("keyup","input[type='number']",function(){
+//				if($(this).val().indexOf(".") > 0){
+//					var sval = $(this).val().substr(0,$(this).val().indexOf("."))+$(this).val().substring($(this).val().indexOf(".")+1);
+//					$(this).val(sval.trim());
+//				}
+				if($(this).val().length >= 10){
+					$(this).val($(this).val().substr(0,10));
+					a_Save();
+					b_Save();
+					c_Save();
+				}
+			})
+			$(document).on("blur","input[type='number']",function(){
+				$(this).parents("li").find("label").remove();
+				if($(this).val()!=""){
+					if(!fushu($(this).val())){
+						a = false;
+						if($(this).parent(".b_r").length!=0){
+							$(this).parents(".problem").prev().find(".left label").remove();
+							$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+						}else{
+							$(this).find(".left label").remove();
+							$('<label class="message_info">10位正整数</label>').appendTo($(this).parents("li").find(".left"))
+						}
+					};
+				}
+			});
+			function fushu(val){
+				var telReg = /^(\d{0,10})$/;
+				if(val!=""){
+					if(telReg.test(val)){
+						return true;
+					}else{
+						return false;
+					}
+				}
+				
+			}
+		</script>
+		
+	</body>
+
+</html>

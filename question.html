@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<meta charset="UTF-8">
+		<title>问卷</title>
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/demoxf0729.css" />
+		<link rel="stylesheet" type="text/css" href="css/businessModel.css" />
+		<link rel="stylesheet" href="css/lCalendar.css" />
+	</head>
+
+	<body>
+		<footer id="next">
+			<p>下一题</p>
+		</footer>
+		<script type="text/javascript" src="js/setHtmlFontSize.js"></script>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lCalendar.min.js"></script>
+		<script src="js/city.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/otherChecker.js"></script>
+		<script src="js/regExpCheck.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/question.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/formatMoneyText.js"></script>
+
+		<!--<script>
+//		var y = {
+//				"code": "0001.0003.0035.0032",
+//				"completeStatus": null,
+//				"id": 18,
+//				"investigateModelCode": "0001.0003.0035",
+//				"isEnd": false,
+//				"modelValue": "{\"name\":\"您现在的银行贷款、小贷机构（除中安）及私人欠款有多少（元）\",\"code\":\"0001.0003.0035.0032\",\"answerType\":\"INPUTTABLE\",\"answerInput\":\"DOUBLE\",\"photograph\":\"TRUE\",\"answerChoice\":null,\"investigateModelCode\":\"0001.0003.0035\",\"sortNo\":5,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":\"\",\"shortName\":\"借款情况\",\"answerLimit\":0,\"answerLimitMin\":0,\"questionnaireCode\":\"0001.0003\",\"isControlShow\":\"0\",\"controlShowRule\":null,\"inputUnit\":null,\"regexRule\":\"^(\\\\d{0,10})$\",\"regexRuleName\":\"10位正整数\",\"photoFileCode\":\"1.7\",\"columnCode\":null,\"choiceCode\":null,\"tip\":null,\"groupControlList\":null,\"controlShowRuleList\":null,\"codeDicList\":null,\"questionTableList\":[{\"questionCode\":\"0001.0003.0035.0032\",\"code\":\"0001.0003.0035.0032.0672\",\"name\":\"负债类型\",\"type\":\"CODE\",\"answerChoice\":\"{61426463-4F63-46EB-B0C2-2D1CBCA2B4DD}\",\"questionnaireCode\":\"0001.0003\",\"sourceType\":\"1\",\"sortNo\":1,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"1\",\"isControlShow\":\"1\",\"controlShowRule\":\"0032.0672_2_show\",\"isDynamicShow\":\"0\",\"isDynamicCheck\":\"0\",\"dynamicCheckRule\":null,\"inputUnit\":null,\"regexRule\":\"^.{0,50}$\",\"regexRuleName\":\"最大50位非特殊字符,不能换行\",\"isAllowRepeat\":\"1\",\"groupControlList\":null,\"controlShowRuleList\":[{\"code\":[\"0001.0003.0035.0032.0007\",\"0001.0003.0035.0032.0519\",\"0001.0003.0035.0032.0693\",\"0001.0003.0035.0032.0973\"],\"key\":\"^{B620DFFA-26DF-4D2E-9DE6-629AFC940BE3}$\"},{\"code\":[\"0001.0003.0035.0032.0007\",\"0001.0003.0035.0032.0519\",\"0001.0003.0035.0032.0693\",\"0001.0003.0035.0032.0973\"],\"key\":\"^{3E72A750-F2C9-4765-8B0D-DCB9455E7E62}$\"},{\"code\":[\"0001.0003.0035.0032.0007\",\"0001.0003.0035.0032.0693\"],\"key\":\"^{7B46EE51-822A-400B-B263-3BB3FBA71025}$\"},{\"code\":[\"0001.0003.0035.0032.0693\"],\"key\":\"^{2AF1266A-5793-4C3B-88A4-43326498C878}$\"},{\"code\":[\"0001.0003.0035.0032.0693\"],\"key\":\"^{285FC6B1-5ECA-45F3-AA74-4FEBD519F663}$\"},{\"code\":[\"0001.0003.0035.0032.0007\",\"0001.0003.0035.0032.0519\",\"0001.0003.0035.0032.0693\",\"0001.0003.0035.0032.0973\"],\"key\":\"^{5F97450B-6C65-4A4E-9AA0-0AAA882647E1}$\"}],\"dynamicCheckRuleList\":null,\"codeDicList\":[{\"code\":\"{B620DFFA-26DF-4D2E-9DE6-629AFC940BE3}\",\"name\":\"银行信用贷款\",\"typeCode\":\"{61426463-4F63-46EB-B0C2-2D1CBCA2B4DD}\",\"showOrder\":1,\"codeDicList\":null},{\"code\":\"{5F97450B-6C65-4A4E-9AA0-0AAA882647E1}\",\"name\":\"银行抵押贷款\",\"typeCode\":\"{61426463-4F63-46EB-B0C2-2D1CBCA2B4DD}\",\"showOrder\":2,\"codeDicList\":null},{\"code\":\"{3E72A750-F2C9-4765-8B0D-DCB9455E7E62}\",\"name\":\"小贷公司贷款\",\"typeCode\":\"{61426463-4F63-46EB-B0C2-2D1CBCA2B4DD}\",\"showOrder\":3,\"codeDicList\":null},{\"code\":\"{285FC6B1-5ECA-45F3-AA74-4FEBD519F663}\",\"name\":\"信用卡\",\"typeCode\":\"{61426463-4F63-46EB-B0C2-2D1CBCA2B4DD}\",\"showOrder\":4,\"codeDicList\":null},{\"code\":\"{7B46EE51-822A-400B-B263-3BB3FBA71025}\",\"name\":\"私人借款\",\"typeCode\":\"{61426463-4F63-46EB-B0C2-2D1CBCA2B4DD}\",\"showOrder\":5,\"codeDicList\":null},{\"code\":\"{2AF1266A-5793-4C3B-88A4-43326498C878}\",\"name\":\"其他\",\"typeCode\":\"{61426463-4F63-46EB-B0C2-2D1CBCA2B4DD}\",\"showOrder\":6,\"codeDicList\":null}],\"require\":false},{\"questionCode\":\"0001.0003.0035.0032\",\"code\":\"0001.0003.0035.0032.0519\",\"name\":\"机构名称\",\"type\":\"STRING\",\"answerChoice\":null,\"questionnaireCode\":\"0001.0003\",\"sourceType\":\"1\",\"sortNo\":3,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"isControlShow\":\"0\",\"controlShowRule\":null,\"isDynamicShow\":\"1\",\"isDynamicCheck\":\"0\",\"dynamicCheckRule\":null,\"inputUnit\":null,\"regexRule\":\"^.{0,50}$\",\"regexRuleName\":\"最大50位非特殊字符,不能换行\",\"isAllowRepeat\":\"1\",\"groupControlList\":null,\"controlShowRuleList\":null,\"dynamicCheckRuleList\":null,\"codeDicList\":null,\"require\":false},{\"questionCode\":\"0001.0003.0035.0032\",\"code\":\"0001.0003.0035.0032.0693\",\"name\":\"剩余本金（元）\",\"type\":\"DOUBLE\",\"answerChoice\":null,\"questionnaireCode\":\"0001.0003\",\"sourceType\":\"1\",\"sortNo\":4,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"isControlShow\":\"0\",\"controlShowRule\":null,\"isDynamicShow\":\"1\",\"isDynamicCheck\":\"0\",\"dynamicCheckRule\":null,\"inputUnit\":\"元\",\"regexRule\":\"^(\\\\d{0,10})$\",\"regexRuleName\":\"10位正整数\",\"isAllowRepeat\":\"1\",\"groupControlList\":null,\"controlShowRuleList\":null,\"dynamicCheckRuleList\":null,\"codeDicList\":null,\"require\":false},{\"questionCode\":\"0001.0003.0035.0032\",\"code\":\"0001.0003.0035.0032.0007\",\"name\":\"贷款起始时间\",\"type\":\"DATE\",\"answerChoice\":null,\"questionnaireCode\":\"0001.0003\",\"sourceType\":\"1\",\"sortNo\":5,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"isControlShow\":\"0\",\"controlShowRule\":null,\"isDynamicShow\":\"1\",\"isDynamicCheck\":\"0\",\"dynamicCheckRule\":null,\"inputUnit\":null,\"regexRule\":\"other_datelighteqtoday\",\"regexRuleName\":\"小于等于当前日期\",\"isAllowRepeat\":\"1\",\"groupControlList\":null,\"controlShowRuleList\":null,\"dynamicCheckRuleList\":null,\"codeDicList\":null,\"require\":false},{\"questionCode\":\"0001.0003.0035.0032\",\"code\":\"0001.0003.0035.0032.0973\",\"name\":\"期限（月）\",\"type\":\"INTEGER\",\"answerChoice\":null,\"questionnaireCode\":\"0001.0003\",\"sourceType\":\"1\",\"sortNo\":6,\"checkMark\":\"0\",\"limitLength\":0,\"defaultValue\":null,\"isLabel\":\"0\",\"isControlShow\":\"0\",\"controlShowRule\":null,\"isDynamicShow\":\"1\",\"isDynamicCheck\":\"0\",\"dynamicCheckRule\":null,\"inputUnit\":null,\"regexRule\":\"^(\\\\d{0,10})$\",\"regexRuleName\":\"10位正整数\",\"isAllowRepeat\":\"1\",\"groupControlList\":null,\"controlShowRuleList\":null,\"dynamicCheckRuleList\":null,\"codeDicList\":null,\"require\":false}],\"overrideStatus\":\"0\",\"require\":false}",
+//				"name": "借款情况",
+//				"overrideStatus": "0",
+//				"photoFileCode": "1.7",
+//				"questionTableAnswerMap": {
+//					"1": [{
+//						"id": 217,
+//						"investigateQuestionCode": "0001.0003.0035.0032",
+//						"investigateTableCode": "0001.0003.0035.0032.0672",
+//						"lineNo": 1,
+//						"serialNo": "{B276A238-283B-4709-AC88-70319F84E366}",
+//						"value": "{2AF1266A-5793-4C3B-88A4-43326498C878}",
+//						"source": 1
+//					}, {
+//						"id": 218,
+//						"investigateQuestionCode": "0001.0003.0035.0032",
+//						"investigateTableCode": "0001.0003.0035.0032.0693",
+//						"lineNo": 1,
+//						"serialNo": "{B276A238-283B-4709-AC88-70319F84E366}",
+//						"value": 66,
+//						"source": 1
+//					}],
+//					"2": [{
+//						"id": 219,
+//						"investigateQuestionCode": "0001.0003.0035.0032",
+//						"investigateTableCode": "0001.0003.0035.0032.0672",
+//						"lineNo": 1,
+//						"serialNo": "{B276A238-283B-4709-AC88-70319F84E366}",
+//						"value": "{B620DFFA-26DF-4D2E-9DE6-629AFC940BE3}",
+//						"source": 0
+//					}, {
+//						"id": 212,
+//						"investigateQuestionCode": "0001.0003.0035.0032",
+//						"investigateTableCode": "0001.0003.0035.0032.0693",
+//						"lineNo": 1,
+//						"serialNo": "{B276A238-283B-4709-AC88-70319F84E366}",
+//						"value": 66,
+//						"source": 0
+//					}]
+//				},
+//				"questionnaireCode": "0001.0003",
+//				"sortNo": 5,
+//				"value": 8888
+//			};
+//			
+//			
+//			
+//			loadQuestion(y);
+
+		</script>
+	-->
+	
+	</body>
+
+</html>

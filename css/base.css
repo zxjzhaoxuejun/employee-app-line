@@ -1,0 +1,136 @@
+/*公共样式*/
+.clearfix{*zoom:1}
+.clearfix:after{content:"";display: block;clear:both}
+.centerfix{margin:0 auto;}
+textarea,input{outline:none;border:none}
+/*行业风险CSS样式*/
+
+.risk{position:relative;width:10.8rem;height:1.47rem;background: #f1f0f6;}
+.risk h2{position:absolute;font-size:0.42rem;top:0.55rem;left:0.5rem;font-weight: normal;color: #191919;}
+.risk div{position:absolute;background:url(../img/report_li.png) no-repeat;width:0.2rem;height:0.2rem;top:0.7rem;left:0.25rem}
+
+.risk_input_wrap{position:relative;width:10rem;height:7.98rem;background: #ffffff;border:0.02rem solid #cdcdd2;margin-top:0.46rem;border-radius:0.1rem}
+.risk_input{width:93%;height:93%;font-size:0.42rem;margin:3.5% 3.5%;}
+
+.risk_input_wrap span{position:absolute;color:#a0a0a5;display: inline}
+/*.risk_input_wrap span:nth-of-type(1){font-size:0.36rem;color:#a0a0a5;left:0.4rem;top:0.4rem;}*/
+.risk_input_wrap span:nth-of-type(1){font-size:0.32rem;color:#a0a0a5;left:7.06rem;bottom: 0.36rem}
+
+
+
+
+/*信用报告信息CSS样式*/
+/*#report_divtop{width:10.8rem;height:1.5rem;background:#f0f0f5;font-size:0.38rem;}
+#report_ul li{width:10.2rem;height:1.2rem;font-size:0.36rem;color:#a0a0a5;border-bottom: 0.04rem solid #cdcdd2;margin:0 auto;}
+#report_ul li span:nth-of-type(1){margin-left:0.1rem;line-height: 1.2rem}
+#report_ul li span:nth-of-type(2){margin-left:0.1rem;line-height: 1.2rem}
+#report_ul li input{width:2.5rem;margin-left:1rem;}*/
+
+/*信贷员建议*/
+
+.head-top{width:10.8rem;height:1.49rem;background:#f0f0f5}
+.head-top span{font-size: 0.38rem;margin-left:0.5rem;line-height:1.49rem}
+.suggest_suggest{width:10.04rem;height:1.2rem;border-bottom:0.04rem solid #cdcdd2;background:url(../img/report_li.png) no-repeat 0.12rem 0.53rem;font-size:0.36rem;color:#a0a0a5;position: relative;}
+.suggest_suggest span{position:absolute;top:0.46rem}
+.suggest_suggest div{position:absolute;width:0.38rem;height:0.38rem;top:0.52rem}
+.suggest_no{position:absolute;width:100%;display: block}
+.suggest_no_sub{display: block}
+
+.suggest_suggest span:nth-of-type(1){left:0.43rem;}
+.suggest_suggest div:nth-of-type(1){left:3.75rem;background: url(../img/suggets.png) no-repeat}
+.suggest_suggest span:nth-of-type(2){left:4.21rem;}
+.suggest_suggest div:nth-of-type(2){left:6.79rem;background: url(../img/suggets01.png) no-repeat}
+.suggest_suggest span:nth-of-type(3){left:7.23rem;}
+.suggest_reson{width:8.5rem;height:0.6rem;margin:0 auto;position:relative;margin-top:0.3rem }
+.suggest_reson div{position:absolute;width:0.4rem;height:0.4rem;top:0.3rem;left:0;background:url(../img/jx_icon.png) no-repeat }
+.suggest_reson span{position:absolute;font-size:0.36rem;left:1rem;top:0.27rem;color:#a0a0a5}
+/*标准样式*/
+.suggest_yes{position:absolute;width:100%}
+
+.suggest_yes li{font-size:0.36rem;}
+.suggest_yes span:nth-of-type(1){margin-left:0.5rem}
+.suggest_yes input{margin-left:0.2rem}
+.suggest_yes span:nth-of-type(2){margin-left:2.5rem}
+
+.footer_zh{width:100%;height:1.2rem;background:blue}
+.checkspan{color: rgb(160, 160, 165);font-size:0.45rem}
+.checkimg{margin-left:0.8rem}
+
+/*修改整个组的公共样式，并重命名*/
+
+/*.right b的样式修改*/
+.b_zh{
+    font-size: 0.4rem;
+    display:inline-block;
+    float: left;
+    color: #a09fa4;
+    width: 1.5rem !important;
+    height: 1.4rem;
+    overflow: hidden;
+    margin-left:0.05rem;
+}
+.s2no{
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 50%;
+	background:#30b48d ;
+	display: none;
+	position: absolute;
+	top:0.1rem;
+	left:0.1rem;
+}
+.s2active{
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 50%;
+	background:#30b48d ;
+	display: block;
+	position: absolute;
+	top:0.1rem;
+	left:0.1rem;
+}
+.span_zh{
+	width: 2.5rem!important;
+	height: 1rem;
+	display: block;
+	float: left;
+	line-height: 1rem;
+	text-align: center;
+	margin: 0.8rem 0 0 0.5rem;
+	border: 0.04rem solid #32be97;
+	border-radius: 0.15rem;
+	color: #32be97;
+	font-size: 0.4rem;
+	position: relative;
+}
+.s1_zh{
+	width: 0.5rem!important;
+	height: 0.4rem;
+	border-radius: 50%;
+	border: 0.05rem solid #30b48d;
+	display: block;
+	float: left;
+	margin: 0.45rem 0.1rem 0 0.1rem;
+	position: relative;
+}
+.active_zh{
+	display:block;
+}
+.hide_zh{
+	display:none;
+}
+.add_active{
+	width: 2rem;
+	height: 1rem;
+	display: block;
+	float: left;
+	line-height: 1rem;
+	text-align: center;
+	margin: 0.8rem 0 0 0.5rem;
+	border: 0.04rem solid #32be97;
+	border-radius: 0.15rem;
+	color: #FFFFFF!important;
+	font-size: 0.4rem;
+	position: relative;
+	background:#32be97;
+}

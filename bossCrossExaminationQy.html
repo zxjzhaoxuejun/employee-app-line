@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<title>交叉检验1</title>
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/lCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/demoxf0729.css"/>
+		<link rel="stylesheet" type="text/css" href="css/businessModel.css"/>
+		<script type="text/javascript" src="js/setHtmlFontSize.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script src="js/lCalendar.min.js"></script>
+	</head>
+
+	<body>
+		<section>
+			<div class="a_dd">
+				<div class="problem lr">
+					<p>"+"进项</p>
+					<ul>
+						<li fieldName="periodProfit">
+							<div class="left">
+								<span>*</span>
+								<i>期间利润</i>
+							</div>
+							<div class="right">
+								<span class="s_pan">0</span>
+								<b class="yuan">元</b>
+							</div>
+						</li>
+						<li fieldName="repayPrincipal">
+							<div class="left">
+								<span>&nbsp;&nbsp;</span>
+								<i>还款本金</i>
+							</div>
+							<div class="right">
+								<input type="number" placeholder="请输入还款本金" value="" />
+								<b class="yuan">元</b>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="section13">
+					<div class="problem show" style="display: block;">
+						<p class="_xq">
+							<span fieldName="periodIncome">期间注资</span><span class="_zsp">0</span><span>元</span>
+							<img src="img/add_icon.png" / class="add"><img src="img/jian_icon.png" class="jian" />
+						</p>
+						<div class="cy">
+							<span class="span_bg">页签</span>
+						</div>
+						<ul class="section13">
+							<li fieldName="category" ct="{1E5F4994-FE87-4955-88FD-DC3067BD78E5}:其他,{5BFC0847-CC7A-4208-ADB3-340047D8D966}:一次性补贴等,{7EEAE491-4D86-44A0-9420-00348B238997}:注资或入股,{94CBC214-9CD6-4FF2-A893-3FB71BDC91D0}:退股收益,{BD38EA40-B814-4629-B0DB-B3A224A9E880}:投资收益,{D0920350-3E33-4A8E-A626-6D0C2106A1E2}:出售个人资产净收入">
+								<div class="left">
+									<span>*</span>
+									<i>类型</i>
+								</div>
+								<div class="right">
+									<span class="choose">请选择</span>
+									<img src="img/down_icon.png" class="select select_1" />
+								</div>
+							</li>
+							<li fieldname="categoryOther" style="display: none;">
+								<div class="left"><span>*</span><i>其他</i></div>
+								<div class="right">
+									<input type="text" placeholder="请输入其他">
+								</div>
+							</li>
+							<li fieldName="date">
+								<div class="left">
+									<span>*</span>
+									<i>时间</i>
+								</div>
+								<div class="right">
+									<input id="demo11" type="text" readonly name="input_date" placeholder="请输入时间" data-lcalendar="1916-01-11,2116-05-29" />
+								</div>
+							</li>
+							<li fieldName="amount" class="amount">
+								<div class="left">
+									<span>*</span>
+									<i>金额</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入" value="" /><b class="yuan">元</b>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="problem a_ft">
+					<div class="a_bg"></div>
+					<ul>
+						<li fieldName="revalue">
+							<div class="left">
+								<span>&nbsp;&nbsp;</span>
+								<i>升值</i>
+							</div>
+							<div class="right">
+								<input type="number" placeholder="请输入" value="" /><b class="yuan">元</b>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="j_ian">
+				<div class="problem">
+					<p>"-"出项</p>
+				</div>
+				<div id="section14" total="0">
+					<div class="problem show" style="display: block;">
+						<p class="_xq">
+							<span fieldName="periodOutcome">期间内提取的资金</span><span class="_zsp">0</span><span>元</span>
+							<img src="img/add_icon.png" / class="add"><img src="img/jian_icon.png" class="jian" />
+						</p>
+						<div class="cy">
+							<span class="span_bg">页签</span>
+						</div>
+						<ul class="section14">
+							<li fieldName="category" ct="{1897A6D1-52F3-4819-9033-3CD26579FFBB}:其他,{2955FC4B-35E4-4B30-97D6-6DDAC83A822D}:家庭装修、旅游等开销,{37A37E66-50F4-4D8C-8908-826F776198ED}:其他生意投资,{4BFAB7EA-D916-4508-8078-88F340468549}:股东分红或退股,{B0F7B4AC-3875-401F-A4EB-BE01E45FECDE}:购置非经营性房产、车辆,{C2BA3062-E717-4B99-A68C-CAF6B2B9E628}:一次性赔偿、广告投入、展会、产品研发等,{FF912F6F-44FD-442A-A9FC-C280DFA655E4}:企业搬迁、装修、转让费等费用">
+								<div class="left">
+									<span>*</span>
+									<i>类型</i>
+								</div>
+								<div class="right">
+									<span class="choose">请选择</span>
+									<img src="img/down_icon.png" class="select select_1" />
+								</div>
+							</li>
+							<li fieldname="categoryOther" style="display: none;">
+								<div class="left"><span>*</span><i>其他</i></div>
+								<div class="right">
+									<input type="text" placeholder="请输入其他">
+								</div>
+							</li>
+							<li fieldName="date">
+								<div class="left">
+									<span>*</span>
+									<i>时间</i>
+								</div>
+								<div class="right">
+									<input id="demo12" type="text" readonly name="input_date" placeholder="请输入时间" data-lcalendar="1916-01-11,2116-05-29" />
+								</div>
+							</li>
+							<li fieldName="amount" class="amount">
+								<div class="left">
+									<span>*</span>
+									<i>金额</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入金额" value="" /><b class="yuan">元</b>
+								</div>
+							</li>
+	
+						</ul>
+					</div>
+						
+				</div>
+				<div id="section15" total="0">
+					<div class="problem show" style="display: block;">
+						<p class="_xq" style="height:1.5rem">
+							<span>他人借款</span>
+							<img src="img/add_icon.png" / class="add"><img src="img/jian_icon.png" class="jian" />
+						</p>
+						<div class="cy">
+							<span class="span_bg">页签</span>
+						</div>
+						<ul>
+							<li fieldName="relationship" ct="{69E70A28-8629-4148-9B70-0C7075A90A93}:其他亲属,{BB371C93-CB2C-4F0E-B215-509FCD654E9C}:同学,{BC8C881E-7ABC-47D4-B3AE-E51E9DCF3DA7}:朋友,{D273B17C-EAA9-47BD-889B-BA4142E50B22}:合伙人,{D36C49E1-308E-40C0-8AD6-676338A4913F}:其他,{FEB0D593-BC9E-431F-A218-83F03B85E392}:兄弟姐妹">
+								<div class="left">
+									<span>*</span>
+									<i>借钱给</i>
+								</div>
+								<div class="right">
+									<span class="choose">请选择</span>
+									<img src="img/down_icon.png" class="select select_1" />
+								</div>
+							</li>
+							<li fieldname="relationshipOther" style="display: none;">
+								<div class="left"><span>*</span><i>其他</i></div>
+								<div class="right">
+									<input type="text" placeholder="请输入其他">
+								</div>
+							</li>
+							<li fieldName="date">
+								<div class="left">
+									<span>*</span>
+									<i>借款时间</i>
+								</div>
+								<div class="right">
+									<input id="demo13" type="text" readonly name="input_date" placeholder="请输入时间" data-lcalendar="1916-01-11,2116-05-29" />
+								</div>
+							</li>
+							<li fieldName="amount" class="amount">
+								<div class="left">
+									<span>*</span>
+									<i>金额</i>
+								</div>
+								<div class="right">
+									<input type="number" placeholder="请输入金额" value="" /><b class="yuan">元</b>
+								</div>
+							</li>
+	
+						</ul>
+					</div>
+						
+				</div>	
+				<div class="problem j_ft">
+					<div class="j_bg"></div>
+					<ul>
+						<li fieldName="depreciation">
+							<div class="left">
+								<span>&nbsp;&nbsp;</span>
+								<i>折旧</i>
+							</div>
+							<div class="right">
+								<span class="s_pan">0</span><b class="yuan">元</b>
+							</div>
+						</li>
+						<li fieldName="devalue">
+							<div class="left">
+								<span>&nbsp;&nbsp;</span>
+								<i>贬值</i>
+							</div>
+							<div class="right">
+								<input type="number" placeholder="请输入贬值" value="" /><b class="yuan">元</b>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="r_esult">
+				<div class="problem">
+					<p>结果</p>
+					<ul>
+						<li fieldName="entitlement">
+							<div class="left">
+								<span>*</span>
+								<i>应有权益</i>
+							</div>
+							<div class="right">
+								<span class="s_pan">0</span>
+								<b class="yuan">元</b>
+							</div>
+						</li>
+						<li fieldName="actualInterest">
+							<div class="left">
+								<span>*</span>
+								<i>实际权益</i>
+							</div>
+							<div class="right">
+								<span class="s_pan">0</span>
+								<b class="yuan">元</b>
+							</div>
+						</li>
+						<li fieldName="difference">
+							<div class="left">
+								<span>*</span>
+								<i>差别权益</i>
+							</div>
+							<div class="right">
+								<span class="s_pan">0</span>
+								<b class="yuan">元</b>
+							</div>
+						</li>
+						<li fieldName="percentage">
+							<div class="left">
+								<span>*</span>
+								<i>%</i>
+							</div>
+							<div class="right">
+								<span class="s_pan">0</span>
+								<b class="yuan">%</b>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="r_eason">
+				<div class="problem">
+					<p>权益差别原因</p>
+					<ul>
+						<li class="textareaStyle" fieldName="differenceReason">
+							<div class="textCons right">
+								<textarea placeholder="请输入解决方法"></textarea>
+								<span>此处可输入1000字</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</section>
+		<footer id="next">
+			<p>提交</p>
+		</footer>
+		<script type="text/javascript" src="js/crossTest_computeRuble.js"></script>
+		<script src="js/bossCrossExaminationQy.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/formatMoneyText.js"></script>
+		<script type="text/javascript">
+//			$(".left span").html("&nbsp;&nbsp;")
+
+//          var h = [{
+//				"sysDicMap": {
+//					"bossIncomeAccountOtherDict": [{
+//						"value": "其他支出",
+//						"showOrder": 0,
+//						"key": "{85710B86-FB2F-4E46-B012-2B094224267A}"
+//					}, {
+//						"value": "分期还款",
+//						"showOrder": 0,
+//						"key": "{887C6960-6230-43C1-9CCB-B630B5F03844}"
+//					}, {
+//						"value": "家庭开支",
+//						"showOrder": 0,
+//						"key": "{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}"
+//					}, {
+//						"value": "其他收入",
+//						"showOrder": 9999,
+//						"key": "otherIncome"
+//					}],
+//					"bossIncomeAccountFixedOutcomeDict": [{
+//						"value": "通讯费及网络费用",
+//						"showOrder": 0,
+//						"key": "{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}"
+//					}, {
+//						"value": "员工保险及食宿",
+//						"showOrder": 0,
+//						"key": "{0A311F00-58D4-433D-974B-BFDF84852234}"
+//					}, {
+//						"value": "办公等财务费用",
+//						"showOrder": 0,
+//						"key": "{007350F6-2770-4893-B9F7-74C3D48F0776}"
+//					}, {
+//						"value": "税收",
+//						"showOrder": 0,
+//						"key": "{4AA0B22A-9EFD-48DA-9317-76DA7577387C}"
+//					}, {
+//						"value": "分期还款",
+//						"showOrder": 0,
+//						"key": "{76B82085-2BEC-467F-BC4D-D747CC721C96}"
+//					}, {
+//						"value": "招待费",
+//						"showOrder": 0,
+//						"key": "{EE2B8CA6-C5E0-49F9-957C-C2DFBADA708F}"
+//					}, {
+//						"value": "材料损耗",
+//						"showOrder": 0,
+//						"key": "{A1676E44-7319-474F-A6A2-274AF6F5D110}"
+//					}, {
+//						"value": "租金",
+//						"showOrder": 0,
+//						"key": "{A1F0C692-CDFD-4725-A917-704D29568BA7}"
+//					}, {
+//						"value": "其他费用",
+//						"showOrder": 0,
+//						"key": "{A189676C-6823-4855-AADE-E6521541F61D}"
+//					}, {
+//						"value": "水电费",
+//						"showOrder": 0,
+//						"key": "{8EC1AD82-2889-495A-9382-267F2C58A055}"
+//					}, {
+//						"value": "广告及维护费",
+//						"showOrder": 0,
+//						"key": "{A39E3E87-2C7D-4767-8ED6-6B2A4ED21C13}"
+//					}, {
+//						"value": "交通费",
+//						"showOrder": 0,
+//						"key": "{4ACECC2E-538F-445F-BA81-17F962B41D97}"
+//					}, {
+//						"value": "工资",
+//						"showOrder": 0,
+//						"key": "{306785B0-12F4-425A-B63B-B73C293FDF0B}"
+//					}],
+//					"bossIncomeAccountTurnoverResourceTypeDict": [{
+//						"value": "营业额",
+//						"showOrder": 1,
+//						"key": "{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}"
+//					}, {
+//						"value": "进货",
+//						"showOrder": 2,
+//						"key": "{B54F5716-8B32-4F27-9928-8AE90939CE68}"
+//					}, {
+//						"value": "生成量",
+//						"showOrder": 3,
+//						"key": "{C5789F12-5014-48DC-9FC7-79A0282CFDD1}"
+//					}, {
+//						"value": "提成",
+//						"showOrder": 4,
+//						"key": "{4A972719-ABE3-4341-9B80-0954CB29FA7D}"
+//					}],
+//					"bossBorrowInfoDict": [{
+//						"value": "其他",
+//						"showOrder": 0,
+//						"key": "{D36C49E1-308E-40C0-8AD6-676338A4913F}"
+//					}, {
+//						"value": "兄弟姐妹",
+//						"showOrder": 0,
+//						"key": "{FEB0D593-BC9E-431F-A218-83F03B85E392}"
+//					}, {
+//						"value": "朋友",
+//						"showOrder": 0,
+//						"key": "{BC8C881E-7ABC-47D4-B3AE-E51E9DCF3DA7}"
+//					}, {
+//						"value": "其他亲属",
+//						"showOrder": 0,
+//						"key": "{69E70A28-8629-4148-9B70-0C7075A90A93}"
+//					}, {
+//						"value": "合伙人",
+//						"showOrder": 0,
+//						"key": "{D273B17C-EAA9-47BD-889B-BA4142E50B22}"
+//					}, {
+//						"value": "同学",
+//						"showOrder": 0,
+//						"key": "{BB371C93-CB2C-4F0E-B215-509FCD654E9C}"
+//					}],
+//					"bossOtherFundSourceDict": [{
+//						"value": "出售个人资产净收入",
+//						"showOrder": 0,
+//						"key": "{D0920350-3E33-4A8E-A626-6D0C2106A1E2}"
+//					}, {
+//						"value": "退股收益",
+//						"showOrder": 0,
+//						"key": "{94CBC214-9CD6-4FF2-A893-3FB71BDC91D0}"
+//					}, {
+//						"value": "其他",
+//						"showOrder": 0,
+//						"key": "{1E5F4994-FE87-4955-88FD-DC3067BD78E5}"
+//					}, {
+//						"value": "投资收益",
+//						"showOrder": 0,
+//						"key": "{BD38EA40-B814-4629-B0DB-B3A224A9E880}"
+//					}, {
+//						"value": "注资或入股",
+//						"showOrder": 0,
+//						"key": "{7EEAE491-4D86-44A0-9420-00348B238997}"
+//					}, {
+//						"value": "一次性补贴等",
+//						"showOrder": 0,
+//						"key": "{5BFC0847-CC7A-4208-ADB3-340047D8D966}"
+//					}],
+//					"bossAcrossTurnoverTypeDict": [{
+//						"value": "分销",
+//						"showOrder": 0,
+//						"key": "{7DC1ABFC-78A6-4213-92F4-4489F15E126A}"
+//					}, {
+//						"value": "餐饮酒店",
+//						"showOrder": 0,
+//						"key": "{BFCFBA01-50DD-49F0-B872-2A2979FD6878}"
+//					}, {
+//						"value": "商超直供",
+//						"showOrder": 0,
+//						"key": "{304A49D0-686A-4176-BD16-65E1866319C7}"
+//					}, {
+//						"value": "批发团购",
+//						"showOrder": 0,
+//						"key": "{54E13452-9CE1-4E2E-8B6F-F5184EF2931C}"
+//					}, {
+//						"value": "合作单位",
+//						"showOrder": 0,
+//						"key": "{F3056438-53FE-4480-BCCA-AF48AB5EEEF7}"
+//					}, {
+//						"value": "店面零售",
+//						"showOrder": 0,
+//						"key": "{CFEA04B5-E470-4110-BB15-553A86EC0359}"
+//					}, {
+//						"value": "其他",
+//						"showOrder": 0,
+//						"key": "{AE8DACE3-CB76-4113-ADCF-F0F9D9D3183F}"
+//					}, {
+//						"value": "大单工程",
+//						"showOrder": 0,
+//						"key": "{680C8808-0FC8-4F0A-B903-3C28CE744005}"
+//					}],
+//					"bossIncomeAccountTurnoverResourceDict": [{
+//						"value": "账本",
+//						"showOrder": 1,
+//						"key": "{AC232BC4-0E95-490F-94ED-DB588284DBA6}"
+//					}, {
+//						"value": "口述",
+//						"showOrder": 2,
+//						"key": "{3C907C03-DD0E-467A-B7BF-FB44957C858E}"
+//					}, {
+//						"value": "其他",
+//						"showOrder": 3,
+//						"key": "{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}"
+//					}],
+//					"bossAcrossOtherTypeDict": [{
+//						"value": "商场扣点",
+//						"showOrder": 0,
+//						"key": "{7DABF20C-581D-4C6D-A554-48A2A2E9D008}"
+//					}, {
+//						"value": "销售提成",
+//						"showOrder": 0,
+//						"key": "{CE910B54-7375-46F3-A001-1B71C0794AC6}"
+//					}],
+//					"bossLargeExpenseDict": [{
+//						"value": "家庭装修、旅游等开销",
+//						"showOrder": 0,
+//						"key": "{2955FC4B-35E4-4B30-97D6-6DDAC83A822D}"
+//					}, {
+//						"value": "其他生意投资",
+//						"showOrder": 0,
+//						"key": "{37A37E66-50F4-4D8C-8908-826F776198ED}"
+//					}, {
+//						"value": "企业搬迁、装修、转让费等费用",
+//						"showOrder": 0,
+//						"key": "{FF912F6F-44FD-442A-A9FC-C280DFA655E4}"
+//					}, {
+//						"value": "购置非经营性房产、车辆",
+//						"showOrder": 0,
+//						"key": "{B0F7B4AC-3875-401F-A4EB-BE01E45FECDE}"
+//					}, {
+//						"value": "一次性赔偿、广告投入、展会、产品研发等生意支出",
+//						"showOrder": 0,
+//						"key": "{C2BA3062-E717-4B99-A68C-CAF6B2B9E628}"
+//					}, {
+//						"value": "股东分红或退股",
+//						"showOrder": 0,
+//						"key": "{4BFAB7EA-D916-4508-8078-88F340468549}"
+//					}, {
+//						"value": "其他",
+//						"showOrder": 0,
+//						"key": "{1897A6D1-52F3-4819-9033-3CD26579FFBB}"
+//					}]
+//				}
+//			}, {	
+//	"bossContactModel": "{\"bossContacts\":[{\"name\":\"刘磊\",\"relationship\":\"{F1BFCDF1-CB80-424A-A9A5-519228D21B02}\",\"isKnownLoan\":\"1\",\"phone\":\"18013812345\",\"familyTelephone\":null,\"familyAddressSameCustom\":\"1\",\"companyAddressSameCustom\":\"1\",\"job\":\"{6D7DC76C-718A-45AB-9F0F-FA8D56251A2D}\",\"companyPhone\":null,\"checkRemark\":\"待审核\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"name\":\"周日华\",\"relationship\":\"{D7316C55-127B-405D-8D54-4104C3FA05C9}\",\"isKnownLoan\":\"1\",\"phone\":\"13222777900\",\"familyTelephone\":null,\"familyAddressSameCustom\":\"0\",\"familyAddress\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{B02E46EE-C983-48C9-A732-FE7719A02BA0}@{2F4807AC-9A7B-4FDF-AEB7-B02AD047DA1D}||江宁区\",\"companyAddressSameCustom\":\"1\",\"job\":\"{81CD6777-F9CA-42EA-9188-8EB7246770CD}\",\"companyPhone\":null,\"checkRemark\":\"待审核\",\"lineNo\":\"2\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"auditorCode\":null,\"auditorName\":null},{\"name\":\"占传利\",\"relationship\":\"{761A74CF-86DE-4A74-854C-C8EA9D7BD5EB}\",\"isKnownLoan\":\"1\",\"phone\":\"13851743676\",\"familyTelephone\":null,\"familyAddressSameCustom\":\"0\",\"familyAddress\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{B02E46EE-C983-48C9-A732-FE7719A02BA0}@{2F4807AC-9A7B-4FDF-AEB7-B02AD047DA1D}\",\"companyAddressSameCustom\":\"0\",\"companyName\":null,\"companyAddress\":null,\"job\":null,\"companyPhone\":null,\"sex\":null,\"post\":null,\"checkRemark\":\"待审核\",\"lineNo\":\"3\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"auditorCode\":null,\"auditorName\":null}]}",
+//	"bossCashFlowModel": "{\"bossCashFlowMain\":{},\"bossCashFlowDetails\":[]}",
+//	"bossIncomeAccountDates": "[{\"date\":\"2017-01\",\"sortNo\":1.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-02\",\"sortNo\":2.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-03\",\"sortNo\":3.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-04\",\"sortNo\":4.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-05\",\"sortNo\":5.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-06\",\"sortNo\":6.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-07\",\"sortNo\":7.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-08\",\"sortNo\":8.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-09\",\"sortNo\":9.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-10\",\"sortNo\":10.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-11\",\"sortNo\":11.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"date\":\"2017-12\",\"sortNo\":12.0,\"batchNo\":1.0,\"commitDataType\":\"1\"}]",
+//	"bossAdviseModel": "{\"bossAdvise\":{\"loanAdvise\":\"{42B0FE69-4998-49CC-B093-3353D21DC8E6}\",\"adviseAmount\":\"200000\",\"adviseTerm\":\"24\",\"adviseMonthRepayment\":\"11333\",\"repayDate\":\"5\",\"denyReason\":\"客户还款多\",\"refuseReason\":null,\"denyReasonZac\":null,\"denyReasonCust\":null,\"denyReasonOther\":null},\"bossAdviseCoborrowerMessages\":[{\"type\":\"{A2DEC2E3-63C3-43B7-A804-43C31C8E2BE0}\",\"name\":\"刘磊\",\"cert\":\"321323199004163032\",\"relationship\":\"{5705449E-0EBC-42BB-8421-1FA833D051F5}\",\"familyAddressSameCustom\":\"1\",\"companyNameSameCustom\":\"1\",\"contactPhone\":\"18013812345\",\"workAddressSameCustom\":\"1\",\"lineNo\":\"1\"}]}",
+//	"serialNo": "{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}",
+//	"bossOffBalanceAssetModel": "{\"bossOffBalanceAsset\":{\"houseLoanBalance\":\"2412104\",\"carLoanBalance\":\"0\",\"evaluate\":null}}",
+//	"bossOwnerInfoModel": "{\"bossOwnerLoanInfo\":{\"serialNo\":null,\"houseLoanCount\":1.0,\"otherLoanCount\":82.0,\"unclearLoanCount\":24.0,\"unclearContractAmount\":5745000.0,\"unclearBalanceAmount\":4977810.0,\"avgRepayAmount\":84357.0,\"overdueCount\":0.0,\"overdueAmount\":0.0},\"bossOwnerCreditInfo\":{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"creditAccountCount\":5.0,\"uncancleAccountCount\":5.0,\"uncancleCreditAmount\":374000.0,\"usedAmount\":257072.0,\"avgUsedAmount\":223890.0,\"overdueCount\":0.0,\"overdueAmount\":0.0},\"bossOwnerCreditReports\":[{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"dateLimit\":1.0,\"loanCount\":1.0,\"creditCount\":1.0,\"loanCreditCount\":2.0,\"lineNo\":1.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"dateLimit\":3.0,\"loanCount\":2.0,\"creditCount\":1.0,\"loanCreditCount\":3.0,\"lineNo\":2.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"dateLimit\":6.0,\"loanCount\":4.0,\"creditCount\":1.0,\"loanCreditCount\":5.0,\"lineNo\":3.0}],\"bossOverdues\":[{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":1.0,\"loan\":2.0,\"credit\":2.0,\"semiCredit\":0.0,\"lineNo\":0.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":2.0,\"loan\":0.0,\"credit\":0.0,\"semiCredit\":0.0,\"lineNo\":0.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":3.0,\"loan\":0.0,\"credit\":0.0,\"semiCredit\":0.0,\"lineNo\":0.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":4.0,\"loan\":0.0,\"credit\":0.0,\"semiCredit\":0.0,\"lineNo\":0.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":5.0,\"loan\":0.0,\"credit\":0.0,\"semiCredit\":0.0,\"lineNo\":0.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":6.0,\"loan\":0.0,\"credit\":0.0,\"semiCredit\":0.0,\"lineNo\":0.0},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":7.0,\"loan\":0.0,\"credit\":0.0,\"semiCredit\":0.0,\"lineNo\":0.0}]}",
+//	"bossBusinessChangeCauseModel": "{\"preInvestigateInfo\":{\"investigateDate\":\"2017-08-25 13:47:25\",\"turnover\":1246926.67,\"grossProfit\":0.0,\"eployeeCount\":4.0,\"receivableAccount\":2800000.0,\"payableAccount\":0.0,\"stock\":295000.0,\"fixedAsset\":240000.0,\"businessAddress\":\"江苏省南京市江宁区东麒路众彩物流E区413号\",\"familyInfo\":\"客户爱人在家打理家务，儿子一起经营生意！\",\"businessArea\":120.0},\"curInvestigateInfo\":null}",
+//	"questionnaireCode": "{\"questionnaireCode\":\"0003\"}",
+//	"bossLoanPurposeModel": "{\"bossLoanPurposes\":[{\"project\":\"{593A967C-1B99-45A2-BCD6-69AF01D345B1}\",\"investmentFund\":\"20\",\"useDetail\":\"进货\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossFundSources\":[{\"fundSource\":\"{53B7D9A4-0608-4CB9-8D9F-FFB89D992050}\",\"amount\":\"0.5\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"fundSource\":\"{C985129A-F9B8-45EB-BA69-99E8093BE282}\",\"amount\":\"3\",\"lineNo\":\"2\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}]}",
+//	"bossCompanyInfoModel": "{\"bossCompanyInfo\":{\"companyName\":\"南京玖甲商贸有限公司\",\"businessLicense\":\"1\",\"legalPerson\":\"刘加青\",\"mainBusiness\":\"大米销售\",\"businessBeginTime\":\"2011-11-26\",\"employeeCount\":\"2\",\"companyTelephone\":\"025-58670180\",\"customerShareRatio\":\"60\",\"businessPremiseType\":\"{8AA0F0DD-F9DB-4DDB-A5CD-5497A4731700}\",\"leaseContractTermStr\":\"2017-12-01,2018-11-30\",\"businessAddress\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{B02E46EE-C983-48C9-A732-FE7719A02BA0}@{2F4807AC-9A7B-4FDF-AEB7-B02AD047DA1D}||东山街道东麒路众彩物流E区413号\",\"businessPremiseArea\":\"120\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},\"bossShareholderRatioInfos\":[{\"name\":\"刘磊\",\"ratio\":\"40\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}]}",
+//	"bossIndustryRiskModel": "{\"bossIndustryRisk\":{\"description\":\"客户所处行业为与老百姓生活息息相关，受大环境影响较小，国家对此会有政策！\"}}",
+//	"bossBaseInfoModel": "{\"bossBaseInfo\":{\"name\":\"刘加青\",\"certNo\":\"320825196809203017\",\"sex\":\"{EBAF5B30-ABDE-461B-B56F-020566BB5455}\",\"phone\":\"13814068222\",\"residenceAddress\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{B02E46EE-C983-48C9-A732-FE7719A02BA0}@{2F4807AC-9A7B-4FDF-AEB7-B02AD047DA1D}||东山街道上元大街763号9幢302室\",\"marrige\":\"{3DE4DAC9-4357-4E6B-A3BE-2D3B56B6483D}\",\"spouseName\":\"田云\",\"isKnownLoan\":\"1\",\"spouseCertType\":\"{F17E7EC6-C4AA-4537-8BC4-1E6B22AC273A}\",\"spouseCertNo\":\"320825196709143088\",\"spousePhone\":\"18912954679\",\"spouseFamilyPhone\":null,\"spouseFamilyAddressSameCustom\":\"1\",\"spouseJob\":\"{9B59176C-F4B6-4DD8-BA8D-D0E0D5F69F4B}\",\"spouseCompanyNameSameCustom\":\"0\",\"spouseCompanyName\":null,\"spouseCompanyPhone\":null,\"spouseCompanyAddressSameCustom\":\"0\",\"spouseCompanyAddress\":null,\"spouseSalary\":\"0\",\"spouseRemark\":\"待审核\",\"liveStat\":\"{61C4A2C8-3D92-406A-BB36-FE5A8630E769}\",\"whomLive\":\"{C8225A89-4BDC-407B-BBD4-4135700011A0},{A7D99FA0-D47A-4F4B-8CFD-DA3DC8897B64}\",\"currentAddress\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{B02E46EE-C983-48C9-A732-FE7719A02BA0}@{2F4807AC-9A7B-4FDF-AEB7-B02AD047DA1D}||东山街道万安西路上善居5栋1404室\",\"liveBeginDate\":\"2011-07-25\",\"rent\":\"0\",\"familyPhone\":\"138-14068222\",\"familyCount\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"auditorCode\":null,\"auditorName\":null},\"bossFamilyInfos\":[{\"relationship\":\"{88F0493F-AA10-4366-BEC5-53C293564D60}\",\"job\":\"{6D7DC76C-718A-45AB-9F0F-FA8D56251A2D}\",\"workPlace\":\"{679BB9DA-7B7E-4522-9B2E-E49F188C9D23}\",\"vocationIntroduce\":\"儿子参与生意\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}]}",
+//	"bossAssetInfoModel": "{\"bossAssetCars\":[{\"buyStatus\":\"01\",\"owner\":\"{14F2E020-68EE-4147-824A-A11167071FA4}\",\"ownerOther\":\"南京玖甲商贸有限公司甲\",\"buyDate\":\"2014-09-01\",\"price\":\"15\",\"state\":\"{55D662F4-8C5C-4E4D-9732-3440E9F98242}\",\"type\":\"大通\",\"carNo\":\"苏AD1RQ7\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"buyStatus\":\"01\",\"owner\":\"{14F2E020-68EE-4147-824A-A11167071FA4}\",\"buyDate\":\"2016-11-21\",\"price\":15.0,\"state\":\"{55D662F4-8C5C-4E4D-9732-3440E9F98242}\",\"type\":\"江淮\",\"carNo\":\"苏A9Y5CQ\",\"lineNo\":2.0,\"ownerOther\":\"南京玖甲商贸有限公司\",\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"buyStatus\":\"01\",\"owner\":\"{4EF5FE7A-3BBE-4B3D-BC6E-EA3F240DA289}\",\"buyDate\":\"2012-03-07\",\"price\":37.0,\"state\":\"{55D662F4-8C5C-4E4D-9732-3440E9F98242}\",\"type\":\"大众CC\",\"carNo\":\"苏A5LL22\",\"lineNo\":3.0,\"ownerOther\":null,\"batchNo\":1.0,\"commitDataType\":\"1\"}],\"bossAssetHouses\":[{\"type\":\"{3F83C49C-FF06-4D8E-93ED-D51C8BFEBBF7}\",\"owner\":\"{4EF5FE7A-3BBE-4B3D-BC6E-EA3F240DA289}\",\"buyDate\":\"2016-06-20\",\"price\":\"300\",\"area\":\"128\",\"state\":\"{F3B50FB6-7218-4AA8-9B0D-0BF616978960}\",\"addressChoice\":\"0\",\"address\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{B02E46EE-C983-48C9-A732-FE7719A02BA0}@{2F4807AC-9A7B-4FDF-AEB7-B02AD047DA1D}||新亭西路777号龙湖春江郦城4栋1004\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{E18B00D2-5745-46CB-80F2-232746610D6F}\",\"owner\":\"{4EF5FE7A-3BBE-4B3D-BC6E-EA3F240DA289}\",\"buyDate\":\"2013-08-25\",\"price\":160.0,\"area\":90.0,\"state\":\"{F3B50FB6-7218-4AA8-9B0D-0BF616978960}\",\"address\":\"{7D7126AB-CBDA-43A2-BD4A-990291B20A4E}@{B02E46EE-C983-48C9-A732-FE7719A02BA0}@{2F4807AC-9A7B-4FDF-AEB7-B02AD047DA1D}||东山街道竹山路68号江宁万达广场西区5幢1114室\",\"addressChoice\":\"0\",\"lineNo\":2.0,\"batchNo\":1.0,\"commitDataType\":\"1\"},{\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{3F83C49C-FF06-4D8E-93ED-D51C8BFEBBF7}\",\"owner\":\"{4EF5FE7A-3BBE-4B3D-BC6E-EA3F240DA289}\",\"buyDate\":\"2010-08-25\",\"price\":100.0,\"area\":98.0,\"state\":\"{55D662F4-8C5C-4E4D-9732-3440E9F98242}\",\"address\":null,\"addressChoice\":\"1\",\"lineNo\":3.0,\"batchNo\":1.0,\"commitDataType\":\"1\"}],\"assetCarNo\":{\"carCount\":\"3\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},\"assetHouseNo\":{\"houseCount\":\"3\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}}",
+//	"bossBusinessInfoModel": "{\"bossBusinessInfos\":[],\"bossCurrentBusinessInfo\":{\"beginDate\":\"2008-09-01\",\"initialInvestmentFund\":\"10\",\"customerContribution\":\"10\",\"totalInvestmentAmount\":\"200\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},\"bossNetProfit\":{\"previousYearNetProfit\":\"100\",\"lastYearNetProfit\":\"80\",\"thisYearNetProfit\":\"40\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},\"bossOtherFundSources\":[],\"bossLargeExpenses\":[]}",
+//	"balanceSheetModel": "{\"balanceSheetAnswers\":[{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"1500000\",\"code\":\"0001.0003.08.02.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":1230000.0,\"code\":\"0001.0003.08.11.01\",\"parentCode\":\"0001.0003.08.11\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"0\",\"code\":\"0001.0003.08.11.03\",\"parentCode\":\"0001.0003.08.11\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":0.0,\"code\":\"0001.0003.08.11.02\",\"parentCode\":\"0001.0003.08.11\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"0\",\"code\":\"0001.0003.08.03.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":234339.0,\"code\":\"0001.0003.08.11.04\",\"parentCode\":\"0001.0003.08.11\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":3390844.0,\"code\":\"0001.0003.08.006\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"3\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"1300000\",\"code\":\"0001.0003.08.12\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"1\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"810000\",\"code\":\"0001.0003.08.04.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"1024207\",\"code\":\"0001.0003.08.11\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"1\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"2500000\",\"code\":\"0001.0003.08.07.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":1917705.0,\"code\":\"0001.0003.08.005\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"3\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":1473139.0,\"code\":\"0001.0003.08.004\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"3\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":1473139.0,\"code\":\"0001.0003.08.003\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"3\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":3390844.0,\"code\":\"0001.0003.08.002\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"3\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":3104844.0,\"code\":\"0001.0003.08.001\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"3\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"10000\",\"code\":\"0001.0003.08.09.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"240000\",\"code\":\"0001.0003.08.05.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"0\",\"code\":\"0001.0003.08.10.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"114453\",\"code\":\"0001.0003.08.06.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"34776\",\"code\":\"0001.0003.08.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"1\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":null,\"code\":\"0001.0003.08.12.03\",\"parentCode\":\"0001.0003.08.12\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":null,\"code\":\"0001.0003.08.01.03\",\"parentCode\":\"0001.0003.08.01\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":0.0,\"code\":\"0001.0003.08.12.01\",\"parentCode\":\"0001.0003.08.12\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"29776\",\"code\":\"0001.0003.08.01.02\",\"parentCode\":\"0001.0003.08.01\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":0.0,\"code\":\"0001.0003.08.12.02\",\"parentCode\":\"0001.0003.08.12\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"5000\",\"code\":\"0001.0003.08.01.01\",\"parentCode\":\"0001.0003.08.01\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"value\":\"0\",\"code\":\"0001.0003.08.08.01\",\"parentCode\":\"0\",\"detailModelCode\":\"0001.0003.08\",\"type\":\"2\",\"batchNo\":0.0,\"commitDataType\":null}],\"bossDeposits\":[{\"name\":\"南京银行对公\",\"amount\":\"17747\",\"lineNo\":1.0},{\"name\":\"民生银行对私\",\"amount\":\"12029\",\"lineNo\":2.0}],\"bossReceivableAccounts\":[{\"indentorName\":\"蒲公英商业保理\",\"receivableBeginTime\":\"2017-01-01\",\"receivableEndTime\":\"2017-12-31\",\"receivableAccount\":\"300000\",\"lineNo\":\"1\"},{\"indentorName\":\"巨诚北京华联超市\",\"receivableBeginTime\":\"2017-06-01\",\"receivableEndTime\":\"2017-08-24\",\"receivableAccount\":\"200000\",\"lineNo\":\"2\"},{\"indentorName\":\"企事业单位食堂\",\"receivableBeginTime\":\"2016-08-01\",\"receivableEndTime\":\"2017-08-24\",\"receivableAccount\":\"1000000\",\"lineNo\":\"3\"}],\"bossPrepayAccounts\":[],\"bossStocks\":[{\"name\":\"大米\",\"number\":\"300000\",\"unitPrice\":\"2.5\",\"amount\":\"750000\",\"lineNo\":\"1\"},{\"name\":\"油\",\"number\":\"500\",\"unitPrice\":\"120\",\"amount\":\"60000\",\"lineNo\":\"2\"}],\"bossFixedAssets\":[{\"name\":\"货车\",\"number\":\"2\",\"buyTime\":\"2016-11-21\",\"unitPrice\":\"150000\",\"totalValue\":\"240000\",\"lineNo\":\"1\"}],\"bossOtherBusinessAccounts\":[{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"assetType\":\"押金\",\"endDate\":null,\"amount\":\"20000\",\"lineNo\":1.0,\"assetTypeOther\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"assetType\":\"预付房租\",\"endDate\":\"2018-11-30\",\"amount\":\"94453\",\"lineNo\":2.0,\"assetTypeOther\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"assetType\":\"加盟费及保证金\",\"endDate\":null,\"amount\":null,\"lineNo\":3.0,\"assetTypeOther\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"assetType\":\"下游铺货\",\"endDate\":null,\"amount\":null,\"lineNo\":4.0,\"assetTypeOther\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"assetType\":\"预付设备定金\",\"endDate\":null,\"amount\":null,\"lineNo\":5.0,\"assetTypeOther\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"},{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"assetType\":\"其他\",\"endDate\":null,\"amount\":null,\"lineNo\":6.0,\"assetTypeOther\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"}],\"bossOtherNotBusinessAccounts\":[{\"name\":\"上善居房子\",\"amount\":\"2500000\",\"lineNo\":1.0}],\"bossPayableAccounts\":[],\"bossOthersPayableAccounts\":[{\"payableType\":\"{221126D1-A0B0-49C8-BDB8-85DA1E539103}\",\"payableBeginTime\":\"2017-12-01\",\"payableEndTime\":\"2017-12-31\",\"amount\":\"10000\",\"lineNo\":\"1\"}],\"bossPaymentAdvances\":[],\"bossBankShortTermLoans\":[{\"organizationName\":\"平安\",\"loanBeginTime\":\"2016-06-20\",\"term\":\"12\",\"lineNo\":1.0,\"residualAmount\":\"767185\"}],\"bossCompanyShortTermLoans\":[],\"bossCreditShortTermLoans\":[{\"residualAmount\":\"257022\",\"lineNo\":\"1\"}],\"bossBankLongTermDepts\":[{\"organizationName\":\"浙商银行\",\"loanBeginTime\":\"2017-04-24\",\"term\":\"36\",\"lineNo\":1.0,\"residualAmount\":\"1300000\"}],\"bossPrivateLongTermDepts\":[]}",
+//	"bossIncomeAccountModel": "{\"bossIncomeAccountIncomes\":[{\"date\":\"2017-01\",\"amount\":\"985180\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-02\",\"amount\":\"1056329\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-03\",\"amount\":\"993984\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-04\",\"amount\":\"1040659\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-05\",\"amount\":\"917881\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-06\",\"amount\":\"1165930\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-07\",\"amount\":\"983439\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-08\",\"amount\":\"1020486\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-09\",\"amount\":\"1077838\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-10\",\"amount\":\"1108013\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-11\",\"amount\":\"1321839\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"date\":\"2017-12\",\"amount\":\"1003984\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"type\":\"1\"},{\"type\":\"2\",\"date\":null,\"amount\":\"0\",\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossIncomeAccountVariableCosts\":[{\"amount\":866958.4,\"date\":\"2017-01\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":929569.52,\"date\":\"2017-02\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":874705.92,\"date\":\"2017-03\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":915779.92,\"date\":\"2017-04\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":807735.28,\"date\":\"2017-05\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":1026018.4,\"date\":\"2017-06\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":865426.32,\"date\":\"2017-07\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":898027.68,\"date\":\"2017-08\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":948497.44,\"date\":\"2017-09\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":975051.44,\"date\":\"2017-10\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":1163218.32,\"date\":\"2017-11\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":883505.92,\"date\":\"2017-12\",\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"1\",\"variableCost\":\"88\"},{\"amount\":0.0,\"date\":null,\"lineNo\":2.0,\"name\":\"食品销售（粮油蛋，调味料，散装包装食品）\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"2\",\"variableCost\":\"88\"}],\"bossIncomeAccountFixedOutcomes\":[{\"date\":\"2017-01\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-02\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-03\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-04\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-05\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-06\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-07\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-08\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-09\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-10\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-11\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-12\",\"amount\":\"10000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"type\":\"1\",\"nameOther\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"nameOther\":null,\"name\":\"{306785B0-12F4-425A-B63B-B73C293FDF0B}\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-02\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-03\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-04\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-05\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-06\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-07\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-08\",\"amount\":\"9000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-09\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-10\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-11\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-12\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"type\":\"1\",\"nameOther\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"nameOther\":null,\"name\":\"{A1F0C692-CDFD-4725-A917-704D29568BA7}\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-02\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-03\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-04\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-05\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-06\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-07\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-08\",\"amount\":\"3000\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-09\",\"amount\":\"0\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-10\",\"amount\":\"0\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-11\",\"amount\":\"0\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-12\",\"amount\":\"0\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"type\":\"1\",\"nameOther\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"nameOther\":null,\"name\":\"{4AA0B22A-9EFD-48DA-9317-76DA7577387C}\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-02\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-03\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-04\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-05\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-06\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-07\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-08\",\"amount\":\"5000\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-09\",\"amount\":\"0\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-10\",\"amount\":\"0\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-11\",\"amount\":\"0\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-12\",\"amount\":\"0\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"type\":\"1\",\"nameOther\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"nameOther\":null,\"name\":\"{4ACECC2E-538F-445F-BA81-17F962B41D97}\",\"lineNo\":5.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-02\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-03\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-04\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-05\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-06\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-07\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-08\",\"amount\":\"200\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-09\",\"amount\":\"0\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-10\",\"amount\":\"0\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-11\",\"amount\":\"0\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-12\",\"amount\":\"0\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"type\":\"1\",\"nameOther\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"nameOther\":null,\"name\":\"{8EC1AD82-2889-495A-9382-267F2C58A055}\",\"lineNo\":6.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-02\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-03\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-04\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-05\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-06\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-07\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-08\",\"amount\":\"200\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-09\",\"amount\":\"0\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-10\",\"amount\":\"0\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-11\",\"amount\":\"0\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-12\",\"amount\":\"0\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"type\":\"1\",\"nameOther\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"nameOther\":null,\"name\":\"{FF2372C6-ECD5-44C1-9FAF-F32495EB3136}\",\"lineNo\":7.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-02\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-03\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-04\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-05\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-06\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-07\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-08\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-09\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-10\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-11\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"date\":\"2017-12\",\"amount\":\"70000\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"type\":\"1\",\"nameOther\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"nameOther\":null,\"name\":\"{76B82085-2BEC-467F-BC4D-D747CC721C96}\",\"lineNo\":8.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossIncomeAccountOthers\":[{\"date\":\"2017-01\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-02\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-03\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-04\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-05\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-06\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-07\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-08\",\"amount\":\"6000\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-09\",\"amount\":\"0\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-10\",\"amount\":\"0\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-11\",\"amount\":\"0\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"date\":\"2017-12\",\"amount\":\"0\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"otherIncome\",\"category\":\"4\",\"type\":\"1\",\"otherName\":\"房租\"},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"otherName\":\"房租\",\"name\":\"otherIncome\",\"category\":\"4\",\"lineNo\":2.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-02\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-03\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-04\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-05\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-06\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-07\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-08\",\"amount\":\"3000\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-09\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-10\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-11\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-12\",\"amount\":\"0\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"type\":\"1\",\"otherName\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"otherName\":null,\"name\":\"{85F66E2D-75C5-45C5-ABB2-2C5F9863F7FD}\",\"category\":\"1\",\"lineNo\":3.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-01\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-02\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-03\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-04\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-05\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-06\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-07\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-08\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-09\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-10\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-11\",\"amount\":\"24032\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"date\":\"2017-12\",\"amount\":\"24832\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"type\":\"1\",\"otherName\":null},{\"type\":\"2\",\"date\":null,\"amount\":0.0,\"otherName\":null,\"name\":\"{887C6960-6230-43C1-9CCB-B630B5F03844}\",\"category\":\"2\",\"lineNo\":4.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossIncomeAccountSummaries\":[{\"date\":\"2017-01\",\"amount\":-210.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-02\",\"amount\":8327.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-03\",\"amount\":846.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-04\",\"amount\":6447.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-05\",\"amount\":-8286.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-06\",\"amount\":21480.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-07\",\"amount\":-419.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-08\",\"amount\":4026.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-09\",\"amount\":25309.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-10\",\"amount\":28930.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-11\",\"amount\":54589.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":\"2017-12\",\"amount\":15646.0,\"type\":\"9\",\"otherType\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"date\":null,\"amount\":0.0,\"type\":\"9\",\"otherType\":\"2\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossIncomeAccountTurnoverResources\":[{\"date\":\"2017-01\",\"amount\":\"985180\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-02\",\"amount\":\"1056329\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-03\",\"amount\":\"993984\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-04\",\"amount\":\"1040659\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-05\",\"amount\":\"917881\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-06\",\"amount\":\"1165930\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-07\",\"amount\":\"983439\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-08\",\"amount\":\"702324\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-09\",\"amount\":\"1077838\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-10\",\"amount\":\"1108013\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-11\",\"amount\":\"1321839\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"},{\"date\":\"2017-12\",\"amount\":\"1003984\",\"lineNo\":1.0,\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\",\"type\":\"{00ED47C3-6F7E-475D-A4D6-667AEB475AD0}\",\"resource\":\"{FE755FD9-F55B-4DEC-AA4F-F49F114A4F41}\",\"otherResource\":\"系统\"}],\"bossAcrossVariableCosts\":[{\"id\":\"3c959796896a11e7bf556c92bf20e571\",\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"type\":\"大米\",\"enterPrice\":\"40\",\"salePrice\":\"50\",\"saleRatio\":\"90\",\"profit\":\"10\",\"grossProfitRate\":\"20\",\"createDate\":\"2017-08-25\",\"updateDate\":\"2017-08-25\",\"isDelete\":\"0\",\"status\":1.0,\"questionnaireCode\":\"0001.0003\",\"lineNo\":0.0,\"batchNo\":1.0,\"commitDataType\":\"2\"},{\"id\":\"3c959c45896a11e7bf556c92bf20e571\",\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"type\":\"多力油\",\"enterPrice\":120.0,\"salePrice\":130.0,\"saleRatio\":10.0,\"profit\":10.0,\"grossProfitRate\":7.7,\"createDate\":\"2017-08-25\",\"updateDate\":\"2017-08-25\",\"isDelete\":\"0\",\"status\":1.0,\"questionnaireCode\":\"0001.0003\",\"lineNo\":1.0,\"batchNo\":1.0,\"commitDataType\":\"2\"}],\"bossAcrossOtherCost\":{\"id\":\"3c935bc4896a11e7bf556c92bf20e571\",\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"productGrossProfitRate\":18.8,\"costRate\":null,\"avgNetProfit\":80000.0,\"netGrossProfitRate\":18.3,\"breakEvenTurnover\":600000.0,\"turnoverGrossProfitRate\":18.9,\"remark\":\"1、客户口述毛利在15%左右\\n2、抽样客户大米20斤装进价40一包，售价50一包，毛利率20%\\n抽样客户多力油进价120元一桶，售价130元一桶，毛利为8%，客户大米销量占90%，油占10%，加权毛利为19%\\n由于客户大米批发到单位售价会低于零售的50元每包，故综合毛利取12%为保守毛利率\\n\",\"comprehensiveGrossProfitRate\":0.0,\"createDate\":\"2017-08-25\",\"updateDate\":\"2017-08-25\",\"isDelete\":\"0\",\"status\":1.0,\"questionnaireCode\":\"0001.0003\",\"influenceFactor\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"},\"bossAcrossOtherTypes\":[],\"bossAcrossTurnover\":{\"busySeason\":null,\"busySeasonAvgSaleAmount\":0.0,\"shoulderSeason\":\"1,2,3,4,5,6,7,8,9,10,11,12\",\"shoulderSeasonAvgSaleAmount\":1500000.0,\"slackSeason\":null,\"slackSeasonAvgSaleAmount\":0.0,\"busySeasonMonthCount\":0.0,\"slackSeasonMonthCount\":0.0,\"shoulderSeasonMonthCount\":12.0,\"remark\":\"1、客户口述一年20000000营业额\\n2、统计客户销售系统2017年1——12月数据:985180、1056329、993984、1040659、917881、1165930983439、702324、1077838、1108013、1321839、1003984合计12357400平均每月1029783\\n3、客户开票系统显示对公业务2017.2-12:693371、331914、539123、359658、955359、622213、215286、340622、574296、529871、620779合计5781892平均每月525627占总的营业额一半可推全月营业额1051253\\n综合取1029783为客户每月保守营业额\"},\"bossAcrossTurnoverProjects\":[{\"id\":\"3c94af68896a11e7bf556c92bf20e571\",\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"type\":\"大米\",\"monthSaleAmount\":1300000.0,\"saleRatio\":90.0,\"createDate\":\"2017-08-25\",\"updateDate\":\"2017-08-25\",\"isDelete\":\"0\",\"status\":1.0,\"questionnaireCode\":\"0001.0003\",\"lineNo\":1.0,\"batchNo\":1.0,\"commitDataType\":\"2\"},{\"id\":\"3c94b120896a11e7bf556c92bf20e571\",\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"type\":\"食用油\",\"monthSaleAmount\":200000.0,\"saleRatio\":10.0,\"createDate\":\"2017-08-25\",\"updateDate\":\"2017-08-25\",\"isDelete\":\"0\",\"status\":1.0,\"questionnaireCode\":\"0001.0003\",\"lineNo\":2.0,\"batchNo\":1.0,\"commitDataType\":\"2\"}],\"bossAcrossTurnoverTypes\":[{\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"type\":\"{54E13452-9CE1-4E2E-8B6F-F5184EF2931C}\",\"monthSaleAmount\":1500000.0,\"saleRatio\":100.0,\"lineNo\":1.0,\"typeOther\":null,\"batchNo\":1.0,\"commitDataType\":\"2\"}],\"bossAcrossInitialEquity\":{\"cashDeposit\":\"10000\",\"receivableAccount\":\"2000000\",\"prepayAccount\":null,\"stock\":\"200000\",\"fixedAsset\":\"240000\",\"otherOperateAsset\":\"20000\",\"otherNonoperateAsset\":null,\"payableAccount\":\"10000\",\"prereceiveAccount\":null,\"smallLoanCompanyLoan\":null,\"bankCreditLoan\":\"280000\",\"zaLoanBalance\":null,\"creditOverdraw\":\"230000\",\"bankMortgageLoan\":\"1200000\",\"personalLoan\":\"300000\",\"other\":null,\"initialEquityDate\":\"2017-01-12\",\"initialInterest\":\"450000\"},\"bossAcrossCheck\":{\"id\":\"3c90c2bb896a11e7bf556c92bf20e571\",\"serialNo\":\"{7EB27EE8-F0E8-4707-BEC6-0C9F357E8864}\",\"periodProfit\":349127.0,\"repayPrincipal\":185303.0,\"revalue\":null,\"depreciation\":0.0,\"devalue\":null,\"entitlement\":1994430.0,\"actualInterest\":1917705.0,\"difference\":76725.0,\"percentage\":14.0,\"differenceReason\":\"客户权益相差较小！期末有部分贷款未统计在内造成权益偏差！\",\"createDate\":\"2017-08-25\",\"updateDate\":\"2017-08-25\",\"isDelete\":\"0\",\"status\":1.0,\"questionnaireCode\":\"0001.0003\",\"periodIncome\":0.0,\"periodOutcome\":0.0,\"batchNo\":1.0,\"commitDataType\":\"2\"},\"bossAcrossCheckPeriods\":null,\"bossBorrowInfos\":null}",
+//	"bossManagementModel": "{\"bossAgencyInfos\":[],\"bossSaleModels\":[{\"saleModel\":\"{54E13452-9CE1-4E2E-8B6F-F5184EF2931C}\",\"monthSaleAmount\":\"1200000\",\"saleRatio\":\"100\",\"grossProfitRate\":\"8\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossProductInfos\":[{\"productName\":\"大米\",\"monthSaleAmount\":\"1300000\",\"saleRatio\":\"90\",\"grossProfitRate\":\"20\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"productName\":\"食用油\",\"monthSaleAmount\":\"200000\",\"saleRatio\":\"10\",\"grossProfitRate\":\"8\",\"lineNo\":\"2\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossStoreNumberInfo\":{\"storeNumber\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},\"bossStoreInfos\":[{\"storeName\":\"南京玖甲商贸\",\"openDate\":\"2008-10-25\",\"monthSaleAmount\":\"1500000\",\"comprehensiveNetProfit\":\"8\",\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossUpstreams\":[{\"supplierName\":\"东北大米\",\"cooperationYear\":\"10\",\"purchaseRatio\":\"25\",\"monthPurchaseAmount\":\"300000\",\"payCycle\":\"{73D9D1F3-52EF-4107-AC91-15804AFEC1D0}\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"lastPayTime\":null,\"lastPayAmount\":null,\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"supplierName\":\"江苏农垦\",\"cooperationYear\":\"10\",\"purchaseRatio\":\"25\",\"monthPurchaseAmount\":\"400000\",\"payCycle\":\"{73D9D1F3-52EF-4107-AC91-15804AFEC1D0}\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"lastPayTime\":null,\"lastPayAmount\":null,\"lineNo\":\"2\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"supplierName\":\"深圳中泰\",\"cooperationYear\":\"10\",\"purchaseRatio\":\"15\",\"monthPurchaseAmount\":\"300000\",\"payCycle\":\"{73D9D1F3-52EF-4107-AC91-15804AFEC1D0}\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"lastPayTime\":null,\"lastPayAmount\":null,\"lineNo\":\"3\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"supplierName\":\"中储粮\",\"cooperationYear\":\"10\",\"purchaseRatio\":\"25\",\"monthPurchaseAmount\":\"300000\",\"payCycle\":\"{73D9D1F3-52EF-4107-AC91-15804AFEC1D0}\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"lastPayTime\":null,\"lastPayAmount\":null,\"lineNo\":\"4\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"supplierName\":\"苏果大豆油\",\"cooperationYear\":\"10\",\"purchaseRatio\":\"10\",\"monthPurchaseAmount\":\"200000\",\"payCycle\":\"{73D9D1F3-52EF-4107-AC91-15804AFEC1D0}\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"lastPayTime\":null,\"lastPayAmount\":null,\"lineNo\":\"5\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossDownstreams\":[{\"indentorName\":\"蒲公英商业保理\",\"cooperationYear\":\"3\",\"saleRatio\":\"20\",\"monthSaleAmount\":\"200000\",\"payCycle\":\"{F36AB0E1-0ED2-4CFB-B0DE-E5FC84E58FD5}\",\"generalAccountPeriod\":\"50\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"generalReceiveTime\":\"{3B1BB814-FBC2-45C9-B813-3676C1D0EC26}\",\"lastReceiveTime\":null,\"lastReceiveAmount\":null,\"receivableAccount\":null,\"receivableTimeStr\":null,\"lineNo\":\"1\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"indentorName\":\"巨诚北京华联超市\",\"cooperationYear\":\"5\",\"saleRatio\":\"20\",\"monthSaleAmount\":\"300000\",\"payCycle\":\"{F36AB0E1-0ED2-4CFB-B0DE-E5FC84E58FD5}\",\"generalAccountPeriod\":\"30\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"generalReceiveTime\":\"{3B1BB814-FBC2-45C9-B813-3676C1D0EC26}\",\"lastReceiveTime\":\"2017-08-02\",\"lastReceiveAmount\":\"57703\",\"receivableAccount\":null,\"receivableTimeStr\":\"2017-01-01,2018-01-11\",\"lineNo\":\"2\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},{\"indentorName\":\"企事业单位食堂\",\"cooperationYear\":\"10\",\"saleRatio\":\"60\",\"monthSaleAmount\":\"1000000\",\"payCycle\":\"{F36AB0E1-0ED2-4CFB-B0DE-E5FC84E58FD5}\",\"generalAccountPeriod\":\"30\",\"payWay\":\"{5A7AB0E8-89AE-4F0D-B35E-EDFFE47480B5}\",\"generalReceiveTime\":\"{3B1BB814-FBC2-45C9-B813-3676C1D0EC26}\",\"lastReceiveTime\":\"2017-07-26\",\"lastReceiveAmount\":\"52268\",\"receivableAccount\":null,\"receivableTimeStr\":\"2017-01-01,2018-01-11\",\"lineNo\":\"3\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"}],\"bossServiceCategorys\":null,\"bossBillingModes\":null,\"bossUpstreamAmount\":{\"totalAmount\":\"1800\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},\"bossDownstreamAmount\":{\"totalAmount\":\"2000\",\"serialNo\":\"{3A5FCA7B-E82C-40ED-92C5-AC6FA90A7EF1}\"},\"bossProductionFlow\":null,\"bossOutGoingMachnings\":null,\"bossProductionCapaction\":null}",
+//	"bossAnalysisRiskModel": "{\"bossAnalysisRisk\":{\"proposal\":\"优势:1、客户南京生意经营多年，上下游客户合作多年，稳定！\\n         2、客户南京资产雄厚，家庭稳定，都知晓贷款！社会评价高！\\n劣势:1、今年经济大环境差一点，饭店客户的采购量偏少，造成客户总体偏少！\"}}",
+//	"bossFamilyInfoModel": "{\"bossFamilyOtherDescription\":{\"otherDescription\":\"客户爱人在家打理家务，儿子一起经营生意！\"}}"
+//}]
+//	loadBossCrossExaminationQy(h)
+		</script>
+	
+	
+	</body>
+
+</html>

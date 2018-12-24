@@ -1,0 +1,215 @@
+/*我的css*/
+/*Checkbox复选框*/
+.chenckbox{
+	display: -webkit-flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.chenckbox .chenckboxNews{
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+	margin:0 0.20rem;	
+}
+.chenckbox .chenckboxNews img{
+	height: 0.38rem;
+	width: 0.38rem;
+}
+/*table里面的小方块*/
+.zhucy span{
+	white-space: nowrap;
+	/*overflow: hidden;*/
+	text-overflow: ellipsis;	
+}
+.zhucy span[data-select="select"]{
+	background: rgb(50, 190, 151);
+	color: #FFFFFF;
+}
+/*textarea的样式*/
+.problem ul .textareaStyle .left{
+	width: 100%;
+}
+.problem ul .textareaStyle .left i{
+	width: 70%;
+}
+.problem ul .textareaStyle .right{
+	width: 100%;
+}
+.problem ul .textareaStyle .right textarea{
+	width:100%;
+	height: 2.00rem;
+	border-radius: 0.2rem;
+	margin: 0.2rem 0;
+	box-sizing: border-box;
+	border:0.03rem solid #a09fa4;
+	resize: none;
+	font-size: 0.38rem;
+}
+/*电话样式*/
+.problem ul li .right input.telephone_left{
+	width: 1.4rem;
+	text-align: center;
+}
+.problem ul li .right input.telephone_center{
+	width: 2.0rem;
+	text-align: center;
+}
+.problem ul li .right input.telephone_right{
+	width: 1.6rem;
+	text-align: center;
+}
+/*.problem ul li .left .message_info{
+	font-size: 0.4rem;
+	color: #f0564c;
+	display: inline-block;
+	margin-left: 0.1rem;
+}*/
+/*每一行验证不通过样式提醒*/
+.message_info{
+	display: inline-block;
+	width: 100%;
+	/*height: 0.6rem;*/
+	min-height: 0.6rem;
+	font-size: 0.36rem;
+	font-family: "微软雅黑";
+	color: #F04137;
+	margin-left:0.3rem ;
+	/*position: absolute;
+	left:0.3rem;
+	bottom: 0.4rem;*/
+}
+/*下面样式是用来没有必填没有填完或者验证没有通过时样式提醒*/
+.cy span[data-checkstate="unpass"],.cy span[data-judgefinish="no"]{
+	color : #F5A17C;
+}
+/*单选超过2个的样式*/
+#mask .maskBox{
+	margin-bottom: 1.4rem;
+	max-height: 8.0rem;
+	overflow-y:scroll;
+}
+#mask .cancelBtn{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	height: 1.4rem;
+	background: #FFFFFF;
+	font-size: 0.42rem;
+	line-height: 1.4rem;
+	z-index: 10;
+}
+#mask ul li{
+	/*white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+}
+/*超出部分省略显示*/
+.right span{
+	max-width: 5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*address下划线样式*/
+.problem ul li .addressYlborder{
+   border-top: 0.05rem solid #FAAA28;
+}
+/*coverEle行遮盖层的样式*/
+.problem ul li .coverEle{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+/*address类型的.x-address的加星号*/
+.problem ul li .x-address span{
+	color:#f0564c;
+}
+.problem ul li .x-address i{
+	margin-left:0.08rem;
+}
+.problem ul li .x-address .x-address_p1{
+    min-height: 1.4rem;
+    box-sizing: border-box;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+	line-height: normal;
+}
+.problem div.x-address p:nth-of-type(1){
+	position: relative;
+}
+.problem div.x-address p:nth-of-type(1) label{
+	top:0.36rem;
+}
+/*版本修改*/
+.problem li{
+	min-height: 1.4rem;
+	background: #ffffff;
+	margin: 0 0.4rem;
+	line-height:normal;
+	border-bottom: 0.05rem solid #E6E6EB;
+	overflow: hidden;
+	position: relative;
+}
+div.x-address p:nth-of-type(2) input{
+	color:rgb(25, 25, 25);
+}
+.problem .left{
+	min-height:1.4rem;
+	box-sizing: border-box;
+	padding-top: 0.4rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items:flex-start;
+}
+.problem .right{
+	line-height: 1.4rem;
+	/*width: 5.5rem;*/
+	width: 6.0rem;
+	float: left;
+	position: relative;
+}
+.problem div.x-address p:nth-of-type(2){
+	float:left;
+	width: 5.5rem;
+	font-size: 0.4rem;
+	background: #fff;
+	padding-left: 0;
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+.right input{
+	/*width: 4.3rem;*/
+	width: 4.9rem;
+	font-size: 0.4rem;
+	height: 1rem;
+	line-height: 1rem;
+	padding: 0.15rem 0;
+	border: none;
+	display: block;
+	float: left;
+	outline: none;
+	color: #191919;
+	background: #fff;
+	padding-left: 0.05rem;
+}
+
+.qdate input{
+	width: 2.4rem;
+}
+
+input[disabled]{color:#333;opacity:1;background: #dedede !important;}
+.edit-mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #dedede;
+	opacity: 0.3;
+	z-index: 900;
+}

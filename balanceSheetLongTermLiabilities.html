@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<title>长期负债</title>
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/lCalendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/demoxf0729.css" />
+		<link rel="stylesheet" type="text/css" href="css/businessModel.css" />
+		<script type="text/javascript" src="js/setHtmlFontSize.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script src="js/lCalendar.min.js"></script>
+	</head>
+
+	<body>
+		<section id="section12">
+			<div class="problem" id="12_1" _code="0001.0003.08.12">
+				<p class="_xq"><span>长期负债</span><span class="w_zsp _zsp">0</span><span>元</span></p>
+			</div>
+			<div class="problem show" id="12_1_1" style="display: block;">
+				<div class="cy"><span class="span_bg">银行抵押贷款</span><span>私人借款</span><span>其他</span></div>
+				<div class="d_k">
+					<div class="yszk">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善银行抵押贷款</span><img src="img/_add.png" class="_add" style="right: 0.8rem;" /></p>
+						<ul>
+						</ul>
+					</div>
+					<div class="zadk" style="display: none;">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善私人借款</span><img src="img/_add.png" class="_add" style="right: 0.8rem;" /></p>
+						<ul>
+						</ul>
+					</div>
+					<div class="xyk" style="display: none;" _code="0001.0003.08.12.03">
+						<p class="_xq" style="margin-top: 0.5rem;"><span>请完善其他</span></p>
+						<ul>
+							<li fieldname="supplierName">
+								<div class="left"><span>*</span><i>其他</i></div>
+								<div class="right">
+									<input maxlength="10" class="money" type="number" placeholder="请输入其他" value="">
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer id="next">
+			<p>提交</p>
+		</footer>
+		<script src="js/formatMoneyText.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var sj;
+			var shortLoan = { //长期负债
+				bingding: function() {
+					var that = this;
+					$(".yszk ._add").click(function() {
+						var _this = $(this);
+						that.mask();
+						$(".qr").click(function() {
+							var a = true;
+							$("#mask li").each(function() {
+								$(this).find("label").remove();
+								if ($(this).find("input").val().trim() == "") {
+									a = false;
+									$(this).children(".left").append('<label class="message_info">请输入必填数据</label>');
+								} else {
+									if ($(this).find("input").attr("name") == "input_date") {
+										function left(date1) {
+											var d = new Date();
+											var year = d.getFullYear();
+											var month = d.getMonth() + 1;
+											if (month < 10) {
+												month = "0" + month;
+											}
+											var day = d.getDate();
+											if (day < 10) {
+												day = "0" + day;
+											}
+											var str = year + "-" + month + "-" + day; //当前日期
+											if (date1 == str) {
+												return true;
+											}
+											var oDate1 = new Date(date1);
+											var oDate2 = new Date(str);
+											if (oDate1.getTime() > oDate2.getTime()) {
+												return false;
+											} else {
+												return true;
+											}
+										}
+										var date1 = $(this).find("input").val();
+										var b = left(date1);
+										if (!b) {
+											$(this).children(".left").append('<label class="message_info">小于等于当前日期</label>');
+											a = false;
+										}
+									}
+									if($(this).find("input").attr("type") == "number"){
+										if($(this).find("input").val()!=""){
+											$(this).parents("li").find("label").remove();
+											if(!fushu($(this).find("input").val())){
+												a = false;
+												if($(this).parent(".b_r").length!=0){
+													$(this).parents(".problem").prev().find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+												}else{
+													$(this).find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+												}
+											};
+										}
+									}
+								}
+							});
+							if (a) {
+								$('<li>' +
+									'<div class="dqTop">' +
+									'<span fieldname="organizationName">' + $("._jg").val() + '</span>' +
+									'<img src="img/_sc.png" class="s_d"/>' +
+									'</div>' +
+									'<div class="dqBottom">' +
+									'<div><span fieldname="loanBeginTime">' + $("#date01").val() + '</span></div>' +
+									'<div><span fieldname="term">' + $("._qx").val() + '</span><b class="yuan">期</b></div>' +
+									'<div><span fieldname="residualAmount" class="money">' + $("._je").val() + '</span><b class="yuan">元</b></div>' +
+									'</div>' +
+									'</li>').appendTo(_this.parents("div").children("ul"))
+								$("#mask").remove();
+								that.sum();
+							}
+						});
+					});
+					$(".zadk ._add").click(function() {
+						var _this = $(this);
+						that.mask();
+						$("._qx").parents("li").remove();
+						$("._jg").parents("li").remove();
+						$(".qr").click(function() {
+							var a = true;
+							$("#mask li").each(function() {
+								$(this).find("label").remove();
+								if ($(this).find("input").val().trim() == "") {
+									a = false;
+									$(this).children(".left").append('<label class="message_info">请输入必填数据</label>');
+								} else {
+									if ($(this).find("input").attr("name") == "input_date") {
+										function left(date1) {
+											var d = new Date();
+											var year = d.getFullYear();
+											var month = d.getMonth() + 1;
+											if (month < 10) {
+												month = "0" + month;
+											}
+											var day = d.getDate();
+											if (day < 10) {
+												day = "0" + day;
+											}
+											var str = year + "-" + month + "-" + day; //当前日期
+											if (date1 == str) {
+												return true;
+											}
+											var oDate1 = new Date(date1);
+											var oDate2 = new Date(str);
+											if (oDate1.getTime() > oDate2.getTime()) {
+												return false;
+											} else {
+												return true;
+											}
+										}
+										var date1 = $(this).find("input").val();
+										var b = left(date1);
+										if (!b) {
+											$(this).children(".left").append('<label class="message_info">小于等于当前日期</label>');
+											a = false;
+										}
+									}
+									if($(this).find("input").attr("type") == "number"){
+										if($(this).find("input").val()!=""){
+											$(this).parents("li").find("label").remove();
+											if(!fushu($(this).find("input").val())){
+												a = false;
+												if($(this).parent(".b_r").length!=0){
+													$(this).parents(".problem").prev().find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+												}else{
+													$(this).find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+												}
+											};
+										}
+									}
+								}
+							});
+							if (a) {
+								$('<li>' +
+									'<div class="dqTop">' +
+									'<span fieldname="organizationName"></span>' +
+									'<img src="img/_sc.png" class="s_d"/>' +
+									'</div>' +
+									'<div class="dqBottom">' +
+									'<div><span fieldname="loanBeginTime">' + $("#date01").val() + '</span></div>' +
+									'<div><span fieldname="term"></span><b class="yuan"></b></div>' +
+									'<div><span fieldname="residualAmount" class="money">' + $("._je").val() + '</span><b class="yuan">元</b></div>' +
+									'</div>' +
+									'</li>').appendTo(_this.parents("div").children("ul"))
+								$("#mask").remove();
+								that.sum();
+							}
+						});
+					});
+					$(document).on("click", ".s_d", function() {
+						var _this = $(this);
+						$('<div id="mask"><div class="mask_bg"></div><div class="remove"><p class="s_c">您确认要删除吗？<img class="_ci" src="img/close_icon.png"/><p class="_qr">确认</p></div></div>').appendTo("body");
+						$("._ci").click(function() {
+							$("#mask").remove();
+						});
+						$("._qr").click(function() {
+							_this.parents("li").remove();
+							$("#mask").remove();
+							that.sum();
+						});
+						return false;
+					});
+					$(document).on("click", ".yszk li", function() {
+						that.mask();
+						var t_hat = $(this);
+						$("._jg").val($(this).find(".dqTop span").text());
+						$("#date01").val($(this).find(".dqBottom div:nth-of-type(1) span").text());
+						$("._qx").val($(this).find(".dqBottom div:nth-of-type(2) span").text());
+						$("._je").val($(this).find(".dqBottom div:nth-of-type(3) span").text());
+						$(".qr").click(function() {
+							var a = true;
+							$("#mask li").each(function() {
+								$(this).find("label").remove();
+								if ($(this).find("input").val().trim() == "") {
+									a = false;
+									$(this).children(".left").append('<label class="message_info">请输入必填数据</label>');
+								} else {
+									if ($(this).find("input").attr("name") == "input_date") {
+										function left(date1) {
+											var d = new Date();
+											var year = d.getFullYear();
+											var month = d.getMonth() + 1;
+											if (month < 10) {
+												month = "0" + month;
+											}
+											var day = d.getDate();
+											if (day < 10) {
+												day = "0" + day;
+											}
+											var str = year + "-" + month + "-" + day; //当前日期
+											if (date1 == str) {
+												return true;
+											}
+											var oDate1 = new Date(date1);
+											var oDate2 = new Date(str);
+											if (oDate1.getTime() > oDate2.getTime()) {
+												return false;
+											} else {
+												return true;
+											}
+										}
+										var date1 = $(this).find("input").val();
+										var b = left(date1);
+										if (!b) {
+											$(this).children(".left").append('<label class="message_info">小于等于当前日期</label>');
+											a = false;
+										}
+									}
+									if($(this).find("input").attr("type") == "number"){
+										if($(this).find("input").val()!=""){
+											$(this).parents("li").find("label").remove();
+											if(!fushu($(this).find("input").val())){
+												a = false;
+												if($(this).parent(".b_r").length!=0){
+													$(this).parents(".problem").prev().find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+												}else{
+													$(this).find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+												}
+											};
+										}
+									}
+								}
+							});
+							if (a) {
+								t_hat.find(".dqTop span").text($("._jg").val());
+								t_hat.find(".dqBottom div:nth-of-type(1) span").text($("#date01").val());
+								t_hat.find(".dqBottom div:nth-of-type(2) span").text($("._qx").val());
+								t_hat.find(".dqBottom div:nth-of-type(3) span").text($("._je").val());
+								$("#mask").remove();
+								that.sum();
+							}
+						});
+					});
+					$(document).on("click", ".zadk li", function() {
+						that.mask();
+						$("._qx").parents("li").remove();
+						$("._jg").parents("li").remove();
+						var t_hat = $(this);
+						$("#date01").val($(this).find(".dqBottom div:nth-of-type(1) span").text());
+						$("._je").val($(this).find(".dqBottom div:nth-of-type(3) span").text());
+						$(".qr").click(function() {
+							var a = true;
+							$("#mask li").each(function() {
+								$(this).find("label").remove();
+								if ($(this).find("input").val().trim() == "") {
+									a = false;
+									$(this).children(".left").append('<label class="message_info">请输入必填数据</label>');
+								} else {
+									if ($(this).find("input").attr("name") == "input_date") {
+										function left(date1) {
+											var d = new Date();
+											var year = d.getFullYear();
+											var month = d.getMonth() + 1;
+											if (month < 10) {
+												month = "0" + month;
+											}
+											var day = d.getDate();
+											if (day < 10) {
+												day = "0" + day;
+											}
+											var str = year + "-" + month + "-" + day; //当前日期
+											if (date1 == str) {
+												return true;
+											}
+											var oDate1 = new Date(date1);
+											var oDate2 = new Date(str);
+											if (oDate1.getTime() > oDate2.getTime()) {
+												return false;
+											} else {
+												return true;
+											}
+										}
+										var date1 = $(this).find("input").val();
+										var b = left(date1);
+										if (!b) {
+											$(this).children(".left").append('<label class="message_info">小于等于当前日期</label>');
+											a = false;
+										}
+									}
+									if($(this).find("input").attr("type") == "number"){
+										if($(this).find("input").val()!=""){
+											$(this).parents("li").find("label").remove();
+											if(!fushu($(this).find("input").val())){
+												a = false;
+												if($(this).parent(".b_r").length!=0){
+													$(this).parents(".problem").prev().find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+												}else{
+													$(this).find(".left label").remove();
+													$('<label class="message_info">10位正整数</label>').appendTo($(this).find(".left"))
+												}
+											};
+										}
+									}
+								}
+							});
+							if (a) {
+								t_hat.find(".dqBottom div:nth-of-type(1) span").text($("#date01").val());
+								t_hat.find(".dqBottom div:nth-of-type(3) span").text($("._je").val());
+								$("#mask").remove();
+								that.sum();
+							}
+						});
+					});
+					$(".xyk .money").on("keyup change", function() {
+						that.sum();
+					})
+				},
+				mask: function() {
+					$('<div id="mask"><div class="mask_bg"></div><div class="problem show" style="display: block;"><ul class="u_l"><div class="d_t"><span class="qr">确认</span><span class="qx">取消</span></div><li>' +
+						'<div class="left"><span>*</span><i>机构名称</i></div>' +
+						'<div class="right">' +
+						'<input maxlength="8" class="_jg" type="text" placeholder="请输入机构名称" value="">' +
+						'</div>' +
+						'</li><li>' +
+						'<div class="left"><span>*</span><i>贷款起始时间</i></div>' +
+						'<div class="right">' +
+						'<input id="date01" type="text" readonly="" name="input_date" placeholder="日期选择" data-lcalendar="1988-01-11,2020-05-29">' +
+						'</div>' +
+						'</li><li class="advanceAccount">' +
+						'<div class="left"><span>*</span><i>期限</i></div>' +
+						'<div class="right">' +
+						'<input maxlength="3" class="_qx" type="number" placeholder="请输入期限" value=""><b class="yuan">期</b></div>' +
+						'</li><li class="advanceAccount">' +
+						'<div class="left"><span>*</span><i>金额</i></div>' +
+						'<div class="right">' +
+						'<input maxlength="10" class="_je" type="number" placeholder="请输入金额" value=""><b class="yuan">元</b></div>' +
+						'</li></ul></div></div>').appendTo("body");
+					var calendar = new lCalendar();
+					calendar.init({
+						'trigger': '#date01',
+						'type': 'date'
+					});
+					$(".qx").click(function() {
+						$("#mask").remove();
+					});
+					$("#mask input").on("blur", function() {
+						$(this).parents("li").find("label").remove();
+						if ($(this).val().trim() == "") {
+							$(this).parents("li").children(".left").append('<label class="message_info">请输入必填数据</label>');
+						} else {
+							console.log($(this).context.id)
+							var _id = $(this).context.id;
+							var it = $("#" + _id);
+							if (it.attr("name") == "input_date") {
+								function left(date1) {
+									var d = new Date();
+									var year = d.getFullYear();
+									var month = d.getMonth() + 1;
+									if (month < 10) {
+										month = "0" + month;
+									}
+									var day = d.getDate();
+									if (day < 10) {
+										day = "0" + day;
+									}
+									var str = year + "-" + month + "-" + day; //当前日期
+									if (date1 == str) {
+										return true;
+									}
+									var oDate1 = new Date(date1);
+									var oDate2 = new Date(str);
+									if (oDate1.getTime() > oDate2.getTime()) {
+										return false;
+									} else {
+										return true;
+									}
+								}
+								var date1 = it.val();
+								var b = left(date1);
+								if (!b) {
+									it.parents("li").children(".left").append('<label class="message_info">小于等于当前日期</label>');
+								}
+							}
+						}
+					});
+					$("#mask input[type='number']").on("blur",function(){
+						if($(this).val()!=""){
+							$(this).parents("li").find("label").remove();
+							if(!fushu($(this).val())){
+								if($(this).parent(".b_r").length!=0){
+									$(this).parents(".problem").prev().find(".left label").remove();
+									$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+								}else{
+									$(this).parents("li").find(".left label").remove();
+									$('<label class="message_info">10位正整数</label>').appendTo($(this).parents("li").find(".left"))
+								}
+							};
+						}
+					})
+				},
+				span: function() {
+					$("#section12 .cy span").click(function() {
+						$(this).addClass("span_bg").siblings().removeClass("span_bg");
+						$(".d_k").children().eq($(this).index()).show().siblings().hide();
+					});
+				},
+				sum: function() {
+					var num = 0;
+					$(".d_k").each(function() {
+						$(this).find("li").each(function() {
+							if ($(this).find(".money").text().trim() != "") {
+								num += parseInt($(this).find(".money").text())
+							}
+							if ($(this).find(".money").val().trim() != "") {
+								num += parseInt($(this).find(".money").val())
+							}
+						})
+					})
+					$("#section12 .w_zsp").text(num);
+				}
+			};
+			shortLoan.bingding();
+			shortLoan.span();
+			shortLoan.sum();
+			$("#next").on("click", function() {
+				submit(true)
+			});
+
+			function submit(tf) {
+				if (sj != undefined) {
+					sj["balanceSheetModel"]["bossBankLongTermDepts"] = [];
+					sj["balanceSheetModel"]["bossPrivateLongTermDepts"] = [];
+				} else {
+					sj = {
+						"balanceSheetModel": {
+							"balanceSheetAnswers": [],
+							"bossBankLongTermDepts": [],
+							"bossPrivateLongTermDepts": []
+						}
+					};
+				}
+				(function() {
+					var a = true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function() { //长期负债
+						if ($(this)[0].code == $("#section12 #12_1").attr("_code")) {
+							a = false
+							$(this)[0].value = $("#section12 #12_1 ._zsp").text();
+							if ($(this)[0].value.trim() == "") {
+								$(this)[0].value == null;
+							}
+						}
+					});
+					if (a) {
+						var balanceSheetAnswersVlue = {}; //长期负债
+						balanceSheetAnswersVlue["value"] = $("#section12 #12_1 ._zsp").text();
+						if (balanceSheetAnswersVlue["value"].trim() == "") {
+							balanceSheetAnswersVlue["value"] = null;
+						}
+						balanceSheetAnswersVlue["code"] = $("#section12 #12_1").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(balanceSheetAnswersVlue);
+					}
+				})();
+				(function() {
+					var a = true;
+					$(sj["balanceSheetModel"]["balanceSheetAnswers"]).each(function() { //其他
+						if ($(this)[0].code == $("#section12 #12_1_1 .xyk").attr("_code")) {
+							a = false
+							$(this)[0].value = $("#section12 #12_1_1 .xyk .money").val();
+							if ($(this)[0].value.trim() == "") {
+								$(this)[0].value == null;
+							}
+						}
+					});
+					if (a) {
+						var balanceSheetAnswersVlue = {}; //其他
+						balanceSheetAnswersVlue["value"] = $("#section12 #12_1_1 .xyk .money").val();
+						if (balanceSheetAnswersVlue["value"].trim() == "") {
+							balanceSheetAnswersVlue["value"] = null;
+						}
+						balanceSheetAnswersVlue["code"] = $("#section12 #12_1_1 .xyk").attr("_code");
+						sj["balanceSheetModel"]["balanceSheetAnswers"].push(balanceSheetAnswersVlue);
+					}
+				})();
+				//bossBankLongTermDepts银行抵押贷款
+				var bossBankLongTermDeptsAy = [];
+				$("#section12 .yszk ul li").each(function(i) {
+					var by = {};
+					var jm = $(this).children(".dqTop").find("span").attr("fieldname");
+					var jz = $(this).children(".dqTop").find("span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(1) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(1) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(2) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(2) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(3) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(3) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by["lineNo"] = i + 1;
+					by[jm] = jz;
+					bossBankLongTermDeptsAy.push(by)
+				})
+				sj["balanceSheetModel"]["bossBankLongTermDepts"] = bossBankLongTermDeptsAy;
+				//bossPrivateLongTermDepts;//私人借款
+				var bossPrivateLongTermDeptsAy = [];
+				$("#section12 .zadk ul li").each(function(i) {
+					var by = {};
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(1) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(1) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by[jm] = jz;
+					jm = $(this).children(".dqBottom").find("div:nth-of-type(3) span").attr("fieldname");
+					jz = $(this).children(".dqBottom").find("div:nth-of-type(3) span").text();
+					if (jz.trim() == "") {
+						jz = null
+					}
+					by["lineNo"] = i + 1;
+					by[jm] = jz;
+					bossPrivateLongTermDeptsAy.push(by)
+				})
+				sj["balanceSheetModel"]["bossPrivateLongTermDepts"] = bossPrivateLongTermDeptsAy;
+				var status = "2";
+				$(".yszk ._xq span").css({
+					"color": "#191919"
+				});
+				var yszkStatus="2";
+				$(".yszk li").each(function() {
+					if ($(this).find(".dqTop span").text().trim() == "") {
+						status = "1";
+						$(".yszk ._xq span").css({
+							"color": "#F04137"
+						});
+						yszkStatus="1";
+					};
+					if ($(this).find(".dqBottom div:nth-of-type(1) span").text().trim() == "") {
+						status = "1";
+						yszkStatus="1";
+						$(".yszk ._xq span").css({
+							"color": "#F04137"
+						});
+					}
+					if ($(this).find(".dqBottom div:nth-of-type(2) span").text().trim() == "") {
+						status = "1";
+						yszkStatus="1";
+						$(".yszk ._xq span").css({
+							"color": "#F04137"
+						});
+					}
+					if ($(this).find(".dqBottom div:nth-of-type(3) span").text().trim() == "") {
+						status = "1";
+						yszkStatus="1";
+						$(".yszk ._xq span").css({
+							"color": "#F04137"
+						});
+					}
+				});
+				
+				if(yszkStatus=="1"){
+					$(".yszk").parent().prev().children('span').eq(0).css({"color":"#F5A17C"});
+				}else{
+					$(".yszk").parent().prev().children('span').eq(0).css({"color":"#ffffff"});
+				}
+				$(".xedk ._xq span").css({
+					"color": "#191919"
+				});
+				
+				var zadkStatus="2";
+				$(".zadk li").each(function() {
+					if ($(this).find(".dqBottom div:nth-of-type(1) span").text().trim() == "") {
+						status = "1";
+						zadkStatus="1";
+						$(".zadk ._xq span").css({
+							"color": "#F04137"
+						});
+					}
+					if ($(this).find(".dqBottom div:nth-of-type(3) span").text().trim() == "") {
+						status = "1";
+						zadkStatus="1";
+						$(".zadk ._xq span").css({
+							"color": "#F04137"
+						});
+					}
+				});
+				
+				if(zadkStatus=="1"){
+					$(".zadk").parent().prev().children('span').eq(1).css({"color":"#F5A17C"});
+				}else{
+					$(".zadk").parent().prev().children('span').eq(1).css({"color":"#ffffff"});
+				}
+				$(".xyk input").parents("li").find("label").remove();
+				$("#12_1_1 .cy span:nth-of-type(3)").removeClass("unfinish");
+				if($(".xyk input").val()!=""){
+					if(!fushu($(".xyk input").val())){
+						$("#12_1_1 .cy span:nth-of-type(3)").addClass("unfinish");
+						$('<label class="message_info">10位正整数</label>').appendTo($(".xyk input").parents("li").find(".left"))
+						status="1";
+					};
+				}
+				
+//				sj["completeStatus"] = status;
+//				console.log(sj)
+				//2018-4-25新增
+				var privatesData=sj["balanceSheetModel"]["bossPrivateLongTermDepts"];//私人借款
+				var bankLong=sj["balanceSheetModel"]["bossBankLongTermDepts"];//银行抵押贷款
+				function isRepeat_1(arr,textInfo) {//银行抵押贷款
+					   var hash = {};
+					   for(var i in arr) {
+					       if(hash[arr[i].organizationName]&&hash[arr[i].residualAmount]&&hash[arr[i].term]&&hash[arr[i].loanBeginTime])//&&hash[arr[i].amount11]
+					       {
+					       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+					       	    '<div class="res-mask-con">'+
+					       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+					       	      '<div class="res-mask-btn">知道了</div>'+
+					       	   '</div>'+
+					       	   '</div>';
+					       	   $(maskHtml).appendTo('body');
+					       	   $('.res-mask-btn').click(function(){
+					       	   		$('.res-mask').remove();
+					       	   })
+					           return true;
+					       }
+					       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+					       hash[arr[i].organizationName] = true;
+					       hash[arr[i].residualAmount] = true;
+					       hash[arr[i].term] = true;
+					       hash[arr[i].loanBeginTime] = true;
+					    }
+					   return false;
+					}
+				
+				function isRepeat_2(arr,textInfo) {//私人借款
+					   var hash = {};
+					   for(var i in arr) {
+					       if(hash[arr[i].loanBeginTime]&&hash[arr[i].residualAmount])//&&hash[arr[i].amount11]
+					       {
+					       	var maskHtml='<div class="res-mask"><div class="res-mask-bg"></div>'+
+					       	    '<div class="res-mask-con">'+
+					       	      '<div class="res-mask-info">'+textInfo+'</div>'+
+					       	      '<div class="res-mask-btn">知道了</div>'+
+					       	   '</div>'+
+					       	   '</div>';
+					       	   $(maskHtml).appendTo('body');
+					       	   $('.res-mask-btn').click(function(){
+					       	   		$('.res-mask').remove();
+					       	   })
+					           return true;
+					       }
+					       // 不存在该元素，则赋值为true，可以赋任意值，相应的修改if判断条件即可
+					       hash[arr[i].loanBeginTime] = true;
+					       hash[arr[i].residualAmount] = true;
+					  
+					    }
+					   return false;
+					}
+					var isRepeatStu_1=isRepeat_1(bankLong,'长期负债模块中的银行抵押贷款页签中不能输入相同数据！');
+					var isRepeatStu_2=isRepeat_2(privatesData,'长期负债模块中的私人借款页签中不能输入相同数据！');
+				//end
+				if(status=='2'&&!isRepeatStu_1&&!isRepeatStu_2){
+					sj["completeStatus"]=2;
+				}else{
+					sj["completeStatus"]=1;
+				}
+				
+				var _sj = JSON.stringify(sj);
+				if (tf == undefined) {
+					var tf = false;
+				}
+				if (tf) {
+					if (status == "2"&&!isRepeatStu_1&&!isRepeatStu_2) {
+						AndroidJs.saveWjDetalAnswer(_sj, true);
+					} else {
+						AndroidJs.saveWjDetalAnswer(_sj, false);
+					}
+				} else {
+					AndroidJs.saveWjDetalAnswer(_sj, false);
+				}
+			}
+			$(document).on("keyup", "input[type='number']", function() {
+//				if ($(this).val().indexOf(".") > 0) {
+//					var sval = $(this).val().substr(0, $(this).val().indexOf(".")) + $(this).val().substring($(this).val().indexOf(".") + 1);
+//					$(this).val(sval.trim());
+//				}
+				if ($(this).val().length >= 10) {
+					$(this).val($(this).val().substr(0, 10));
+				}
+				shortLoan.sum();
+			})
+			$(".xyk input").on("blur",function(){
+				$(this).parents("li").find("label").remove();
+				if($(this).val()!=""){
+					if(!fushu($(this).val())){
+						a = false;
+						if($(this).parent(".b_r").length!=0){
+							$(this).parents(".problem").prev().find(".left label").remove();
+							$('<label class="message_info">10位正整数</label>').appendTo($(this).parents(".problem").prev().find(".left"))
+						}else{
+							$(this).find(".left label").remove();
+							$('<label class="message_info">10位正整数</label>').appendTo($(this).parents("li").find(".left"))
+						}
+					};
+				}
+			})
+			
+		
+			function loadBalanceSheetLongTermLiabilities(sjson) {
+				var AndroidAnswer = sjson[1];
+				sjson = sjson[0];
+				sjson["answer"]=AndroidAnswer;
+				function jsonForm(data){
+					var r=data.answer;
+					var answerJson={};//答案json字符串转换
+					for(var key in r){
+						answerJson[key]=$.parseJSON(r[key]);
+					}
+					data.answer = answerJson;
+					return data;
+				}
+				var json=jsonForm(sjson);
+				var c_ode = json.answer.questionnaireCode.questionnaireCode;
+				var cqfz_code = "0001." + c_ode + ".08.12";
+				$("#12_1").attr("_code", cqfz_code);
+				var qt_code = "0001." + c_ode + ".08.12.03";
+				$(".xyk").attr("_code", qt_code);
+				sj = json.answer;
+				console.log(json)
+				var bossBankLongTermDepts = json.answer.balanceSheetModel.bossBankLongTermDepts; //银行抵押贷款
+				console.log(bossBankLongTermDepts);
+				if (bossBankLongTermDepts.length != 0) {
+					$("#section12 .yszk ul").children().remove();
+					$(bossBankLongTermDepts).each(function() {
+						var on = $(this)[0].organizationName;
+						var lbt = $(this)[0].loanBeginTime;
+						var tm = $(this)[0].term;
+						var ra = $(this)[0].residualAmount;
+						if (on == null||on=='') {
+							return true;
+							on = "";
+						}
+						if (lbt == null) {
+							lbt = "";
+						}
+						if (tm == null) {
+							tm = "";
+						} else {
+							if (!isNaN(parseInt(tm))) {
+								tm = parseInt(tm)
+							}
+						}
+						if (ra == null) {
+							ra = "";
+						} else {
+							if (!isNaN(parseInt(ra))) {
+								ra = parseInt(ra)
+							}
+						}
+						$('<li>' +
+							'<div class="dqTop">' +
+							'<span fieldname="organizationName">' + on + '</span>' +
+							'<img src="img/_sc.png" class="s_d" />' +
+							'</div>' +
+							'<div class="dqBottom">' +
+							'<div><span fieldname="loanBeginTime">' + lbt + '</span></div>' +
+							'<div><span fieldname="term">' + tm + '</span><b class="yuan">期</b></div>' +
+							'<div><span fieldname="residualAmount" class="money">' + ra + '</span><b class="yuan">元</b></div>' +
+							'</div>' +
+							'</li>').appendTo("#section12 .yszk ul");
+					});
+				};
+				var bossPrivateLongTermDepts = json.answer.balanceSheetModel.bossPrivateLongTermDepts; //私人借款
+				console.log(bossPrivateLongTermDepts);
+				if (bossPrivateLongTermDepts.length != 0) {
+					$("#section12 .zadk ul").children().remove();
+					$(bossPrivateLongTermDepts).each(function() {
+						var lbt = $(this)[0].loanBeginTime;
+						var ra = $(this)[0].residualAmount;
+						if (lbt == null) {
+							lbt = "";
+						}
+						if (ra == null) {
+							ra = "";
+						}
+						$('<li>' +
+							'<div class="dqTop">' +
+							'<span fieldname="organizationName"></span>' +
+							'<img src="img/_sc.png" class="s_d" />' +
+							'</div>' +
+							'<div class="dqBottom">' +
+							'<div><span fieldname="loanBeginTime">' + lbt + '</span></div>' +
+							'<div><span fieldname="term"></span><b class="yuan"></b></div>' +
+							'<div><span fieldname="residualAmount" class="money">' + ra + '</span><b class="yuan">元</b></div>' +
+							'</div>' +
+							'</li>').appendTo("#section12 .zadk ul");
+					});
+				};
+				var balanceSheetAnswers = json.answer.balanceSheetModel.balanceSheetAnswers; //大类答案
+				$(balanceSheetAnswers).each(function() {
+					if ($(this)[0].code == $("#section12 .xyk").attr("_code")) { //其他
+						if ($(this)[0].value != null) {
+							if (!isNaN(parseInt($(this)[0].value))) {
+								$("#section12 .xyk ul li").first().find("input").val(parseInt($(this)[0].value))
+							} else {
+								$("#section12 .xyk ul li").first().find("input").val($(this)[0].value)
+							}
+						}
+					}
+				});
+				shortLoan.sum();
+			}
+		</script>
+		<script type="text/javascript">
+			$(".left span").html("&nbsp;&nbsp;");
+			function fushu(val){
+				var telReg = /^(\d{0,8})$/;
+				if(val!=""){
+					if(telReg.test(val)){
+						return true;
+					}else{
+						return false;
+					}
+				}
+				
+			}
+		</script>
+		
+		
+		
+	</body>
+
+</html>
